@@ -1,0 +1,80 @@
+char EncoderReadF1()
+{
+    char in;
+    TRISBbits.TRISB0=1;//input
+    in = 0;
+    in+=PORTBbits.RB0; delay(1);
+    in+=PORTBbits.RB0; delay(1);
+    in+=PORTBbits.RB0; delay(1);
+    if(in>=2)
+        return 1;
+    else
+        return 0;
+}
+char EncoderReadF2()
+{
+    char in;
+    TRISBbits.TRISB1=1;
+    in = 0;
+    in+=PORTBbits.RB1; delay(1);
+    in+=PORTBbits.RB1; delay(1);
+    in+=PORTBbits.RB1; delay(1);
+    if(in>=2)
+        return 1;
+    else
+        return 0;
+}
+long positionCounter = 0;//position counter
+char EncState = -1;//encoder prev state
+void EncoderScan(void)
+{
+    TRISBbits.TRISB0=1;//input F1.1
+    TRISBbits.TRISB1=1;//input F1.2
+char New;
+New = PORTB & 0x03;
+// ????? ??????? ????????
+// ? ?????????? ?? ??????
+// ?????? ? ????? ??????? ??? ?????????? -- ???????????
+// ??? ????????? ??????? ???????
+
+switch(EncState)
+	{
+	case 2:
+		{
+		if(New == 3) positionCounter++;
+		if(New == 0) positionCounter--;
+		break;
+		}
+
+	case 0:
+		{
+		if(New == 2) positionCounter++;
+		if(New == 1) positionCounter--;
+		break;
+		}
+	case 1:
+		{
+		if(New == 0) positionCounter++;
+		if(New == 3) positionCounter--;
+		break;
+		}
+	case 3:
+		{
+		if(New == 1) positionCounter++;
+		if(New == 2) positionCounter--;
+		break;
+		}
+	}
+
+EncState = New;		// ?????????? ????? ????????
+				// ??????????? ?????????
+}
+
+long StartVcounter = 0;
+long Vvalue = 0;
+int CountV()
+{
+    Vvalue= positionCounter - StartVcounter;
+    StartVcounter = positionCounter;
+    return Vvalue;
+}
