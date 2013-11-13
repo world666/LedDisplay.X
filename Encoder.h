@@ -24,7 +24,7 @@ char EncoderReadF2()
     else
         return 0;
 }
-long positionCounter = 0;//position counter
+long EncPositionCounter = 0;//position counter
 char EncState = -1;//encoder prev state
 void EncoderScan(void)
 {
@@ -32,49 +32,51 @@ void EncoderScan(void)
     TRISBbits.TRISB1=1;//input F1.2
 char New;
 New = PORTB & 0x03;
-// ????? ??????? ????????
-// ? ?????????? ?? ??????
-// ?????? ? ????? ??????? ??? ?????????? -- ???????????
-// ??? ????????? ??????? ???????
-
+//impuls investigation
 switch(EncState)
 	{
 	case 2:
 		{
-		if(New == 3) positionCounter++;
-		if(New == 0) positionCounter--;
+		if(New == 3) EncPositionCounter++;
+		if(New == 0) EncPositionCounter--;
 		break;
 		}
 
 	case 0:
 		{
-		if(New == 2) positionCounter++;
-		if(New == 1) positionCounter--;
+		if(New == 2) EncPositionCounter++;
+		if(New == 1) EncPositionCounter--;
 		break;
 		}
 	case 1:
 		{
-		if(New == 0) positionCounter++;
-		if(New == 3) positionCounter--;
+		if(New == 0) EncPositionCounter++;
+		if(New == 3) EncPositionCounter--;
 		break;
 		}
 	case 3:
 		{
-		if(New == 1) positionCounter++;
-		if(New == 2) positionCounter--;
+		if(New == 1) EncPositionCounter++;
+		if(New == 2) EncPositionCounter--;
 		break;
 		}
 	}
-
 EncState = New;		// ?????????? ????? ????????
 				// ??????????? ?????????
 }
 
-long StartVcounter = 0;
+long EncStartVcounter = 0;
 long Vvalue = 0;
-int CountV()
+long EncCountV()
 {
-    Vvalue= positionCounter - StartVcounter;
-    StartVcounter = positionCounter;
+    Vvalue= EncPositionCounter - EncStartVcounter;
+    EncStartVcounter = EncPositionCounter;
     return Vvalue;
+}
+char EncGetDistance(char *str)
+{
+    long marks = (EncPositionCounter>>2);
+    long distance = marks*DISTANCE_PER_MARKS;//travel distance
+    char offset = LongToString(distance,str);//view distance
+    return offset;
 }

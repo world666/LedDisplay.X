@@ -7,12 +7,20 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <xc.h>
+
+#include "Configuration.h"
 #include "MainLibrary.h"
 #include "DigitalInputs.h"
 #include "Uart.h"
 #include "Timer.h"
 #include "Encoder.h"
+#include "Display.h"
+#include "Spi.h"
+#include "RealTimer.h"
+#include "FRAM.h"
+
 // FOSC
 #pragma config FOSFPR = XT_PLL16             // Oscillator (XT)
 #pragma config FCKSMEN = CSW_FSCM_OFF   // Clock Switching and Monitor (Sw Disabled, Mon Disabled)
@@ -57,17 +65,25 @@ void __attribute__((__interrupt__, __auto_psv__)) _T3Interrupt(void);
 
 int main(int argc, char** argv) {
     ADPCFG = 0xFFFF;//RB only digit
-
+    DisplayInitialization();
+    DisplayView("start");
+    RtcInitialization();
+    FramInitialization();
+    //FramWrite(0x0,0xA);
+    //RtcSetTime();
     OpenUART2();
     StartTimer1();
     StartTimer2();
-    StartTimer3();
-    PrintStringUART2("Start");
-      
+    //StartTimer3();
+    //PrintStringUART2("Start");
+   
+    char wdt;
     while(1)
     {
-        
-                                
+        TRISDbits.TRISD0 = 1;//in WDT
+        if(PORTDbits.RD0)//wdt active
+            FramWrite(0x0,0x9);
+
     }
     return (EXIT_SUCCESS);
 }
@@ -79,20 +95,40 @@ void __attribute__((__interrupt__, __auto_psv__)) _T1Interrupt(void)
     TRISCbits.TRISC13 = 0;
     // Toggle LED on RD1
     LATCbits.LATC13 = 1 - LATCbits.LATC13;
-    ReadDigitalInputs();
+    char signals = ReadDigitalInputs();
+    
     // write to uart encoder counter
-    char str[5];
-    //LongToCharArray((positionCounter>>2),str);
-    LongToCharArray((Vvalue),str);
-    PrintStringUART2(str);
+    char str[60]="";
+    char sDistance[12];
+    char sSignals[9];
+    
+    RtcWriteDateInString(str);
+    strcat(str,"     ");
+    char offset = EncGetDistance(sDistance);
+    strcat(str, sDistance+offset);
+    strcat(str,"    ");
+    DigitalInputsToString(sSignals,signals);
+    strcat(str,sSignals);
+    strcat(str,"        ");
+
+    //LongToCharArray(distance,sDistance);
+    //PrintDigitUART2(sDistance,4);
+    
+    DisplayView(str);
+    char dt[4];
+    unsigned long data = FramRead(0x0);
+    LongToCharArray(data,dt);
+    PrintDigitUART2(dt,4);
+
+    //LongToCharArray(seconds,str);
+    //LongToCharArray((Vvalue),str);
+    //PrintDigitUART2(str,4);
 }
 // Timer 2 interrupt service count encoder signal f1 f2
 void __attribute__((__interrupt__, __auto_psv__)) _T2Interrupt(void)
 {
     // Clear Timer 2 interrupt flag
     _T2IF = 0;
-
-    
     EncoderScan();
 }
 void __attribute__((__interrupt__, __auto_psv__)) _T3Interrupt(void)
@@ -103,5 +139,5 @@ void __attribute__((__interrupt__, __auto_psv__)) _T3Interrupt(void)
      TRISCbits.TRISC14 = 0;
     // Toggle LED on RD1
     LATCbits.LATC14 = 1 - LATCbits.LATC14;
-    CountV();  
+    EncCountV();
 }

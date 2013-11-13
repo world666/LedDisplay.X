@@ -5,7 +5,7 @@ void StartTimer1()//write to uart timer
     // Period = PR1 * prescaler * Tcy = 58594 * 256 * 33.33ns = 500ms
     T1CON = 0;            // Clear Timer 1 configuration
     T1CONbits.TCKPS = 3;  // Set timer 1 prescaler (0=1:1, 1=1:8, 2=1:64, 3=1:256)
-    PR1 = 50000;          // Set Timer 1 period (max value is 65535)
+    PR1 = 30000;          // Set Timer 1 period (max value is 65535)
     _T1IP = 3;            // Set Timer 1 interrupt priority
     _T1IF = 0;            // Clear Timer 1 interrupt flag
     _T1IE = 1;            // Enable Timer 1 interrupt
@@ -18,13 +18,13 @@ void StartTimer2()//encoder timer f1 f2
     // Period = PR2 * prescaler * Tcy = 58594 * 256 * 33.33ns = 500ms
     T2CON = 0;            // Clear Timer 2 configuration
     T2CONbits.TCKPS = 0;  // Set timer 2 prescaler (0=1:1, 1=1:8, 2=1:64, 3=1:256)
-    PR2 = 80;          // Set Timer 2 period (max value is 65535)
+    PR2 = 70;          // Set Timer 2 period (max value is 65535)//70
     _T2IP = 0x5;            // Set Timer 2 interrupt priority
     _T2IF = 0;            // Clear Timer 2 interrupt flag
     _T2IE = 1;            // Enable Timer 2 interrupt
     T2CONbits.TON = 1;    // Turn on Timer 2
 }
-void StartTimer3()//count V
+void StartTimer3()//count V count evry 1/10 sec
 {
     // Configure Timer 3.
     // PR3 and TCKPS are set to call interrupt every 500ms.

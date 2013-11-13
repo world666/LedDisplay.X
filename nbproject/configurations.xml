@@ -9,6 +9,11 @@
       <itemPath>MainLibrary.h</itemPath>
       <itemPath>Timer.h</itemPath>
       <itemPath>Encoder.h</itemPath>
+      <itemPath>Display.h</itemPath>
+      <itemPath>Configuration.h</itemPath>
+      <itemPath>RealTimer.h</itemPath>
+      <itemPath>Spi.h</itemPath>
+      <itemPath>FRAM.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

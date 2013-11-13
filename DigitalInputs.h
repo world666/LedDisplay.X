@@ -4,7 +4,7 @@
  *
  * Created on 31 ?????? 2013, 9:15
  */
-int ReadDigitalInputs()
+char ReadDigitalInputs()
 {
     TRISDbits.TRISD1 = 0;//output
     TRISDbits.TRISD2 = 0;//output
@@ -22,6 +22,18 @@ int ReadDigitalInputs()
     PORTB = raData;
     LATDbits.LATD2 = 1;//set LE (D17 save data)
     delay(25);
-    return raData;
+    return ~(raData>>8);
+}
+
+void DigitalInputsToString(char *str,char signals)
+{
+    str[8]=0;
+    int i=0;
+    for(i;i<8;i++)
+    {
+        str[i]=signals&1;
+        str[i]+=0x30;
+        signals=signals>>1;
+    }
 }
 

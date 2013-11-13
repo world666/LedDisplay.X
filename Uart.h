@@ -38,4 +38,10 @@ void PrintStringUART2(unsigned char *String)
         WriteCharToUART2(*String++);
     }
 }
+void PrintDigitUART2(unsigned char *Data,int num)
+{
+    int j=0;
+    for (j=0;j<num; j++)
+        WriteCharToUART2(*Data++);
+}
 
