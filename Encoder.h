@@ -26,10 +26,28 @@ char EncoderReadF2()
 }
 long EncPositionCounter = 0;//position counter
 char EncState = -1;//encoder prev state
+char EncF3Counter = -1;
+char EncF3State = 0; //prev F3 state
+void EncoderScanF3()
+{
+    
+}
 void EncoderScan(void)
 {
     TRISBbits.TRISB0=1;//input F1.1
     TRISBbits.TRISB1=1;//input F1.2
+    TRISDbits.TRISD3=1;//input F1.3
+    if(PORTDbits.RD3 == 1)
+    {
+        if(EncF3State==0)
+        {
+          if(EncF3Counter == -1)
+              EncPositionCounter = 0;
+          EncF3Counter++;
+        }
+    }
+    EncF3State = PORTDbits.RD3;
+    
 char New;
 New = PORTB & 0x03;
 //impuls investigation

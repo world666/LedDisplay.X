@@ -11,6 +11,7 @@
 #include <xc.h>
 
 #include "Configuration.h"
+#include "LowVoltageDetect.h"
 #include "MainLibrary.h"
 #include "DigitalInputs.h"
 #include "Uart.h"
@@ -32,9 +33,9 @@
 
 // FBORPOR
 #pragma config FPWRT = PWRT_64          // POR Timer Value (64ms)
-#pragma config BODENV = NONE            // Brown Out Voltage (Reserved)
-#pragma config BOREN = PBOR_OFF         // PBOR Enable (Disabled)
-#pragma config MCLRE = MCLR_DIS         // Master Clear Enable (Disabled)
+#pragma config BODENV = BORV_45            // Brown Out Voltage (4.5)
+#pragma config BOREN = PBOR_OFF         // PBOR Enable (Disable)
+#pragma config MCLRE = MCLR_EN         // Master Clear Enable (Enable)
 
 // FBS
 #pragma config BWRP = WR_PROTECT_BOOT_OFF// Boot Segment Program Memory Write Protect (Boot Segment Program Memory may be written)
@@ -65,24 +66,23 @@ void __attribute__((__interrupt__, __auto_psv__)) _T3Interrupt(void);
 
 int main(int argc, char** argv) {
     ADPCFG = 0xFFFF;//RB only digit
-    DisplayInitialization();
-    DisplayView("start");
-    RtcInitialization();
-    FramInitialization();
-    //FramWrite(0x0,0xA);
+    DisplayInitialization(); //lcd display init
+    DisplayView("start"); //lcd display write
+    RtcInitialization(); //realtime counter init
     //RtcSetTime();
+    FramInitialization(); //fram init
+    //EncPositionCounter = FramReadPositionCounter(); //read position counter adr =0
+    LVDinitialization(); //voltage detect interrupt
+    
     OpenUART2();
-    StartTimer1();
-    StartTimer2();
+    //StartTimer1();
+    //StartTimer2();
     //StartTimer3();
     //PrintStringUART2("Start");
-   
-    char wdt;
+
     while(1)
     {
-        TRISDbits.TRISD0 = 1;//in WDT
-        if(PORTDbits.RD0)//wdt active
-            FramWrite(0x0,0x9);
+
 
     }
     return (EXIT_SUCCESS);
@@ -95,6 +95,10 @@ void __attribute__((__interrupt__, __auto_psv__)) _T1Interrupt(void)
     TRISCbits.TRISC13 = 0;
     // Toggle LED on RD1
     LATCbits.LATC13 = 1 - LATCbits.LATC13;
+
+    TRISDbits.TRISD0 = 0;//out WDT
+    LATDbits.LATD0 = 1 -  LATDbits.LATD0;
+
     char signals = ReadDigitalInputs();
     
     // write to uart encoder counter
@@ -102,25 +106,30 @@ void __attribute__((__interrupt__, __auto_psv__)) _T1Interrupt(void)
     char sDistance[12];
     char sSignals[9];
     
-    RtcWriteDateInString(str);
-    strcat(str,"     ");
-    char offset = EncGetDistance(sDistance);
+    RtcWriteDateInString(str); //time and date
+    while(strlen(str)<32)
+      strcat(str," ");
+
+    char offset = EncGetDistance(sDistance);//distance in mm
     strcat(str, sDistance+offset);
-    strcat(str,"    ");
-    DigitalInputsToString(sSignals,signals);
+    strcat(str, " ");
+    offset = LongToString(EncF3Counter,sDistance);//f3 counter
+    strcat(str, sDistance+offset);
+    while(strlen(str)<48)
+      strcat(str," ");
+
+    DigitalInputsToString(sSignals,signals);//8 analog signals
     strcat(str,sSignals);
-    strcat(str,"        ");
+    while(strlen(str)<64)
+      strcat(str," ");
 
-    //LongToCharArray(distance,sDistance);
-    //PrintDigitUART2(sDistance,4);
-    
     DisplayView(str);
-    char dt[4];
-    unsigned long data = FramRead(0x0);
-    LongToCharArray(data,dt);
-    PrintDigitUART2(dt,4);
 
-    //LongToCharArray(seconds,str);
+    //LongToCharArray(140,sDistance);
+    //PrintDigitUART2(sDistance,4);
+  
+ 
+   
     //LongToCharArray((Vvalue),str);
     //PrintDigitUART2(str,4);
 }
@@ -140,4 +149,14 @@ void __attribute__((__interrupt__, __auto_psv__)) _T3Interrupt(void)
     // Toggle LED on RD1
     LATCbits.LATC14 = 1 - LATCbits.LATC14;
     EncCountV();
+}
+
+void __attribute__((__interrupt__, __auto_psv__)) _LVDInterrupt(void) //low voltage detcetion
+//save data in fram
+{
+    _LVDIF = 0; //clear interrupt flag
+    //fram write position counter
+    char data[4];
+    LongToCharArray(EncPositionCounter,data);
+    FramWrite(0x0,data,4); //adr=0
 }

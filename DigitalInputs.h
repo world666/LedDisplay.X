@@ -6,8 +6,8 @@
  */
 char ReadDigitalInputs()
 {
-    TRISDbits.TRISD1 = 0;//output
-    TRISDbits.TRISD2 = 0;//output
+    TRISDbits.TRISD1 = 0;//output OE
+    TRISDbits.TRISD2 = 0;//output LE
 
     //read input digit (RB8-RB15)
     TRISB |= 0xFF00;//input

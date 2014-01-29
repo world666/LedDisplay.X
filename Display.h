@@ -7,10 +7,10 @@
 
 void clrscr()
 {
-    TRISGbits.TRISG2 = 0;//RS
-    TRISGbits.TRISG3 = 0;//RW
-    TRISFbits.TRISF6 = 0;//D0
-    TRISD &= 0x00FF;//D1-D3, E
+TRISGbits.TRISG2 = 0;//RS
+TRISGbits.TRISG3 = 0;//RW
+TRISFbits.TRISF6 = 0;//D0
+TRISD &= 0x00FF;//D1-D3, E
 //display clear
 LATGbits.LATG2 = 0;//RS=0 - command
 LATGbits.LATG3 = 0;//RW=0 - write
@@ -30,10 +30,10 @@ delay(10000);
 }
 void setDDRAM(char x)
 {
-    TRISGbits.TRISG2 = 0;//RS
-    TRISGbits.TRISG3 = 0;//RW
-    TRISFbits.TRISF6 = 0;//D0
-    TRISD &= 0x00FF;//D1-D3, E
+TRISGbits.TRISG2 = 0;//RS
+TRISGbits.TRISG3 = 0;//RW
+TRISFbits.TRISF6 = 0;//D0
+TRISD &= 0x00FF;//D1-D3, E
 //set DDRAM adr
 LATGbits.LATG2 = 0;//RS=0 - command
 LATGbits.LATG3 = 0;//RW=0 - write
@@ -60,10 +60,10 @@ delay(100);
 }
 void DisplayInitialization()//4-bit interface
 {
-    TRISGbits.TRISG2 = 0;//RS
-    TRISGbits.TRISG3 = 0;//RW
-    TRISFbits.TRISF6 = 0;//D0
-    TRISD &= 0x00FF;//D1-D3, E
+TRISGbits.TRISG2 = 0;//RS
+TRISGbits.TRISG3 = 0;//RW
+TRISFbits.TRISF6 = 0;//D0
+TRISD &= 0x00FF;//D1-D3, E
 //set string
 LATGbits.LATG2 = 0;//RS=0 - command
 LATGbits.LATG3 = 0;//RW=0 - write
@@ -176,8 +176,5 @@ delay(30);
 
    }
  }
-}/*/
-for(k=0;k<7;k++)
- for(l=0;l<30000;l++)
-  c=0;*/
+}
 }

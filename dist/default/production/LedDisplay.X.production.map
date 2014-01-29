@@ -1,4 +1,4 @@
-Microchip Technology Inc, vø„;
+Microchip Technology Inc, vø„6
 
 Tool Name:
   c:\program files (x86)\microchip\xc16\v1.20\bin\bin\..\bin/elf-ld.exe
@@ -91,20 +91,20 @@ Program Memory  [Origin = 0x100, Length = 0x17efe]
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x100               0x30a           0x48f  (1167)
-.const                       0x40a                0x20            0x30  (48)
-.text                        0x42a               0xf4e          0x16f5  (5877)
-.dinit                      0x1378                0x12            0x1b  (27)
+.const                       0x40a                 0xc            0x12  (18)
+.text                        0x416              0x10b4          0x190e  (6414)
+.dinit                      0x14ca                0x14            0x1e  (30)
 
-                     Total program memory used (bytes):         0x1bcf  (7119) 4%
+                     Total program memory used (bytes):         0x1dcd  (7629) 5%
 
 
 Data Memory  [Origin = 0x800, Length = 0x2000]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
-.ndata                       0x800                   0             0xe  (14)
+.ndata                       0x800                   0            0x10  (16)
 
-                        Total data memory used (bytes):            0xe  (14) <1%
+                        Total data memory used (bytes):           0x10  (16) <1%
 
 
 Dynamic Memory Usage
@@ -112,24 +112,28 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                        0x80e                              0x1ff2  (8178)
+stack                        0x810                              0x1ff0  (8176)
 
-                        Maximum dynamic memory (bytes):         0x1ff2  (8178)
+                        Maximum dynamic memory (bytes):         0x1ff0  (8176)
 
 
 External Symbols in Data Memory (by address):
 
                     0x0800                  _EncPositionCounter
                     0x0804                  _EncState
-                    0x0806                  _EncStartVcounter
-                    0x080a                  _Vvalue
+                    0x0805                  _EncF3Counter
+                    0x0806                  _EncF3State
+                    0x0808                  _EncStartVcounter
+                    0x080c                  _Vvalue
 
 External Symbols in Data Memory (by name):
 
+                    0x0805                  _EncF3Counter
+                    0x0806                  _EncF3State
                     0x0800                  _EncPositionCounter
-                    0x0806                  _EncStartVcounter
+                    0x0808                  _EncStartVcounter
                     0x0804                  _EncState
-                    0x080a                  _Vvalue
+                    0x080c                  _Vvalue
 
 External Symbols in Program Memory (by address):
 
@@ -157,96 +161,104 @@ External Symbols in Program Memory (by address):
                   0x0003d8                  _memcpy
                   0x0003e6                  _strcat
                   0x0003fc                  _strlen
-                  0x00042a                  _delay
-                  0x000452                  _LongToString
-                  0x00050a                  _LongToCharArray
-                  0x000540                  _ReadDigitalInputs
-                  0x000580                  _DigitalInputsToString
-                  0x0005c6                  _OpenUART2
-                  0x0005e4                  _BusyUART2
-                  0x0005fe                  _WriteCharToUART2
-                  0x000616                  _PrintStringUART2
-                  0x000632                  _PrintDigitUART2
-                  0x00065e                  _StartTimer1
-                  0x000684                  _StartTimer2
-                  0x0006aa                  _StartTimer3
-                  0x0006d0                  _EncoderReadF1
-                  0x000726                  _EncoderReadF2
-                  0x00077c                  _EncoderScan
-                  0x000852                  _EncCountV
-                  0x000876                  _EncGetDistance
-                  0x0008b6                  _clrscr
-                  0x0008fe                  _setDDRAM
-                  0x000a2a                  _DisplayInitialization
-                  0x000afe                  _DisplayView
-                  0x000cc6                  _ConfigurateSPI2
-                  0x000cee                  _spi2_write
-                  0x000d28                  _spi2_read
-                  0x000d62                  _RtcSetTime
-                  0x000db0                  _RtcInitialization
-                  0x000dba                  _rtc_write_byte
-                  0x000ddc                  _RtcRead
-                  0x000dfe                  _RtcReadSeconds
-                  0x000e2c                  _RtcReadMinutes
-                  0x000e5a                  _RtcReadHours
-                  0x000e88                  _RtcReadDayOfWeek
-                  0x000e9a                  _RtcReadDays
-                  0x000ec8                  _RtcReadMonth
-                  0x000ef6                  _RtcReadYear
-                  0x000f20                  _RtcWriteDateInString
-                  0x001150                  _FramInitialization
-                  0x00115a                  _FramWriteEnable
-                  0x00116c                  _FramWrite
-                  0x00119c                  _FramRead
-                  0x0011cc                  _FramReadStatus
-                  0x0011e8                  _main
-                  0x001218                  __T1Interrupt
-                  0x00130e                  __T2Interrupt
-                  0x001334                  __T3Interrupt
+                  0x000416                  _LVDinitialization
+                  0x000446                  _delay
+                  0x00046e                  _LongToString
+                  0x000526                  _LongToCharArray
+                  0x00055c                  _ReadDigitalInputs
+                  0x00059c                  _DigitalInputsToString
+                  0x0005e2                  _OpenUART2
+                  0x000600                  _BusyUART2
+                  0x00061a                  _WriteCharToUART2
+                  0x000632                  _PrintStringUART2
+                  0x00064e                  _PrintDigitUART2
+                  0x00067a                  _StartTimer1
+                  0x0006a0                  _StartTimer2
+                  0x0006c6                  _StartTimer3
+                  0x0006ec                  _EncoderReadF1
+                  0x000742                  _EncoderReadF2
+                  0x000798                  _EncoderScanF3
+                  0x00079e                  _EncoderScan
+                  0x0008ac                  _EncCountV
+                  0x0008d0                  _EncGetDistance
+                  0x000910                  _clrscr
+                  0x000958                  _setDDRAM
+                  0x000a84                  _DisplayInitialization
+                  0x000b58                  _DisplayView
+                  0x000d20                  _ConfigurateSPI2
+                  0x000d48                  _spi2_write
+                  0x000d82                  _spi2_read
+                  0x000dbc                  _RtcSetTime
+                  0x000e0a                  _RtcInitialization
+                  0x000e14                  _rtc_write_byte
+                  0x000e36                  _RtcRead
+                  0x000e58                  _RtcReadSeconds
+                  0x000e86                  _RtcReadMinutes
+                  0x000eb4                  _RtcReadHours
+                  0x000ee2                  _RtcReadDayOfWeek
+                  0x000ef4                  _RtcReadDays
+                  0x000f22                  _RtcReadMonth
+                  0x000f50                  _RtcReadYear
+                  0x000f7a                  _RtcWriteDateInString
+                  0x0011aa                  _FramInitialization
+                  0x0011b4                  _FramWriteEnable
+                  0x0011c6                  _FramWrite
+                  0x001212                  _FramRead
+                  0x00125a                  _FramReadStatus
+                  0x001276                  _FramReadPositionCounter
+                  0x00128e                  _main
+                  0x0012d4                  __T1Interrupt
+                  0x00142a                  __T2Interrupt
+                  0x001450                  __T3Interrupt
+                  0x001494                  __LVDInterrupt
 
 External Symbols in Program Memory (by name):
 
-                  0x0005e4                  _BusyUART2
-                  0x000cc6                  _ConfigurateSPI2
-                  0x000580                  _DigitalInputsToString
-                  0x000a2a                  _DisplayInitialization
-                  0x000afe                  _DisplayView
-                  0x000852                  _EncCountV
-                  0x000876                  _EncGetDistance
-                  0x0006d0                  _EncoderReadF1
-                  0x000726                  _EncoderReadF2
-                  0x00077c                  _EncoderScan
-                  0x001150                  _FramInitialization
-                  0x00119c                  _FramRead
-                  0x0011cc                  _FramReadStatus
-                  0x00116c                  _FramWrite
-                  0x00115a                  _FramWriteEnable
-                  0x00050a                  _LongToCharArray
-                  0x000452                  _LongToString
+                  0x000600                  _BusyUART2
+                  0x000d20                  _ConfigurateSPI2
+                  0x00059c                  _DigitalInputsToString
+                  0x000a84                  _DisplayInitialization
+                  0x000b58                  _DisplayView
+                  0x0008ac                  _EncCountV
+                  0x0008d0                  _EncGetDistance
+                  0x0006ec                  _EncoderReadF1
+                  0x000742                  _EncoderReadF2
+                  0x00079e                  _EncoderScan
+                  0x000798                  _EncoderScanF3
+                  0x0011aa                  _FramInitialization
+                  0x001212                  _FramRead
+                  0x001276                  _FramReadPositionCounter
+                  0x00125a                  _FramReadStatus
+                  0x0011c6                  _FramWrite
+                  0x0011b4                  _FramWriteEnable
+                  0x000416                  _LVDinitialization
+                  0x000526                  _LongToCharArray
+                  0x00046e                  _LongToString
                   0x00019c                  _OpenSPI2
-                  0x0005c6                  _OpenUART2
-                  0x000632                  _PrintDigitUART2
-                  0x000616                  _PrintStringUART2
-                  0x000540                  _ReadDigitalInputs
-                  0x000db0                  _RtcInitialization
-                  0x000ddc                  _RtcRead
-                  0x000e88                  _RtcReadDayOfWeek
-                  0x000e9a                  _RtcReadDays
-                  0x000e5a                  _RtcReadHours
-                  0x000e2c                  _RtcReadMinutes
-                  0x000ec8                  _RtcReadMonth
-                  0x000dfe                  _RtcReadSeconds
-                  0x000ef6                  _RtcReadYear
-                  0x000d62                  _RtcSetTime
-                  0x000f20                  _RtcWriteDateInString
-                  0x00065e                  _StartTimer1
-                  0x000684                  _StartTimer2
-                  0x0006aa                  _StartTimer3
-                  0x0005fe                  _WriteCharToUART2
+                  0x0005e2                  _OpenUART2
+                  0x00064e                  _PrintDigitUART2
+                  0x000632                  _PrintStringUART2
+                  0x00055c                  _ReadDigitalInputs
+                  0x000e0a                  _RtcInitialization
+                  0x000e36                  _RtcRead
+                  0x000ee2                  _RtcReadDayOfWeek
+                  0x000ef4                  _RtcReadDays
+                  0x000eb4                  _RtcReadHours
+                  0x000e86                  _RtcReadMinutes
+                  0x000f22                  _RtcReadMonth
+                  0x000e58                  _RtcReadSeconds
+                  0x000f50                  _RtcReadYear
+                  0x000dbc                  _RtcSetTime
+                  0x000f7a                  _RtcWriteDateInString
+                  0x00067a                  _StartTimer1
+                  0x0006a0                  _StartTimer2
+                  0x0006c6                  _StartTimer3
+                  0x00061a                  _WriteCharToUART2
                   0x000198                  __DefaultInterrupt
-                  0x001218                  __T1Interrupt
-                  0x00130e                  __T2Interrupt
-                  0x001334                  __T3Interrupt
+                  0x001494                  __LVDInterrupt
+                  0x0012d4                  __T1Interrupt
+                  0x00142a                  __T2Interrupt
+                  0x001450                  __T3Interrupt
                   0x0001a2                  ___divsi3
                   0x0001c0                  ___fixsfsi
                   0x0002de                  ___floatdisf
@@ -266,14 +278,14 @@ External Symbols in Program Memory (by name):
                   0x0003a8                  __funpack2
                   0x000126                  __psv_init
                   0x000100                  __resetPRI
-                  0x0008b6                  _clrscr
-                  0x00042a                  _delay
-                  0x0011e8                  _main
+                  0x000910                  _clrscr
+                  0x000446                  _delay
+                  0x00128e                  _main
                   0x0003d8                  _memcpy
-                  0x000dba                  _rtc_write_byte
-                  0x0008fe                  _setDDRAM
-                  0x000d28                  _spi2_read
-                  0x000cee                  _spi2_write
+                  0x000e14                  _rtc_write_byte
+                  0x000958                  _setDDRAM
+                  0x000d82                  _spi2_read
+                  0x000d48                  _spi2_write
                   0x0003e6                  _strcat
                   0x0003fc                  _strlen
 
@@ -443,26 +455,26 @@ userdata
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x2af4
+.debug_info       0x000000       0x3109
  *(.debug_info)
- .debug_info      0x000000       0x2af4 build/default/production/main.o
+ .debug_info      0x000000       0x3109 build/default/production/main.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0x23d
  *(.debug_abbrev)
  .debug_abbrev    0x000000        0x23d build/default/production/main.o
 
-.debug_line       0x000000       0x1325
+.debug_line       0x000000       0x1497
  *(.debug_line)
- .debug_line      0x000000       0x1325 build/default/production/main.o
+ .debug_line      0x000000       0x1497 build/default/production/main.o
 
-.debug_frame      0x000000        0x2f4
+.debug_frame      0x000000        0x334
  *(.debug_frame)
- .debug_frame     0x000000        0x2f4 build/default/production/main.o
+ .debug_frame     0x000000        0x334 build/default/production/main.o
 
-.debug_str        0x000000        0x157
+.debug_str        0x000000        0x194
  *(.debug_str)
- .debug_str       0x000000        0x157 build/default/production/main.o
+ .debug_str       0x000000        0x194 build/default/production/main.o
 
 .debug_loc
  *(.debug_loc)
@@ -471,10 +483,10 @@ userdata
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0x376
+                  0x000000        0x3ec
  *(.debug_pubnames)
  .debug_pubnames
-                  0x000000        0x376 build/default/production/main.o
+                  0x000000        0x3ec build/default/production/main.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -496,11 +508,11 @@ userdata
                   0x000014          0x4 LONG 0x198 DEFINED (__INT0Interrupt)?ABSOLUTE (__INT0Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000016          0x4 LONG 0x198 DEFINED (__IC1Interrupt)?ABSOLUTE (__IC1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000018          0x4 LONG 0x198 DEFINED (__OC1Interrupt)?ABSOLUTE (__OC1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00001a          0x4 LONG 0x1218 DEFINED (__T1Interrupt)?ABSOLUTE (__T1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00001a          0x4 LONG 0x12d4 DEFINED (__T1Interrupt)?ABSOLUTE (__T1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00001c          0x4 LONG 0x198 DEFINED (__IC2Interrupt)?ABSOLUTE (__IC2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00001e          0x4 LONG 0x198 DEFINED (__OC2Interrupt)?ABSOLUTE (__OC2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000020          0x4 LONG 0x130e DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000022          0x4 LONG 0x1334 DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000020          0x4 LONG 0x142a DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000022          0x4 LONG 0x1450 DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000024          0x4 LONG 0x198 DEFINED (__SPI1Interrupt)?ABSOLUTE (__SPI1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000026          0x4 LONG 0x198 DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000028          0x4 LONG 0x198 DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
@@ -535,7 +547,7 @@ userdata
                   0x000062          0x4 LONG 0x198 DEFINED (__PWMInterrupt)?ABSOLUTE (__PWMInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000064          0x4 LONG 0x198 DEFINED (__QEIInterrupt)?ABSOLUTE (__QEIInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000066          0x4 LONG 0x198 DEFINED (__DCIInterrupt)?ABSOLUTE (__DCIInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000068          0x4 LONG 0x198 DEFINED (__LVDInterrupt)?ABSOLUTE (__LVDInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000068          0x4 LONG 0x1494 DEFINED (__LVDInterrupt)?ABSOLUTE (__LVDInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00006a          0x4 LONG 0x198 DEFINED (__FLTAInterrupt)?ABSOLUTE (__FLTAInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00006c          0x4 LONG 0x198 DEFINED (__FLTBInterrupt)?ABSOLUTE (__FLTBInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00006e          0x4 LONG 0x198 DEFINED (__Interrupt45)?ABSOLUTE (__Interrupt45):ABSOLUTE (__DefaultInterrupt)
@@ -560,11 +572,11 @@ userdata
                   0x000094          0x4 LONG 0x198 DEFINED (__AltINT0Interrupt)?ABSOLUTE (__AltINT0Interrupt):DEFINED (__INT0Interrupt)?ABSOLUTE (__INT0Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000096          0x4 LONG 0x198 DEFINED (__AltIC1Interrupt)?ABSOLUTE (__AltIC1Interrupt):DEFINED (__IC1Interrupt)?ABSOLUTE (__IC1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000098          0x4 LONG 0x198 DEFINED (__AltOC1Interrupt)?ABSOLUTE (__AltOC1Interrupt):DEFINED (__OC1Interrupt)?ABSOLUTE (__OC1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00009a          0x4 LONG 0x1218 DEFINED (__AltT1Interrupt)?ABSOLUTE (__AltT1Interrupt):DEFINED (__T1Interrupt)?ABSOLUTE (__T1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00009a          0x4 LONG 0x12d4 DEFINED (__AltT1Interrupt)?ABSOLUTE (__AltT1Interrupt):DEFINED (__T1Interrupt)?ABSOLUTE (__T1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00009c          0x4 LONG 0x198 DEFINED (__AltIC2Interrupt)?ABSOLUTE (__AltIC2Interrupt):DEFINED (__IC2Interrupt)?ABSOLUTE (__IC2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00009e          0x4 LONG 0x198 DEFINED (__AltOC2Interrupt)?ABSOLUTE (__AltOC2Interrupt):DEFINED (__OC2Interrupt)?ABSOLUTE (__OC2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000a0          0x4 LONG 0x130e DEFINED (__AltT2Interrupt)?ABSOLUTE (__AltT2Interrupt):DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000a2          0x4 LONG 0x1334 DEFINED (__AltT3Interrupt)?ABSOLUTE (__AltT3Interrupt):DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000a0          0x4 LONG 0x142a DEFINED (__AltT2Interrupt)?ABSOLUTE (__AltT2Interrupt):DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000a2          0x4 LONG 0x1450 DEFINED (__AltT3Interrupt)?ABSOLUTE (__AltT3Interrupt):DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000a4          0x4 LONG 0x198 DEFINED (__AltSPI1Interrupt)?ABSOLUTE (__AltSPI1Interrupt):DEFINED (__SPI1Interrupt)?ABSOLUTE (__SPI1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000a6          0x4 LONG 0x198 DEFINED (__AltU1RXInterrupt)?ABSOLUTE (__AltU1RXInterrupt):DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000a8          0x4 LONG 0x198 DEFINED (__AltU1TXInterrupt)?ABSOLUTE (__AltU1TXInterrupt):DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
@@ -599,7 +611,7 @@ userdata
                   0x0000e2          0x4 LONG 0x198 DEFINED (__AltPWMInterrupt)?ABSOLUTE (__AltPWMInterrupt):DEFINED (__PWMInterrupt)?ABSOLUTE (__PWMInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000e4          0x4 LONG 0x198 DEFINED (__AltQEIInterrupt)?ABSOLUTE (__AltQEIInterrupt):DEFINED (__QEIInterrupt)?ABSOLUTE (__QEIInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000e6          0x4 LONG 0x198 DEFINED (__AltDCIInterrupt)?ABSOLUTE (__AltDCIInterrupt):DEFINED (__DCIInterrupt)?ABSOLUTE (__DCIInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000e8          0x4 LONG 0x198 DEFINED (__AltLVDInterrupt)?ABSOLUTE (__AltLVDInterrupt):DEFINED (__LVDInterrupt)?ABSOLUTE (__LVDInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000e8          0x4 LONG 0x1494 DEFINED (__AltLVDInterrupt)?ABSOLUTE (__AltLVDInterrupt):DEFINED (__LVDInterrupt)?ABSOLUTE (__LVDInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000ea          0x4 LONG 0x198 DEFINED (__AltFLTAInterrupt)?ABSOLUTE (__AltFLTAInterrupt):DEFINED (__FLTAInterrupt)?ABSOLUTE (__FLTAInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000ec          0x4 LONG 0x198 DEFINED (__AltFLTBInterrupt)?ABSOLUTE (__AltFLTBInterrupt):DEFINED (__FLTBInterrupt)?ABSOLUTE (__FLTBInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000ee          0x4 LONG 0x198 DEFINED (__AltInterrupt45)?ABSOLUTE (__AltInterrupt45):DEFINED (__Interrupt45)?ABSOLUTE (__Interrupt45):ABSOLUTE (__DefaultInterrupt)
@@ -1621,59 +1633,61 @@ LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x000018        0x2d5
+                  0x000018        0x34b
  .debug_pubtypes
-                  0x000018        0x2d5 build/default/production/main.o
+                  0x000018        0x34b build/default/production/main.o
 
 __c30_signature
-                  0x0002ee         0x78
+                  0x000364         0x78
  __c30_signature
-                  0x0002ee          0x6 build/default/production/main.o
+                  0x000364          0x6 build/default/production/main.o
  __c30_signature
-                  0x0002f4          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(OpenSPI2.o)
+                  0x00036a          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(OpenSPI2.o)
  __c30_signature
-                  0x0002fa          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
+                  0x000370          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
  __c30_signature
-                  0x000300          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
+                  0x000376          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
  __c30_signature
-                  0x000306          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(divsi3.eo)
+                  0x00037c          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(divsi3.eo)
  __c30_signature
-                  0x00030c          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fixsfsi.eo)
+                  0x000382          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fixsfsi.eo)
  __c30_signature
-                  0x000312          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatsisf.eo)
+                  0x000388          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatsisf.eo)
  __c30_signature
-                  0x000318          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(funpack.eo)
+                  0x00038e          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(funpack.eo)
  __c30_signature
-                  0x00031e          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(modsi3.eo)
+                  0x000394          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(modsi3.eo)
  __c30_signature
-                  0x000324          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(mulsf3.eo)
+                  0x00039a          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(mulsf3.eo)
  __c30_signature
-                  0x00032a          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
+                  0x0003a0          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
  __c30_signature
-                  0x000330          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(umodsi3.eo)
+                  0x0003a6          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(umodsi3.eo)
  __c30_signature
-                  0x000336          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatdisf.eo)
+                  0x0003ac          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatdisf.eo)
  __c30_signature
-                  0x00033c          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatundisf.eo)
+                  0x0003b2          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatundisf.eo)
  __c30_signature
-                  0x000342          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fpack.eo)
+                  0x0003b8          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fpack.eo)
  __c30_signature
-                  0x000348          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(funpack2.eo)
+                  0x0003be          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(funpack2.eo)
  __c30_signature
-                  0x00034e          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(futil.eo)
+                  0x0003c4          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(futil.eo)
  __c30_signature
-                  0x000354          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(memcpy.eo)
+                  0x0003ca          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(memcpy.eo)
  __c30_signature
-                  0x00035a          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(strcat.eo)
+                  0x0003d0          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(strcat.eo)
  __c30_signature
-                  0x000360          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(strlen.eo)
+                  0x0003d6          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(strlen.eo)
 
-.ndata              0x0800          0xe
- .ndata             0x0800          0xe build/default/production/main.o
+.ndata              0x0800         0x10
+ .ndata             0x0800         0x10 build/default/production/main.o
                     0x0800                  _EncPositionCounter
                     0x0804                  _EncState
-                    0x0806                  _EncStartVcounter
-                    0x080a                  _Vvalue
+                    0x0805                  _EncF3Counter
+                    0x0806                  _EncF3State
+                    0x0808                  _EncStartVcounter
+                    0x080c                  _Vvalue
 
 .config_ICS       0xf8000c          0x2
  .config_ICS      0xf8000c          0x2 build/default/production/main.o
@@ -1698,57 +1712,61 @@ __c30_signature
  .config_FCKSMEN
                   0xf80000          0x2 build/default/production/main.o
 
-.const              0x840a         0x20 load address 0x00040a  
- .const             0x840a         0x20 build/default/production/main.o
+.const              0x840a          0xc load address 0x00040a  
+ .const             0x840a          0xc build/default/production/main.o
 
-.text             0x00042a        0xf4e
- .text            0x00042a        0xf4e build/default/production/main.o
-                  0x00042a                  _delay
-                  0x000452                  _LongToString
-                  0x00050a                  _LongToCharArray
-                  0x000540                  _ReadDigitalInputs
-                  0x000580                  _DigitalInputsToString
-                  0x0005c6                  _OpenUART2
-                  0x0005e4                  _BusyUART2
-                  0x0005fe                  _WriteCharToUART2
-                  0x000616                  _PrintStringUART2
-                  0x000632                  _PrintDigitUART2
-                  0x00065e                  _StartTimer1
-                  0x000684                  _StartTimer2
-                  0x0006aa                  _StartTimer3
-                  0x0006d0                  _EncoderReadF1
-                  0x000726                  _EncoderReadF2
-                  0x00077c                  _EncoderScan
-                  0x000852                  _EncCountV
-                  0x000876                  _EncGetDistance
-                  0x0008b6                  _clrscr
-                  0x0008fe                  _setDDRAM
-                  0x000a2a                  _DisplayInitialization
-                  0x000afe                  _DisplayView
-                  0x000cc6                  _ConfigurateSPI2
-                  0x000cee                  _spi2_write
-                  0x000d28                  _spi2_read
-                  0x000d62                  _RtcSetTime
-                  0x000db0                  _RtcInitialization
-                  0x000dba                  _rtc_write_byte
-                  0x000ddc                  _RtcRead
-                  0x000dfe                  _RtcReadSeconds
-                  0x000e2c                  _RtcReadMinutes
-                  0x000e5a                  _RtcReadHours
-                  0x000e88                  _RtcReadDayOfWeek
-                  0x000e9a                  _RtcReadDays
-                  0x000ec8                  _RtcReadMonth
-                  0x000ef6                  _RtcReadYear
-                  0x000f20                  _RtcWriteDateInString
-                  0x001150                  _FramInitialization
-                  0x00115a                  _FramWriteEnable
-                  0x00116c                  _FramWrite
-                  0x00119c                  _FramRead
-                  0x0011cc                  _FramReadStatus
-                  0x0011e8                  _main
-                  0x001218                  __T1Interrupt
-                  0x00130e                  __T2Interrupt
-                  0x001334                  __T3Interrupt
+.text             0x000416       0x10b4
+ .text            0x000416       0x10b4 build/default/production/main.o
+                  0x000416                  _LVDinitialization
+                  0x000446                  _delay
+                  0x00046e                  _LongToString
+                  0x000526                  _LongToCharArray
+                  0x00055c                  _ReadDigitalInputs
+                  0x00059c                  _DigitalInputsToString
+                  0x0005e2                  _OpenUART2
+                  0x000600                  _BusyUART2
+                  0x00061a                  _WriteCharToUART2
+                  0x000632                  _PrintStringUART2
+                  0x00064e                  _PrintDigitUART2
+                  0x00067a                  _StartTimer1
+                  0x0006a0                  _StartTimer2
+                  0x0006c6                  _StartTimer3
+                  0x0006ec                  _EncoderReadF1
+                  0x000742                  _EncoderReadF2
+                  0x000798                  _EncoderScanF3
+                  0x00079e                  _EncoderScan
+                  0x0008ac                  _EncCountV
+                  0x0008d0                  _EncGetDistance
+                  0x000910                  _clrscr
+                  0x000958                  _setDDRAM
+                  0x000a84                  _DisplayInitialization
+                  0x000b58                  _DisplayView
+                  0x000d20                  _ConfigurateSPI2
+                  0x000d48                  _spi2_write
+                  0x000d82                  _spi2_read
+                  0x000dbc                  _RtcSetTime
+                  0x000e0a                  _RtcInitialization
+                  0x000e14                  _rtc_write_byte
+                  0x000e36                  _RtcRead
+                  0x000e58                  _RtcReadSeconds
+                  0x000e86                  _RtcReadMinutes
+                  0x000eb4                  _RtcReadHours
+                  0x000ee2                  _RtcReadDayOfWeek
+                  0x000ef4                  _RtcReadDays
+                  0x000f22                  _RtcReadMonth
+                  0x000f50                  _RtcReadYear
+                  0x000f7a                  _RtcWriteDateInString
+                  0x0011aa                  _FramInitialization
+                  0x0011b4                  _FramWriteEnable
+                  0x0011c6                  _FramWrite
+                  0x001212                  _FramRead
+                  0x00125a                  _FramReadStatus
+                  0x001276                  _FramReadPositionCounter
+                  0x00128e                  _main
+                  0x0012d4                  __T1Interrupt
+                  0x00142a                  __T2Interrupt
+                  0x001450                  __T3Interrupt
+                  0x001494                  __LVDInterrupt
 
-.dinit            0x001378         0x12
- .dinit           0x001378         0x12 data_init
+.dinit            0x0014ca         0x14
+ .dinit           0x0014ca         0x14 data_init

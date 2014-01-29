@@ -1,12 +1,13 @@
 build/default/production/main.o:  \
 main.c  \
 Configuration.h  \
+ LowVoltageDetect.h  \
 MainLibrary.h  \
- DigitalInputs.h  \
+DigitalInputs.h  \
 Uart.h  \
 Timer.h  \
-Encoder.h  \
+ Encoder.h  \
 Display.h  \
 Spi.h  \
 RealTimer.h  \
- FRAM.h 
+FRAM.h 
