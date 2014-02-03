@@ -19,7 +19,7 @@
 
 // rtc_settings - set parameters and time
 void RtcSetTime(void)
-{  
+{
 	rtc_write_byte(CONTROL_REG, 0x80); // ????????? ??????????? ??????????
         rtc_write_byte(DAY_WRITE, 0x3); //3
 	rtc_write_byte(DATE_WRITE, 19); // 13
@@ -29,7 +29,7 @@ void RtcSetTime(void)
 	rtc_write_byte(MINUTES_WRITE, 0x48); // ????????? ?????
 	rtc_write_byte(SECONDS_WRITE, 0); // 0
 	rtc_write_byte(CONTROL_REG, 0x0); // ?????? ??????????? ??????????
-        
+
 }
 void RtcInitialization()
 {
@@ -71,20 +71,23 @@ unsigned char RtcReadSeconds()
     unsigned char seconds = (buf&0x7F)>>4;
     seconds*=10;
     seconds+=buf&0x0F;
+    return seconds;
 }
 unsigned char RtcReadMinutes()
 {
     unsigned char buf = RtcRead(MINUTES_READ);
-    unsigned char seconds = (buf&0x7F)>>4;
-    seconds*=10;
-    seconds+=buf&0x0F;
+    unsigned char minutes = (buf&0x7F)>>4;
+    minutes*=10;
+    minutes+=buf&0x0F;
+    return minutes;
 }
 unsigned char RtcReadHours()
 {
     unsigned char buf = RtcRead(HOURS_READ);
-    unsigned char seconds = (buf&0x3F)>>4;
-    seconds*=10;
-    seconds+=buf&0x0F;
+    unsigned char hours = (buf&0x3F)>>4;
+    hours*=10;
+    hours+=buf&0x0F;
+    return hours;
 }
 unsigned char RtcReadDayOfWeek()
 {
@@ -94,23 +97,26 @@ unsigned char RtcReadDayOfWeek()
 unsigned char RtcReadDays()
 {
     unsigned char buf = RtcRead(DATE_READ);
-    unsigned char seconds = (buf&0x7F)>>4;
-    seconds*=10;
-    seconds+=buf&0x0F;
+    unsigned char date = (buf&0x7F)>>4;
+    date*=10;
+    date+=buf&0x0F;
+    return date;
 }
 unsigned char RtcReadMonth()
 {
     unsigned char buf = RtcRead(MONTH_READ);
-    unsigned char seconds = (buf&0x7F)>>4;
-    seconds*=10;
-    seconds+=buf&0x0F;
+    unsigned char month = (buf&0x7F)>>4;
+    month*=10;
+    month+=buf&0x0F;
+    return month;
 }
 unsigned char RtcReadYear()
 {
     unsigned char buf = RtcRead(YEAR_READ);
-    unsigned char seconds = (buf&0xFF)>>4;
-    seconds*=10;
-    seconds+=buf&0x0F;
+    unsigned char year = (buf&0xFF)>>4;
+    year*=10;
+    year+=buf&0x0F;
+    return year;
 }
 void RtcWriteDateInString(char *str)
 {

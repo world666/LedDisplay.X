@@ -21,7 +21,7 @@
 #include "Spi.h"
 #include "RealTimer.h"
 #include "FRAM.h"
-
+#include "Fat.h"
 // FOSC
 #pragma config FOSFPR = XT_PLL16             // Oscillator (XT)
 #pragma config FCKSMEN = CSW_FSCM_OFF   // Clock Switching and Monitor (Sw Disabled, Mon Disabled)

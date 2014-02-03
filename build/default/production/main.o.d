@@ -10,4 +10,5 @@ Timer.h  \
 Display.h  \
 Spi.h  \
 RealTimer.h  \
-FRAM.h 
+FRAM.h  \
+Fat.h 
