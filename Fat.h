@@ -43,3 +43,4 @@ unsigned int FindFreeClusterNum();
 unsigned int FindFreeDescriptorNum();
 void WriteDescriptorByAdress(unsigned int, char*);
 void ReadDescriptorByAdress(unsigned int, char*);
+unsigned char DescriptorsDefragmentation();
