@@ -1,3 +1,7 @@
+/**
+ * @author Kyrylov Andrii
+ * @todo read F1 with program filter
+ */
 char EncoderReadF1()
 {
     char in;
@@ -11,6 +15,10 @@ char EncoderReadF1()
     else
         return 0;
 }
+/**
+ * @author Kyrylov Andrii
+ * @todo read F2 with program filter
+ */
 char EncoderReadF2()
 {
     char in;
@@ -28,10 +36,11 @@ long EncPositionCounter = 0;//position counter
 char EncState = -1;//encoder prev state
 char EncF3Counter = -1;
 char EncF3State = 0; //prev F3 state
-void EncoderScanF3()
-{
-    
-}
+
+/**
+ * @author Kyrylov Andrii
+ * @todo scan f1, f2, f3 signals and count current position in ticks
+ */
 void EncoderScan(void)
 {
     TRISBbits.TRISB0=1;//input F1.1
@@ -85,12 +94,24 @@ EncState = New;		// ?????????? ????? ????????
 
 long EncStartVcounter = 0;
 long Vvalue = 0;
+
+/**
+ * @author Kyrylov Andrii
+ * @todo count speed from position
+ */
 long EncCountV()
 {
     Vvalue= EncPositionCounter - EncStartVcounter;
     EncStartVcounter = EncPositionCounter;
     return Vvalue;
 }
+
+/**
+ * @author Kyrylov Andrii
+ * @param *str pointer to output string
+ * @todo convert current distance to string
+ * @return offset in str
+ */
 char EncGetDistance(char *str)
 {
     long marks = (EncPositionCounter>>2);

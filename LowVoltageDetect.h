@@ -3,8 +3,13 @@
  * Author: andrey
  *
  * Created on 15 ????????? 2013, 13:56
+ * library for Low voltage detection
  */
 
+/**
+ * @author Kyrylov Andrii
+ * @todo init iterrupt for LVD; border is 4.6V
+ */
 void LVDinitialization()
 {
     RCONbits.LVDL = 0xE;//<4.6V

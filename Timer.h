@@ -1,3 +1,7 @@
+/**
+ * @author Kyrylov Andrii
+ * @todo init timer 1 interrupt (write to lcd)
+ */
 void StartTimer1()//write to uart timer
 {
     // Configure Timer 1.
@@ -11,7 +15,12 @@ void StartTimer1()//write to uart timer
     _T1IE = 1;            // Enable Timer 1 interrupt
     T1CONbits.TON = 1;    // Turn on Timer 1
 }
-void StartTimer2()//encoder timer f1 f2
+
+/**
+ * @author Kyrylov Andrii
+ * @todo init timer 2 (encoder timer f1 f2)
+ */
+void StartTimer2()
 {
     // Configure Timer 2.
     // PR2 and TCKPS are set to call interrupt every 500ms.
@@ -24,7 +33,12 @@ void StartTimer2()//encoder timer f1 f2
     _T2IE = 1;            // Enable Timer 2 interrupt
     T2CONbits.TON = 1;    // Turn on Timer 2
 }
-void StartTimer3()//count V count evry 1/10 sec
+
+/**
+ * @author Kyrylov Andrii
+ * @todo init timer 3 (count V count evry 1/10 sec)
+ */
+void StartTimer3()
 {
     // Configure Timer 3.
     // PR3 and TCKPS are set to call interrupt every 500ms.

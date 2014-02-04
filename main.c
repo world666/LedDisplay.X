@@ -67,7 +67,6 @@ void __attribute__((__interrupt__, __auto_psv__)) _T3Interrupt(void);
 int main(int argc, char** argv) {
     ADPCFG = 0xFFFF;//RB only digit
     DisplayInitialization(); //lcd display init
-    DisplayView("start"); //lcd display write
     RtcInitialization(); //realtime counter init
     //RtcSetTime();
     FramInitialization(); //fram init
@@ -80,6 +79,9 @@ int main(int argc, char** argv) {
     //StartTimer3();
     //PrintStringUART2("Start");
 
+    DisplayView("start"); //lcd display write
+    ReadBootSector();
+    
     while(1)
     {
 

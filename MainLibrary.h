@@ -3,6 +3,12 @@
  * Author: andrey
  *
  * Created on 31 ?????? 2013, 15:35
+ * contains base methods
+ */
+/**
+ * @author Kyrylov Andrii
+ * @param time - delay value in ticks
+ * @todo make delay
  */
 void delay(long time)
 {
@@ -10,6 +16,13 @@ void delay(long time)
     for(i=0;i<time;i++);
 }
 
+/**
+ * @author Kyrylov Andrii
+ * @param digit - value for converting
+ * @param *result - pointer to output string
+ * @todo convert long digit to string
+ * @return offset in string
+ */
 unsigned int LongToString(long digit,char *result)
 {
     result[11]=0;
@@ -34,6 +47,13 @@ unsigned int LongToString(long digit,char *result)
         result[i--]='-';
     return (i+1);
 }
+
+/**
+ * @author Kyrylov Andrii
+ * @param digit - value for converting
+ * @param *result - pointer to output array
+ * @todo convert long digit to char array (4 byte)
+ */
 void LongToCharArray(long digit,char *result)
 {
     char *ch = &digit;

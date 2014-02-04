@@ -1,4 +1,4 @@
-Microchip Technology Inc, v¯Ñ:
+Microchip Technology Inc, vêãr
 
 Tool Name:
   c:\program files (x86)\microchip\xc16\v1.20\bin\bin\..\bin/elf-ld.exe
@@ -6,7 +6,7 @@ Tool Name:
 Command:
   -p30F6012A \
   -o \
-  dist/default/production/LedDisplay.X.production.elf \
+  dist/default/debug/LedDisplay.X.debug.elf \
   -Lc:/program files (x86)/microchip/xc16/v1.20/bin/bin/.. \
   -Lc:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib \
   -Lc:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/PIC24E \
@@ -21,10 +21,17 @@ Command:
   -Lc:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../support/dsPIC33E/gld \
   -Lc:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC33F \
   -Lc:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../support/dsPIC33F/gld \
-  build/default/production/main.o \
-  build/default/production/Fat.o \
+  build/default/debug/main.o \
+  build/default/debug/Fat.o \
+  -TC:\Users\andrey\AppData\Local\Temp\tmp00000f8c.00 \
+  -TC:\Users\andrey\AppData\Local\Temp\tmp00000f8c.01 \
+  -TC:\Users\andrey\AppData\Local\Temp\tmp00000f8c.02 \
+  -TC:\Users\andrey\AppData\Local\Temp\tmp00000f8c.03 \
   --defsym=__MPLAB_BUILD=1 \
-  -Tp30F6012A.gld.00 \
+  --defsym=__MPLAB_DEBUG=1 \
+  --defsym=__DEBUG=1 \
+  --defsym=__MPLAB_DEBUGGER_ICD3=1 \
+  -Tp30F6012A.gld.04 \
   --stack=16 \
   --check-sections \
   --data-init \
@@ -36,7 +43,7 @@ Command:
   --stackguard=16 \
   --no-force-link \
   --smart-io \
-  -Map=dist/default/production/LedDisplay.X.production.map \
+  -Map=dist/default/debug/LedDisplay.X.debug.map \
   --report-mem \
   -start-group \
   --library=fx-elf \
@@ -48,23 +55,23 @@ Command:
 Archive member included because of file (symbol)
 
 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(OpenSPI2.o)
-                              build/default/production/main.o (_OpenSPI2)
+                              build/default/debug/main.o (_OpenSPI2)
 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
                               (__resetPRI)
 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
                               c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o) (__data_init_standard)
 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(divsi3.eo)
-                              build/default/production/main.o (___divsi3)
+                              build/default/debug/main.o (___divsi3)
 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fixsfsi.eo)
-                              build/default/production/main.o (_(float, int, long long, short, float, short, int))
+                              build/default/debug/main.o (_(float, int, long long, short, float, short, int))
 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatsisf.eo)
-                              build/default/production/main.o (___floatsisf)
+                              build/default/debug/main.o (___floatsisf)
 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(funpack.eo)
                               c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fixsfsi.eo) (__funpack)
 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(modsi3.eo)
-                              build/default/production/main.o (___modsi3)
+                              build/default/debug/main.o (___modsi3)
 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(mulsf3.eo)
-                              build/default/production/main.o (___mulsf3)
+                              build/default/debug/main.o (___mulsf3)
 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
                               c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(divsi3.eo) (___udivsi3)
 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(umodsi3.eo)
@@ -80,11 +87,11 @@ c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(funpack
 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(futil.eo)
                               c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(mulsf3.eo) (__fPropagateNaN)
 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(memcpy.eo)
-                              build/default/production/main.o (_memcpy)
+                              build/default/debug/main.o (_memcpy)
 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(strcat.eo)
-                              build/default/production/main.o (_strcat)
+                              build/default/debug/main.o (_strcat)
 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(strlen.eo)
-                              build/default/production/main.o (_strlen)
+                              build/default/debug/main.o (_strlen)
 
 
 Program Memory  [Origin = 0x100, Length = 0x17efe]
@@ -103,9 +110,13 @@ Data Memory  [Origin = 0x800, Length = 0x2000]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
-.ndata                       0x800                   0            0x10  (16)
+reserve_data_0x800           0x800                0x1f            0x20  (32)
+reserve_data_0x820           0x820                 0x1             0x2  (2)
+reserve_data_0x822           0x822                 0x1             0x2  (2)
+reserve_data_0x824           0x824                0x2b            0x2c  (44)
+.ndata                       0x850                   0            0x10  (16)
 
-                        Total data memory used (bytes):           0x10  (16) <1%
+                        Total data memory used (bytes):           0x60  (96) 1%
 
 
 Dynamic Memory Usage
@@ -113,28 +124,28 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                        0x810                              0x1ff0  (8176)
+stack                        0x860                              0x1fa0  (8096)
 
-                        Maximum dynamic memory (bytes):         0x1ff0  (8176)
+                        Maximum dynamic memory (bytes):         0x1fa0  (8096)
 
 
 External Symbols in Data Memory (by address):
 
-                    0x0800                  _EncPositionCounter
-                    0x0804                  _EncState
-                    0x0805                  _EncF3Counter
-                    0x0806                  _EncF3State
-                    0x0808                  _EncStartVcounter
-                    0x080c                  _Vvalue
+                    0x0850                  _EncPositionCounter
+                    0x0854                  _EncState
+                    0x0855                  _EncF3Counter
+                    0x0856                  _EncF3State
+                    0x0858                  _EncStartVcounter
+                    0x085c                  _Vvalue
 
 External Symbols in Data Memory (by name):
 
-                    0x0805                  _EncF3Counter
-                    0x0806                  _EncF3State
-                    0x0800                  _EncPositionCounter
-                    0x0808                  _EncStartVcounter
-                    0x0804                  _EncState
-                    0x080c                  _Vvalue
+                    0x0855                  _EncF3Counter
+                    0x0856                  _EncF3State
+                    0x0850                  _EncPositionCounter
+                    0x0858                  _EncStartVcounter
+                    0x0854                  _EncState
+                    0x085c                  _Vvalue
 
 External Symbols in Program Memory (by address):
 
@@ -331,9 +342,36 @@ FICD             0xf8000c           0x000002
 
 Linker script and memory map
 
-LOAD build/default/production/main.o
-LOAD build/default/production/Fat.o
+LOAD build/default/debug/main.o
+LOAD build/default/debug/Fat.o
+
+reserve_data_0x800
+                    0x0800         0x20
+                  0x000800          0x2 SHORT 0x0
+                    0x0820                  . = 0x20
+ *fill*             0x0801         0x1f00
+
+reserve_data_0x820
+                    0x0820          0x2
+                  0x000820          0x2 SHORT 0x0
+                    0x0822                  . = 0x2
+ *fill*             0x0821          0x100
+
+reserve_data_0x822
+                    0x0822          0x2
+                  0x000822          0x2 SHORT 0x0
+                    0x0824                  . = 0x2
+ *fill*             0x0823          0x100
+
+reserve_data_0x824
+                    0x0824         0x2c
+                  0x000824          0x2 SHORT 0x0
+                    0x0850                  . = 0x2c
+ *fill*             0x0825         0x2b00
                     0x0001                  __MPLAB_BUILD = 0x1
+                    0x0001                  __MPLAB_DEBUG = 0x1
+                    0x0001                  __DEBUG = 0x1
+                    0x0001                  __MPLAB_DEBUGGER_ICD3 = 0x1
 LOAD c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a
                     0x8005c0                  __FUID0 = 0x8005c0
                     0x8005c2                  __FUID1 = 0x8005c2
@@ -475,29 +513,29 @@ userdata
 
 .debug_info       0x000000       0x3586
  *(.debug_info)
- .debug_info      0x000000       0x30fc build/default/production/main.o
- .debug_info      0x0030fc        0x48a build/default/production/Fat.o
+ .debug_info      0x000000       0x30fc build/default/debug/main.o
+ .debug_info      0x0030fc        0x48a build/default/debug/Fat.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0x36e
  *(.debug_abbrev)
- .debug_abbrev    0x000000        0x23d build/default/production/main.o
- .debug_abbrev    0x00023d        0x131 build/default/production/Fat.o
+ .debug_abbrev    0x000000        0x23d build/default/debug/main.o
+ .debug_abbrev    0x00023d        0x131 build/default/debug/Fat.o
 
 .debug_line       0x000000       0x16c5
  *(.debug_line)
- .debug_line      0x000000       0x14b7 build/default/production/main.o
- .debug_line      0x0014b7        0x20e build/default/production/Fat.o
+ .debug_line      0x000000       0x14b7 build/default/debug/main.o
+ .debug_line      0x0014b7        0x20e build/default/debug/Fat.o
 
 .debug_frame      0x000000        0x3c8
  *(.debug_frame)
- .debug_frame     0x000000        0x334 build/default/production/main.o
- .debug_frame     0x000334         0x94 build/default/production/Fat.o
+ .debug_frame     0x000000        0x334 build/default/debug/main.o
+ .debug_frame     0x000334         0x94 build/default/debug/Fat.o
 
 .debug_str        0x000000        0x1ab
  *(.debug_str)
- .debug_str       0x000000        0x18c build/default/production/main.o
- .debug_str       0x00018c         0x1f build/default/production/Fat.o
+ .debug_str       0x000000        0x18c build/default/debug/main.o
+ .debug_str       0x00018c         0x1f build/default/debug/Fat.o
 
 .debug_loc
  *(.debug_loc)
@@ -509,9 +547,9 @@ userdata
                   0x000000        0x4ac
  *(.debug_pubnames)
  .debug_pubnames
-                  0x000000        0x3ec build/default/production/main.o
+                  0x000000        0x3ec build/default/debug/main.o
  .debug_pubnames
-                  0x0003ec         0xc0 build/default/production/Fat.o
+                  0x0003ec         0xc0 build/default/debug/Fat.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -519,9 +557,9 @@ userdata
 .debug_aranges    0x000000         0x30
  *(.debug_aranges)
  .debug_aranges
-                  0x000000         0x18 build/default/production/main.o
+                  0x000000         0x18 build/default/debug/main.o
  .debug_aranges
-                  0x000018         0x18 build/default/production/Fat.o
+                  0x000018         0x18 build/default/debug/Fat.o
 
 .ivt              0x000004         0x7c
                   0x000004          0x4 LONG 0x198 DEFINED (__ReservedTrap0)?ABSOLUTE (__ReservedTrap0):ABSOLUTE (__DefaultInterrupt)
@@ -1654,7 +1692,7 @@ LOAD c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libpic30-elf.
 LOAD c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a
 LOAD c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a
 END GROUP
-OUTPUT(dist/default/production/LedDisplay.X.production.elf elf32-pic30)
+OUTPUT(dist/default/debug/LedDisplay.X.debug.elf elf32-pic30)
 LOAD jump_table
 LOAD default_isr
 LOAD data_init
@@ -1662,16 +1700,16 @@ LOAD data_init
 .debug_pubtypes
                   0x000030        0x36f
  .debug_pubtypes
-                  0x000030        0x34b build/default/production/main.o
+                  0x000030        0x34b build/default/debug/main.o
  .debug_pubtypes
-                  0x00037b         0x24 build/default/production/Fat.o
+                  0x00037b         0x24 build/default/debug/Fat.o
 
 __c30_signature
                   0x0003a0         0x7e
  __c30_signature
-                  0x0003a0          0x6 build/default/production/main.o
+                  0x0003a0          0x6 build/default/debug/main.o
  __c30_signature
-                  0x0003a6          0x6 build/default/production/Fat.o
+                  0x0003a6          0x6 build/default/debug/Fat.o
  __c30_signature
                   0x0003ac          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(OpenSPI2.o)
  __c30_signature
@@ -1711,43 +1749,43 @@ __c30_signature
  __c30_signature
                   0x000418          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(strlen.eo)
 
-.ndata              0x0800         0x10
- .ndata             0x0800         0x10 build/default/production/main.o
-                    0x0800                  _EncPositionCounter
-                    0x0804                  _EncState
-                    0x0805                  _EncF3Counter
-                    0x0806                  _EncF3State
-                    0x0808                  _EncStartVcounter
-                    0x080c                  _Vvalue
+.ndata              0x0850         0x10
+ .ndata             0x0850         0x10 build/default/debug/main.o
+                    0x0850                  _EncPositionCounter
+                    0x0854                  _EncState
+                    0x0855                  _EncF3Counter
+                    0x0856                  _EncF3State
+                    0x0858                  _EncStartVcounter
+                    0x085c                  _Vvalue
 
 .config_ICS       0xf8000c          0x2
- .config_ICS      0xf8000c          0x2 build/default/production/main.o
+ .config_ICS      0xf8000c          0x2 build/default/debug/main.o
 
 .config_GCP       0xf8000a          0x2
- .config_GCP      0xf8000a          0x2 build/default/production/main.o
+ .config_GCP      0xf8000a          0x2 build/default/debug/main.o
 
 .config_RSS       0xf80008          0x2
- .config_RSS      0xf80008          0x2 build/default/production/main.o
+ .config_RSS      0xf80008          0x2 build/default/debug/main.o
 
 .config_RBS       0xf80006          0x2
- .config_RBS      0xf80006          0x2 build/default/production/main.o
+ .config_RBS      0xf80006          0x2 build/default/debug/main.o
 
 .config_MCLRE     0xf80004          0x2
- .config_MCLRE    0xf80004          0x2 build/default/production/main.o
+ .config_MCLRE    0xf80004          0x2 build/default/debug/main.o
 
 .config_WDT       0xf80002          0x2
- .config_WDT      0xf80002          0x2 build/default/production/main.o
+ .config_WDT      0xf80002          0x2 build/default/debug/main.o
 
 .config_FCKSMEN
                   0xf80000          0x2
  .config_FCKSMEN
-                  0xf80000          0x2 build/default/production/main.o
+                  0xf80000          0x2 build/default/debug/main.o
 
 .const              0x840a          0xc load address 0x00040a  
- .const             0x840a          0xc build/default/production/main.o
+ .const             0x840a          0xc build/default/debug/main.o
 
 .text             0x000416       0x11b6
- .text            0x000416       0x1096 build/default/production/main.o
+ .text            0x000416       0x1096 build/default/debug/main.o
                   0x000416                  _LVDinitialization
                   0x000446                  _delay
                   0x00046e                  _LongToString
@@ -1798,7 +1836,7 @@ __c30_signature
                   0x00140c                  __T2Interrupt
                   0x001432                  __T3Interrupt
                   0x001476                  __LVDInterrupt
- .text            0x0014ac        0x120 build/default/production/Fat.o
+ .text            0x0014ac        0x120 build/default/debug/Fat.o
                   0x0014ac                  _WriteBootSector
                   0x0014ca                  _ReadBootSector
                   0x0014dc                  _ReadNextFat

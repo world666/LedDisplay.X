@@ -3,6 +3,15 @@
  * Author: andrey
  *
  * Created on 31 ?????? 2013, 9:15
+ * Contains methods for input/output digital signals processing
+ */
+
+/**
+ * @author Kyrylov Andrii
+ * @todo save data from input port
+ * to input register; read data form input register to ram;
+ * write data from ram to output register
+ * @return input data from port
  */
 char ReadDigitalInputs()
 {
@@ -25,6 +34,12 @@ char ReadDigitalInputs()
     return ~(raData>>8);
 }
 
+/**
+ * @author Kyrylov Andrii
+ * @param str - pointer to output string
+ * @param signals - byte of input signals
+ * @todo convert signals values to string ('1'/'0')
+ */
 void DigitalInputsToString(char *str,char signals)
 {
     str[8]=0;

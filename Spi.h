@@ -3,10 +3,15 @@
  * Author: andrey
  *
  * Created on 13 ????????? 2013, 13:52
+ * library for work with spi
  */
 
 #include <spi.h>
 
+/**
+ * @author Kyrylov Andrii
+ * @todo ini spi modul (8-bit interface)
+ */
 void ConfigurateSPI2()
 {
    unsigned int SPICONValue = 0;
@@ -37,6 +42,12 @@ void ConfigurateSPI2()
    IEC1bits.SPI2IE = 1;
    SPI2STATbits.SPITBF = 0;*/
 }
+
+/**
+ * @author Kyrylov Andrii
+ * @param data_out - output value
+ * @todo write over spi
+ */
 void spi2_write(unsigned int data_out)
 {
 
@@ -49,7 +60,12 @@ void spi2_write(unsigned int data_out)
      while(IFS1bits.SPI2IF == 0);  
      data_out = SPI2BUF;               //Avoiding overflow when reading
 }
-// rtc_read - read byte from rtc
+
+/**
+ * @author Kyrylov Andrii
+ * @todo read byte over spi module
+ * @return byte is received from spi
+ */
 unsigned char spi2_read(void)
 {
 

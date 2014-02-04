@@ -3,8 +3,13 @@
  * Author: andrey
  *
  * Created on 6 ????????? 2013, 14:43
+ * contains methods for working with lcd
  */
 
+/**
+ * @author Kyrylov Andrii
+ * @todo clear display
+ */
 void clrscr()
 {
 TRISGbits.TRISG2 = 0;//RS
@@ -28,6 +33,12 @@ LATDbits.LATD11 = 0;//E=0 - go
 delay(10000);
 //----------
 }
+
+/**
+ * @author Kyrylov Andrii
+ * @param x - address of lcd memory
+ * @todo set position pointer
+ */
 void setDDRAM(char x)
 {
 TRISGbits.TRISG2 = 0;//RS
@@ -58,6 +69,12 @@ LATDbits.LATD11 = 0;//E=0 - go
 //-----
 delay(100);
 }
+
+/**
+ * @author Kyrylov Andrii
+ * @todo init display (set 4-bit interface, display on, clrscr,
+ * set enty mode, set ddram)
+ */
 void DisplayInitialization()//4-bit interface
 {
 TRISGbits.TRISG2 = 0;//RS
@@ -125,7 +142,11 @@ setDDRAM(0x80);
 delay(3000);
 }
 
-
+/**
+ * @author Kyrylov Andrii
+ * @param *buf - pointer to output data
+ * @todo show information on lcd
+ */
 void DisplayView(char *buf)
 {
     int position = 0;

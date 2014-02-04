@@ -17,7 +17,10 @@
 #define YEAR_WRITE 0x86
 #define CONTROL_REG 0x8F
 
-// rtc_settings - set parameters and time
+/**
+ * @author Kyrylov Andrii
+ * @todo set parameters and times
+ */
 void RtcSetTime(void)
 {
 	rtc_write_byte(CONTROL_REG, 0x80); // ????????? ??????????? ??????????
@@ -31,16 +34,22 @@ void RtcSetTime(void)
 	rtc_write_byte(CONTROL_REG, 0x0); // ?????? ??????????? ??????????
 
 }
+
+/**
+ * @author Kyrylov Andrii
+ * @todo clr cs and init spi for rtc
+ */
 void RtcInitialization()
 {
     TRISGbits.TRISG13 = 0; // CS_RTC out
     ConfigurateSPI2();
 }
-// rtc_write - write byte to rtc
-
-// rtc_write_byte - ??????? ?????? ?????? ? RTC
-// address = 0xXX -> ????? ?????
-// rtc_data = 0xXX -> ??????
+/**
+ * @author Kyrylov Andrii
+ * @param address - address in rtc memory
+ * @param rtc_data - data to be written
+ * @todo write byte to rtc
+ */
 void rtc_write_byte(unsigned char address, unsigned char rtc_data)
 {
         TRISGbits.TRISG13 = 0; // CS_RTC out
@@ -51,8 +60,12 @@ void rtc_write_byte(unsigned char address, unsigned char rtc_data)
         TRISGbits.TRISG13 = 0; // CS_RTC out
 	LATGbits.LATG13 = 0; // clr rtc
 }
-// rtc_read_byte - read data from rtc
-// address = 0xXX -> byte adress
+
+/**
+ * @author Kyrylov Andrii
+ * @param address - address in rtc memory
+ * @todo read byte from rtc by address
+ */
 unsigned char RtcRead(unsigned char address)
 {
         TRISGbits.TRISG13 = 0; // CS_RTC out
@@ -65,6 +78,11 @@ unsigned char RtcRead(unsigned char address)
 	LATGbits.LATG13 = 0; // uncheck rtc
 	return rtc_data; // ????? ?? ???????
 }
+
+/**
+ * @author Kyrylov Andrii
+ * @todo read seconds value from rtc
+ */
 unsigned char RtcReadSeconds()
 {
     unsigned char buf = RtcRead(SECONDS_READ);
@@ -73,6 +91,11 @@ unsigned char RtcReadSeconds()
     seconds+=buf&0x0F;
     return seconds;
 }
+
+/**
+ * @author Kyrylov Andrii
+ * @todo read minutes value from rtc
+ */
 unsigned char RtcReadMinutes()
 {
     unsigned char buf = RtcRead(MINUTES_READ);
@@ -81,6 +104,11 @@ unsigned char RtcReadMinutes()
     minutes+=buf&0x0F;
     return minutes;
 }
+
+/**
+ * @author Kyrylov Andrii
+ * @todo read hours value from rtc
+ */
 unsigned char RtcReadHours()
 {
     unsigned char buf = RtcRead(HOURS_READ);
@@ -89,11 +117,21 @@ unsigned char RtcReadHours()
     hours+=buf&0x0F;
     return hours;
 }
+
+/**
+ * @author Kyrylov Andrii
+ * @todo read day of week value from rtc
+ */
 unsigned char RtcReadDayOfWeek()
 {
     unsigned char buf = RtcRead(DAY_READ);
     return buf;
 }
+
+/**
+ * @author Kyrylov Andrii
+ * @todo read days value from rtc
+ */
 unsigned char RtcReadDays()
 {
     unsigned char buf = RtcRead(DATE_READ);
@@ -102,6 +140,11 @@ unsigned char RtcReadDays()
     date+=buf&0x0F;
     return date;
 }
+
+/**
+ * @author Kyrylov Andrii
+ * @todo read month value from rtc
+ */
 unsigned char RtcReadMonth()
 {
     unsigned char buf = RtcRead(MONTH_READ);
@@ -110,6 +153,11 @@ unsigned char RtcReadMonth()
     month+=buf&0x0F;
     return month;
 }
+
+/**
+ * @author Kyrylov Andrii
+ * @todo read year value from rtc
+ */
 unsigned char RtcReadYear()
 {
     unsigned char buf = RtcRead(YEAR_READ);
@@ -118,6 +166,12 @@ unsigned char RtcReadYear()
     year+=buf&0x0F;
     return year;
 }
+
+/**
+ * @author Kyrylov Andrii
+ * @param *str - pointer to output string
+ * @todo convert current date to string
+ */
 void RtcWriteDateInString(char *str)
 {
     char dayNames[7][10] = {"Monday",
