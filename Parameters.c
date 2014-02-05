@@ -11,6 +11,7 @@ char AddParameter(char* name, char type, char* data, unsigned int dataLength)
     ReadBootSector(&boot);
     ParamDescriptor paramDescriptor;
     paramDescriptor.parameterType = type;
+    paramDescriptor.index = FindMaxIndex()+1;
     double clustersCount = (double)dataLength/boot.ClusterSize;
     clustersCount = ceil(clustersCount);
     //fat (clusters sequence)
@@ -42,8 +43,8 @@ char AddParameter(char* name, char type, char* data, unsigned int dataLength)
     //count extended descriptors num
     double buf = (double)(strlen(name) + 1)/sizeof(ExtendedParamDescriptor);
     unsigned int extendedDescriptorsCount = (int)ceil(buf);
-    paramDescriptor.paramName[0] = (char *)(extendedDescriptorsCount)[0];
-    paramDescriptor.paramName[1] = (char *)(extendedDescriptorsCount)[1];
+    paramDescriptor.paramName[1] = ((char* )(extendedDescriptorsCount))[0];
+    paramDescriptor.paramName[2] = ((char* )(extendedDescriptorsCount))[1];
     WriteDescriptorByAddress(freeDescriptorAdr,&paramDescriptor);
     i=0;
     ExtendedParamDescriptor extendedDescriptor;
@@ -56,4 +57,28 @@ char AddParameter(char* name, char type, char* data, unsigned int dataLength)
         WriteDescriptorByAddress(freeDescriptorAdr,&extendedDescriptor);
     }
     return 1;
+}
+
+unsigned int FindMaxIndex()
+{
+    Boot boot;
+    ReadBootSector(&boot);
+    unsigned int maxIndex = 0;
+    ParamDescriptor descriptor;
+    int adr = boot.BootSectorSize + boot.FatSectorSize;
+    for(adr; adr < boot.BootSectorSize + boot.FatSectorSize + boot.DescriptorSectorSize;
+            adr += sizeof(ParamDescriptor))
+    {
+        ReadDescriptorByAddress(adr, &descriptor);
+        if(descriptor.paramName[0] != 0)
+            break;
+        if(descriptor.paramName[0] !=0x0F)
+        {
+            if(maxIndex < descriptor.index)
+                maxIndex = descriptor.index;
+        }
+    }
+    if(maxIndex == 0)
+        return 0x1FFF;
+    return maxIndex;
 }
