@@ -116,9 +116,3 @@ unsigned char DescriptorsDefragmentation();
  * todo write data to chosen cluster
  */
 void WriteDataToCluster(unsigned int, char*);
-/**
- * @author Liutyi Ievgen
- * @todo find max index among existing parameter's descriptors
- * @return max index
- */
-unsigned int FindMaxIndex();

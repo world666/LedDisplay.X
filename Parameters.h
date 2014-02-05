@@ -17,3 +17,9 @@
  * 0 - there is not enough space
  */
 char AddParameter(char*, char, char*, unsigned int);
+/**
+ * @author Liutyi Ievgen
+ * @todo find max index among existing parameter's descriptors
+ * @return max index
+ */
+unsigned int FindMaxIndex();

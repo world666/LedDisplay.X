@@ -73,7 +73,6 @@ int main(int argc, char** argv) {
     FramInitialization(); //fram init
     //EncPositionCounter = FramReadPositionCounter(); //read position counter adr =0
     LVDinitialization(); //voltage detect interrupt
-    
     OpenUART2();
     //StartTimer1();
     //StartTimer2();
