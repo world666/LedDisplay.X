@@ -44,7 +44,12 @@ void WriteBootSector();
  * @author Liutyi Ievgen
  * @todo read a Boot structure data from flash memory
  */
-void ReadBootSector();
+void ReadBootSector(Boot*);
+/**
+ * @author Liutyi Ievgen
+ * @todo make a formatting of flash memory 
+ */
+void Formatting();
 /**
  * @author Liutyi Ievgen
  * @param unsigned int param is current cluster number
@@ -69,11 +74,11 @@ void WriteToFat(unsigned int, unsigned int);
 unsigned int FindFreeClusterNum();
 /**
  * @author Liutyi Ievgen
- * @todo find the fist free descriptor number
- * @return free descriptor number
- * @return if free descriptor number = 0xFFFF => there are no free descriptors
+ * @todo find the fist free descriptor address
+ * @return free descriptor address
+ * @return if free descriptor address = 0xFFFF => there are no free descriptors
  */
-unsigned int FindFreeDescriptorNum();
+unsigned int FindFreeDescriptorAdr();
 /**
  * @author Liutyi Ievgen
  * @param unsigned int param1 is address

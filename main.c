@@ -80,7 +80,7 @@ int main(int argc, char** argv) {
     //PrintStringUART2("Start");
 
     DisplayView("start"); //lcd display write
-    ReadBootSector();
+    //ReadBootSector();
     
     while(1)
     {
