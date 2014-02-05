@@ -156,3 +156,26 @@ void WriteDataToCluster(unsigned int clusterNum, char* data)
     unsigned int adr = boot.BootSectorSize + boot.FatSectorSize + boot.DescriptorSectorSize + clusterNum * boot.ClusterSize;
     FramWrite(adr, data, boot.ClusterSize);
 }
+unsigned int FindMaxIndex()
+{
+    Boot boot;
+    ReadBootSector(&boot);
+    unsigned int maxIndex = 0;
+    ParamDescriptor descriptor;
+    int adr = boot.BootSectorSize + boot.FatSectorSize;
+    for(adr; adr < boot.BootSectorSize + boot.FatSectorSize + boot.DescriptorSectorSize;
+            adr += sizeof(ParamDescriptor))
+    {
+        ReadDescriptorByAddress(adr, &descriptor);
+        if(descriptor.paramName[0] != 0)
+            break;
+        if(descriptor.paramName[0] !=0x0F)
+        {
+            if(maxIndex < descriptor.index)
+                maxIndex = descriptor.index;
+        }
+    }
+    if(maxIndex == 0)
+        return 0x1FFF;
+    return maxIndex;
+}
