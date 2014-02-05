@@ -10,7 +10,8 @@ typedef struct Boot
     unsigned int FatSectorSize; // 1524 bytes (count = 762)
     unsigned int DescriptorSectorSize; //3600 bytes (count = 400)
     unsigned int DataSectorSize; //3048 bytes (count = 762)
-    char Rezerved[8];
+    unsigned char ClusterSize;
+    char Rezerved[7];
 } Boot;
 
 typedef struct FatDescriptor
@@ -73,6 +74,14 @@ void WriteToFat(unsigned int, unsigned int);
  */
 unsigned int FindFreeClusterNum();
 /**
+* @author Liutyi Ievgen
+ * @param unsigned char param is necessary clusters count
+ * @todo allocate clusters sequence for parameter
+ * @return number of the first cluster in allocated sequence
+ * @return if number of the first cluster = 0xFFFF => there are no free clusters
+ */
+unsigned int AllocateClustersSequence(unsigned char);
+/**
  * @author Liutyi Ievgen
  * @todo find the fist free descriptor address
  * @return free descriptor address
@@ -100,3 +109,10 @@ void ReadDescriptorByAddress(unsigned int, char*);
  * @return 0 => defragmentation isn't necessary
  */
 unsigned char DescriptorsDefragmentation();
+/**
+ * @author Liutyi Ievgen
+ * @param unsigned int param1 is number of cluster
+ * @param char* param2 is data
+ * todo write data to chosen cluster
+ */
+void WriteDataToCluster(unsigned int, char*);

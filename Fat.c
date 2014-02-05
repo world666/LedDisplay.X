@@ -6,6 +6,7 @@ void WriteBootSector()
     boot.FatSectorSize = 1524;
     boot.DescriptorSectorSize = 3600;
     boot.DataSectorSize = 3048;
+    boot.ClusterSize = 4;
     FramWrite(0,&boot, sizeof(Boot));
 }
 void ReadBootSector(Boot* boot)
@@ -65,6 +66,26 @@ unsigned int FindFreeClusterNum()
     }
     return freeClusterNum;
 }
+unsigned int AllocateClustersSequence(unsigned char clustersCount)
+{
+    unsigned int freeClusterNum;
+    unsigned int prevFreeClusterNum;
+    unsigned int firstFreeClusterNum;
+    int i = 0;
+    for(i; i < clustersCount; i++)
+    {
+        freeClusterNum = FindFreeClusterNum();
+        if(freeClusterNum == 0xFFFF) //all clusters are busy
+            return freeClusterNum;
+        if(i!=0)
+            WriteToFat(prevFreeClusterNum, freeClusterNum);
+        else
+            firstFreeClusterNum = freeClusterNum;
+        WriteToFat(freeClusterNum, 0xFFFF); // end of sequence
+        prevFreeClusterNum = freeClusterNum;
+    }
+   return firstFreeClusterNum;
+}
 unsigned int FindFreeDescriptorAdr()
 {
     Boot boot;
@@ -85,11 +106,11 @@ unsigned int FindFreeDescriptorAdr()
 }
 void WriteDescriptorByAddress(unsigned int address, char* data)
 {
-    FramWrite(address, &data, sizeof(ParamDescriptor));
+    FramWrite(address, data, sizeof(ParamDescriptor));
 }
 void ReadDescriptorByAddress(unsigned int address, char* data)
 {
-    FramRead(address, &data, sizeof(ParamDescriptor));
+    FramRead(address, data, sizeof(ParamDescriptor));
 }
 unsigned char DescriptorsDefragmentation()
 {
@@ -127,4 +148,11 @@ unsigned char DescriptorsDefragmentation()
         freeDescriptorAdr += sizeof(ParamDescriptor);
     }
     return 1;
+}
+void WriteDataToCluster(unsigned int clusterNum, char* data)
+{
+    Boot boot;
+    ReadBootSector(&boot);
+    unsigned int adr = boot.BootSectorSize + boot.FatSectorSize + boot.DescriptorSectorSize + clusterNum * boot.ClusterSize;
+    FramWrite(adr, data, boot.ClusterSize);
 }
