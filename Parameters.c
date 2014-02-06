@@ -68,7 +68,7 @@ char DeleteParameter(unsigned int paramIndex)
     ParamDescriptor paramDescriptor;
     ReadDescriptorByAddress(descriptorAdr, &paramDescriptor);
     //clear data
-    ClearClasterSequence(paramDescriptor.startCluster);
+    ClearClustersSequence(paramDescriptor.startCluster);
     //clear head descriptor
     paramDescriptor.paramName[0] = 0;
     WriteDescriptorByAddress(descriptorAdr,&paramDescriptor);
