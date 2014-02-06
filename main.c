@@ -78,10 +78,11 @@ int main(int argc, char** argv) {
     //StartTimer2();
     //StartTimer3();
     //PrintStringUART2("Start");
-
     DisplayView("start"); //lcd display write
-    //ReadBootSector();
-    
+    Formatting();
+    char* name = "andrey";
+    char data[4];
+    AddParameter(name,1,data,4);
     while(1)
     {
 

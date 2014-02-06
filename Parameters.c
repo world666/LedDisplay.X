@@ -21,9 +21,9 @@ char AddParameter(char* name, char type, char* data, unsigned int dataLength)
     paramDescriptor.startCluster = clusterNum;
     //data area
     int i=0;
-    for(i;i<dataLength;i+=boot.ClusterSize)
+    for(i;i<clustersCount;i++)
     {
-        WriteDataToCluster(clusterNum,data+i);
+        WriteDataToCluster(clusterNum,data+i*boot.ClusterSize);
         clusterNum = ReadNextFat(clusterNum);
     }
     //find free descriptor adr
@@ -41,10 +41,11 @@ char AddParameter(char* name, char type, char* data, unsigned int dataLength)
     //extended descriptors
     paramDescriptor.paramName[0] = 0x0F;//exteded descripto sign
     //count extended descriptors num
-    double buf = (double)(strlen(name) + 1)/sizeof(ExtendedParamDescriptor);
+    double buf = (double)(strlen(name) + 1)/boot.DescriptorSize;
     unsigned int extendedDescriptorsCount = (int)ceil(buf);
-    paramDescriptor.paramName[1] = ((char* )(extendedDescriptorsCount))[0];
-    paramDescriptor.paramName[2] = ((char* )(extendedDescriptorsCount))[1];
+    char *ch = &extendedDescriptorsCount;
+    paramDescriptor.paramName[1] = ch[0];
+    paramDescriptor.paramName[2] = ch[1];
     WriteDescriptorByAddress(freeDescriptorAdr,&paramDescriptor);
     i=0;
     ExtendedParamDescriptor extendedDescriptor;
@@ -52,8 +53,8 @@ char AddParameter(char* name, char type, char* data, unsigned int dataLength)
     {
         freeDescriptorAdr = FindFreeDescriptorAdr();
         int j=0;
-        for(j;j<sizeof(ExtendedParamDescriptor);j++)
-            extendedDescriptor.paramName[j] = name[i*j];
+        for(j;j<boot.DescriptorSize;j++)
+            extendedDescriptor.paramName[j] = name[i*boot.DescriptorSize + j];
         WriteDescriptorByAddress(freeDescriptorAdr,&extendedDescriptor);
     }
     return 1;
@@ -67,10 +68,10 @@ unsigned int FindMaxIndex()
     ParamDescriptor descriptor;
     int adr = boot.BootSectorSize + boot.FatSectorSize;
     for(adr; adr < boot.BootSectorSize + boot.FatSectorSize + boot.DescriptorSectorSize;
-            adr += sizeof(ParamDescriptor))
+            adr += boot.DescriptorSize)
     {
         ReadDescriptorByAddress(adr, &descriptor);
-        if(descriptor.paramName[0] != 0)
+        if(descriptor.paramName[0] == 0)
             break;
         if(descriptor.paramName[0] !=0x0F)
         {

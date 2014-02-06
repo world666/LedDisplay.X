@@ -10,8 +10,9 @@ typedef struct Boot
     unsigned int FatSectorSize; // 1524 bytes (count = 762)
     unsigned int DescriptorSectorSize; //3600 bytes (count = 400)
     unsigned int DataSectorSize; //3048 bytes (count = 762)
-    unsigned char ClusterSize;
-    char Rezerved[7];
+    unsigned char ClusterSize; //4
+    unsigned char DescriptorSize; //9
+    char Rezerved[6];
 } Boot;
 
 typedef struct FatDescriptor
