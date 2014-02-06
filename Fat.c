@@ -87,6 +87,21 @@ unsigned int AllocateClustersSequence(unsigned char clustersCount)
     }
    return firstFreeClusterNum;
 }
+void ClearClustersSequence(unsigned int firstClusterNum)
+{
+    Boot boot;
+    ReadBootSector(&boot);
+    unsigned int currentFat = firstClusterNum;
+    unsigned int nextFat;
+    while(1)
+    {
+       nextFat = ReadNextFat(currentFat);
+       WriteToFat(currentFat, 0);
+       currentFat = nextFat;
+       if(nextFat == 0xFFFF)
+           break;
+    }
+}
 unsigned int FindFreeDescriptorAdr()
 {
     Boot boot;

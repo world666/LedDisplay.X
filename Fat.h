@@ -75,13 +75,19 @@ void WriteToFat(unsigned int, unsigned int);
  */
 unsigned int FindFreeClusterNum();
 /**
-* @author Liutyi Ievgen
+ * @author Liutyi Ievgen
  * @param unsigned char param is necessary clusters count
  * @todo allocate clusters sequence for parameter
  * @return number of the first cluster in allocated sequence
  * @return if number of the first cluster = 0xFFFF => there are no free clusters
  */
 unsigned int AllocateClustersSequence(unsigned char);
+/**
+ * @author Liutyi Ievgen
+ * @param unsigned char param is first cluster number, where parameter is located
+ * @todo clear clusters sequence for parameter
+ */
+void ClearClustersSequence(unsigned int);
 /**
  * @author Liutyi Ievgen
  * @todo find the fist free descriptor address

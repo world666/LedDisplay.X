@@ -23,3 +23,11 @@ char AddParameter(char*, char, char*, unsigned int);
  * @return max index
  */
 unsigned int FindMaxIndex();
+/**
+ * @author Liutyi Ievgen
+ * @param index of necessary parameter
+ * @todo find descriptor address by index
+ * @return descriptor address
+ * @return 0xFFFF => there are no descriptor with such index
+ */
+unsigned int FindDescriptorAdrByIndex(unsigned int);

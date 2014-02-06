@@ -83,3 +83,23 @@ unsigned int FindMaxIndex()
         return 0x1FFF;
     return maxIndex;
 }
+unsigned int FindDescriptorAdrByIndex(unsigned int index)
+{
+    Boot boot;
+    ReadBootSector(&boot);
+    unsigned int descriptorAdr = 0xFFFF;//there are no descriptor with such index
+    ParamDescriptor descriptor;
+    int adr = boot.BootSectorSize + boot.FatSectorSize;
+    for(adr; adr < boot.BootSectorSize + boot.FatSectorSize + boot.DescriptorSectorSize; adr += boot.DescriptorSize)
+    {
+        ReadDescriptorByAddress(adr, &descriptor);
+        if(descriptor.paramName[0] == 0)
+            break;
+        if(descriptor.paramName[0] !=0x0F && descriptor.index == index)
+        {
+            descriptorAdr = adr;
+            break;
+        }
+    }
+    return descriptorAdr;
+}
