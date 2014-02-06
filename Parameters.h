@@ -18,6 +18,14 @@
  */
 char AddParameter(char*, char, char*, unsigned int);
 /**
+ * @author KyrylovAndrii
+ * @param unsigned int parameter index
+ * @todo delete parameter by parameter Index
+ * @return 1 - parameter was deleted;
+ * 0 - parameter wasn't deleted
+ */
+char DeleteParameter(unsigned int)
+/**
  * @author Liutyi Ievgen
  * @todo find max index among existing parameter's descriptors
  * @return max index

@@ -60,6 +60,33 @@ char AddParameter(char* name, char type, char* data, unsigned int dataLength)
     return 1;
 }
 
+char DeleteParameter(unsigned int paramIndex)
+{
+    Boot boot;
+    ReadBootSector(&boot);
+    unsigned int descriptorAdr = FindDescriptorAdrByIndex(paramIndex);
+    ParamDescriptor paramDescriptor;
+    ReadDescriptorByAddress(descriptorAdr, &paramDescriptor);
+    //clear data
+    ClearClasterSequence(paramDescriptor.startCluster);
+    //clear head descriptor
+    paramDescriptor.paramName[0] = 0;
+    WriteDescriptorByAddress(descriptorAdr,&paramDescriptor);
+    if(paramDescriptor.paramName[0]!=0x0F)//short name
+        return 1;
+    //long name
+    unsigned int extendedDescriptorsCount =  paramDescriptor.paramName[1] + (paramDescriptor.paramName[2]<<8);
+    int i=0;
+    descriptorAdr+=boot.DescriptorSize;
+    ExtendedParamDescriptor extParamDescriptor;
+    extParamDescriptor.paramName[0] = 0;
+    for(i;i<extendedDescriptorsCount;i++)
+    {
+        WriteDescriptorByAddress(descriptorAdr, &extParamDescriptor);
+        descriptorAdr+=boot.DescriptorSize;
+    }
+}
+
 unsigned int FindMaxIndex()
 {
     Boot boot;
