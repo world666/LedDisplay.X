@@ -23,6 +23,9 @@
 #include "FRAM.h"
 #include "Fat.h"
 #include "Parameters.h"
+#include "Can.h"
+#include "CanOpen.h"
+
 // FOSC
 #pragma config FOSFPR = XT_PLL16             // Oscillator (XT)
 #pragma config FCKSMEN = CSW_FSCM_OFF   // Clock Switching and Monitor (Sw Disabled, Mon Disabled)
@@ -64,25 +67,25 @@ void __attribute__((__interrupt__, __auto_psv__)) _T1Interrupt(void);
 void __attribute__((__interrupt__, __auto_psv__)) _T2Interrupt(void);
 // Function prototype for timer 3 ISR
 void __attribute__((__interrupt__, __auto_psv__)) _T3Interrupt(void);
+// Function prototype for timer 4 ISR
+void __attribute__((__interrupt__, __auto_psv__)) _T4Interrupt(void);
 
 int main(int argc, char** argv) {
     ADPCFG = 0xFFFF;//RB only digit
     DisplayInitialization(); //lcd display init
     RtcInitialization(); //realtime counter init
     //RtcSetTime();
-    FramInitialization(); //fram init
+    //FramInitialization(); //fram init
     //EncPositionCounter = FramReadPositionCounter(); //read position counter adr =0
-    LVDinitialization(); //voltage detect interrupt
-    OpenUART2();
-    //StartTimer1();
-    //StartTimer2();
-    //StartTimer3();
+    //LVDinitialization(); //voltage detect interrupt
+    //OpenUART2();
+    StartTimer1();
+    StartTimer2();
+    StartTimer3();
+    StartTimer4();
     //PrintStringUART2("Start");
     DisplayView("start"); //lcd display write
-    Formatting();
-    char* name = "andrey";
-    char data[4];
-    AddParameter(name,1,data,4);
+    Can1Initialization();
     while(1)
     {
 
@@ -99,9 +102,6 @@ void __attribute__((__interrupt__, __auto_psv__)) _T1Interrupt(void)
     // Toggle LED on RD1
     LATCbits.LATC13 = 1 - LATCbits.LATC13;
 
-    TRISDbits.TRISD0 = 0;//out WDT
-    LATDbits.LATD0 = 1 -  LATDbits.LATD0;
-
     char signals = ReadDigitalInputs();
     
     // write to uart encoder counter
@@ -113,7 +113,7 @@ void __attribute__((__interrupt__, __auto_psv__)) _T1Interrupt(void)
     while(strlen(str)<32)
       strcat(str," ");
 
-    char offset = EncGetDistance(sDistance);//distance in mm
+    char offset = EncGetDistanceStr(sDistance);//distance in mm
     strcat(str, sDistance+offset);
     strcat(str, " ");
     offset = LongToString(EncF3Counter,sDistance);//f3 counter
@@ -147,13 +147,26 @@ void __attribute__((__interrupt__, __auto_psv__)) _T3Interrupt(void)
 {
     // Clear Timer 3 interrupt flag
     _T3IF = 0;
+    TRISDbits.TRISD0 = 0;//out WDT
+    LATDbits.LATD0 = 1 -  LATDbits.LATD0;
 
-     TRISCbits.TRISC14 = 0;
+    TRISCbits.TRISC14 = 0;
     // Toggle LED on RD1
     LATCbits.LATC14 = 1 - LATCbits.LATC14;
     EncCountV();
 }
+void __attribute__((__interrupt__, __auto_psv__)) _T4Interrupt(void)
+{
+    // Clear Timer 4 interrupt flag
+    // Write to can bus
+    _T4IF = 0;
 
+    int speed = EncGetV();
+    long lDistance = EncGetDistanceLong();
+    long rDistance = -850000 + 50000 - lDistance;
+
+    SendCurrentObjectState(rDistance,lDistance,speed,0);
+}
 void __attribute__((__interrupt__, __auto_psv__)) _LVDInterrupt(void) //low voltage detcetion
 //save data in fram
 {

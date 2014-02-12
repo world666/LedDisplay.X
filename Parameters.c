@@ -87,6 +87,15 @@ char DeleteParameter(unsigned int paramIndex)
     }
 }
 
+/*char ReadParameterType(unsigned int paramIndex)
+{
+    Boot boot;
+    ReadBootSector(&boot);
+    unsigned int descriptorAdr = FindDescriptorAdrByIndex(paramIndex);
+    ParamDescriptor paramDescriptor;
+    ReadDescriptorByAddress(descriptorAdr, &paramDescriptor);
+    return paramDescriptor.parameterType;
+}*/
 unsigned int FindMaxIndex()
 {
     Boot boot;

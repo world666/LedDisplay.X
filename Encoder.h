@@ -45,7 +45,7 @@ void EncoderScan(void)
 {
     TRISBbits.TRISB0=1;//input F1.1
     TRISBbits.TRISB1=1;//input F1.2
-    TRISDbits.TRISD3=1;//input F1.3
+    /*TRISDbits.TRISD3=1;//input F1.3
     if(PORTDbits.RD3 == 1)
     {
         if(EncF3State==0)
@@ -55,7 +55,7 @@ void EncoderScan(void)
           EncF3Counter++;
         }
     }
-    EncF3State = PORTDbits.RD3;
+    EncF3State = PORTDbits.RD3;*/
     
 char New;
 New = PORTB & 0x03;
@@ -64,27 +64,27 @@ switch(EncState)
 	{
 	case 2:
 		{
-		if(New == 3) EncPositionCounter++;
-		if(New == 0) EncPositionCounter--;
+		if(New == 3) EncPositionCounter--;
+		if(New == 0) EncPositionCounter++;
 		break;
 		}
 
 	case 0:
 		{
-		if(New == 2) EncPositionCounter++;
-		if(New == 1) EncPositionCounter--;
+		if(New == 2) EncPositionCounter--;
+		if(New == 1) EncPositionCounter++;
 		break;
 		}
 	case 1:
 		{
-		if(New == 0) EncPositionCounter++;
-		if(New == 3) EncPositionCounter--;
+		if(New == 0) EncPositionCounter--;
+		if(New == 3) EncPositionCounter++;
 		break;
 		}
 	case 3:
 		{
-		if(New == 1) EncPositionCounter++;
-		if(New == 2) EncPositionCounter--;
+		if(New == 1) EncPositionCounter--;
+		if(New == 2) EncPositionCounter++;
 		break;
 		}
 	}
@@ -93,17 +93,16 @@ EncState = New;		// ?????????? ????? ????????
 }
 
 long EncStartVcounter = 0;
-long Vvalue = 0;
+int Vvalue = 0;
 
 /**
  * @author Kyrylov Andrii
  * @todo count speed from position
  */
-long EncCountV()
+void EncCountV()
 {
     Vvalue= EncPositionCounter - EncStartVcounter;
     EncStartVcounter = EncPositionCounter;
-    return Vvalue;
 }
 
 /**
@@ -112,10 +111,29 @@ long EncCountV()
  * @todo convert current distance to string
  * @return offset in str
  */
-char EncGetDistance(char *str)
+char EncGetDistanceStr(char *str)
 {
     long marks = (EncPositionCounter>>2);
     long distance = marks*DISTANCE_PER_MARKS;//travel distance
     char offset = LongToString(distance,str);//view distance
     return offset;
+}
+
+/**
+ * @author Kyrylov Andrii
+ * @todo convert current counter to distance in mm
+ * @return distance in mm
+ */
+long EncGetDistanceLong()
+{
+    long marks = (EncPositionCounter>>2);
+    long distance = marks*DISTANCE_PER_MARKS;//travel distance
+    return distance;
+}
+
+int EncGetV()
+{
+    int speed = Vvalue>>2;
+    speed*=DISTANCE_PER_MARKS;
+    return Vvalue/1.07;
 }

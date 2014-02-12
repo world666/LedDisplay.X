@@ -12,4 +12,6 @@ Spi.h  \
  RealTimer.h  \
 FRAM.h  \
 Fat.h  \
-Parameters.h 
+Parameters.h  \
+Can.h  \
+CanOpen.h 

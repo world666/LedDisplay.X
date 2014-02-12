@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   Parameters.h
  * Author: andrey
  *
@@ -24,7 +24,7 @@ char AddParameter(char*, char, char*, unsigned int);
  * @return 1 - parameter was deleted;
  * 0 - parameter wasn't deleted
  */
-char DeleteParameter(unsigned int)
+char DeleteParameter(unsigned int);
 /**
  * @author Liutyi Ievgen
  * @todo find max index among existing parameter's descriptors

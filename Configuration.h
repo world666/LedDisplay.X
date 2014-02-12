@@ -7,4 +7,7 @@
 
 #define ROTATE_ELEMENT_DIAMETR 1000; //mm
 #define ROTATE_ELEMENT_MARKS_NUM 5000;
-#define DISTANCE_PER_MARKS 0.2; //mm
+#define DISTANCE_PER_MARKS 0.5; //mm
+#define HIGH_EDGE 50000;
+#define LOW_EDGE -850000
+#define NODE_ID 3;
