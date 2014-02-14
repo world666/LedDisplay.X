@@ -1,4 +1,4 @@
-Microchip Technology Inc, và‚2
+Microchip Technology Inc, và‚S
 
 Tool Name:
   c:\program files\microchip\xc16\v1.21\bin\bin\..\bin/elf-ld.exe
@@ -122,10 +122,10 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x100               0x5dc           0x8ca  (2250)
 .const                       0x6dc                 0xc            0x12  (18)
-.text                        0x6e8              0x18ba          0x2517  (9495)
-.dinit                      0x1fa2                0x12            0x1b  (27)
+.text                        0x6e8              0x1c26          0x2a39  (10809)
+.dinit                      0x230e                0x12            0x1b  (27)
 
-                     Total program memory used (bytes):         0x2e0e  (11790) 8%
+                     Total program memory used (bytes):         0x3330  (13104) 8%
 
 
 Data Memory  [Origin = 0x800, Length = 0x2000]
@@ -183,8 +183,8 @@ External Symbols in Program Memory (by address):
                   0x0002f6                  ___divsi3
                   0x000314                  __fchop
                   0x000362                  ___ltsf2
-                  0x000362                  ___eqsf2
                   0x000362                  ___lesf2
+                  0x000362                  ___eqsf2
                   0x000366                  ___fixsfsi
                   0x0003a8                  ___fixunssfsi
                   0x0003de                  ___floatsisf
@@ -260,47 +260,55 @@ External Symbols in Program Memory (by address):
                   0x001746                  __T3Interrupt
                   0x0017a6                  __T4Interrupt
                   0x0017f6                  __LVDInterrupt
-                  0x00182c                  _WriteBootSector
-                  0x001852                  _ReadBootSector
-                  0x001862                  _Formatting
-                  0x0018c0                  _ReadNextFat
-                  0x0018e6                  _WriteToFat
-                  0x00190a                  _FindFreeClusterNum
-                  0x001956                  _AllocateClustersSequence
-                  0x0019a4                  _ClearClustersSequence
-                  0x0019d4                  _FindFreeDescriptorAdr
-                  0x001a22                  _WriteDescriptorByAddress
-                  0x001a3c                  _ReadDescriptorByAddress
-                  0x001a56                  _DescriptorsDefragmentation
-                  0x001b14                  _WriteDataToCluster
-                  0x001b46                  _AddParameter
-                  0x001cee                  _DeleteParameter
-                  0x001d66                  _FindMaxIndex
-                  0x001dcc                  _FindDescriptorAdrByIndex
-                  0x001e2e                  _SendTPDO
-                  0x001e54                  _SendCurrentObjectState
-                  0x001f1e                  _Can1Initialization
-                  0x001f70                  _Can1SendData
+                  0x00182c                  _AddParameter
+                  0x0019dc                  _DeleteParameter
+                  0x001a54                  _ReadParameterValue
+                  0x001ab4                  _ReadParameterName
+                  0x001b4e                  _ReadParameterType
+                  0x001b70                  _EditParameterValue
+                  0x001c10                  _EditParameterName
+                  0x001d86                  _FindMaxIndex
+                  0x001dec                  _FindDescriptorAdrByIndex
+                  0x001e4e                  _WriteBootSector
+                  0x001e74                  _ReadBootSector
+                  0x001e84                  _Formatting
+                  0x001ee2                  _ReadNextFat
+                  0x001f08                  _WriteToFat
+                  0x001f2c                  _FindFreeClusterNum
+                  0x001f78                  _AllocateClustersSequence
+                  0x001fc6                  _ClearClustersSequence
+                  0x001ff6                  _FindFreeDescriptorAdr
+                  0x002044                  _WriteDescriptorByAddress
+                  0x00205e                  _ReadDescriptorByAddress
+                  0x002078                  _DescriptorsDefragmentation
+                  0x002136                  _WriteDataToCluster
+                  0x002168                  _ReadDataFromCluster
+                  0x00219a                  _SendTPDO
+                  0x0021c0                  _SendCurrentObjectState
+                  0x00228a                  _Can1Initialization
+                  0x0022dc                  _Can1SendData
 
 External Symbols in Program Memory (by name):
 
-                  0x001b46                  _AddParameter
-                  0x001956                  _AllocateClustersSequence
+                  0x00182c                  _AddParameter
+                  0x001f78                  _AllocateClustersSequence
                   0x0008d2                  _BusyUART2
                   0x00019c                  _CAN1Initialize
                   0x0001a2                  _CAN1SendMessage
                   0x000232                  _CAN1SetOperationMode
                   0x000236                  _CAN1SetRXMode
                   0x000246                  _CAN1SetTXMode
-                  0x001f1e                  _Can1Initialization
-                  0x001f70                  _Can1SendData
-                  0x0019a4                  _ClearClustersSequence
+                  0x00228a                  _Can1Initialization
+                  0x0022dc                  _Can1SendData
+                  0x001fc6                  _ClearClustersSequence
                   0x00104e                  _ConfigurateSPI2
-                  0x001cee                  _DeleteParameter
-                  0x001a56                  _DescriptorsDefragmentation
+                  0x0019dc                  _DeleteParameter
+                  0x002078                  _DescriptorsDefragmentation
                   0x00086e                  _DigitalInputsToString
                   0x000db2                  _DisplayInitialization
                   0x000e86                  _DisplayView
+                  0x001c10                  _EditParameterName
+                  0x001b70                  _EditParameterValue
                   0x000b66                  _EncCountV
                   0x000bc4                  _EncGetDistanceLong
                   0x000b84                  _EncGetDistanceStr
@@ -308,11 +316,11 @@ External Symbols in Program Memory (by name):
                   0x0009e4                  _EncoderReadF1
                   0x000a3a                  _EncoderReadF2
                   0x000a90                  _EncoderScan
-                  0x001dcc                  _FindDescriptorAdrByIndex
-                  0x00190a                  _FindFreeClusterNum
-                  0x0019d4                  _FindFreeDescriptorAdr
-                  0x001d66                  _FindMaxIndex
-                  0x001862                  _Formatting
+                  0x001dec                  _FindDescriptorAdrByIndex
+                  0x001f2c                  _FindFreeClusterNum
+                  0x001ff6                  _FindFreeDescriptorAdr
+                  0x001d86                  _FindMaxIndex
+                  0x001e84                  _Formatting
                   0x0014e4                  _FramInitialization
                   0x00154c                  _FramRead
                   0x0015b0                  _FramReadPositionCounter
@@ -326,10 +334,14 @@ External Symbols in Program Memory (by name):
                   0x0008b4                  _OpenUART2
                   0x000920                  _PrintDigitUART2
                   0x000904                  _PrintStringUART2
-                  0x001852                  _ReadBootSector
-                  0x001a3c                  _ReadDescriptorByAddress
+                  0x001e74                  _ReadBootSector
+                  0x002168                  _ReadDataFromCluster
+                  0x00205e                  _ReadDescriptorByAddress
                   0x00082e                  _ReadDigitalInputs
-                  0x0018c0                  _ReadNextFat
+                  0x001ee2                  _ReadNextFat
+                  0x001ab4                  _ReadParameterName
+                  0x001b4e                  _ReadParameterType
+                  0x001a54                  _ReadParameterValue
                   0x001138                  _RtcInitialization
                   0x001164                  _RtcRead
                   0x001216                  _RtcReadDayOfWeek
@@ -341,17 +353,17 @@ External Symbols in Program Memory (by name):
                   0x001288                  _RtcReadYear
                   0x0010ea                  _RtcSetTime
                   0x0012b4                  _RtcWriteDateInString
-                  0x001e54                  _SendCurrentObjectState
-                  0x001e2e                  _SendTPDO
+                  0x0021c0                  _SendCurrentObjectState
+                  0x00219a                  _SendTPDO
                   0x00094c                  _StartTimer1
                   0x000972                  _StartTimer2
                   0x000998                  _StartTimer3
                   0x0009be                  _StartTimer4
-                  0x00182c                  _WriteBootSector
+                  0x001e4e                  _WriteBootSector
                   0x0008ec                  _WriteCharToUART2
-                  0x001b14                  _WriteDataToCluster
-                  0x001a22                  _WriteDescriptorByAddress
-                  0x0018e6                  _WriteToFat
+                  0x002136                  _WriteDataToCluster
+                  0x002044                  _WriteDescriptorByAddress
+                  0x001f08                  _WriteToFat
                   0x000198                  __DefaultInterrupt
                   0x0017f6                  __LVDInterrupt
                   0x0015e6                  __T1Interrupt
@@ -601,45 +613,45 @@ userdata
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x46a4
+.debug_info       0x000000       0x4a74
  *(.debug_info)
  .debug_info      0x000000       0x3509 build/default/production/main.o
- .debug_info      0x003509        0x7aa build/default/production/Fat.o
- .debug_info      0x003cb3        0x4fe build/default/production/Parameters.o
- .debug_info      0x0041b1        0x30d build/default/production/Can.o
- .debug_info      0x0044be        0x1e6 build/default/production/CanOpen.o
+ .debug_info      0x003509        0x81a build/default/production/Fat.o
+ .debug_info      0x003d23        0x85e build/default/production/Parameters.o
+ .debug_info      0x004581        0x30d build/default/production/Can.o
+ .debug_info      0x00488e        0x1e6 build/default/production/CanOpen.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x5b4
+.debug_abbrev     0x000000        0x60e
  *(.debug_abbrev)
  .debug_abbrev    0x000000        0x228 build/default/production/main.o
  .debug_abbrev    0x000228        0x13c build/default/production/Fat.o
- .debug_abbrev    0x000364        0x10d build/default/production/Parameters.o
- .debug_abbrev    0x000471         0xd6 build/default/production/Can.o
- .debug_abbrev    0x000547         0x6d build/default/production/CanOpen.o
+ .debug_abbrev    0x000364        0x167 build/default/production/Parameters.o
+ .debug_abbrev    0x0004cb         0xd6 build/default/production/Can.o
+ .debug_abbrev    0x0005a1         0x6d build/default/production/CanOpen.o
 
-.debug_line       0x000000       0x1f56
+.debug_line       0x000000       0x228d
  *(.debug_line)
  .debug_line      0x000000       0x155d build/default/production/main.o
- .debug_line      0x00155d        0x498 build/default/production/Fat.o
- .debug_line      0x0019f5        0x335 build/default/production/Parameters.o
- .debug_line      0x001d2a        0x117 build/default/production/Can.o
- .debug_line      0x001e41        0x115 build/default/production/CanOpen.o
+ .debug_line      0x00155d        0x4ca build/default/production/Fat.o
+ .debug_line      0x001a27        0x63a build/default/production/Parameters.o
+ .debug_line      0x002061        0x117 build/default/production/Can.o
+ .debug_line      0x002178        0x115 build/default/production/CanOpen.o
 
-.debug_frame      0x000000        0x504
+.debug_frame      0x000000        0x564
  *(.debug_frame)
  .debug_frame     0x000000        0x364 build/default/production/main.o
- .debug_frame     0x000364         0xe4 build/default/production/Fat.o
- .debug_frame     0x000448         0x54 build/default/production/Parameters.o
- .debug_frame     0x00049c         0x34 build/default/production/Can.o
- .debug_frame     0x0004d0         0x34 build/default/production/CanOpen.o
+ .debug_frame     0x000364         0xf4 build/default/production/Fat.o
+ .debug_frame     0x000458         0xa4 build/default/production/Parameters.o
+ .debug_frame     0x0004fc         0x34 build/default/production/Can.o
+ .debug_frame     0x000530         0x34 build/default/production/CanOpen.o
 
-.debug_str        0x000000        0x298
+.debug_str        0x000000        0x317
  *(.debug_str)
  .debug_str       0x000000        0x1ae build/default/production/main.o
  .debug_str       0x0001ae         0x6b build/default/production/Fat.o
- .debug_str       0x000219         0x74 build/default/production/Parameters.o
- .debug_str       0x00028d          0xb build/default/production/Can.o
+ .debug_str       0x000219         0xf3 build/default/production/Parameters.o
+ .debug_str       0x00030c          0xb build/default/production/Can.o
 
 .debug_loc
  *(.debug_loc)
@@ -648,18 +660,18 @@ userdata
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0x638
+                  0x000000        0x6c0
  *(.debug_pubnames)
  .debug_pubnames
                   0x000000        0x421 build/default/production/main.o
  .debug_pubnames
-                  0x000421        0x13e build/default/production/Fat.o
+                  0x000421        0x156 build/default/production/Fat.o
  .debug_pubnames
-                  0x00055f         0x65 build/default/production/Parameters.o
+                  0x000577         0xd5 build/default/production/Parameters.o
  .debug_pubnames
-                  0x0005c4         0x3a build/default/production/Can.o
+                  0x00064c         0x3a build/default/production/Can.o
  .debug_pubnames
-                  0x0005fe         0x3a build/default/production/CanOpen.o
+                  0x000686         0x3a build/default/production/CanOpen.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -1936,7 +1948,7 @@ __c30_signature
 .const              0x86dc          0xc load address 0x0006dc  
  .const             0x86dc          0xc build/default/production/main.o
 
-.text             0x0006e8       0x18ba
+.text             0x0006e8       0x1c26
  .text            0x0006e8       0x1144 build/default/production/main.o
                   0x0006e8                  _LVDinitialization
                   0x000718                  _delay
@@ -1991,31 +2003,37 @@ __c30_signature
                   0x001746                  __T3Interrupt
                   0x0017a6                  __T4Interrupt
                   0x0017f6                  __LVDInterrupt
- .text            0x00182c        0x31a build/default/production/Fat.o
-                  0x00182c                  _WriteBootSector
-                  0x001852                  _ReadBootSector
-                  0x001862                  _Formatting
-                  0x0018c0                  _ReadNextFat
-                  0x0018e6                  _WriteToFat
-                  0x00190a                  _FindFreeClusterNum
-                  0x001956                  _AllocateClustersSequence
-                  0x0019a4                  _ClearClustersSequence
-                  0x0019d4                  _FindFreeDescriptorAdr
-                  0x001a22                  _WriteDescriptorByAddress
-                  0x001a3c                  _ReadDescriptorByAddress
-                  0x001a56                  _DescriptorsDefragmentation
-                  0x001b14                  _WriteDataToCluster
- .text            0x001b46        0x2e8 build/default/production/Parameters.o
-                  0x001b46                  _AddParameter
-                  0x001cee                  _DeleteParameter
-                  0x001d66                  _FindMaxIndex
-                  0x001dcc                  _FindDescriptorAdrByIndex
- .text            0x001e2e         0xf0 build/default/production/CanOpen.o
-                  0x001e2e                  _SendTPDO
-                  0x001e54                  _SendCurrentObjectState
- .text            0x001f1e         0x84 build/default/production/Can.o
-                  0x001f1e                  _Can1Initialization
-                  0x001f70                  _Can1SendData
+ .text            0x00182c        0x622 build/default/production/Parameters.o
+                  0x00182c                  _AddParameter
+                  0x0019dc                  _DeleteParameter
+                  0x001a54                  _ReadParameterValue
+                  0x001ab4                  _ReadParameterName
+                  0x001b4e                  _ReadParameterType
+                  0x001b70                  _EditParameterValue
+                  0x001c10                  _EditParameterName
+                  0x001d86                  _FindMaxIndex
+                  0x001dec                  _FindDescriptorAdrByIndex
+ .text            0x001e4e        0x34c build/default/production/Fat.o
+                  0x001e4e                  _WriteBootSector
+                  0x001e74                  _ReadBootSector
+                  0x001e84                  _Formatting
+                  0x001ee2                  _ReadNextFat
+                  0x001f08                  _WriteToFat
+                  0x001f2c                  _FindFreeClusterNum
+                  0x001f78                  _AllocateClustersSequence
+                  0x001fc6                  _ClearClustersSequence
+                  0x001ff6                  _FindFreeDescriptorAdr
+                  0x002044                  _WriteDescriptorByAddress
+                  0x00205e                  _ReadDescriptorByAddress
+                  0x002078                  _DescriptorsDefragmentation
+                  0x002136                  _WriteDataToCluster
+                  0x002168                  _ReadDataFromCluster
+ .text            0x00219a         0xf0 build/default/production/CanOpen.o
+                  0x00219a                  _SendTPDO
+                  0x0021c0                  _SendCurrentObjectState
+ .text            0x00228a         0x84 build/default/production/Can.o
+                  0x00228a                  _Can1Initialization
+                  0x0022dc                  _Can1SendData
 
-.dinit            0x001fa2         0x12
- .dinit           0x001fa2         0x12 data_init
+.dinit            0x00230e         0x12
+ .dinit           0x00230e         0x12 data_init

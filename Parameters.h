@@ -27,6 +27,46 @@ char AddParameter(char*, char, char*, unsigned int);
 char DeleteParameter(unsigned int);
 /**
  * @author Liutyi Ievgen
+ * @param unsigned int param1 is index of necessary parameter
+ * @param char* param2 is bufer for value
+ * @todo read value of necessary parameter in bufer
+ * @return size of parameter value in bytes
+ */
+unsigned int ReadParameterValue(unsigned int, char*);
+/**
+ * @author Liutyi Ievgen
+ * @param unsigned int param1 is index of necessary parameter
+ * @param char* param2 is bufer for name
+ * @todo read name of necessary parameter in bufer
+ * @return size of parameter name in bytes
+ */
+unsigned char ReadParameterName(unsigned int, char*);
+/**
+ * @author Liutyi Ievgen
+ * @param unsigned int param1 is index of necessary parameter
+ * @todo read type of necessary parameter
+ * @return type of necessary parameter
+ */
+char ReadParameterType(unsigned int);
+/**
+ * @author Liutyi Ievgen
+ * @param unsigned int param1 is index of necessary parameter
+ * @param char* param2 is parameter value array
+ * @param unsigned int param3 is byte count in value array
+ * @todo change value of necessary parameter
+ */
+void EditParameterValue(unsigned int, char*, unsigned int);
+/**
+ * @author Liutyi Ievgen
+ * @param unsigned int param1 is index of necessary parameter
+ * @param char* param2 is parameter new name
+ * @todo change name of necessary parameter
+ * @return 1 - name was changed successfully
+ * @return 0 - name wasn't changed 
+ */
+char EditParameterName(unsigned int, char*);
+/**
+ * @author Liutyi Ievgen
  * @todo find max index among existing parameter's descriptors
  * @return max index
  */

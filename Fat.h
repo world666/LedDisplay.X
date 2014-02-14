@@ -123,3 +123,10 @@ unsigned char DescriptorsDefragmentation();
  * todo write data to chosen cluster
  */
 void WriteDataToCluster(unsigned int, char*);
+/**
+ * @author Liutyi Ievgen
+ * @param unsigned int param1 is number of cluster
+ * @param char* param2 is data
+ * todo read data from chosen cluster
+ */
+void ReadDataFromCluster(unsigned int, char*);

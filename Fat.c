@@ -176,3 +176,10 @@ void WriteDataToCluster(unsigned int clusterNum, char* data)
     unsigned int adr = boot.BootSectorSize + boot.FatSectorSize + boot.DescriptorSectorSize + clusterNum * boot.ClusterSize;
     FramWrite(adr, data, boot.ClusterSize);
 }
+void ReadDataFromCluster(unsigned int clusterNum, char* data)
+{
+    Boot boot;
+    ReadBootSector(&boot);
+    unsigned int adr = boot.BootSectorSize + boot.FatSectorSize + boot.DescriptorSectorSize + clusterNum * boot.ClusterSize;
+    FramRead(adr, data, boot.ClusterSize);
+}

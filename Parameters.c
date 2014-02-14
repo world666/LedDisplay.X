@@ -46,6 +46,7 @@ char AddParameter(char* name, char type, char* data, unsigned int dataLength)
     char *ch = &extendedDescriptorsCount;
     paramDescriptor.paramName[1] = ch[0];
     paramDescriptor.paramName[2] = ch[1];
+    paramDescriptor.paramName[3] = ch[2];
     WriteDescriptorByAddress(freeDescriptorAdr,&paramDescriptor);
     i=0;
     ExtendedParamDescriptor extendedDescriptor;
@@ -87,7 +88,55 @@ char DeleteParameter(unsigned int paramIndex)
     }
 }
 
-/*char ReadParameterType(unsigned int paramIndex)
+unsigned int ReadParameterValue(unsigned int paramIndex, char* data)
+{
+    Boot boot;
+    ReadBootSector(&boot);
+    ParamDescriptor paramDescriptor;
+    unsigned int descriptorAdr = FindDescriptorAdrByIndex(paramIndex);
+    ReadDescriptorByAddress(descriptorAdr, &paramDescriptor);
+    unsigned int currentCluster = paramDescriptor.startCluster;
+    int i = 0;
+    while(1)
+    {
+        ReadDataFromCluster(currentCluster, data+i*boot.ClusterSize);
+        currentCluster = ReadNextFat(currentCluster);
+        if(currentCluster == 0xFFFF)
+            break;
+        i++;
+    }
+    return (i+1)*boot.ClusterSize;
+}
+
+unsigned char ReadParameterName(unsigned int paramIndex, char* name)
+{
+    Boot boot;
+    ReadBootSector(&boot);
+    ParamDescriptor paramDescriptor;
+    ExtendedParamDescriptor extendedParamDescriptor;
+    unsigned char nameSize = 0;
+    unsigned int descriptorAdr = FindDescriptorAdrByIndex(paramIndex);
+    ReadDescriptorByAddress(descriptorAdr, &paramDescriptor);
+    if(paramDescriptor.paramName[0] == 0x0F)
+    {
+        int extendedDescriptorCount = paramDescriptor.paramName[1] + paramDescriptor.paramName[2]<<8 + paramDescriptor.paramName[3]<<16;
+        int i = 1;
+        for(i; i < (extendedDescriptorCount + 1); i++)
+        {
+            ReadDescriptorByAddress(descriptorAdr + boot.DescriptorSize*i, &extendedParamDescriptor);
+            name[(i-1)*boot.DescriptorSize] = extendedParamDescriptor.paramName;
+            nameSize += boot.DescriptorSize;
+        }
+    }
+    else
+    {
+        name = paramDescriptor.paramName;
+        nameSize = 4;
+    }
+    return nameSize;
+}
+
+char ReadParameterType(unsigned int paramIndex)
 {
     Boot boot;
     ReadBootSector(&boot);
@@ -95,7 +144,80 @@ char DeleteParameter(unsigned int paramIndex)
     ParamDescriptor paramDescriptor;
     ReadDescriptorByAddress(descriptorAdr, &paramDescriptor);
     return paramDescriptor.parameterType;
-}*/
+}
+
+void EditParameterValue(unsigned int paramIndex, char* value, unsigned int dataLength)
+{
+    Boot boot;
+    ReadBootSector(&boot);
+    ParamDescriptor paramDescriptor;
+    unsigned int descriptorAdr = FindDescriptorAdrByIndex(paramIndex);
+    ReadDescriptorByAddress(descriptorAdr, &paramDescriptor);
+    unsigned int currentCluster = paramDescriptor.startCluster;
+    double clustersCount = (double)dataLength/boot.ClusterSize;
+    clustersCount = ceil(clustersCount);
+    int i = 0;
+    for(i;i<clustersCount;i++)
+    {
+        WriteDataToCluster(currentCluster, value+i*boot.ClusterSize);
+        currentCluster = ReadNextFat(currentCluster);
+    }
+}
+
+char EditParameterName(unsigned int paramIndex, char* name)
+{
+    Boot boot;
+    ReadBootSector(&boot);
+    char zero = 0;
+    ParamDescriptor paramDescriptor;
+    unsigned int descriptorAdr = FindDescriptorAdrByIndex(paramIndex);
+    ReadDescriptorByAddress(descriptorAdr, &paramDescriptor);
+    //deleting of descriptors
+    if(paramDescriptor.paramName[0] == 0x0F)
+    {
+        int extendedDescriptorCount = paramDescriptor.paramName[1] + paramDescriptor.paramName[2]<<8 + paramDescriptor.paramName[3]<<16;
+        int i = 1;
+        for(i; i < (extendedDescriptorCount + 1); i++)
+        {
+            FramWrite(descriptorAdr + i*boot.DescriptorSize, &zero, sizeof(char));
+        }
+    }
+    FramWrite(descriptorAdr, &zero, sizeof(char));
+    DescriptorsDefragmentation();
+    unsigned int freeDescriptorAdr = FindFreeDescriptorAdr();
+    if(freeDescriptorAdr == 0xFFFF)
+        return 0;
+    //name + write descriptor
+    if(strlen(name)<4)//simple descriptor
+    {
+        paramDescriptor.paramName[0] = 0;
+        strcat(paramDescriptor.paramName,name);
+        WriteDescriptorByAddress(freeDescriptorAdr,&paramDescriptor);
+        return 1;
+    }
+    //extended descriptors
+    paramDescriptor.paramName[0] = 0x0F;//exteded descripto sign
+    //count extended descriptors num
+    double buf = (double)(strlen(name) + 1)/boot.DescriptorSize;
+    unsigned int extendedDescriptorsCount = (int)ceil(buf);
+    char *ch = &extendedDescriptorsCount;
+    paramDescriptor.paramName[1] = ch[0];
+    paramDescriptor.paramName[2] = ch[1];
+    paramDescriptor.paramName[3] = ch[2];
+    WriteDescriptorByAddress(freeDescriptorAdr,&paramDescriptor);
+    int ii=0;
+    ExtendedParamDescriptor extendedDescriptor;
+    for(ii;ii<extendedDescriptorsCount;ii++)
+    {
+        freeDescriptorAdr = FindFreeDescriptorAdr();
+        int j=0;
+        for(j;j<boot.DescriptorSize;j++)
+            extendedDescriptor.paramName[j] = name[ii*boot.DescriptorSize + j];
+        WriteDescriptorByAddress(freeDescriptorAdr,&extendedDescriptor);
+    }
+    return 1;
+}
+
 unsigned int FindMaxIndex()
 {
     Boot boot;
