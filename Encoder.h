@@ -1,41 +1,6 @@
-/**
- * @author Kyrylov Andrii
- * @todo read F1 with program filter
- */
-char EncoderReadF1()
-{
-    char in;
-    TRISBbits.TRISB0=1;//input
-    in = 0;
-    in+=PORTBbits.RB0; delay(1);
-    in+=PORTBbits.RB0; delay(1);
-    in+=PORTBbits.RB0; delay(1);
-    if(in>=2)
-        return 1;
-    else
-        return 0;
-}
-/**
- * @author Kyrylov Andrii
- * @todo read F2 with program filter
- */
-char EncoderReadF2()
-{
-    char in;
-    TRISBbits.TRISB1=1;
-    in = 0;
-    in+=PORTBbits.RB1; delay(1);
-    in+=PORTBbits.RB1; delay(1);
-    in+=PORTBbits.RB1; delay(1);
-    if(in>=2)
-        return 1;
-    else
-        return 0;
-}
+
 long EncPositionCounter = 0;//position counter
 char EncState = -1;//encoder prev state
-char EncF3Counter = -1;
-char EncF3State = 0; //prev F3 state
 
 /**
  * @author Kyrylov Andrii
@@ -45,17 +10,6 @@ void EncoderScan(void)
 {
     TRISBbits.TRISB0=1;//input F1.1
     TRISBbits.TRISB1=1;//input F1.2
-    /*TRISDbits.TRISD3=1;//input F1.3
-    if(PORTDbits.RD3 == 1)
-    {
-        if(EncF3State==0)
-        {
-          if(EncF3Counter == -1)
-              EncPositionCounter = 0;
-          EncF3Counter++;
-        }
-    }
-    EncF3State = PORTDbits.RD3;*/
     
 char New;
 New = PORTB & 0x03;
@@ -88,8 +42,7 @@ switch(EncState)
 		break;
 		}
 	}
-EncState = New;		// ?????????? ????? ????????
-				// ??????????? ?????????
+EncState = New;		// ?????????? ????? ????????				// ??????????? ?????????
 }
 
 long EncStartVcounter = 0;
@@ -135,5 +88,5 @@ int EncGetV()
 {
     int speed = Vvalue>>2;
     speed*=DISTANCE_PER_MARKS;
-    return Vvalue/1.07;
+    return speed/0.1;
 }

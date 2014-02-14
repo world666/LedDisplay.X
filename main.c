@@ -69,6 +69,8 @@ void __attribute__((__interrupt__, __auto_psv__)) _T2Interrupt(void);
 void __attribute__((__interrupt__, __auto_psv__)) _T3Interrupt(void);
 // Function prototype for timer 4 ISR
 void __attribute__((__interrupt__, __auto_psv__)) _T4Interrupt(void);
+// Can Receive Parameter
+void __attribute__ ((__interrupt__, __auto_psv__)) _C1Interrupt (void);
 
 int main(int argc, char** argv) {
     ADPCFG = 0xFFFF;//RB only digit
@@ -79,9 +81,9 @@ int main(int argc, char** argv) {
     //EncPositionCounter = FramReadPositionCounter(); //read position counter adr =0
     //LVDinitialization(); //voltage detect interrupt
     //OpenUART2();
-    StartTimer1();
-    StartTimer2();
-    StartTimer3();
+    //StartTimer1();
+    //StartTimer2();
+    //StartTimer3();
     StartTimer4();
     //PrintStringUART2("Start");
     DisplayView("start"); //lcd display write
@@ -114,9 +116,6 @@ void __attribute__((__interrupt__, __auto_psv__)) _T1Interrupt(void)
       strcat(str," ");
 
     char offset = EncGetDistanceStr(sDistance);//distance in mm
-    strcat(str, sDistance+offset);
-    strcat(str, " ");
-    offset = LongToString(EncF3Counter,sDistance);//f3 counter
     strcat(str, sDistance+offset);
     while(strlen(str)<48)
       strcat(str," ");
@@ -167,6 +166,25 @@ void __attribute__((__interrupt__, __auto_psv__)) _T4Interrupt(void)
 
     SendCurrentObjectState(rDistance,lDistance,speed,0);
 }
+void __attribute__ ((__interrupt__, __auto_psv__)) _C1Interrupt (void){
+    IFS1bits.C1IF = 0; //Clear CAN1 interrupt flag   
+    char rxData[8];
+    if(C1CTRLbits.ICODE == 7) //check filters
+    {
+        C1INTFbits.WAKIF = 0;
+        return;
+    }
+    C1INTFbits.RX0IF = 0;
+    CAN1ReceiveMessage(rxData, 8, 0);
+//    if(rxData[0] == 0x40)
+        rxData[0] = 0x4B;
+        rxData[1] = 0x01;
+        rxData[2] = 0x20;
+        rxData[3] = 0x2;
+        rxData[4] = 0x1;
+        Can1SendData(0x580,rxData,0);
+    C1RX0CONbits.RXFUL = 0;
+  }
 void __attribute__((__interrupt__, __auto_psv__)) _LVDInterrupt(void) //low voltage detcetion
 //save data in fram
 {

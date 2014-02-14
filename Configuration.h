@@ -10,4 +10,4 @@
 #define DISTANCE_PER_MARKS 0.5; //mm
 #define HIGH_EDGE 50000;
 #define LOW_EDGE -850000
-#define NODE_ID 3;
+#define NODE_ID 1;
