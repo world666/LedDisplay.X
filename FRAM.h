@@ -50,7 +50,7 @@ void FramWrite(unsigned int address,char *data, int length)
     int i;
     for(i=0; i<length;i++)
     {
-        spi2_write(*data++);
+        spi2_write(data[i]);
     }
     TRISGbits.TRISG12 = 0; // CS_FR out
     LATGbits.LATG12 = 1; // uncheck fram
@@ -74,7 +74,7 @@ void FramRead(unsigned int address,char *data, int length)
     int i;
     for(i=0; i<length;i++)
     {
-        *data++ = spi2_read();
+        data[i] = spi2_read();
     }
     TRISGbits.TRISG12 = 0; // CS_FR out
     LATGbits.LATG12 = 1; // uncheck fram

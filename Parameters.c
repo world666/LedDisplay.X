@@ -94,6 +94,8 @@ unsigned int ReadParameterValue(unsigned int paramIndex, char* data)
     ReadBootSector(&boot);
     ParamDescriptor paramDescriptor;
     unsigned int descriptorAdr = FindDescriptorAdrByIndex(paramIndex);
+    if(descriptorAdr==0xFFFF)//there are no parameter with such index
+        return 0;
     ReadDescriptorByAddress(descriptorAdr, &paramDescriptor);
     unsigned int currentCluster = paramDescriptor.startCluster;
     int i = 0;
@@ -114,8 +116,9 @@ unsigned char ReadParameterName(unsigned int paramIndex, char* name)
     ReadBootSector(&boot);
     ParamDescriptor paramDescriptor;
     ExtendedParamDescriptor extendedParamDescriptor;
-    unsigned char nameSize = 0;
     unsigned int descriptorAdr = FindDescriptorAdrByIndex(paramIndex);
+    if(descriptorAdr == 0xFFFF)//there are no parameter with such index
+        return 0;
     ReadDescriptorByAddress(descriptorAdr, &paramDescriptor);
     if(paramDescriptor.paramName[0] == 0x0F)
     {
@@ -125,15 +128,14 @@ unsigned char ReadParameterName(unsigned int paramIndex, char* name)
         {
             ReadDescriptorByAddress(descriptorAdr + boot.DescriptorSize*i, &extendedParamDescriptor);
             name[(i-1)*boot.DescriptorSize] = extendedParamDescriptor.paramName;
-            nameSize += boot.DescriptorSize;
         }
     }
     else
     {
-        name = paramDescriptor.paramName;
-        nameSize = 4;
+        name[0] = 0;
+        strcat(name,paramDescriptor.paramName);
     }
-    return nameSize;
+    return strlen(name);
 }
 
 char ReadParameterType(unsigned int paramIndex)
@@ -141,6 +143,8 @@ char ReadParameterType(unsigned int paramIndex)
     Boot boot;
     ReadBootSector(&boot);
     unsigned int descriptorAdr = FindDescriptorAdrByIndex(paramIndex);
+    if(descriptorAdr == 0xFFFF)//there are no descriptors with such index
+        return -1;
     ParamDescriptor paramDescriptor;
     ReadDescriptorByAddress(descriptorAdr, &paramDescriptor);
     return paramDescriptor.parameterType;
@@ -238,7 +242,7 @@ unsigned int FindMaxIndex()
         }
     }
     if(maxIndex == 0)
-        return 0x1FFF;
+        return 0x2000;
     return maxIndex;
 }
 unsigned int FindDescriptorAdrByIndex(unsigned int index)

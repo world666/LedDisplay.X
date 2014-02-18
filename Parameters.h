@@ -31,6 +31,7 @@ char DeleteParameter(unsigned int);
  * @param char* param2 is bufer for value
  * @todo read value of necessary parameter in bufer
  * @return size of parameter value in bytes
+ * @return 0 - there are no parameter with such index
  */
 unsigned int ReadParameterValue(unsigned int, char*);
 /**
@@ -39,6 +40,7 @@ unsigned int ReadParameterValue(unsigned int, char*);
  * @param char* param2 is bufer for name
  * @todo read name of necessary parameter in bufer
  * @return size of parameter name in bytes
+ * @return 0 - there are no parameter with such index
  */
 unsigned char ReadParameterName(unsigned int, char*);
 /**
@@ -46,6 +48,7 @@ unsigned char ReadParameterName(unsigned int, char*);
  * @param unsigned int param1 is index of necessary parameter
  * @todo read type of necessary parameter
  * @return type of necessary parameter
+ * @return -1 => there are no parameter with such index
  */
 char ReadParameterType(unsigned int);
 /**

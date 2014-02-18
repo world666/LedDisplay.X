@@ -38,7 +38,7 @@ void StartTimer2()//4.1 mks
  * @author Kyrylov Andrii
  * @todo init timer 3 (count V count evry 1/10 sec)
  */
-void StartTimer3()
+void StartTimer3()//0.1s
 {
     // Configure Timer 3.
     // PR3 and TCKPS are set to call interrupt every 500ms.
