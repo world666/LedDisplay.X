@@ -4,6 +4,16 @@
  *
  * Created on 11 ??????? 2014 ?., 9:55
  */
+typedef struct DeviceInformation
+{
+    unsigned char ObjectCount; 
+    unsigned int ParametersCount; 
+    char SystemName[10]; //3600 bytes (count = 400)
+    char DeviceName[4]; //3048 bytes (count = 762)
+    char DeviceVersion[4]; //4
+    char SoftVersion[3]; //9
+    char CanVersion[4];
+} DeviceInformation;
 /**
  * @autor Kyrylov Andrii
  * @param unsigned char - pdo number(1-4)

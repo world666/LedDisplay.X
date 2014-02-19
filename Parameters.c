@@ -46,7 +46,7 @@ char AddParameter(char* name, char type, char* data, unsigned int dataLength)
     char *ch = &extendedDescriptorsCount;
     paramDescriptor.paramName[1] = ch[0];
     paramDescriptor.paramName[2] = ch[1];
-    paramDescriptor.paramName[3] = ch[2];
+    paramDescriptor.paramName[3] = 0;
     WriteDescriptorByAddress(freeDescriptorAdr,&paramDescriptor);
     i=0;
     ExtendedParamDescriptor extendedDescriptor;
@@ -122,12 +122,14 @@ unsigned char ReadParameterName(unsigned int paramIndex, char* name)
     ReadDescriptorByAddress(descriptorAdr, &paramDescriptor);
     if(paramDescriptor.paramName[0] == 0x0F)
     {
-        int extendedDescriptorCount = paramDescriptor.paramName[1] + paramDescriptor.paramName[2]<<8 + paramDescriptor.paramName[3]<<16;
-        int i = 1;
+        unsigned int extendedDescriptorCount = paramDescriptor.paramName[1] + (paramDescriptor.paramName[2]<<8);
+        unsigned int i = 1;
         for(i; i < (extendedDescriptorCount + 1); i++)
         {
             ReadDescriptorByAddress(descriptorAdr + boot.DescriptorSize*i, &extendedParamDescriptor);
-            name[(i-1)*boot.DescriptorSize] = extendedParamDescriptor.paramName;
+            int j=0;
+            for(j;j<boot.DescriptorSize;j++)
+                name[(i-1)*boot.DescriptorSize + j] = extendedParamDescriptor.paramName[j];
         }
     }
     else
@@ -179,7 +181,7 @@ char EditParameterName(unsigned int paramIndex, char* name)
     //deleting of descriptors
     if(paramDescriptor.paramName[0] == 0x0F)
     {
-        int extendedDescriptorCount = paramDescriptor.paramName[1] + paramDescriptor.paramName[2]<<8 + paramDescriptor.paramName[3]<<16;
+        int extendedDescriptorCount = paramDescriptor.paramName[1] + paramDescriptor.paramName[2]<<8;
         int i = 1;
         for(i; i < (extendedDescriptorCount + 1); i++)
         {
@@ -207,7 +209,7 @@ char EditParameterName(unsigned int paramIndex, char* name)
     char *ch = &extendedDescriptorsCount;
     paramDescriptor.paramName[1] = ch[0];
     paramDescriptor.paramName[2] = ch[1];
-    paramDescriptor.paramName[3] = ch[2];
+    paramDescriptor.paramName[3] = 0;
     WriteDescriptorByAddress(freeDescriptorAdr,&paramDescriptor);
     int ii=0;
     ExtendedParamDescriptor extendedDescriptor;
@@ -235,10 +237,12 @@ unsigned int FindMaxIndex()
         ReadDescriptorByAddress(adr, &descriptor);
         if(descriptor.paramName[0] == 0)
             break;
-        if(descriptor.paramName[0] !=0x0F)
+        if(maxIndex < descriptor.index)
+            maxIndex = descriptor.index;
+        if(descriptor.paramName[0] == 0x0F)//extended
         {
-            if(maxIndex < descriptor.index)
-                maxIndex = descriptor.index;
+            unsigned int extCount = descriptor.paramName[1] + (descriptor.paramName[2]<<8);
+            adr+=extCount*boot.DescriptorSize;
         }
     }
     if(maxIndex == 0)
@@ -257,10 +261,15 @@ unsigned int FindDescriptorAdrByIndex(unsigned int index)
         ReadDescriptorByAddress(adr, &descriptor);
         if(descriptor.paramName[0] == 0)
             break;
-        if(descriptor.paramName[0] !=0x0F && descriptor.index == index)
+        if(descriptor.index == index)
         {
             descriptorAdr = adr;
             break;
+        }
+        if(descriptor.paramName[0] == 0x0F)//extended
+        {
+            unsigned int extCount = descriptor.paramName[1] + (descriptor.paramName[2]<<8);
+            adr+=extCount*boot.DescriptorSize;
         }
     }
     return descriptorAdr;

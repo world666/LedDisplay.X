@@ -10,6 +10,8 @@
 #include <string.h>
 #include <xc.h>
 
+
+
 #include "Configuration.h"
 #include "LowVoltageDetect.h"
 #include "MainLibrary.h"
@@ -90,11 +92,16 @@ int main(int argc, char** argv) {
     DisplayView("start"); //lcd display write
     Can1Initialization();
 
-    //Formatting();
-    /*char name[] = "dV";
-    float valueLong = 0.5;
-    char *valueChar = &valueLong;
-    char rezult = AddParameter(name,0x8,valueChar,4);*/
+    Formatting();
+    char name[] = "table";
+    char valueChar[120];
+    int i=0;
+    for(i;i<120;i++)
+        valueChar[i] = 0;
+    valueChar[4] = 100;
+    char rezult = AddParameter(name,0xF,valueChar,120);
+
+    AddParameter(name,0xF,valueChar,120);
    
     while(1);
     return (EXIT_SUCCESS);

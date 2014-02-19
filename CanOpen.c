@@ -2,6 +2,10 @@
 #include "CanOpen.h"
 #include "Configuration.h"
 
+char canOpenCodtDomainBlock[200];
+unsigned int canOpenCodtDomainLength;
+unsigned int canOpenCodtDomainCurrentPosition = 0;
+
 void SendTPDO(unsigned char pdoNumber, unsigned char nodeId, char* data, unsigned char bufNumber)
 {
  unsigned int sId;
@@ -44,6 +48,8 @@ void CanOpenParseReceivedData(char *data)
         SendDictionaryElement(data);
     else if((data[0]&0xF3) == 0x22)
         EditDictionaryElement(data);
+    else if(data[0] == 0x60 || data[0] == 0x70)
+        CanOpenSendCodtDomainMsg();
 }
 void EditDictionaryElement(char* data)
 {
@@ -87,8 +93,8 @@ void SendDictionaryElement(char* data)
 void SendValue(char* data)
 {
     unsigned char nodeID = NODE_ID;
-    char sendBuf[8];
-    char valueArray[4];
+    char sendBuf[8] = {0,0,0,0,0,0,0,0};
+    char valueArray[150];
     unsigned int objIndex = data[1] + (data[2]<<8);
     char objType = ReadParameterType(objIndex);
     unsigned int byteCount = ReadParameterValue(objIndex,valueArray);
@@ -97,29 +103,42 @@ void SendValue(char* data)
     sendBuf[1] = data[1];
     sendBuf[2] = data[2];
     sendBuf[3] = data[3];
-    switch(objType)
+    if(byteCount>4)//codtDomain
     {
-        case 0xF://codtDomain
-            break;
-        case 0x10://sint24
-            sendBuf[0] = 0x47;
-            break;
-        case 0x8://real32
-            sendBuf[0] = 0x43;
-            break;
-        case 0x3://sin16
-            sendBuf[0] = 0x4B;
-            break;
-        case 0x6://sint16
-            sendBuf[0] = 0x4B;
-            break;
+        sendBuf[0] = 0x41;
+        sendBuf[4] = byteCount&0x00FF; //low part
+        sendBuf[5] = (byteCount>>8)&0x00FF; //high part
+        int i=0;
+        for(i=0;i<byteCount;i++)
+            canOpenCodtDomainBlock[i] = valueArray[i];
+        canOpenCodtDomainCurrentPosition = 0;
+        canOpenCodtDomainLength = byteCount;
     }
-    sendBuf[4] = valueArray[0];
-    sendBuf[5] = valueArray[1];
-    sendBuf[6] = valueArray[2];
-    sendBuf[7] = valueArray[3];
+    else
+    {
+        switch(objType)
+        {
+            case 0xF://codtDomain
+                break;
+            case 0x10://sint24
+                sendBuf[0] = 0x47;
+                break;
+            case 0x8://real32
+                sendBuf[0] = 0x43;
+                break;
+            case 0x3://sin16
+                sendBuf[0] = 0x4B;
+                break;
+            case 0x6://sint16
+                sendBuf[0] = 0x4B;
+                break;
+        }
+        sendBuf[4] = valueArray[0];
+        sendBuf[5] = valueArray[1];
+        sendBuf[6] = valueArray[2];
+        sendBuf[7] = valueArray[3];
+    }
     SendTSDO(nodeID, sendBuf,0);
-
 }
 void SendParameterType(char* data)
 {
@@ -140,20 +159,33 @@ void SendParameterType(char* data)
 void SendName(char* data)
 {
     unsigned char nodeID = NODE_ID;
-    char sendBuf[8];
-    char valueArray[4];
+    char sendBuf[8] = {0,0,0,0,0,0,0,0};
+    char valueArray[30]; //max name is 29 symbols
     unsigned int objIndex = data[1] + (data[2]<<8);
-    unsigned int byteCount = ReadParameterName(objIndex,valueArray);
+    unsigned char byteCount = ReadParameterName(objIndex,valueArray);
     if(byteCount == 0)
         return;
-    sendBuf[0] = 0x43 + ((4-byteCount)<<2);
     sendBuf[1] = data[1];
     sendBuf[2] = data[2];
     sendBuf[3] = data[3];
-    sendBuf[4] = valueArray[0];
-    sendBuf[5] = valueArray[1];
-    sendBuf[6] = valueArray[2];
-    sendBuf[7] = valueArray[3];
+    if(byteCount<=4)//short msg
+    {
+        sendBuf[0] = 0x43 + ((4-byteCount)<<2);
+        sendBuf[4] = valueArray[0];
+        sendBuf[5] = valueArray[1];
+        sendBuf[6] = valueArray[2];
+        sendBuf[7] = valueArray[3];
+    }
+    else //codtdomain
+    {
+        sendBuf[0] = 0x41;
+        sendBuf[4] = byteCount&0x00FF; //low part
+        sendBuf[5] = (byteCount>>8)&0x00FF; //high part
+        canOpenCodtDomainBlock[0] = 0;
+        strcat(canOpenCodtDomainBlock,valueArray);
+        canOpenCodtDomainCurrentPosition = 0;
+        canOpenCodtDomainLength = byteCount;
+    }
     SendTSDO(nodeID, sendBuf,0);
 }
 void CanOpenEditName(char* data)
@@ -166,4 +198,22 @@ void CanOpenEditName(char* data)
         newName[0] = data[i+4];
     newName[4-unusedBytes] = 0;
     EditParameterName(objIndex,newName);
+}
+void CanOpenSendCodtDomainMsg()
+{
+    unsigned char nodeID = NODE_ID;
+    char sendBuf[8] = {0,0,0,0,0,0,0,0};
+    if(canOpenCodtDomainCurrentPosition + 8> canOpenCodtDomainLength) // last block
+    {
+        sendBuf[0] = 1;//lastblock flag
+        unsigned char unusedBytes = 7-(canOpenCodtDomainLength-canOpenCodtDomainCurrentPosition);
+        sendBuf[0]+=(unusedBytes<<1);
+    }
+    else
+        sendBuf[0] = 0;
+    //write data
+    int i=1;
+    for(i;i<8;i++)
+        sendBuf[i] = canOpenCodtDomainBlock[canOpenCodtDomainCurrentPosition++];
+    SendTSDO(nodeID, sendBuf,0);
 }
