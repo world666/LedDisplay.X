@@ -130,10 +130,10 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x100               0x6ac           0xa02  (2562)
 .const                       0x7ac                0x38            0x54  (84)
-.text                        0x7e4              0x255e          0x380d  (14349)
-.dinit                      0x2d42                0x1e            0x2d  (45)
+.text                        0x7e4              0x2570          0x3828  (14376)
+.dinit                      0x2d54                0x1e            0x2d  (45)
 
-                     Total program memory used (bytes):         0x4290  (17040) 11%
+                     Total program memory used (bytes):         0x42ab  (17067) 11%
 
 
 Data Memory  [Origin = 0x800, Length = 0x2000]
@@ -279,51 +279,51 @@ External Symbols in Program Memory (by address):
                   0x00181e                  __C1Interrupt
                   0x00185a                  __LVDInterrupt
                   0x001888                  _AddParameter
-                  0x001a34                  _DeleteParameter
+                  0x001a38                  _DeleteParameter
                   0x001aac                  _ReadParameterValue
                   0x001b18                  _ReadParameterName
                   0x001bcc                  _ReadParameterType
                   0x001bf8                  _EditParameterValue
                   0x001c98                  _EditParameterName
-                  0x001e02                  _FindMaxIndex
-                  0x001e86                  _FindDescriptorAdrByIndex
-                  0x001f06                  _WriteAllParameters
-                  0x0020ca                  _SendTPDO
-                  0x0020f0                  _SendTSDO
-                  0x00210e                  _CanOpenSendCurrentObjectState
-                  0x0021d8                  _CanOpenParseReceivedData
-                  0x002250                  _EditDictionaryElement
-                  0x0022c4                  _EditCodtDomainElement
-                  0x0022f6                  _SendDictionaryElement
-                  0x002354                  _SendDeviceInformation
-                  0x0024a8                  _SendValue
-                  0x0025c8                  _SendParameterType
-                  0x00262a                  _SendName
-                  0x0026d4                  _CanOpenEditName
-                  0x002730                  _CanOpenSendCodtDomainMsg
-                  0x002798                  _CanOpenGetCodtDomainMsg
-                  0x00280e                  _WriteBootSector
-                  0x002834                  _ReadBootSector
-                  0x002844                  _Formatting
-                  0x0028a2                  _ReadNextFat
-                  0x0028c8                  _WriteToFat
-                  0x0028ec                  _FindFreeClusterNum
-                  0x002938                  _AllocateClustersSequence
-                  0x002986                  _ClearClustersSequence
-                  0x0029b6                  _FindFreeDescriptorAdr
-                  0x002a2a                  _WriteDescriptorByAddress
-                  0x002a44                  _ReadDescriptorByAddress
-                  0x002a5e                  _DescriptorsDefragmentation
-                  0x002b1c                  _WriteDataToCluster
-                  0x002b4e                  _ReadDataFromCluster
-                  0x002b80                  _Can1Initialization
-                  0x002cfe                  _Can1SendData
-                  0x002d30                  _Can1ReceiveData
+                  0x001e06                  _FindMaxIndex
+                  0x001e8c                  _FindDescriptorAdrByIndex
+                  0x001f0e                  _WriteAllParameters
+                  0x0020dc                  _SendTPDO
+                  0x002102                  _SendTSDO
+                  0x002120                  _CanOpenSendCurrentObjectState
+                  0x0021ea                  _CanOpenParseReceivedData
+                  0x002262                  _EditDictionaryElement
+                  0x0022d6                  _EditCodtDomainElement
+                  0x002308                  _SendDictionaryElement
+                  0x002366                  _SendDeviceInformation
+                  0x0024ba                  _SendValue
+                  0x0025da                  _SendParameterType
+                  0x00263c                  _SendName
+                  0x0026e6                  _CanOpenEditName
+                  0x002742                  _CanOpenSendCodtDomainMsg
+                  0x0027aa                  _CanOpenGetCodtDomainMsg
+                  0x002820                  _WriteBootSector
+                  0x002846                  _ReadBootSector
+                  0x002856                  _Formatting
+                  0x0028b4                  _ReadNextFat
+                  0x0028da                  _WriteToFat
+                  0x0028fe                  _FindFreeClusterNum
+                  0x00294a                  _AllocateClustersSequence
+                  0x002998                  _ClearClustersSequence
+                  0x0029c8                  _FindFreeDescriptorAdr
+                  0x002a3c                  _WriteDescriptorByAddress
+                  0x002a56                  _ReadDescriptorByAddress
+                  0x002a70                  _DescriptorsDefragmentation
+                  0x002b2e                  _WriteDataToCluster
+                  0x002b60                  _ReadDataFromCluster
+                  0x002b92                  _Can1Initialization
+                  0x002d10                  _Can1SendData
+                  0x002d42                  _Can1ReceiveData
 
 External Symbols in Program Memory (by name):
 
                   0x001888                  _AddParameter
-                  0x002938                  _AllocateClustersSequence
+                  0x00294a                  _AllocateClustersSequence
                   0x0009ce                  _BusyUART2
                   0x0001c4                  _CAN1Initialize
                   0x0001ca                  _CAN1ReceiveMessage
@@ -333,24 +333,24 @@ External Symbols in Program Memory (by name):
                   0x0002dc                  _CAN1SetOperationMode
                   0x0002e0                  _CAN1SetRXMode
                   0x0002f0                  _CAN1SetTXMode
-                  0x002b80                  _Can1Initialization
-                  0x002d30                  _Can1ReceiveData
-                  0x002cfe                  _Can1SendData
-                  0x0026d4                  _CanOpenEditName
-                  0x002798                  _CanOpenGetCodtDomainMsg
-                  0x0021d8                  _CanOpenParseReceivedData
-                  0x002730                  _CanOpenSendCodtDomainMsg
-                  0x00210e                  _CanOpenSendCurrentObjectState
-                  0x002986                  _ClearClustersSequence
+                  0x002b92                  _Can1Initialization
+                  0x002d42                  _Can1ReceiveData
+                  0x002d10                  _Can1SendData
+                  0x0026e6                  _CanOpenEditName
+                  0x0027aa                  _CanOpenGetCodtDomainMsg
+                  0x0021ea                  _CanOpenParseReceivedData
+                  0x002742                  _CanOpenSendCodtDomainMsg
+                  0x002120                  _CanOpenSendCurrentObjectState
+                  0x002998                  _ClearClustersSequence
                   0x000306                  _ConfigIntCAN1
                   0x00109e                  _ConfigurateSPI2
-                  0x001a34                  _DeleteParameter
-                  0x002a5e                  _DescriptorsDefragmentation
+                  0x001a38                  _DeleteParameter
+                  0x002a70                  _DescriptorsDefragmentation
                   0x00096a                  _DigitalInputsToString
                   0x000e02                  _DisplayInitialization
                   0x000ed6                  _DisplayView
-                  0x0022c4                  _EditCodtDomainElement
-                  0x002250                  _EditDictionaryElement
+                  0x0022d6                  _EditCodtDomainElement
+                  0x002262                  _EditDictionaryElement
                   0x001c98                  _EditParameterName
                   0x001bf8                  _EditParameterValue
                   0x000bb6                  _EncCountV
@@ -358,11 +358,11 @@ External Symbols in Program Memory (by name):
                   0x000bd4                  _EncGetDistanceStr
                   0x000c48                  _EncGetV
                   0x000ae0                  _EncoderScan
-                  0x001e86                  _FindDescriptorAdrByIndex
-                  0x0028ec                  _FindFreeClusterNum
-                  0x0029b6                  _FindFreeDescriptorAdr
-                  0x001e02                  _FindMaxIndex
-                  0x002844                  _Formatting
+                  0x001e8c                  _FindDescriptorAdrByIndex
+                  0x0028fe                  _FindFreeClusterNum
+                  0x0029c8                  _FindFreeDescriptorAdr
+                  0x001e06                  _FindMaxIndex
+                  0x002856                  _Formatting
                   0x001534                  _FramInitialization
                   0x00159a                  _FramRead
                   0x001600                  _FramReadPositionCounter
@@ -376,11 +376,11 @@ External Symbols in Program Memory (by name):
                   0x0009b0                  _OpenUART2
                   0x000a1c                  _PrintDigitUART2
                   0x000a00                  _PrintStringUART2
-                  0x002834                  _ReadBootSector
-                  0x002b4e                  _ReadDataFromCluster
-                  0x002a44                  _ReadDescriptorByAddress
+                  0x002846                  _ReadBootSector
+                  0x002b60                  _ReadDataFromCluster
+                  0x002a56                  _ReadDescriptorByAddress
                   0x00092a                  _ReadDigitalInputs
-                  0x0028a2                  _ReadNextFat
+                  0x0028b4                  _ReadNextFat
                   0x001b18                  _ReadParameterName
                   0x001bcc                  _ReadParameterType
                   0x001aac                  _ReadParameterValue
@@ -395,23 +395,23 @@ External Symbols in Program Memory (by name):
                   0x0012d8                  _RtcReadYear
                   0x00113a                  _RtcSetTime
                   0x001304                  _RtcWriteDateInString
-                  0x002354                  _SendDeviceInformation
-                  0x0022f6                  _SendDictionaryElement
-                  0x00262a                  _SendName
-                  0x0025c8                  _SendParameterType
-                  0x0020ca                  _SendTPDO
-                  0x0020f0                  _SendTSDO
-                  0x0024a8                  _SendValue
+                  0x002366                  _SendDeviceInformation
+                  0x002308                  _SendDictionaryElement
+                  0x00263c                  _SendName
+                  0x0025da                  _SendParameterType
+                  0x0020dc                  _SendTPDO
+                  0x002102                  _SendTSDO
+                  0x0024ba                  _SendValue
                   0x000a48                  _StartTimer1
                   0x000a6e                  _StartTimer2
                   0x000a94                  _StartTimer3
                   0x000aba                  _StartTimer4
-                  0x001f06                  _WriteAllParameters
-                  0x00280e                  _WriteBootSector
+                  0x001f0e                  _WriteAllParameters
+                  0x002820                  _WriteBootSector
                   0x0009e8                  _WriteCharToUART2
-                  0x002b1c                  _WriteDataToCluster
-                  0x002a2a                  _WriteDescriptorByAddress
-                  0x0028c8                  _WriteToFat
+                  0x002b2e                  _WriteDataToCluster
+                  0x002a3c                  _WriteDescriptorByAddress
+                  0x0028da                  _WriteToFat
                   0x00181e                  __C1Interrupt
                   0x0001c0                  __DefaultInterrupt
                   0x00185a                  __LVDInterrupt
@@ -670,13 +670,13 @@ userdata
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x599f
+.debug_info       0x000000       0x59c6
  *(.debug_info)
  .debug_info      0x000000       0x3941 build/default/production/main.o
  .debug_info      0x003941        0x85a build/default/production/Fat.o
- .debug_info      0x00419b        0xa86 build/default/production/Parameters.o
- .debug_info      0x004c21        0x372 build/default/production/Can.o
- .debug_info      0x004f93        0xa0c build/default/production/CanOpen.o
+ .debug_info      0x00419b        0xaad build/default/production/Parameters.o
+ .debug_info      0x004c48        0x372 build/default/production/Can.o
+ .debug_info      0x004fba        0xa0c build/default/production/CanOpen.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0x7a9
@@ -687,13 +687,13 @@ userdata
  .debug_abbrev    0x00050d         0xd0 build/default/production/Can.o
  .debug_abbrev    0x0005dd        0x1cc build/default/production/CanOpen.o
 
-.debug_line       0x000000       0x2bc4
+.debug_line       0x000000       0x2bbc
  *(.debug_line)
  .debug_line      0x000000       0x14e7 build/default/production/main.o
  .debug_line      0x0014e7        0x4e4 build/default/production/Fat.o
- .debug_line      0x0019cb        0x7f0 build/default/production/Parameters.o
- .debug_line      0x0021bb        0x17f build/default/production/Can.o
- .debug_line      0x00233a        0x88a build/default/production/CanOpen.o
+ .debug_line      0x0019cb        0x7e8 build/default/production/Parameters.o
+ .debug_line      0x0021b3        0x17f build/default/production/Can.o
+ .debug_line      0x002332        0x88a build/default/production/CanOpen.o
 
 .debug_frame      0x000000        0x634
  *(.debug_frame)
@@ -2024,7 +2024,7 @@ __c30_signature
  .const             0x87ac         0x2c build/default/production/Parameters.o
  .const             0x87d8          0xc build/default/production/main.o
 
-.text             0x0007e4       0x255e
+.text             0x0007e4       0x2570
  .text            0x0007e4       0x10a4 build/default/production/main.o
                   0x0007e4                  _LVDinitialization
                   0x000814                  _delay
@@ -2078,51 +2078,51 @@ __c30_signature
                   0x0017b6                  __T4Interrupt
                   0x00181e                  __C1Interrupt
                   0x00185a                  __LVDInterrupt
- .text            0x001888        0x842 build/default/production/Parameters.o
+ .text            0x001888        0x854 build/default/production/Parameters.o
                   0x001888                  _AddParameter
-                  0x001a34                  _DeleteParameter
+                  0x001a38                  _DeleteParameter
                   0x001aac                  _ReadParameterValue
                   0x001b18                  _ReadParameterName
                   0x001bcc                  _ReadParameterType
                   0x001bf8                  _EditParameterValue
                   0x001c98                  _EditParameterName
-                  0x001e02                  _FindMaxIndex
-                  0x001e86                  _FindDescriptorAdrByIndex
-                  0x001f06                  _WriteAllParameters
- .text            0x0020ca        0x744 build/default/production/CanOpen.o
-                  0x0020ca                  _SendTPDO
-                  0x0020f0                  _SendTSDO
-                  0x00210e                  _CanOpenSendCurrentObjectState
-                  0x0021d8                  _CanOpenParseReceivedData
-                  0x002250                  _EditDictionaryElement
-                  0x0022c4                  _EditCodtDomainElement
-                  0x0022f6                  _SendDictionaryElement
-                  0x002354                  _SendDeviceInformation
-                  0x0024a8                  _SendValue
-                  0x0025c8                  _SendParameterType
-                  0x00262a                  _SendName
-                  0x0026d4                  _CanOpenEditName
-                  0x002730                  _CanOpenSendCodtDomainMsg
-                  0x002798                  _CanOpenGetCodtDomainMsg
- .text            0x00280e        0x372 build/default/production/Fat.o
-                  0x00280e                  _WriteBootSector
-                  0x002834                  _ReadBootSector
-                  0x002844                  _Formatting
-                  0x0028a2                  _ReadNextFat
-                  0x0028c8                  _WriteToFat
-                  0x0028ec                  _FindFreeClusterNum
-                  0x002938                  _AllocateClustersSequence
-                  0x002986                  _ClearClustersSequence
-                  0x0029b6                  _FindFreeDescriptorAdr
-                  0x002a2a                  _WriteDescriptorByAddress
-                  0x002a44                  _ReadDescriptorByAddress
-                  0x002a5e                  _DescriptorsDefragmentation
-                  0x002b1c                  _WriteDataToCluster
-                  0x002b4e                  _ReadDataFromCluster
- .text            0x002b80        0x1c2 build/default/production/Can.o
-                  0x002b80                  _Can1Initialization
-                  0x002cfe                  _Can1SendData
-                  0x002d30                  _Can1ReceiveData
+                  0x001e06                  _FindMaxIndex
+                  0x001e8c                  _FindDescriptorAdrByIndex
+                  0x001f0e                  _WriteAllParameters
+ .text            0x0020dc        0x744 build/default/production/CanOpen.o
+                  0x0020dc                  _SendTPDO
+                  0x002102                  _SendTSDO
+                  0x002120                  _CanOpenSendCurrentObjectState
+                  0x0021ea                  _CanOpenParseReceivedData
+                  0x002262                  _EditDictionaryElement
+                  0x0022d6                  _EditCodtDomainElement
+                  0x002308                  _SendDictionaryElement
+                  0x002366                  _SendDeviceInformation
+                  0x0024ba                  _SendValue
+                  0x0025da                  _SendParameterType
+                  0x00263c                  _SendName
+                  0x0026e6                  _CanOpenEditName
+                  0x002742                  _CanOpenSendCodtDomainMsg
+                  0x0027aa                  _CanOpenGetCodtDomainMsg
+ .text            0x002820        0x372 build/default/production/Fat.o
+                  0x002820                  _WriteBootSector
+                  0x002846                  _ReadBootSector
+                  0x002856                  _Formatting
+                  0x0028b4                  _ReadNextFat
+                  0x0028da                  _WriteToFat
+                  0x0028fe                  _FindFreeClusterNum
+                  0x00294a                  _AllocateClustersSequence
+                  0x002998                  _ClearClustersSequence
+                  0x0029c8                  _FindFreeDescriptorAdr
+                  0x002a3c                  _WriteDescriptorByAddress
+                  0x002a56                  _ReadDescriptorByAddress
+                  0x002a70                  _DescriptorsDefragmentation
+                  0x002b2e                  _WriteDataToCluster
+                  0x002b60                  _ReadDataFromCluster
+ .text            0x002b92        0x1c2 build/default/production/Can.o
+                  0x002b92                  _Can1Initialization
+                  0x002d10                  _Can1SendData
+                  0x002d42                  _Can1ReceiveData
 
-.dinit            0x002d42         0x1e
- .dinit           0x002d42         0x1e data_init
+.dinit            0x002d54         0x1e
+ .dinit           0x002d54         0x1e data_init

@@ -92,7 +92,8 @@ int main(int argc, char** argv) {
     DisplayView("start"); //lcd display write
     Can1Initialization();
 
-    //WriteAllParameters();
+
+    WriteAllParameters();
     
     while(1);
     return (EXIT_SUCCESS);

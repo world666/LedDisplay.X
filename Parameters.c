@@ -53,7 +53,7 @@ char AddParameter(char* name, char type, char* data, unsigned int dataLength)
     ExtendedParamDescriptor extendedDescriptor;
     for(i;i<extendedDescriptorsCount;i++)
     {
-        freeDescriptorAdr = FindFreeDescriptorAdr();
+        freeDescriptorAdr += boot.DescriptorSize;
         int j=0;
         for(j;j<boot.DescriptorSize;j++)
             extendedDescriptor.paramName[j] = name[i*boot.DescriptorSize + j];
@@ -64,6 +64,7 @@ char AddParameter(char* name, char type, char* data, unsigned int dataLength)
 
 char DeleteParameter(unsigned int paramIndex)
 {
+    char zero = 0;
     Boot boot;
     ReadBootSector(&boot);
     unsigned int descriptorAdr = FindDescriptorAdrByIndex(paramIndex);
@@ -72,21 +73,17 @@ char DeleteParameter(unsigned int paramIndex)
     //clear data
     ClearClustersSequence(paramDescriptor.startCluster);
     //clear head descriptor
-    paramDescriptor.paramName[0] = 0;
-    WriteDescriptorByAddress(descriptorAdr,&paramDescriptor);
-    if(paramDescriptor.paramName[0]!=0x0F)//short name
-        return 1;
-    //long name
-    unsigned int extendedDescriptorsCount =  paramDescriptor.paramName[1] + (paramDescriptor.paramName[2]<<8);
-    int i=0;
-    descriptorAdr+=boot.DescriptorSize;
-    ExtendedParamDescriptor extParamDescriptor;
-    extParamDescriptor.paramName[0] = 0;
-    for(i;i<extendedDescriptorsCount;i++)
+    if(paramDescriptor.paramName[0] == 0x0F)
     {
-        WriteDescriptorByAddress(descriptorAdr, &extParamDescriptor);
-        descriptorAdr+=boot.DescriptorSize;
+        int extendedDescriptorCount = paramDescriptor.paramName[1] + paramDescriptor.paramName[2]<<8;
+        int i = 1;
+        for(i; i < (extendedDescriptorCount + 1); i++)
+        {
+            FramWrite(descriptorAdr + i*boot.DescriptorSize, &zero, sizeof(char));
+        }
     }
+    FramWrite(descriptorAdr, &zero, sizeof(char));
+    DescriptorsDefragmentation();
 }
 
 unsigned int ReadParameterValue(unsigned int paramIndex, char* data)
@@ -216,7 +213,7 @@ char EditParameterName(unsigned int paramIndex, char* name)
     ExtendedParamDescriptor extendedDescriptor;
     for(ii;ii<extendedDescriptorsCount;ii++)
     {
-        freeDescriptorAdr = FindFreeDescriptorAdr();
+        freeDescriptorAdr += boot.DescriptorSize;
         int j=0;
         for(j;j<boot.DescriptorSize;j++)
             extendedDescriptor.paramName[j] = name[ii*boot.DescriptorSize + j];
@@ -235,16 +232,17 @@ unsigned int FindMaxIndex()
     for(adr; adr < boot.BootSectorSize + boot.FatSectorSize + boot.DescriptorSectorSize;
             adr += boot.DescriptorSize)
     {
-        if(descriptor.paramName[0] == 0x0F)//extended
-        {
-            unsigned int extCount = descriptor.paramName[1] + (descriptor.paramName[2]<<8);
-            adr+=extCount*boot.DescriptorSize;
-        }
         ReadDescriptorByAddress(adr, &descriptor);
         if(descriptor.paramName[0] == 0)
             break;
         if(maxIndex < descriptor.index)
             maxIndex = descriptor.index;
+        if(descriptor.paramName[0] == 0x0F)//extended
+        {
+            unsigned int extCount = descriptor.paramName[1] + (descriptor.paramName[2]<<8);
+            adr+=extCount*boot.DescriptorSize;
+            continue;
+        }                 
     }
     if(maxIndex == 0)
         return 0x1FFF;
@@ -261,18 +259,20 @@ unsigned int FindDescriptorAdrByIndex(unsigned int index)
     for(adr; adr < boot.BootSectorSize + boot.FatSectorSize + boot.DescriptorSectorSize; adr += boot.DescriptorSize)
     {
         ReadDescriptorByAddress(adr, &descriptor);
-        if(descriptor.paramName[0] == 0x0F)//extended
-        {
-            unsigned int extCount = descriptor.paramName[1] + (descriptor.paramName[2]<<8);
-            adr+=extCount*boot.DescriptorSize;
-        }
-        if(descriptor.paramName[0] == 0)
-            break;
         if(descriptor.index == index)
         {
             descriptorAdr = adr;
             break;
         } 
+        if(descriptor.paramName[0] == 0x0F)//extended
+        {
+            unsigned int extCount = descriptor.paramName[1] + (descriptor.paramName[2]<<8);
+            adr+=extCount*boot.DescriptorSize;
+            continue;
+        }
+        if(descriptor.paramName[0] == 0)
+            break;
+        
     }
     return descriptorAdr;
 }
@@ -284,7 +284,7 @@ unsigned char WriteAllParameters()
     char name[] = "inf";
     DeviceInformation deviceInformation;
     deviceInformation.ObjectCount = 7;
-    deviceInformation.ParametersCount = 6;
+    deviceInformation.ParametersCount = 5;
     deviceInformation.SystemName[0] = 0;
     strcat(deviceInformation.SystemName, "don_avto_1");
      deviceInformation.DeviceName[0] = 0;
@@ -319,7 +319,7 @@ unsigned char WriteAllParameters()
     if(!AddParameter(name3,0x10,&value,3))
         return 0;
 
-    char name4[] = "low_low";
+    char name4[] = "low_edge";
     value = 850000;
     if(!AddParameter(name4,0x10,&value,3))
         return 0;
