@@ -107,12 +107,17 @@ unsigned int FindFreeDescriptorAdr()
     Boot boot;
     ReadBootSector(&boot);
     unsigned int freeDescriptorAdr = 0xFFFF;//there are no free descriptors
-    char descriptorFirstByte;
+    char descriptorFirstByte[3];
     int adr = boot.BootSectorSize + boot.FatSectorSize;
     for(adr; adr < boot.BootSectorSize + boot.FatSectorSize + boot.DescriptorSectorSize; adr += boot.DescriptorSize)
     {
-        FramRead(adr, &descriptorFirstByte, sizeof(char));
-        if(descriptorFirstByte == 0)
+        FramRead(adr, &descriptorFirstByte, 3);
+        if(descriptorFirstByte[0] == 0x0F)//extended
+        {
+            unsigned int extCount = descriptorFirstByte[1] + (descriptorFirstByte[2]<<8);
+            adr+=extCount*boot.DescriptorSize;
+        }
+        else if(descriptorFirstByte[0] == 0)
         {
             freeDescriptorAdr = adr;
             break;

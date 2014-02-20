@@ -2,6 +2,7 @@
 #include <string.h>
 #include "Fat.h"
 #include "Parameters.h"
+#include "CanOpen.h"
 
 
 
@@ -234,21 +235,22 @@ unsigned int FindMaxIndex()
     for(adr; adr < boot.BootSectorSize + boot.FatSectorSize + boot.DescriptorSectorSize;
             adr += boot.DescriptorSize)
     {
-        ReadDescriptorByAddress(adr, &descriptor);
-        if(descriptor.paramName[0] == 0)
-            break;
-        if(maxIndex < descriptor.index)
-            maxIndex = descriptor.index;
         if(descriptor.paramName[0] == 0x0F)//extended
         {
             unsigned int extCount = descriptor.paramName[1] + (descriptor.paramName[2]<<8);
             adr+=extCount*boot.DescriptorSize;
         }
+        ReadDescriptorByAddress(adr, &descriptor);
+        if(descriptor.paramName[0] == 0)
+            break;
+        if(maxIndex < descriptor.index)
+            maxIndex = descriptor.index;
     }
     if(maxIndex == 0)
-        return 0x2000;
+        return 0x1FFF;
     return maxIndex;
 }
+
 unsigned int FindDescriptorAdrByIndex(unsigned int index)
 {
     Boot boot;
@@ -259,18 +261,68 @@ unsigned int FindDescriptorAdrByIndex(unsigned int index)
     for(adr; adr < boot.BootSectorSize + boot.FatSectorSize + boot.DescriptorSectorSize; adr += boot.DescriptorSize)
     {
         ReadDescriptorByAddress(adr, &descriptor);
+        if(descriptor.paramName[0] == 0x0F)//extended
+        {
+            unsigned int extCount = descriptor.paramName[1] + (descriptor.paramName[2]<<8);
+            adr+=extCount*boot.DescriptorSize;
+        }
         if(descriptor.paramName[0] == 0)
             break;
         if(descriptor.index == index)
         {
             descriptorAdr = adr;
             break;
-        }
-        if(descriptor.paramName[0] == 0x0F)//extended
-        {
-            unsigned int extCount = descriptor.paramName[1] + (descriptor.paramName[2]<<8);
-            adr+=extCount*boot.DescriptorSize;
-        }
+        } 
     }
     return descriptorAdr;
+}
+
+unsigned char WriteAllParameters()
+{
+    Formatting();
+
+    char name[] = "inf";
+    DeviceInformation deviceInformation;
+    deviceInformation.ObjectCount = 7;
+    deviceInformation.ParametersCount = 6;
+    deviceInformation.SystemName[0] = 0;
+    strcat(deviceInformation.SystemName, "don_avto_1");
+     deviceInformation.DeviceName[0] = 0;
+    strcat(deviceInformation.DeviceName,"os_3");
+    deviceInformation.DeviceVersion[0] = 0;
+    strcat(deviceInformation.DeviceVersion,"v1.0");
+    deviceInformation.SoftVersion[0] = 0;
+    strcat(deviceInformation.SoftVersion,"1.0");
+    deviceInformation.CanVersion[0] = 0;
+    strcat(deviceInformation.CanVersion,"can1");
+
+    if(!AddParameter(name,0xF,&deviceInformation,28))
+        return 0;
+
+    char name2[] = "start_s";
+    long value = 50000;
+    if(!AddParameter(name2,0x10,&value,3))
+        return 0;
+    
+    char name5[] = "node_id";
+    value = 2;
+    if(!AddParameter(name5,0x10,&value,3))
+        return 0;
+
+    char name6[] = "mark_distance";
+    float fvalue = 0.5;
+    if(!AddParameter(name6,0x8,&fvalue,4))
+        return 0;
+
+    char name3[] = "high_edge";
+    value = 50000;
+    if(!AddParameter(name3,0x10,&value,3))
+        return 0;
+
+    char name4[] = "low_low";
+    value = 850000;
+    if(!AddParameter(name4,0x10,&value,3))
+        return 0;
+
+    return 1;
 }

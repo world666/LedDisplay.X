@@ -92,17 +92,8 @@ int main(int argc, char** argv) {
     DisplayView("start"); //lcd display write
     Can1Initialization();
 
-    Formatting();
-    char name[] = "table";
-    char valueChar[120];
-    int i=0;
-    for(i;i<120;i++)
-        valueChar[i] = 0;
-    valueChar[4] = 100;
-    char rezult = AddParameter(name,0xF,valueChar,120);
-
-    AddParameter(name,0xF,valueChar,120);
-   
+    //WriteAllParameters();
+    
     while(1);
     return (EXIT_SUCCESS);
 }
@@ -168,7 +159,9 @@ void __attribute__((__interrupt__, __auto_psv__)) _T4Interrupt(void)
 
     int speed = EncGetV();
     long lDistance = EncGetDistanceLong();
-    long rDistance = -850000 + 50000 - lDistance;
+    long highEdge = HIGH_EDGE;
+    long lowEdge = LOW_EDGE;
+    long rDistance = lowEdge + highEdge - lDistance;
 
     CanOpenSendCurrentObjectState(rDistance,lDistance,speed,0);
 }

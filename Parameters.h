@@ -82,3 +82,11 @@ unsigned int FindMaxIndex();
  * @return 0xFFFF => there are no descriptor with such index
  */
 unsigned int FindDescriptorAdrByIndex(unsigned int);
+
+/**
+ * @author Kyrylov Andrii
+ * @todo write all parameters to fat sysytem
+ * @return 1 - parameters were written
+ * @return 0 - error
+ */
+unsigned char WriteAllParameters();

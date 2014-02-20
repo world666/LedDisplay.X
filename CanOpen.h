@@ -4,7 +4,7 @@
  *
  * Created on 11 ??????? 2014 ?., 9:55
  */
-typedef struct DeviceInformation
+typedef struct DeviceInformation //28bytes
 {
     unsigned char ObjectCount; 
     unsigned int ParametersCount; 
