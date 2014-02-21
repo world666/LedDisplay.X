@@ -19,6 +19,7 @@
       <itemPath>Parameters.h</itemPath>
       <itemPath>Can.h</itemPath>
       <itemPath>CanOpen.h</itemPath>
+      <itemPath>WriteParameters.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

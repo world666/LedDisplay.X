@@ -48,13 +48,11 @@ void CanOpenParseReceivedData(char *data)
 {
     if(data[0] == 0x40)//read query
         SendDictionaryElement(data);
-    else if((data[0]&0xF3) == 0x22) //set query short msg
+    else if((data[0]&0xF0) == 0x20) //set query
         EditDictionaryElement(data);
-    else if((data[0]&0xF3) == 0x20) //set query codtdomain msg
-        EditCodtDomainElement(data);
     else if((data[0]&0xE0) == 0x00) //get codtDomainelement from pc
         CanOpenGetCodtDomainMsg(data);
-    else if(data[0] == 0x60 || data[0] == 0x70)//read query codt domain
+    else if(data[0] == 0x60 || data[0] == 0x70)//read query codt domain to pc
         CanOpenSendCodtDomainMsg();
 }
 void EditDictionaryElement(char* data)
@@ -62,6 +60,14 @@ void EditDictionaryElement(char* data)
     unsigned char nodeID = NODE_ID;
     unsigned char objSubIndex = data[3];
     unsigned int objIndex = data[1] + (data[2]<<8);
+    if((data[0]&0xF3) == 0x20)//get codt domain
+    {
+        canOpenIndex = objIndex;
+        canOpenSubIndex = objSubIndex;
+        canOpenCodtDomainLength = data[4];
+        canOpenCodtDomainCurrentPosition = 0;
+        return;
+    }
         switch(objSubIndex)
         {
             case 2:
@@ -79,13 +85,6 @@ void EditDictionaryElement(char* data)
     sendBuf[2] = data[2];
     sendBuf[3] = data[3];
     SendTSDO(nodeID, sendBuf,0);
-}
-void EditCodtDomainElement(char* data)
-{
-    canOpenIndex = data[1] + (data[2]<<8);
-    canOpenSubIndex = data[3];
-    canOpenCodtDomainLength = data[4];
-    canOpenCodtDomainCurrentPosition = 0;
 }
 void SendDictionaryElement(char* data)
 {   
@@ -307,6 +306,7 @@ void CanOpenSendCodtDomainMsg()
 }
 void CanOpenGetCodtDomainMsg(char* data)
 {
+    unsigned int nodeID = NODE_ID;
     int i=0;
     if(data[0]&0x01==1)//last block
     {
@@ -318,4 +318,12 @@ void CanOpenGetCodtDomainMsg(char* data)
     else
         for(i;i<7;i++)
             canOpenCodtDomainBlock[canOpenCodtDomainCurrentPosition++] = data[i+1];
+    //element was seted
+    char sendBuf[8];
+    char* pointer = &canOpenIndex;
+    sendBuf[0] = 0x60;
+    sendBuf[1] = pointer[0];
+    sendBuf[2] = pointer[1];
+    sendBuf[3] = canOpenSubIndex;
+    SendTSDO(nodeID, sendBuf,0);
 }

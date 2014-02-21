@@ -27,6 +27,7 @@
 #include "Parameters.h"
 #include "Can.h"
 #include "CanOpen.h"
+#include "WriteParameters.h"
 
 // FOSC
 #pragma config FOSFPR = XT_PLL16             // Oscillator (XT)

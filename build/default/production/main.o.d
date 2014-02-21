@@ -14,4 +14,5 @@ FRAM.h  \
 Fat.h  \
 Parameters.h  \
 Can.h  \
- CanOpen.h 
+ CanOpen.h  \
+WriteParameters.h 
