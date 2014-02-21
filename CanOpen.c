@@ -44,8 +44,10 @@ void CanOpenSendCurrentObjectState(long s1, long s2, int v, int a)
     char data3[8] = {0, 0, 0 ,0, 0, 0, 0 ,0};
     SendTPDO(3, nodeID, data3,2);
 }
-void CanOpenParseReceivedData(char *data)
+void CanOpenParseRSDO(unsigned int sid,char *data)
 {
+    if((sid&0x780)!=0x600)//if it's not rsdo
+        return;
     if(data[0] == 0x40)//read query
         SendDictionaryElement(data);
     else if((data[0]&0xF0) == 0x20) //set query

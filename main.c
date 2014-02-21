@@ -176,8 +176,9 @@ void __attribute__ ((__interrupt__, __auto_psv__)) _C1Interrupt (void){
         C1INTFbits.WAKIF = 0;
         return;
     }
+    unsigned int sid = C1RX0SIDbits.SID;
     Can1ReceiveData(rxData);
-    CanOpenParseReceivedData(rxData); //parse message and send response
+    CanOpenParseRSDO(sid,rxData); //parse message and send response
     C1RX0CONbits.RXFUL = 0;
   }
 

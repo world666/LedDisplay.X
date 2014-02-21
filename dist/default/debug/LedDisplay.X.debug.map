@@ -1,4 +1,4 @@
-Microchip Technology Inc, vHŒ9
+Microchip Technology Inc, vHŒr
 
 Tool Name:
   c:\program files (x86)\microchip\xc16\v1.20\bin\bin\..\bin/elf-ld.exe
@@ -26,10 +26,10 @@ Command:
   build/default/debug/Parameters.o \
   build/default/debug/Can.o \
   build/default/debug/CanOpen.o \
-  -TC:\Users\andrey\AppData\Local\Temp\tmp00001768.00 \
-  -TC:\Users\andrey\AppData\Local\Temp\tmp00001768.01 \
-  -TC:\Users\andrey\AppData\Local\Temp\tmp00001768.02 \
-  -TC:\Users\andrey\AppData\Local\Temp\tmp00001768.03 \
+  -TC:\Users\andrey\AppData\Local\Temp\tmp000023cc.00 \
+  -TC:\Users\andrey\AppData\Local\Temp\tmp000023cc.01 \
+  -TC:\Users\andrey\AppData\Local\Temp\tmp000023cc.02 \
+  -TC:\Users\andrey\AppData\Local\Temp\tmp000023cc.03 \
   --defsym=__MPLAB_BUILD=1 \
   --defsym=__MPLAB_DEBUG=1 \
   --defsym=__DEBUG=1 \
@@ -137,10 +137,10 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x100               0x6a8           0x9fc  (2556)
 .const                       0x7a8                0x48            0x6c  (108)
-.text                        0x7f0              0x25a4          0x3876  (14454)
-.dinit                      0x2d94                0x1e            0x2d  (45)
+.text                        0x7f0              0x25c4          0x38a6  (14502)
+.dinit                      0x2db4                0x1e            0x2d  (45)
 
-                     Total program memory used (bytes):         0x430b  (17163) 11%
+                     Total program memory used (bytes):         0x433b  (17211) 11%
 
 
 Data Memory  [Origin = 0x800, Length = 0x2000]
@@ -289,51 +289,51 @@ External Symbols in Program Memory (by address):
                   0x001956                  __T3Interrupt
                   0x0019b6                  __T4Interrupt
                   0x001a1e                  __C1Interrupt
-                  0x001a5a                  __LVDInterrupt
-                  0x001a88                  _SendTPDO
-                  0x001aae                  _SendTSDO
-                  0x001acc                  _CanOpenSendCurrentObjectState
-                  0x001b96                  _CanOpenParseReceivedData
-                  0x001bf6                  _EditDictionaryElement
-                  0x001c94                  _SendDictionaryElement
-                  0x001cf2                  _SendDeviceInformation
-                  0x001e46                  _SendValue
-                  0x001f66                  _SendParameterType
-                  0x001fc8                  _SendName
-                  0x002072                  _CanOpenEditName
-                  0x0020ce                  _CanOpenSendCodtDomainMsg
-                  0x002136                  _CanOpenGetCodtDomainMsg
-                  0x0021da                  _AddParameter
-                  0x00238a                  _DeleteParameter
-                  0x0023fe                  _ReadParameterValue
-                  0x00246a                  _ReadParameterName
-                  0x00251e                  _ReadParameterType
-                  0x00254a                  _EditParameterValue
-                  0x0025ea                  _EditParameterName
-                  0x002758                  _FindMaxIndex
-                  0x0027de                  _FindDescriptorAdrByIndex
-                  0x002860                  _WriteBootSector
-                  0x002886                  _ReadBootSector
-                  0x002896                  _Formatting
-                  0x0028f4                  _ReadNextFat
-                  0x00291a                  _WriteToFat
-                  0x00293e                  _FindFreeClusterNum
-                  0x00298a                  _AllocateClustersSequence
-                  0x0029d8                  _ClearClustersSequence
-                  0x002a08                  _FindFreeDescriptorAdr
-                  0x002a7c                  _WriteDescriptorByAddress
-                  0x002a96                  _ReadDescriptorByAddress
-                  0x002ab0                  _DescriptorsDefragmentation
-                  0x002b6e                  _WriteDataToCluster
-                  0x002ba0                  _ReadDataFromCluster
-                  0x002bd2                  _Can1Initialization
-                  0x002d50                  _Can1SendData
-                  0x002d82                  _Can1ReceiveData
+                  0x001a6a                  __LVDInterrupt
+                  0x001a98                  _SendTPDO
+                  0x001abe                  _SendTSDO
+                  0x001adc                  _CanOpenSendCurrentObjectState
+                  0x001ba6                  _CanOpenParseRSDO
+                  0x001c16                  _EditDictionaryElement
+                  0x001cb4                  _SendDictionaryElement
+                  0x001d12                  _SendDeviceInformation
+                  0x001e66                  _SendValue
+                  0x001f86                  _SendParameterType
+                  0x001fe8                  _SendName
+                  0x002092                  _CanOpenEditName
+                  0x0020ee                  _CanOpenSendCodtDomainMsg
+                  0x002156                  _CanOpenGetCodtDomainMsg
+                  0x0021fa                  _AddParameter
+                  0x0023aa                  _DeleteParameter
+                  0x00241e                  _ReadParameterValue
+                  0x00248a                  _ReadParameterName
+                  0x00253e                  _ReadParameterType
+                  0x00256a                  _EditParameterValue
+                  0x00260a                  _EditParameterName
+                  0x002778                  _FindMaxIndex
+                  0x0027fe                  _FindDescriptorAdrByIndex
+                  0x002880                  _WriteBootSector
+                  0x0028a6                  _ReadBootSector
+                  0x0028b6                  _Formatting
+                  0x002914                  _ReadNextFat
+                  0x00293a                  _WriteToFat
+                  0x00295e                  _FindFreeClusterNum
+                  0x0029aa                  _AllocateClustersSequence
+                  0x0029f8                  _ClearClustersSequence
+                  0x002a28                  _FindFreeDescriptorAdr
+                  0x002a9c                  _WriteDescriptorByAddress
+                  0x002ab6                  _ReadDescriptorByAddress
+                  0x002ad0                  _DescriptorsDefragmentation
+                  0x002b8e                  _WriteDataToCluster
+                  0x002bc0                  _ReadDataFromCluster
+                  0x002bf2                  _Can1Initialization
+                  0x002d70                  _Can1SendData
+                  0x002da2                  _Can1ReceiveData
 
 External Symbols in Program Memory (by name):
 
-                  0x0021da                  _AddParameter
-                  0x00298a                  _AllocateClustersSequence
+                  0x0021fa                  _AddParameter
+                  0x0029aa                  _AllocateClustersSequence
                   0x0009da                  _BusyUART2
                   0x0001c0                  _CAN1Initialize
                   0x0001c6                  _CAN1ReceiveMessage
@@ -343,35 +343,35 @@ External Symbols in Program Memory (by name):
                   0x0002d8                  _CAN1SetOperationMode
                   0x0002dc                  _CAN1SetRXMode
                   0x0002ec                  _CAN1SetTXMode
-                  0x002bd2                  _Can1Initialization
-                  0x002d82                  _Can1ReceiveData
-                  0x002d50                  _Can1SendData
-                  0x002072                  _CanOpenEditName
-                  0x002136                  _CanOpenGetCodtDomainMsg
-                  0x001b96                  _CanOpenParseReceivedData
-                  0x0020ce                  _CanOpenSendCodtDomainMsg
-                  0x001acc                  _CanOpenSendCurrentObjectState
-                  0x0029d8                  _ClearClustersSequence
+                  0x002bf2                  _Can1Initialization
+                  0x002da2                  _Can1ReceiveData
+                  0x002d70                  _Can1SendData
+                  0x002092                  _CanOpenEditName
+                  0x002156                  _CanOpenGetCodtDomainMsg
+                  0x001ba6                  _CanOpenParseRSDO
+                  0x0020ee                  _CanOpenSendCodtDomainMsg
+                  0x001adc                  _CanOpenSendCurrentObjectState
+                  0x0029f8                  _ClearClustersSequence
                   0x000302                  _ConfigIntCAN1
                   0x0010aa                  _ConfigurateSPI2
-                  0x00238a                  _DeleteParameter
-                  0x002ab0                  _DescriptorsDefragmentation
+                  0x0023aa                  _DeleteParameter
+                  0x002ad0                  _DescriptorsDefragmentation
                   0x000976                  _DigitalInputsToString
                   0x000e0e                  _DisplayInitialization
                   0x000ee2                  _DisplayView
-                  0x001bf6                  _EditDictionaryElement
-                  0x0025ea                  _EditParameterName
-                  0x00254a                  _EditParameterValue
+                  0x001c16                  _EditDictionaryElement
+                  0x00260a                  _EditParameterName
+                  0x00256a                  _EditParameterValue
                   0x000bc2                  _EncCountV
                   0x000c20                  _EncGetDistanceLong
                   0x000be0                  _EncGetDistanceStr
                   0x000c54                  _EncGetV
                   0x000aec                  _EncoderScan
-                  0x0027de                  _FindDescriptorAdrByIndex
-                  0x00293e                  _FindFreeClusterNum
-                  0x002a08                  _FindFreeDescriptorAdr
-                  0x002758                  _FindMaxIndex
-                  0x002896                  _Formatting
+                  0x0027fe                  _FindDescriptorAdrByIndex
+                  0x00295e                  _FindFreeClusterNum
+                  0x002a28                  _FindFreeDescriptorAdr
+                  0x002778                  _FindMaxIndex
+                  0x0028b6                  _Formatting
                   0x001540                  _FramInitialization
                   0x0015a6                  _FramRead
                   0x00160c                  _FramReadPositionCounter
@@ -385,14 +385,14 @@ External Symbols in Program Memory (by name):
                   0x0009bc                  _OpenUART2
                   0x000a28                  _PrintDigitUART2
                   0x000a0c                  _PrintStringUART2
-                  0x002886                  _ReadBootSector
-                  0x002ba0                  _ReadDataFromCluster
-                  0x002a96                  _ReadDescriptorByAddress
+                  0x0028a6                  _ReadBootSector
+                  0x002bc0                  _ReadDataFromCluster
+                  0x002ab6                  _ReadDescriptorByAddress
                   0x000936                  _ReadDigitalInputs
-                  0x0028f4                  _ReadNextFat
-                  0x00246a                  _ReadParameterName
-                  0x00251e                  _ReadParameterType
-                  0x0023fe                  _ReadParameterValue
+                  0x002914                  _ReadNextFat
+                  0x00248a                  _ReadParameterName
+                  0x00253e                  _ReadParameterType
+                  0x00241e                  _ReadParameterValue
                   0x001194                  _RtcInitialization
                   0x0011c0                  _RtcRead
                   0x001272                  _RtcReadDayOfWeek
@@ -404,26 +404,26 @@ External Symbols in Program Memory (by name):
                   0x0012e4                  _RtcReadYear
                   0x001146                  _RtcSetTime
                   0x001310                  _RtcWriteDateInString
-                  0x001cf2                  _SendDeviceInformation
-                  0x001c94                  _SendDictionaryElement
-                  0x001fc8                  _SendName
-                  0x001f66                  _SendParameterType
-                  0x001a88                  _SendTPDO
-                  0x001aae                  _SendTSDO
-                  0x001e46                  _SendValue
+                  0x001d12                  _SendDeviceInformation
+                  0x001cb4                  _SendDictionaryElement
+                  0x001fe8                  _SendName
+                  0x001f86                  _SendParameterType
+                  0x001a98                  _SendTPDO
+                  0x001abe                  _SendTSDO
+                  0x001e66                  _SendValue
                   0x000a54                  _StartTimer1
                   0x000a7a                  _StartTimer2
                   0x000aa0                  _StartTimer3
                   0x000ac6                  _StartTimer4
                   0x001624                  _WriteAllParameters
-                  0x002860                  _WriteBootSector
+                  0x002880                  _WriteBootSector
                   0x0009f4                  _WriteCharToUART2
-                  0x002b6e                  _WriteDataToCluster
-                  0x002a7c                  _WriteDescriptorByAddress
-                  0x00291a                  _WriteToFat
+                  0x002b8e                  _WriteDataToCluster
+                  0x002a9c                  _WriteDescriptorByAddress
+                  0x00293a                  _WriteToFat
                   0x001a1e                  __C1Interrupt
                   0x0001bc                  __DefaultInterrupt
-                  0x001a5a                  __LVDInterrupt
+                  0x001a6a                  __LVDInterrupt
                   0x001832                  __T1Interrupt
                   0x001930                  __T2Interrupt
                   0x001956                  __T3Interrupt
@@ -706,13 +706,13 @@ userdata
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x59c7
+.debug_info       0x000000       0x5b70
  *(.debug_info)
- .debug_info      0x000000       0x3b3e build/default/debug/main.o
- .debug_info      0x003b3e        0x85a build/default/debug/Fat.o
- .debug_info      0x004398        0x8cc build/default/debug/Parameters.o
- .debug_info      0x004c64        0x372 build/default/debug/Can.o
- .debug_info      0x004fd6        0x9f1 build/default/debug/CanOpen.o
+ .debug_info      0x000000       0x3cce build/default/debug/main.o
+ .debug_info      0x003cce        0x85a build/default/debug/Fat.o
+ .debug_info      0x004528        0x8cc build/default/debug/Parameters.o
+ .debug_info      0x004df4        0x372 build/default/debug/Can.o
+ .debug_info      0x005166        0xa0a build/default/debug/CanOpen.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0x7d4
@@ -723,13 +723,13 @@ userdata
  .debug_abbrev    0x000538         0xd0 build/default/debug/Can.o
  .debug_abbrev    0x000608        0x1cc build/default/debug/CanOpen.o
 
-.debug_line       0x000000       0x2bfe
+.debug_line       0x000000       0x2c1e
  *(.debug_line)
- .debug_line      0x000000       0x1665 build/default/debug/main.o
- .debug_line      0x001665        0x4e4 build/default/debug/Fat.o
- .debug_line      0x001b49        0x696 build/default/debug/Parameters.o
- .debug_line      0x0021df        0x17f build/default/debug/Can.o
- .debug_line      0x00235e        0x8a0 build/default/debug/CanOpen.o
+ .debug_line      0x000000       0x166d build/default/debug/main.o
+ .debug_line      0x00166d        0x4e4 build/default/debug/Fat.o
+ .debug_line      0x001b51        0x696 build/default/debug/Parameters.o
+ .debug_line      0x0021e7        0x17f build/default/debug/Can.o
+ .debug_line      0x002366        0x8b8 build/default/debug/CanOpen.o
 
 .debug_frame      0x000000        0x624
  *(.debug_frame)
@@ -739,13 +739,13 @@ userdata
  .debug_frame     0x0004fc         0x44 build/default/debug/Can.o
  .debug_frame     0x000540         0xe4 build/default/debug/CanOpen.o
 
-.debug_str        0x000000        0x4f1
+.debug_str        0x000000        0x4fe
  *(.debug_str)
- .debug_str       0x000000        0x1cc build/default/debug/main.o
- .debug_str       0x0001cc         0x6b build/default/debug/Fat.o
- .debug_str       0x000237         0xfc build/default/debug/Parameters.o
- .debug_str       0x000333          0xb build/default/debug/Can.o
- .debug_str       0x00033e        0x1b3 build/default/debug/CanOpen.o
+ .debug_str       0x000000        0x1d9 build/default/debug/main.o
+ .debug_str       0x0001d9         0x6b build/default/debug/Fat.o
+ .debug_str       0x000244         0xfc build/default/debug/Parameters.o
+ .debug_str       0x000340          0xb build/default/debug/Can.o
+ .debug_str       0x00034b        0x1b3 build/default/debug/CanOpen.o
 
 .debug_loc
  *(.debug_loc)
@@ -754,7 +754,7 @@ userdata
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0x836
+                  0x000000        0x82e
  *(.debug_pubnames)
  .debug_pubnames
                   0x000000        0x405 build/default/debug/main.o
@@ -765,7 +765,7 @@ userdata
  .debug_pubnames
                   0x000630         0x4e build/default/debug/Can.o
  .debug_pubnames
-                  0x00067e        0x1b8 build/default/debug/CanOpen.o
+                  0x00067e        0x1b0 build/default/debug/CanOpen.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -834,7 +834,7 @@ userdata
                   0x000062          0x4 LONG 0x1bc DEFINED (__PWMInterrupt)?ABSOLUTE (__PWMInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000064          0x4 LONG 0x1bc DEFINED (__QEIInterrupt)?ABSOLUTE (__QEIInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000066          0x4 LONG 0x1bc DEFINED (__DCIInterrupt)?ABSOLUTE (__DCIInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000068          0x4 LONG 0x1a5a DEFINED (__LVDInterrupt)?ABSOLUTE (__LVDInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000068          0x4 LONG 0x1a6a DEFINED (__LVDInterrupt)?ABSOLUTE (__LVDInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00006a          0x4 LONG 0x1bc DEFINED (__FLTAInterrupt)?ABSOLUTE (__FLTAInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00006c          0x4 LONG 0x1bc DEFINED (__FLTBInterrupt)?ABSOLUTE (__FLTBInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00006e          0x4 LONG 0x1bc DEFINED (__Interrupt45)?ABSOLUTE (__Interrupt45):ABSOLUTE (__DefaultInterrupt)
@@ -898,7 +898,7 @@ userdata
                   0x0000e2          0x4 LONG 0x1bc DEFINED (__AltPWMInterrupt)?ABSOLUTE (__AltPWMInterrupt):DEFINED (__PWMInterrupt)?ABSOLUTE (__PWMInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000e4          0x4 LONG 0x1bc DEFINED (__AltQEIInterrupt)?ABSOLUTE (__AltQEIInterrupt):DEFINED (__QEIInterrupt)?ABSOLUTE (__QEIInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000e6          0x4 LONG 0x1bc DEFINED (__AltDCIInterrupt)?ABSOLUTE (__AltDCIInterrupt):DEFINED (__DCIInterrupt)?ABSOLUTE (__DCIInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000e8          0x4 LONG 0x1a5a DEFINED (__AltLVDInterrupt)?ABSOLUTE (__AltLVDInterrupt):DEFINED (__LVDInterrupt)?ABSOLUTE (__LVDInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000e8          0x4 LONG 0x1a6a DEFINED (__AltLVDInterrupt)?ABSOLUTE (__AltLVDInterrupt):DEFINED (__LVDInterrupt)?ABSOLUTE (__LVDInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000ea          0x4 LONG 0x1bc DEFINED (__AltFLTAInterrupt)?ABSOLUTE (__AltFLTAInterrupt):DEFINED (__FLTAInterrupt)?ABSOLUTE (__FLTAInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000ec          0x4 LONG 0x1bc DEFINED (__AltFLTBInterrupt)?ABSOLUTE (__AltFLTBInterrupt):DEFINED (__FLTBInterrupt)?ABSOLUTE (__FLTBInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000ee          0x4 LONG 0x1bc DEFINED (__AltInterrupt45)?ABSOLUTE (__AltInterrupt45):DEFINED (__Interrupt45)?ABSOLUTE (__Interrupt45):ABSOLUTE (__DefaultInterrupt)
@@ -1920,102 +1920,102 @@ LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x000078        0x512
+                  0x000078        0x537
  .debug_pubtypes
-                  0x000078        0x3f9 build/default/debug/main.o
+                  0x000078        0x41e build/default/debug/main.o
  .debug_pubtypes
-                  0x000471         0x24 build/default/debug/Fat.o
+                  0x000496         0x24 build/default/debug/Fat.o
  .debug_pubtypes
-                  0x000495         0x84 build/default/debug/Parameters.o
+                  0x0004ba         0x84 build/default/debug/Parameters.o
  .debug_pubtypes
-                  0x000519         0x33 build/default/debug/Can.o
+                  0x00053e         0x33 build/default/debug/Can.o
  .debug_pubtypes
-                  0x00054c         0x3e build/default/debug/CanOpen.o
+                  0x000571         0x3e build/default/debug/CanOpen.o
 
 __c30_signature
-                  0x00058a         0xf6
+                  0x0005b0         0xf6
  __c30_signature
-                  0x00058a          0x6 build/default/debug/main.o
+                  0x0005b0          0x6 build/default/debug/main.o
  __c30_signature
-                  0x000590          0x6 build/default/debug/Fat.o
+                  0x0005b6          0x6 build/default/debug/Fat.o
  __c30_signature
-                  0x000596          0x6 build/default/debug/Parameters.o
+                  0x0005bc          0x6 build/default/debug/Parameters.o
  __c30_signature
-                  0x00059c          0x6 build/default/debug/Can.o
+                  0x0005c2          0x6 build/default/debug/Can.o
  __c30_signature
-                  0x0005a2          0x6 build/default/debug/CanOpen.o
+                  0x0005c8          0x6 build/default/debug/CanOpen.o
  __c30_signature
-                  0x0005a8          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1Initialize.o)
+                  0x0005ce          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1Initialize.o)
  __c30_signature
-                  0x0005ae          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1ReceiveMessage.o)
+                  0x0005d4          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1ReceiveMessage.o)
  __c30_signature
-                  0x0005b4          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SendMessage.o)
+                  0x0005da          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SendMessage.o)
  __c30_signature
-                  0x0005ba          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetFilter.o)
+                  0x0005e0          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetFilter.o)
  __c30_signature
-                  0x0005c0          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetMask.o)
+                  0x0005e6          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetMask.o)
  __c30_signature
-                  0x0005c6          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetOperationMode.o)
+                  0x0005ec          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetOperationMode.o)
  __c30_signature
-                  0x0005cc          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetRXMode.o)
+                  0x0005f2          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetRXMode.o)
  __c30_signature
-                  0x0005d2          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetTXMode.o)
+                  0x0005f8          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetTXMode.o)
  __c30_signature
-                  0x0005d8          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(ConfigIntCAN1.o)
+                  0x0005fe          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(ConfigIntCAN1.o)
  __c30_signature
-                  0x0005de          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(OpenSPI2.o)
+                  0x000604          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(OpenSPI2.o)
  __c30_signature
-                  0x0005e4          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
+                  0x00060a          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
  __c30_signature
-                  0x0005ea          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
+                  0x000610          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
  __c30_signature
-                  0x0005f0          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(ceilf.eo)
+                  0x000616          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(ceilf.eo)
  __c30_signature
-                  0x0005f6          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(divsf3.eo)
+                  0x00061c          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(divsf3.eo)
  __c30_signature
-                  0x0005fc          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(divsi3.eo)
+                  0x000622          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(divsi3.eo)
  __c30_signature
-                  0x000602          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fchop.eo)
+                  0x000628          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fchop.eo)
  __c30_signature
-                  0x000608          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(feqltle.eo)
+                  0x00062e          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(feqltle.eo)
  __c30_signature
-                  0x00060e          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fixsfsi.eo)
+                  0x000634          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fixsfsi.eo)
  __c30_signature
-                  0x000614          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fixunssfsi.eo)
+                  0x00063a          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fixunssfsi.eo)
  __c30_signature
-                  0x00061a          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatsisf.eo)
+                  0x000640          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatsisf.eo)
  __c30_signature
-                  0x000620          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatunsisf.eo)
+                  0x000646          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatunsisf.eo)
  __c30_signature
-                  0x000626          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fpack.eo)
+                  0x00064c          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fpack.eo)
  __c30_signature
-                  0x00062c          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(funpack.eo)
+                  0x000652          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(funpack.eo)
  __c30_signature
-                  0x000632          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(funpack2.eo)
+                  0x000658          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(funpack2.eo)
  __c30_signature
-                  0x000638          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(futil.eo)
+                  0x00065e          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(futil.eo)
  __c30_signature
-                  0x00063e          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(modsi3.eo)
+                  0x000664          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(modsi3.eo)
  __c30_signature
-                  0x000644          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(mulsf3.eo)
+                  0x00066a          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(mulsf3.eo)
  __c30_signature
-                  0x00064a          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
+                  0x000670          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
  __c30_signature
-                  0x000650          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(umodsi3.eo)
+                  0x000676          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(umodsi3.eo)
  __c30_signature
-                  0x000656          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(addsf3.eo)
+                  0x00067c          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(addsf3.eo)
  __c30_signature
-                  0x00065c          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fcompare.eo)
+                  0x000682          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fcompare.eo)
  __c30_signature
-                  0x000662          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatdisf.eo)
+                  0x000688          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatdisf.eo)
  __c30_signature
-                  0x000668          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatundisf.eo)
+                  0x00068e          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatundisf.eo)
  __c30_signature
-                  0x00066e          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(memcpy.eo)
+                  0x000694          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(memcpy.eo)
  __c30_signature
-                  0x000674          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(strcat.eo)
+                  0x00069a          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(strcat.eo)
  __c30_signature
-                  0x00067a          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(strlen.eo)
+                  0x0006a0          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(strlen.eo)
 
 .nbss               0x0850         0xce
  .nbss              0x0850         0xce build/default/debug/CanOpen.o
@@ -2059,8 +2059,8 @@ __c30_signature
 .const              0x87a8         0x48 load address 0x0007a8  
  .const             0x87a8         0x48 build/default/debug/main.o
 
-.text             0x0007f0       0x25a4
- .text            0x0007f0       0x1298 build/default/debug/main.o
+.text             0x0007f0       0x25c4
+ .text            0x0007f0       0x12a8 build/default/debug/main.o
                   0x0007f0                  _LVDinitialization
                   0x000820                  _delay
                   0x000848                  _LongToString
@@ -2113,50 +2113,50 @@ __c30_signature
                   0x001956                  __T3Interrupt
                   0x0019b6                  __T4Interrupt
                   0x001a1e                  __C1Interrupt
-                  0x001a5a                  __LVDInterrupt
- .text            0x001a88        0x752 build/default/debug/CanOpen.o
-                  0x001a88                  _SendTPDO
-                  0x001aae                  _SendTSDO
-                  0x001acc                  _CanOpenSendCurrentObjectState
-                  0x001b96                  _CanOpenParseReceivedData
-                  0x001bf6                  _EditDictionaryElement
-                  0x001c94                  _SendDictionaryElement
-                  0x001cf2                  _SendDeviceInformation
-                  0x001e46                  _SendValue
-                  0x001f66                  _SendParameterType
-                  0x001fc8                  _SendName
-                  0x002072                  _CanOpenEditName
-                  0x0020ce                  _CanOpenSendCodtDomainMsg
-                  0x002136                  _CanOpenGetCodtDomainMsg
- .text            0x0021da        0x686 build/default/debug/Parameters.o
-                  0x0021da                  _AddParameter
-                  0x00238a                  _DeleteParameter
-                  0x0023fe                  _ReadParameterValue
-                  0x00246a                  _ReadParameterName
-                  0x00251e                  _ReadParameterType
-                  0x00254a                  _EditParameterValue
-                  0x0025ea                  _EditParameterName
-                  0x002758                  _FindMaxIndex
-                  0x0027de                  _FindDescriptorAdrByIndex
- .text            0x002860        0x372 build/default/debug/Fat.o
-                  0x002860                  _WriteBootSector
-                  0x002886                  _ReadBootSector
-                  0x002896                  _Formatting
-                  0x0028f4                  _ReadNextFat
-                  0x00291a                  _WriteToFat
-                  0x00293e                  _FindFreeClusterNum
-                  0x00298a                  _AllocateClustersSequence
-                  0x0029d8                  _ClearClustersSequence
-                  0x002a08                  _FindFreeDescriptorAdr
-                  0x002a7c                  _WriteDescriptorByAddress
-                  0x002a96                  _ReadDescriptorByAddress
-                  0x002ab0                  _DescriptorsDefragmentation
-                  0x002b6e                  _WriteDataToCluster
-                  0x002ba0                  _ReadDataFromCluster
- .text            0x002bd2        0x1c2 build/default/debug/Can.o
-                  0x002bd2                  _Can1Initialization
-                  0x002d50                  _Can1SendData
-                  0x002d82                  _Can1ReceiveData
+                  0x001a6a                  __LVDInterrupt
+ .text            0x001a98        0x762 build/default/debug/CanOpen.o
+                  0x001a98                  _SendTPDO
+                  0x001abe                  _SendTSDO
+                  0x001adc                  _CanOpenSendCurrentObjectState
+                  0x001ba6                  _CanOpenParseRSDO
+                  0x001c16                  _EditDictionaryElement
+                  0x001cb4                  _SendDictionaryElement
+                  0x001d12                  _SendDeviceInformation
+                  0x001e66                  _SendValue
+                  0x001f86                  _SendParameterType
+                  0x001fe8                  _SendName
+                  0x002092                  _CanOpenEditName
+                  0x0020ee                  _CanOpenSendCodtDomainMsg
+                  0x002156                  _CanOpenGetCodtDomainMsg
+ .text            0x0021fa        0x686 build/default/debug/Parameters.o
+                  0x0021fa                  _AddParameter
+                  0x0023aa                  _DeleteParameter
+                  0x00241e                  _ReadParameterValue
+                  0x00248a                  _ReadParameterName
+                  0x00253e                  _ReadParameterType
+                  0x00256a                  _EditParameterValue
+                  0x00260a                  _EditParameterName
+                  0x002778                  _FindMaxIndex
+                  0x0027fe                  _FindDescriptorAdrByIndex
+ .text            0x002880        0x372 build/default/debug/Fat.o
+                  0x002880                  _WriteBootSector
+                  0x0028a6                  _ReadBootSector
+                  0x0028b6                  _Formatting
+                  0x002914                  _ReadNextFat
+                  0x00293a                  _WriteToFat
+                  0x00295e                  _FindFreeClusterNum
+                  0x0029aa                  _AllocateClustersSequence
+                  0x0029f8                  _ClearClustersSequence
+                  0x002a28                  _FindFreeDescriptorAdr
+                  0x002a9c                  _WriteDescriptorByAddress
+                  0x002ab6                  _ReadDescriptorByAddress
+                  0x002ad0                  _DescriptorsDefragmentation
+                  0x002b8e                  _WriteDataToCluster
+                  0x002bc0                  _ReadDataFromCluster
+ .text            0x002bf2        0x1c2 build/default/debug/Can.o
+                  0x002bf2                  _Can1Initialization
+                  0x002d70                  _Can1SendData
+                  0x002da2                  _Can1ReceiveData
 
-.dinit            0x002d94         0x1e
- .dinit           0x002d94         0x1e data_init
+.dinit            0x002db4         0x1e
+ .dinit           0x002db4         0x1e data_init
