@@ -1,6 +1,6 @@
 build/default/debug/main.o:  \
 main.c  \
-Configuration.h  \
+globals.h  \
 LowVoltageDetect.h  \
  MainLibrary.h  \
 DigitalInputs.h  \
@@ -11,8 +11,4 @@ Display.h  \
 Spi.h  \
  RealTimer.h  \
 FRAM.h  \
-Fat.h  \
-Parameters.h  \
-Can.h  \
-CanOpen.h  \
-WriteParameters.h 
+Synchronization.h 

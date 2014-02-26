@@ -67,7 +67,7 @@ void EncCountV()
 char EncGetDistanceStr(char *str)
 {
     long marks = (EncPositionCounter>>2);
-    long distance = marks*DISTANCE_PER_MARKS;//travel distance
+    long distance = marks*_distancePerMarks;//travel distance
     char offset = LongToString(distance,str);//view distance
     return offset;
 }
@@ -79,14 +79,21 @@ char EncGetDistanceStr(char *str)
  */
 long EncGetDistanceLong()
 {
-    long marks = (EncPositionCounter>>2);
-    long distance = marks*DISTANCE_PER_MARKS;//travel distance
+    long marks = (EncPositionCounter>>2); 
+    long distance = marks*_distancePerMarks;//travel distance
     return distance;
+}
+
+long EncDistanceToCounter(long distance)
+{
+    long counter = distance/_distancePerMarks;
+    counter<<=2;
+    return counter;
 }
 
 int EncGetV()
 {
     int speed = Vvalue>>2;
-    speed*=DISTANCE_PER_MARKS;
+    speed*=_distancePerMarks;
     return speed/0.1;
 }

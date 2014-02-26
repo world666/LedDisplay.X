@@ -1,5 +1,4 @@
 //#include <can.h>
-
 //unsigned int Speed;
 //int ReadADC(unsigned int channel);
 

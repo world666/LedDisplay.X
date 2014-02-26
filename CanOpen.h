@@ -39,7 +39,8 @@ void SendTSDO(unsigned char, char* , unsigned char);
  * @param long - s2
  * @param int - speed(v)
  * @param int - a
+ * @param char - input signals
  * @todo send current object state using tpdo over can bus
  */
-void CanOpenSendCurrentObjectState(long, long, int, int);
+void CanOpenSendCurrentObjectState(long, long, int, int, char);
 

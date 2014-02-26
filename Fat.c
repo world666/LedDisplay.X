@@ -8,11 +8,11 @@ void WriteBootSector()
     boot.DataSectorSize = 3048;
     boot.ClusterSize = 4;
     boot.DescriptorSize = 9;
-    FramWrite(0,&boot, sizeof(Boot));
+    FramWrite(0,&boot, boot.BootSectorSize);
 }
 void ReadBootSector(Boot* boot)
 {
-     FramRead(0, boot, sizeof(Boot));
+     FramRead(0, boot, 16);
 }
 void Formatting()
 {
@@ -29,7 +29,7 @@ void Formatting()
     adr = boot.BootSectorSize + boot.FatSectorSize;
     for(adr; adr < boot.BootSectorSize + boot.FatSectorSize + boot.DescriptorSectorSize; adr += boot.DescriptorSize)
     {
-        FramWrite(adr,&zero, sizeof(char));
+        FramWrite(adr,&zero, 1);
     }
 }
 unsigned int ReadNextFat(unsigned int currentFat)
@@ -38,7 +38,7 @@ unsigned int ReadNextFat(unsigned int currentFat)
     ReadBootSector(&boot);
     unsigned int nextFat;
     unsigned int address = boot.BootSectorSize + currentFat*2 + 2;
-    FramRead(address, &nextFat, sizeof(unsigned int));
+    FramRead(address, &nextFat, 2);
     return nextFat;
 }
 void WriteToFat(unsigned int clusterNum, unsigned int data)
@@ -46,7 +46,7 @@ void WriteToFat(unsigned int clusterNum, unsigned int data)
     Boot boot;
     ReadBootSector(&boot);
     unsigned int address = boot.BootSectorSize + clusterNum*2 + 2;
-    FramWrite(address,&data, sizeof(int));
+    FramWrite(address,&data, 2);
 }
 unsigned int FindFreeClusterNum()
 {
@@ -57,7 +57,7 @@ unsigned int FindFreeClusterNum()
     int adr = boot.BootSectorSize + 2;
     for(adr; adr < boot.BootSectorSize + boot.FatSectorSize; adr += 2)
     {
-        FramRead(adr, &clusterMeaning, sizeof(unsigned int));
+        FramRead(adr, &clusterMeaning, 2);
         if(clusterMeaning == 0)
         {
             freeClusterNum = (adr - boot.BootSectorSize)>>1;
@@ -149,7 +149,7 @@ unsigned char DescriptorsDefragmentation()
     char  bufDescriptor[9];// 9 - descriptor size
     for(adr; adr < boot.BootSectorSize + boot.FatSectorSize + boot.DescriptorSectorSize; adr += boot.DescriptorSize)
     {
-        FramRead(adr, &descriptorFirstByte, sizeof(char));
+        FramRead(adr, &descriptorFirstByte, 1);
         if(descriptorFirstByte == 0 && freeDescriptorAdr == 0xFFFF)
         {
             freeDescriptorAdr = adr;
@@ -168,7 +168,7 @@ unsigned char DescriptorsDefragmentation()
         if(bufDescriptor[0] == 0)
             return 1;
         WriteDescriptorByAddress(freeDescriptorAdr, bufDescriptor);
-        FramWrite(busyDescriptorAdr, &zero, sizeof(char)); // 0
+        FramWrite(busyDescriptorAdr, &zero, 1); // 0
         busyDescriptorAdr += boot.DescriptorSize;
         freeDescriptorAdr += boot.DescriptorSize;
     }

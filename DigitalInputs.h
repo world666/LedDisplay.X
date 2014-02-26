@@ -24,16 +24,26 @@ char ReadDigitalInputs()
     LATDbits.LATD1 = 0; //clr OE (D16 save data)
     delay(25);
     int raData = PORTB;
+    LATDbits.LATD1 = 1; //set OE
+    return (raData>>8);
+}
+void WriteDigitalOutputs(char data)
+{
+    data = ~data;
+    TRISDbits.TRISD1 = 0;//output OE
+    TRISDbits.TRISD2 = 0;//output LE
+    //write output digit (RB8-RB15)
+    TRISB |= 0xFF00;//input
 
-
-    LATDbits.LATD1 = 1;
+    LATDbits.LATD2 = 0; //clr LE
+    LATDbits.LATD1 = 1; //set OE
     TRISB &= 0x00FF;//output
-    PORTB = raData;
+    PORTB = data<<8;
     LATDbits.LATD2 = 1;//set LE (D17 save data)
     delay(25);
-    return ~(raData>>8);
+    LATDbits.LATD2 = 0;//set LE (D17 save data)
+    delay(25);
 }
-
 /**
  * @author Kyrylov Andrii
  * @param str - pointer to output string

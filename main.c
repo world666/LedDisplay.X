@@ -11,8 +11,7 @@
 #include <xc.h>
 
 
-
-#include "Configuration.h"
+#include "globals.h"
 #include "LowVoltageDetect.h"
 #include "MainLibrary.h"
 #include "DigitalInputs.h"
@@ -23,11 +22,7 @@
 #include "Spi.h"
 #include "RealTimer.h"
 #include "FRAM.h"
-#include "Fat.h"
-#include "Parameters.h"
-#include "Can.h"
-#include "CanOpen.h"
-#include "WriteParameters.h"
+#include "Synchronization.h"
 
 // FOSC
 #pragma config FOSFPR = XT_PLL16             // Oscillator (XT)
@@ -83,18 +78,22 @@ int main(int argc, char** argv) {
     RtcInitialization(); //realtime counter init
     //RtcSetTime();
     FramInitialization(); //fram init
-    //ReadParameterValue(ENCODER_COUNTER,&EncPositionCounter); //read position counter id = 0x2000
-    //LVDinitialization(); //voltage detect interrupt
+    //read config
+    WriteAllParameters();
+    ReadParameterValue(ENCODER_COUNTER,&EncPositionCounter); //read position counter id = 0x2000
+
+    ReadConfig();
+    
+    LVDinitialization(); //voltage detect interrupt
+
+    WriteDigitalOutputs(0x3);
     //OpenUART2();
-    //StartTimer1();
-    //StartTimer2();
-    //StartTimer3();
-    //StartTimer4();
+    StartTimer1();
+    StartTimer2();
+    StartTimer3();
+    StartTimer4();
     DisplayView("start"); //lcd display write
     Can1Initialization();
-
-
-    WriteAllParameters();
     
     while(1);
     return (EXIT_SUCCESS);
@@ -109,7 +108,11 @@ void __attribute__((__interrupt__, __auto_psv__)) _T1Interrupt(void)
     LATCbits.LATC13 = 1 - LATCbits.LATC13;
 
     char signals = ReadDigitalInputs();
-    
+
+    //sync encoder counter
+    TrySynchronization(signals);
+    //over rise zone control
+    OverRiseZoneControl(EncGetDistanceLong());
     // write to uart encoder counter
     char str[60]="";
     char sDistance[12];
@@ -124,7 +127,7 @@ void __attribute__((__interrupt__, __auto_psv__)) _T1Interrupt(void)
     while(strlen(str)<48)
       strcat(str," ");
 
-    DigitalInputsToString(sSignals,signals);//8 analog signals
+    DigitalInputsToString(sSignals,~signals);//8 analog signals
     strcat(str,sSignals);
     while(strlen(str)<64)
       strcat(str," ");
@@ -158,18 +161,21 @@ void __attribute__((__interrupt__, __auto_psv__)) _T4Interrupt(void)
     // Clear Timer 4 interrupt flag
     // Write to can bus
     _T4IF = 0;
-
+    delay(5000);
     int speed = EncGetV();
     long lDistance = EncGetDistanceLong();
-    long highEdge = HIGH_EDGE;
-    long lowEdge = LOW_EDGE;
+    long highEdge = _highEdge;
+    long lowEdge = _lowEdge;
     long rDistance = lowEdge + highEdge - lDistance;
-
-    CanOpenSendCurrentObjectState(rDistance,lDistance,speed,0);
+    int a = 0;
+    char inputSignals = ReadDigitalInputs();
+    //while(C1TX0CONbits.TXFUL);
+    CanOpenSendCurrentObjectState(rDistance,lDistance,speed,a,inputSignals);
 }
 void __attribute__ ((__interrupt__, __auto_psv__)) _C1Interrupt (void){
     IFS1bits.C1IF = 0; //Clear CAN1 interrupt flag
     C1INTFbits.RX0IF = 0; //Clear CAN1 RX interrupt flag
+    C1INTFbits.RX1IF = 0; //Clear CAN1 RX interrupt flag
     char rxData[8];
     if(C1CTRLbits.ICODE == 7) //check filters
     {
@@ -180,6 +186,8 @@ void __attribute__ ((__interrupt__, __auto_psv__)) _C1Interrupt (void){
     Can1ReceiveData(rxData);
     CanOpenParseRSDO(sid,rxData); //parse message and send response
     C1RX0CONbits.RXFUL = 0;
+    C1RX1CONbits.RXFUL = 0;
+    //delay(10000);
   }
 
 void __attribute__((__interrupt__, __auto_psv__)) _LVDInterrupt(void) //low voltage detcetion
@@ -187,5 +195,5 @@ void __attribute__((__interrupt__, __auto_psv__)) _LVDInterrupt(void) //low volt
 {
     _LVDIF = 0; //clear interrupt flag
     //fram write position counter
-    FramWrite(5140,&EncPositionCounter,4); //adr=0 : data sector
+    FramWrite(5168,&EncPositionCounter,4); //adr=0 : data sector
 }

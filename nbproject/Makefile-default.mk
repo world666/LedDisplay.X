@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c Fat.c Parameters.c Can.c CanOpen.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c Fat.c Parameters.c Can.c CanOpen.c WriteParameters.c OverRiseZone.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/Fat.o ${OBJECTDIR}/Parameters.o ${OBJECTDIR}/Can.o ${OBJECTDIR}/CanOpen.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/Fat.o.d ${OBJECTDIR}/Parameters.o.d ${OBJECTDIR}/Can.o.d ${OBJECTDIR}/CanOpen.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/Fat.o ${OBJECTDIR}/Parameters.o ${OBJECTDIR}/Can.o ${OBJECTDIR}/CanOpen.o ${OBJECTDIR}/WriteParameters.o ${OBJECTDIR}/OverRiseZone.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/Fat.o.d ${OBJECTDIR}/Parameters.o.d ${OBJECTDIR}/Can.o.d ${OBJECTDIR}/CanOpen.o.d ${OBJECTDIR}/WriteParameters.o.d ${OBJECTDIR}/OverRiseZone.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/Fat.o ${OBJECTDIR}/Parameters.o ${OBJECTDIR}/Can.o ${OBJECTDIR}/CanOpen.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/Fat.o ${OBJECTDIR}/Parameters.o ${OBJECTDIR}/Can.o ${OBJECTDIR}/CanOpen.o ${OBJECTDIR}/WriteParameters.o ${OBJECTDIR}/OverRiseZone.o
 
 # Source Files
-SOURCEFILES=main.c Fat.c Parameters.c Can.c CanOpen.c
+SOURCEFILES=main.c Fat.c Parameters.c Can.c CanOpen.c WriteParameters.c OverRiseZone.c
 
 
 CFLAGS=
@@ -114,6 +114,20 @@ ${OBJECTDIR}/CanOpen.o: CanOpen.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE)  CanOpen.c  -o ${OBJECTDIR}/CanOpen.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/CanOpen.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/CanOpen.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
+${OBJECTDIR}/WriteParameters.o: WriteParameters.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR} 
+	@${RM} ${OBJECTDIR}/WriteParameters.o.d 
+	@${RM} ${OBJECTDIR}/WriteParameters.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  WriteParameters.c  -o ${OBJECTDIR}/WriteParameters.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/WriteParameters.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/WriteParameters.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/OverRiseZone.o: OverRiseZone.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR} 
+	@${RM} ${OBJECTDIR}/OverRiseZone.o.d 
+	@${RM} ${OBJECTDIR}/OverRiseZone.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  OverRiseZone.c  -o ${OBJECTDIR}/OverRiseZone.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/OverRiseZone.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/OverRiseZone.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
 else
 ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR} 
@@ -149,6 +163,20 @@ ${OBJECTDIR}/CanOpen.o: CanOpen.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/CanOpen.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  CanOpen.c  -o ${OBJECTDIR}/CanOpen.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/CanOpen.o.d"      -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/CanOpen.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/WriteParameters.o: WriteParameters.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR} 
+	@${RM} ${OBJECTDIR}/WriteParameters.o.d 
+	@${RM} ${OBJECTDIR}/WriteParameters.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  WriteParameters.c  -o ${OBJECTDIR}/WriteParameters.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/WriteParameters.o.d"      -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/WriteParameters.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/OverRiseZone.o: OverRiseZone.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR} 
+	@${RM} ${OBJECTDIR}/OverRiseZone.o.d 
+	@${RM} ${OBJECTDIR}/OverRiseZone.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  OverRiseZone.c  -o ${OBJECTDIR}/OverRiseZone.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/OverRiseZone.o.d"      -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/OverRiseZone.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 endif
 
