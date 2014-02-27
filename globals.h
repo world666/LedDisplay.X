@@ -14,6 +14,8 @@ long _highEdge;
 long _lowEdge;
 int _synchronization;
 int _synchZone;
+int _overRiseControl = 1;
+int _kolibrovka = 1;
 int _overRizeZoneHigh;
 int _overRizeZoneLow;
 int _buffer;

@@ -113,6 +113,8 @@ void __attribute__((__interrupt__, __auto_psv__)) _T1Interrupt(void)
     TrySynchronization(signals);
     //over rise zone control
     OverRiseZoneControl(EncGetDistanceLong());
+    //try make kolibrovka
+    TryMakeKolibrovka(signals);
     // write to uart encoder counter
     char str[60]="";
     char sDistance[12];
