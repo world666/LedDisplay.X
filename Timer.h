@@ -27,8 +27,8 @@ void StartTimer2()//4.1 mks
     // Period = PR2 * prescaler * Tcy = 58594 * 256 * 33.33ns = 500ms
     T2CON = 0;            // Clear Timer 2 configuration
     T2CONbits.TCKPS = 0;  // Set timer 2 prescaler (0=1:1, 1=1:8, 2=1:64, 3=1:256)
-    PR2 = 100;          // Set Timer 2 period (max value is 65535)//70
-    _T2IP = 0x5;            // Set Timer 2 interrupt priority
+    PR2 = 170;          // Set Timer 2 period (max value is 65535)//70
+    _T2IP = 0x6;            // Set Timer 2 interrupt priority
     _T2IF = 0;            // Clear Timer 2 interrupt flag
     _T2IE = 1;            // Enable Timer 2 interrupt
     T2CONbits.TON = 1;    // Turn on Timer 2

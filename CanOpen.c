@@ -7,6 +7,8 @@ unsigned int canOpenCodtDomainCurrentPosition = 0;
 unsigned int canOpenIndex;
 unsigned int canOpenSubIndex;
 
+char parameterPackageWasSent = 0;
+
 //global vars
 extern int _nodeId;
 
@@ -32,7 +34,7 @@ void CanOpenSendCurrentObjectState(long s1, long s2, int v, int a, char inputSig
     data1[0] = buf[0]; data1[1] = buf[1]; data1[2] = buf[2];
     buf = &s2;
     data1[3] = buf[0]; data1[4] = buf[1]; data1[5] = buf[2];
-    SendTPDO(1, nodeID, data1,0);
+    SendTPDO(1, nodeID, data1,2);
     char data2[8] = {0, 0, 0 ,0, 0, 0, 0 ,0};
     v=-v;
     buf = &v;
@@ -44,12 +46,16 @@ void CanOpenSendCurrentObjectState(long s1, long s2, int v, int a, char inputSig
     data2[6] = buf[0]; data2[7] = buf[1];
     SendTPDO(2, nodeID, data2,1);
     char data3[8] = {inputSignals, 0, 0 ,0, 0, 0, 0 ,0};
-    SendTPDO(3, nodeID, data3,2);
+    if(!parameterPackageWasSent)
+        SendTPDO(3, nodeID, data3,0);
+    else
+        parameterPackageWasSent--;
 }
 void CanOpenParseRSDO(unsigned int sid,char *data)
 {
     if((sid&0x780)!=0x600)//if it's not rsdo
         return;
+    parameterPackageWasSent = 5;
     if(data[0] == 0x40)//read query
         SendDictionaryElement(data);
     else if((data[0]&0xF0) == 0x20) //set query

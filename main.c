@@ -161,7 +161,7 @@ void __attribute__((__interrupt__, __auto_psv__)) _T4Interrupt(void)
     // Clear Timer 4 interrupt flag
     // Write to can bus
     _T4IF = 0;
-    delay(5000);
+    //delay(5000);
     int speed = EncGetV();
     long lDistance = EncGetDistanceLong();
     long highEdge = _highEdge;

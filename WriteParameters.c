@@ -6,7 +6,7 @@ unsigned char WriteAllParameters()
     char name[] = "inf";
     DeviceInformation deviceInformation;
     deviceInformation.ObjectCount = 7;
-    deviceInformation.ParametersCount = 8;
+    deviceInformation.ParametersCount = 10;
     deviceInformation.SystemName[0] = 0;
     strcat(deviceInformation.SystemName, "don_avto_1");
      deviceInformation.DeviceName[0] = 0;
@@ -18,7 +18,7 @@ unsigned char WriteAllParameters()
     deviceInformation.CanVersion[0] = 0;
     strcat(deviceInformation.CanVersion,"can1");
 
-    if(!AddParameter(name,0xF,&deviceInformation,28))
+    if(!AddParameter(name,0xF,&deviceInformation,32))
         return 0;
 
     char name1[] = "start_s";
@@ -27,7 +27,7 @@ unsigned char WriteAllParameters()
         return 0;
 
     char name2[] = "node_id";
-    value = 3;
+    value = 1;
     if(!AddParameter(name2,0x10,&value,3))
         return 0;
 

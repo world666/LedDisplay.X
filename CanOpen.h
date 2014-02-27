@@ -13,6 +13,7 @@ typedef struct DeviceInformation //28bytes
     char DeviceVersion[4]; //4
     char SoftVersion[3]; //9
     char CanVersion[4];
+    char buf[4];
 } DeviceInformation;
 /**
  * @autor Kyrylov Andrii
