@@ -4,6 +4,14 @@
  *
  * Created on 25 ?????? 2014, 13:31
  */
+
+/**
+ * @author Kyrylov Andrii
+ * @param inputSignals - input signals (8 bit)
+ * @todo try make synchronization (???/??? sensors)
+ * @return 1 - synchronization was done
+ * @return 0 - synchronization wasn't done
+ */
 char TrySynchronization(char inputSignals)
 {
     if(!_synchronization)

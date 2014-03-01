@@ -12,12 +12,15 @@ char parameterPackageWasSent = 0;
 //global vars
 extern int _nodeId;
 
-void SendTPDO(unsigned char pdoNumber, unsigned char nodeId, char* data, unsigned char bufNumber)
+void SendTPDO(unsigned char pdoNumber, unsigned char nodeId, char* data, unsigned char bufNumber,char canNumber)
 {
  unsigned int sId;
  sId = 0x80 + pdoNumber * 0x100;
  sId += nodeId;
- Can1SendData(sId, data, bufNumber);
+ if(canNumber == 1)
+    Can1SendData(sId, data, bufNumber);
+ else
+    Can2SendData(sId, data, bufNumber);
 }
 void SendTSDO(unsigned char nodeId, char* data, unsigned char bufNumber)
 {
@@ -26,15 +29,19 @@ void SendTSDO(unsigned char nodeId, char* data, unsigned char bufNumber)
  sId += nodeId;
  Can1SendData(sId, data, bufNumber);
 }
-void CanOpenSendCurrentObjectState(long s1, long s2, int v, int a, char inputSignals)
+void CanOpenSendCurrentObjectState(long s1, long s2, int v, int a, char inputSignals,char canNumber)
 {
+    if(!CAN1IsTXReady(0) && canNumber == 1)
+        return;
+    else if(!CAN2IsTXReady(0) && canNumber == 2)
+        return;
     unsigned char nodeID = _nodeId;
     char data1[8] = {0, 0, 0 ,0, 0, 0, 0 ,0};
     char* buf = &s1;
     data1[0] = buf[0]; data1[1] = buf[1]; data1[2] = buf[2];
     buf = &s2;
     data1[3] = buf[0]; data1[4] = buf[1]; data1[5] = buf[2];
-    SendTPDO(1, nodeID, data1,2);
+    SendTPDO(1, nodeID, data1,2,canNumber);
     char data2[8] = {0, 0, 0 ,0, 0, 0, 0 ,0};
     v=-v;
     buf = &v;
@@ -44,18 +51,18 @@ void CanOpenSendCurrentObjectState(long s1, long s2, int v, int a, char inputSig
     data2[2] = buf[0]; data2[3] = buf[1];
     buf = &a;
     data2[6] = buf[0]; data2[7] = buf[1];
-    SendTPDO(2, nodeID, data2,1);
+    SendTPDO(2, nodeID, data2,1,canNumber);
     char data3[8] = {inputSignals, 0, 0 ,0, 0, 0, 0 ,0};
-    if(!parameterPackageWasSent)
-        SendTPDO(3, nodeID, data3,0);
-    else
-        parameterPackageWasSent--;
+    //if(!parameterPackageWasSent)
+    SendTPDO(3, nodeID, data3,0,canNumber);
+    //else
+      //  parameterPackageWasSent--;
 }
 void CanOpenParseRSDO(unsigned int sid,char *data)
 {
     if((sid&0x780)!=0x600)//if it's not rsdo
         return;
-    parameterPackageWasSent = 5;
+    //parameterPackageWasSent = 5;
     if(data[0] == 0x40)//read query
         SendDictionaryElement(data);
     else if((data[0]&0xF0) == 0x20) //set query

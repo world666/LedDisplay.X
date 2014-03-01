@@ -17,12 +17,13 @@
       <itemPath>Fat.h</itemPath>
       <itemPath>Parameters.h</itemPath>
       <itemPath>Can.h</itemPath>
-      <itemPath>CanOpen.h</itemPath>
       <itemPath>WriteParameters.h</itemPath>
       <itemPath>globals.h</itemPath>
       <itemPath>Synchronization.h</itemPath>
       <itemPath>OverRiseZone.h</itemPath>
       <itemPath>Kolibrovka.h</itemPath>
+      <itemPath>CanOpen.h</itemPath>
+      <itemPath>OverSpeedControl.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -35,10 +36,11 @@
       <itemPath>Fat.c</itemPath>
       <itemPath>Parameters.c</itemPath>
       <itemPath>Can.c</itemPath>
-      <itemPath>CanOpen.c</itemPath>
       <itemPath>WriteParameters.c</itemPath>
       <itemPath>OverRiseZone.c</itemPath>
       <itemPath>Kolibrovka.c</itemPath>
+      <itemPath>CanOpen.c</itemPath>
+      <itemPath>OverSpeedControl.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -56,7 +58,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>ICD3PlatformTool</platformTool>
         <languageToolchain>XC16</languageToolchain>
-        <languageToolchainVersion>1.21</languageToolchainVersion>
+        <languageToolchainVersion>1.20</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <compileType>

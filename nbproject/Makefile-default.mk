@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c Fat.c Parameters.c Can.c CanOpen.c WriteParameters.c OverRiseZone.c Kolibrovka.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c Fat.c Parameters.c Can.c WriteParameters.c OverRiseZone.c Kolibrovka.c CanOpen.c OverSpeedControl.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/Fat.o ${OBJECTDIR}/Parameters.o ${OBJECTDIR}/Can.o ${OBJECTDIR}/CanOpen.o ${OBJECTDIR}/WriteParameters.o ${OBJECTDIR}/OverRiseZone.o ${OBJECTDIR}/Kolibrovka.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/Fat.o.d ${OBJECTDIR}/Parameters.o.d ${OBJECTDIR}/Can.o.d ${OBJECTDIR}/CanOpen.o.d ${OBJECTDIR}/WriteParameters.o.d ${OBJECTDIR}/OverRiseZone.o.d ${OBJECTDIR}/Kolibrovka.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/Fat.o ${OBJECTDIR}/Parameters.o ${OBJECTDIR}/Can.o ${OBJECTDIR}/WriteParameters.o ${OBJECTDIR}/OverRiseZone.o ${OBJECTDIR}/Kolibrovka.o ${OBJECTDIR}/CanOpen.o ${OBJECTDIR}/OverSpeedControl.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/Fat.o.d ${OBJECTDIR}/Parameters.o.d ${OBJECTDIR}/Can.o.d ${OBJECTDIR}/WriteParameters.o.d ${OBJECTDIR}/OverRiseZone.o.d ${OBJECTDIR}/Kolibrovka.o.d ${OBJECTDIR}/CanOpen.o.d ${OBJECTDIR}/OverSpeedControl.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/Fat.o ${OBJECTDIR}/Parameters.o ${OBJECTDIR}/Can.o ${OBJECTDIR}/CanOpen.o ${OBJECTDIR}/WriteParameters.o ${OBJECTDIR}/OverRiseZone.o ${OBJECTDIR}/Kolibrovka.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/Fat.o ${OBJECTDIR}/Parameters.o ${OBJECTDIR}/Can.o ${OBJECTDIR}/WriteParameters.o ${OBJECTDIR}/OverRiseZone.o ${OBJECTDIR}/Kolibrovka.o ${OBJECTDIR}/CanOpen.o ${OBJECTDIR}/OverSpeedControl.o
 
 # Source Files
-SOURCEFILES=main.c Fat.c Parameters.c Can.c CanOpen.c WriteParameters.c OverRiseZone.c Kolibrovka.c
+SOURCEFILES=main.c Fat.c Parameters.c Can.c WriteParameters.c OverRiseZone.c Kolibrovka.c CanOpen.c OverSpeedControl.c
 
 
 CFLAGS=
@@ -107,13 +107,6 @@ ${OBJECTDIR}/Can.o: Can.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE)  Can.c  -o ${OBJECTDIR}/Can.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Can.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/Can.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
-${OBJECTDIR}/CanOpen.o: CanOpen.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR} 
-	@${RM} ${OBJECTDIR}/CanOpen.o.d 
-	@${RM} ${OBJECTDIR}/CanOpen.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  CanOpen.c  -o ${OBJECTDIR}/CanOpen.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/CanOpen.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
-	@${FIXDEPS} "${OBJECTDIR}/CanOpen.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
-	
 ${OBJECTDIR}/WriteParameters.o: WriteParameters.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR} 
 	@${RM} ${OBJECTDIR}/WriteParameters.o.d 
@@ -134,6 +127,20 @@ ${OBJECTDIR}/Kolibrovka.o: Kolibrovka.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/Kolibrovka.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  Kolibrovka.c  -o ${OBJECTDIR}/Kolibrovka.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Kolibrovka.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/Kolibrovka.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/CanOpen.o: CanOpen.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR} 
+	@${RM} ${OBJECTDIR}/CanOpen.o.d 
+	@${RM} ${OBJECTDIR}/CanOpen.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  CanOpen.c  -o ${OBJECTDIR}/CanOpen.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/CanOpen.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/CanOpen.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/OverSpeedControl.o: OverSpeedControl.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR} 
+	@${RM} ${OBJECTDIR}/OverSpeedControl.o.d 
+	@${RM} ${OBJECTDIR}/OverSpeedControl.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  OverSpeedControl.c  -o ${OBJECTDIR}/OverSpeedControl.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/OverSpeedControl.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/OverSpeedControl.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 else
 ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
@@ -164,13 +171,6 @@ ${OBJECTDIR}/Can.o: Can.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE)  Can.c  -o ${OBJECTDIR}/Can.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Can.o.d"      -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/Can.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
-${OBJECTDIR}/CanOpen.o: CanOpen.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR} 
-	@${RM} ${OBJECTDIR}/CanOpen.o.d 
-	@${RM} ${OBJECTDIR}/CanOpen.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  CanOpen.c  -o ${OBJECTDIR}/CanOpen.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/CanOpen.o.d"      -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
-	@${FIXDEPS} "${OBJECTDIR}/CanOpen.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
-	
 ${OBJECTDIR}/WriteParameters.o: WriteParameters.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR} 
 	@${RM} ${OBJECTDIR}/WriteParameters.o.d 
@@ -191,6 +191,20 @@ ${OBJECTDIR}/Kolibrovka.o: Kolibrovka.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/Kolibrovka.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  Kolibrovka.c  -o ${OBJECTDIR}/Kolibrovka.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Kolibrovka.o.d"      -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/Kolibrovka.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/CanOpen.o: CanOpen.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR} 
+	@${RM} ${OBJECTDIR}/CanOpen.o.d 
+	@${RM} ${OBJECTDIR}/CanOpen.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  CanOpen.c  -o ${OBJECTDIR}/CanOpen.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/CanOpen.o.d"      -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/CanOpen.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/OverSpeedControl.o: OverSpeedControl.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR} 
+	@${RM} ${OBJECTDIR}/OverSpeedControl.o.d 
+	@${RM} ${OBJECTDIR}/OverSpeedControl.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  OverSpeedControl.c  -o ${OBJECTDIR}/OverSpeedControl.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/OverSpeedControl.o.d"      -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/OverSpeedControl.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 endif
 

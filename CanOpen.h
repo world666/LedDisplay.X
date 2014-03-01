@@ -15,24 +15,6 @@ typedef struct DeviceInformation //28bytes
     char CanVersion[4];
     char buf[4];
 } DeviceInformation;
-/**
- * @autor Kyrylov Andrii
- * @param unsigned char - pdo number(1-4)
- * @param unsigned char - node id
- * @param char* - data
- * @param unsigned char - buffer number
- * @todo send tpdo over can interface
- */
-void SendTPDO(unsigned char, unsigned char, char*, unsigned char);
-
-/**
- * @autor Kyrylov Andrii
- * @param unsigned char - node id
- * @param char* - data
- * @param unsigned char - buffer number
- * @todo send tsdo over can inetface
- */
-void SendTSDO(unsigned char, char* , unsigned char);
 
 /**
  * @autor Kyrylov Andrii
@@ -41,7 +23,8 @@ void SendTSDO(unsigned char, char* , unsigned char);
  * @param int - speed(v)
  * @param int - a
  * @param char - input signals
+ * @param char - can number
  * @todo send current object state using tpdo over can bus
  */
-void CanOpenSendCurrentObjectState(long, long, int, int, char);
+void CanOpenSendCurrentObjectState(long, long, int, int, char,char);
 

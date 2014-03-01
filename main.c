@@ -67,7 +67,9 @@ void __attribute__((__interrupt__, __auto_psv__)) _T2Interrupt(void);
 void __attribute__((__interrupt__, __auto_psv__)) _T3Interrupt(void);
 // Function prototype for timer 4 ISR
 void __attribute__((__interrupt__, __auto_psv__)) _T4Interrupt(void);
-// Can Receive Parameter
+// Can1 Receive Parameter
+void __attribute__ ((__interrupt__, __auto_psv__)) _C1Interrupt (void);
+// Can2 Receive Parameter
 void __attribute__ ((__interrupt__, __auto_psv__)) _C1Interrupt (void);
 // LVD interrupt
 void __attribute__((__interrupt__, __auto_psv__)) _LVDInterrupt(void);
@@ -87,13 +89,15 @@ int main(int argc, char** argv) {
     LVDinitialization(); //voltage detect interrupt
 
     WriteDigitalOutputs(0x3);
+
+    Can1Initialization();
+    Can2Initialization();
     //OpenUART2();
     StartTimer1();
     StartTimer2();
     StartTimer3();
     StartTimer4();
     DisplayView("start"); //lcd display write
-    Can1Initialization();
     
     while(1);
     return (EXIT_SUCCESS);
@@ -171,8 +175,8 @@ void __attribute__((__interrupt__, __auto_psv__)) _T4Interrupt(void)
     long rDistance = lowEdge + highEdge - lDistance;
     int a = 0;
     char inputSignals = ReadDigitalInputs();
-    //while(C1TX0CONbits.TXFUL);
-    CanOpenSendCurrentObjectState(rDistance,lDistance,speed,a,inputSignals);
+    CanOpenSendCurrentObjectState(rDistance,lDistance,speed,a,inputSignals,1);
+    CanOpenSendCurrentObjectState(rDistance,lDistance,speed,a,inputSignals,2);
 }
 void __attribute__ ((__interrupt__, __auto_psv__)) _C1Interrupt (void){
     IFS1bits.C1IF = 0; //Clear CAN1 interrupt flag
@@ -189,6 +193,23 @@ void __attribute__ ((__interrupt__, __auto_psv__)) _C1Interrupt (void){
     CanOpenParseRSDO(sid,rxData); //parse message and send response
     C1RX0CONbits.RXFUL = 0;
     C1RX1CONbits.RXFUL = 0;
+    //delay(10000);
+  }
+void __attribute__ ((__interrupt__, __auto_psv__)) _C2Interrupt (void){
+    IFS2bits.C2IF = 0; //Clear CAN1 interrupt flag
+    C2INTFbits.RX0IF = 0; //Clear CAN1 RX interrupt flag
+    C2INTFbits.RX1IF = 0; //Clear CAN1 RX interrupt flag
+    char rxData[8];
+    if(C2CTRLbits.ICODE == 7) //check filters
+    {
+        C2INTFbits.WAKIF = 0;
+        return;
+    }
+    unsigned int sid = C2RX0SIDbits.SID;
+    Can2ReceiveData(rxData);
+    //CanOpenParseRSDO(sid,rxData); //parse message and send response
+    C2RX0CONbits.RXFUL = 0;
+    C2RX1CONbits.RXFUL = 0;
     //delay(10000);
   }
 
