@@ -23,6 +23,7 @@
 #include "RealTimer.h"
 #include "FRAM.h"
 #include "Synchronization.h"
+#include "OverSpeedControl.h"
 
 // FOSC
 #pragma config FOSFPR = XT_PLL16             // Oscillator (XT)
@@ -88,7 +89,7 @@ int main(int argc, char** argv) {
     
     LVDinitialization(); //voltage detect interrupt
 
-    WriteDigitalOutputs(0x3);
+    WriteDigitalOutputs(0b00000011);
 
     Can1Initialization();
     Can2Initialization();
@@ -175,8 +176,11 @@ void __attribute__((__interrupt__, __auto_psv__)) _T4Interrupt(void)
     long rDistance = lowEdge + highEdge - lDistance;
     int a = 0;
     char inputSignals = ReadDigitalInputs();
-    CanOpenSendCurrentObjectState(rDistance,lDistance,speed,a,inputSignals,1);
-    CanOpenSendCurrentObjectState(rDistance,lDistance,speed,a,inputSignals,2);
+    int maxV = OverSpeedGetMaxV(lDistance,speed);
+    /*if(speed>maxV)
+        OnBreak();*/
+    CanOpenSendCurrentObjectState(rDistance,lDistance,speed,maxV,a,inputSignals,1);
+    CanOpenSendCurrentObjectState(rDistance,lDistance,speed,maxV,a,inputSignals,2);
 }
 void __attribute__ ((__interrupt__, __auto_psv__)) _C1Interrupt (void){
     IFS1bits.C1IF = 0; //Clear CAN1 interrupt flag

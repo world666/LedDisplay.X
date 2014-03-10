@@ -7,7 +7,7 @@ unsigned int canOpenCodtDomainCurrentPosition = 0;
 unsigned int canOpenIndex;
 unsigned int canOpenSubIndex;
 
-char parameterPackageWasSent = 0;
+int parameterPackageWasSent = 0;
 
 //global vars
 extern int _nodeId;
@@ -29,12 +29,8 @@ void SendTSDO(unsigned char nodeId, char* data, unsigned char bufNumber)
  sId += nodeId;
  Can1SendData(sId, data, bufNumber);
 }
-void CanOpenSendCurrentObjectState(long s1, long s2, int v, int a, char inputSignals,char canNumber)
+void CanOpenSendCurrentObjectState(long s1, long s2, int v, int maxV, int a, char inputSignals,char canNumber)
 {
-    if(!CAN1IsTXReady(0) && canNumber == 1)
-        return;
-    else if(!CAN2IsTXReady(0) && canNumber == 2)
-        return;
     unsigned char nodeID = _nodeId;
     char data1[8] = {0, 0, 0 ,0, 0, 0, 0 ,0};
     char* buf = &s1;
@@ -45,24 +41,23 @@ void CanOpenSendCurrentObjectState(long s1, long s2, int v, int a, char inputSig
     char data2[8] = {0, 0, 0 ,0, 0, 0, 0 ,0};
     v=-v;
     buf = &v;
-    data2[0] = buf[0]; data2[1] = buf[1];
+    data2[0] = buf[0]; data2[1] = buf[1]; // right sosud speed
     v =-v;
     buf = &v;
-    data2[2] = buf[0]; data2[3] = buf[1];
+    data2[2] = buf[0]; data2[3] = buf[1];// left sosud speed
+    buf = &maxV;
+    data2[4] = buf[0]; data2[5] = buf[1];
     buf = &a;
     data2[6] = buf[0]; data2[7] = buf[1];
     SendTPDO(2, nodeID, data2,1,canNumber);
     char data3[8] = {inputSignals, 0, 0 ,0, 0, 0, 0 ,0};
-    //if(!parameterPackageWasSent)
     SendTPDO(3, nodeID, data3,0,canNumber);
-    //else
-      //  parameterPackageWasSent--;
 }
 void CanOpenParseRSDO(unsigned int sid,char *data)
 {
     if((sid&0x780)!=0x600)//if it's not rsdo
         return;
-    //parameterPackageWasSent = 5;
+    parameterPackageWasSent = 10000;
     if(data[0] == 0x40)//read query
         SendDictionaryElement(data);
     else if((data[0]&0xF0) == 0x20) //set query

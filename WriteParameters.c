@@ -6,7 +6,7 @@ unsigned char WriteAllParameters()
     char name[] = "inf";
     DeviceInformation deviceInformation;
     deviceInformation.ObjectCount = 7;
-    deviceInformation.ParametersCount = 10;
+    deviceInformation.ParametersCount = 11;
     deviceInformation.SystemName[0] = 0;
     strcat(deviceInformation.SystemName, "don_avto_1");
      deviceInformation.DeviceName[0] = 0;
@@ -27,7 +27,7 @@ unsigned char WriteAllParameters()
         return 0;
 
     char name2[] = "node_id";
-    value = 3;
+    value = 1;
     if(!AddParameter(name2,0x10,&value,3))
         return 0;
 
@@ -68,6 +68,15 @@ unsigned char WriteAllParameters()
 
     char name10[] = "defence_diagram";
     char codtValue[120];
+    int i=0;
+    for(i;i<120;i++)
+        codtValue[i] = 0;
+    codtValue[0] = 0xF0; codtValue[1] = 0xD8; codtValue[2] = 0xFF; codtValue[3] = 0xFF;
+    codtValue[4] = 0xEC; codtValue[5] = 0x2C;
+    codtValue[6] = 0xC8; codtValue[7] = 0xAF;
+    codtValue[10] = 0xD0; codtValue[11] = 0x07;
+    codtValue[12] = 0xFF; codtValue[13] = 0xFF; codtValue[14] = 0xFF; codtValue[15] = 0x7F;
+    codtValue[16] = 0xDC; codtValue[17] = 0x05;
     if(!AddParameter(name10,0xF,codtValue,120))
         return 0;
 

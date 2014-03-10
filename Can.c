@@ -94,12 +94,14 @@ void Can2Initialization(void)
 
 void Can1SendData(unsigned int sid, char* data, unsigned char bufNumber)
 {
+    while(!CAN1IsTXReady(bufNumber));
 	//Load message ID, Data into transmit buffer and set transmit request bit
 	CAN1SendMessage((CAN_TX_SID(sid)) & (CAN_TX_EID_DIS) & (CAN_SUB_NOR_TX_REQ), (CAN_TX_EID(1)) & (CAN_NOR_TX_REQ), data, 8, bufNumber);
 }
 
 void Can2SendData(unsigned int sid, char* data, unsigned char bufNumber)
 {
+    while(!CAN2IsTXReady(bufNumber));
 	//Load message ID, Data into transmit buffer and set transmit request bit
 	CAN2SendMessage((CAN_TX_SID(sid)) & (CAN_TX_EID_DIS) & (CAN_SUB_NOR_TX_REQ), (CAN_TX_EID(1)) & (CAN_NOR_TX_REQ), data, 8, bufNumber);
 }

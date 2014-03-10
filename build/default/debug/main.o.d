@@ -1,4 +1,4 @@
-build/default/production/main.o:  \
+build/default/debug/main.o:  \
 main.c  \
 globals.h  \
 LowVoltageDetect.h  \
