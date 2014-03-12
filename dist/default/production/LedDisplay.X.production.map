@@ -1,26 +1,26 @@
-Microchip Technology Inc, vÀŒ:
+Microchip Technology Inc, v8ˆ2
 
 Tool Name:
-  c:\program files (x86)\microchip\xc16\v1.20\bin\bin\..\bin/elf-ld.exe
+  c:\program files\microchip\xc16\v1.21\bin\bin\..\bin/elf-ld.exe
 
 Command:
   -p30F6012A \
   -o \
   dist/default/production/LedDisplay.X.production.elf \
-  -Lc:/program files (x86)/microchip/xc16/v1.20/bin/bin/.. \
-  -Lc:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib \
-  -Lc:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/PIC24E \
-  -Lc:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../support/PIC24E/gld \
-  -Lc:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/PIC24F \
-  -Lc:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../support/PIC24F/gld \
-  -Lc:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/PIC24H \
-  -Lc:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../support/PIC24H/gld \
-  -Lc:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F \
-  -Lc:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../support/dsPIC30F/gld \
-  -Lc:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC33E \
-  -Lc:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../support/dsPIC33E/gld \
-  -Lc:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC33F \
-  -Lc:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../support/dsPIC33F/gld \
+  -Lc:/program files/microchip/xc16/v1.21/bin/bin/.. \
+  -Lc:/program files/microchip/xc16/v1.21/bin/bin/../../lib \
+  -Lc:/program files/microchip/xc16/v1.21/bin/bin/../../lib/PIC24E \
+  -Lc:/program files/microchip/xc16/v1.21/bin/bin/../../support/PIC24E/gld \
+  -Lc:/program files/microchip/xc16/v1.21/bin/bin/../../lib/PIC24F \
+  -Lc:/program files/microchip/xc16/v1.21/bin/bin/../../support/PIC24F/gld \
+  -Lc:/program files/microchip/xc16/v1.21/bin/bin/../../lib/PIC24H \
+  -Lc:/program files/microchip/xc16/v1.21/bin/bin/../../support/PIC24H/gld \
+  -Lc:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F \
+  -Lc:/program files/microchip/xc16/v1.21/bin/bin/../../support/dsPIC30F/gld \
+  -Lc:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC33E \
+  -Lc:/program files/microchip/xc16/v1.21/bin/bin/../../support/dsPIC33E/gld \
+  -Lc:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC33F \
+  -Lc:/program files/microchip/xc16/v1.21/bin/bin/../../support/dsPIC33F/gld \
   build/default/production/main.o \
   build/default/production/Fat.o \
   build/default/production/Parameters.o \
@@ -54,99 +54,99 @@ Command:
 
 Archive member included because of file (symbol)
 
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1Initialize.o)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1Initialize.o)
                               build/default/production/Can.o (_CAN1Initialize)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1IsTXReady.o)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1IsTXReady.o)
                               build/default/production/Can.o (_CAN1IsTXReady)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1ReceiveMessage.o)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1ReceiveMessage.o)
                               build/default/production/Can.o (_CAN1ReceiveMessage)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SendMessage.o)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SendMessage.o)
                               build/default/production/Can.o (_CAN1SendMessage)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetFilter.o)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetFilter.o)
                               build/default/production/Can.o (_CAN1SetFilter)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetMask.o)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetMask.o)
                               build/default/production/Can.o (_CAN1SetMask)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetOperationMode.o)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetOperationMode.o)
                               build/default/production/Can.o (_CAN1SetOperationMode)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetRXMode.o)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetRXMode.o)
                               build/default/production/Can.o (_CAN1SetRXMode)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetTXMode.o)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetTXMode.o)
                               build/default/production/Can.o (_CAN1SetTXMode)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2Initialize.o)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2Initialize.o)
                               build/default/production/Can.o (_CAN2Initialize)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2IsTXReady.o)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2IsTXReady.o)
                               build/default/production/Can.o (_CAN2IsTXReady)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2ReceiveMessage.o)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2ReceiveMessage.o)
                               build/default/production/Can.o (_CAN2ReceiveMessage)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SendMessage.o)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SendMessage.o)
                               build/default/production/Can.o (_CAN2SendMessage)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetFilter.o)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetFilter.o)
                               build/default/production/Can.o (_CAN2SetFilter)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetMask.o)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetMask.o)
                               build/default/production/Can.o (_CAN2SetMask)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetOperationMode.o)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetOperationMode.o)
                               build/default/production/Can.o (_CAN2SetOperationMode)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetRXMode.o)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetRXMode.o)
                               build/default/production/Can.o (_CAN2SetRXMode)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetTXMode.o)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetTXMode.o)
                               build/default/production/Can.o (_CAN2SetTXMode)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(ConfigIntCAN1.o)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(ConfigIntCAN1.o)
                               build/default/production/Can.o (_ConfigIntCAN1)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(ConfigIntCAN2.o)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(ConfigIntCAN2.o)
                               build/default/production/Can.o (_ConfigIntCAN2)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(OpenSPI2.o)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(OpenSPI2.o)
                               build/default/production/main.o (_OpenSPI2)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
                               (__resetPRI)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
-                              c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o) (__data_init_standard)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(addsf3.eo)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
+                              c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o) (__data_init_standard)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(addsf3.eo)
                               build/default/production/Kolibrovka.o (___subsf3)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(ceilf.eo)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(ceilf.eo)
                               build/default/production/Parameters.o (_ceilf)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(divsf3.eo)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(divsf3.eo)
                               build/default/production/main.o (___divsf3)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(divsi3.eo)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(divsi3.eo)
                               build/default/production/main.o (___divsi3)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fchop.eo)
-                              c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(ceilf.eo) (__fchop)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(feqltle.eo)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(fchop.eo)
+                              c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(ceilf.eo) (__fchop)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(feqltle.eo)
                               build/default/production/Parameters.o (___ltsf2)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fixsfsi.eo)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(fixsfsi.eo)
                               build/default/production/main.o (_(float, int, long long, short, float, short, int))
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fixunssfsi.eo)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(fixunssfsi.eo)
                               build/default/production/Parameters.o (___fixunssfsi)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatsisf.eo)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(floatsisf.eo)
                               build/default/production/main.o (___floatsisf)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatunsisf.eo)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(floatunsisf.eo)
                               build/default/production/Parameters.o (___floatunsisf)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fpack.eo)
-                              c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(addsf3.eo) (__fpack)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(funpack.eo)
-                              c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fchop.eo) (__funpack)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(funpack2.eo)
-                              c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(addsf3.eo) (__funpack2)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(futil.eo)
-                              c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(addsf3.eo) (__fPropagateNaN)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(modsi3.eo)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(fpack.eo)
+                              c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(addsf3.eo) (__fpack)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(funpack.eo)
+                              c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(fchop.eo) (__funpack)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(funpack2.eo)
+                              c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(addsf3.eo) (__funpack2)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(futil.eo)
+                              c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(addsf3.eo) (__fPropagateNaN)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(modsi3.eo)
                               build/default/production/main.o (___modsi3)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(mulsf3.eo)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(mulsf3.eo)
                               build/default/production/main.o (___mulsf3)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
-                              c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(divsi3.eo) (___udivsi3)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(umodsi3.eo)
-                              c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(modsi3.eo) (___umodsi3)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fcompare.eo)
-                              c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(feqltle.eo) (__fcompare)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatdisf.eo)
-                              c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatsisf.eo) (___floatdisf)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatundisf.eo)
-                              c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatunsisf.eo) (___floatundisf)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(memcpy.eo)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
+                              c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(divsi3.eo) (___udivsi3)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(umodsi3.eo)
+                              c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(modsi3.eo) (___umodsi3)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(fcompare.eo)
+                              c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(feqltle.eo) (__fcompare)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(floatdisf.eo)
+                              c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(floatsisf.eo) (___floatdisf)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(floatundisf.eo)
+                              c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(floatunsisf.eo) (___floatundisf)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libc-elf.a(memcpy.eo)
                               build/default/production/main.o (_memcpy)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(strcat.eo)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libc-elf.a(strcat.eo)
                               build/default/production/main.o (_strcat)
-c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(strlen.eo)
+c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libc-elf.a(strlen.eo)
                               build/default/production/main.o (_strlen)
 
 
@@ -154,12 +154,12 @@ Program Memory  [Origin = 0x100, Length = 0x17efe]
 
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
-.text                        0x100               0x854           0xc7e  (3198)
-.const                       0x954                0x8a            0xcf  (207)
-.text                        0x9de              0x2ec8          0x462c  (17964)
-.dinit                      0x38a6                0x2a            0x3f  (63)
+.text                        0x100               0x874           0xcae  (3246)
+.const                       0x974                0x8a            0xcf  (207)
+.text                        0x9fe              0x2ec2          0x4623  (17955)
+.dinit                      0x38c0                0x2a            0x3f  (63)
 
-                     Total program memory used (bytes):         0x53b8  (21432) 14%
+                     Total program memory used (bytes):         0x53df  (21471) 14%
 
 
 Data Memory  [Origin = 0x800, Length = 0x2000]
@@ -249,322 +249,322 @@ External Symbols in Program Memory (by address):
                   0x0001c6                  _CAN1IsTXReady
                   0x0001e8                  _CAN1ReceiveMessage
                   0x000206                  _CAN1SendMessage
-                  0x000288                  _CAN1SetFilter
-                  0x0002de                  _CAN1SetMask
-                  0x0002fa                  _CAN1SetOperationMode
-                  0x0002fe                  _CAN1SetRXMode
-                  0x00030e                  _CAN1SetTXMode
-                  0x000324                  _CAN2Initialize
-                  0x00032a                  _CAN2IsTXReady
-                  0x00034c                  _CAN2ReceiveMessage
-                  0x00036a                  _CAN2SendMessage
-                  0x0003ec                  _CAN2SetFilter
-                  0x000442                  _CAN2SetMask
-                  0x00045e                  _CAN2SetOperationMode
-                  0x000462                  _CAN2SetRXMode
-                  0x000472                  _CAN2SetTXMode
-                  0x000488                  _ConfigIntCAN1
-                  0x0004ae                  _ConfigIntCAN2
-                  0x0004d4                  _OpenSPI2
-                  0x0004da                  ___subsf3
-                  0x0004dc                  ___addsf3
-                  0x000596                  _ceilf
-                  0x0005a6                  ___divsf3
-                  0x00062a                  ___divsi3
-                  0x000648                  __fchop
-                  0x000696                  ___ltsf2
-                  0x000696                  ___lesf2
-                  0x000696                  ___eqsf2
-                  0x00069a                  ___fixsfsi
-                  0x0006dc                  ___fixunssfsi
-                  0x000712                  ___floatsisf
-                  0x000718                  ___floatunsisf
-                  0x00071c                  __fpack
-                  0x000768                  __funpack
-                  0x000792                  __funpack2
-                  0x0007a2                  __fPropagateNaN
-                  0x0007b4                  __fbopExit
-                  0x0007bc                  __fbopReturnNaN
-                  0x0007c2                  ___modsi3
-                  0x0007e0                  ___mulsf3
-                  0x000848                  ___udivsi3
-                  0x000868                  ___umodsi3
-                  0x00086e                  __fcompare
-                  0x0008a4                  ___floatdisf
-                  0x0008c4                  ___floatundisf
-                  0x000922                  _memcpy
-                  0x000930                  _strcat
-                  0x000946                  _strlen
-                  0x0009de                  _ReadConfig
-                  0x000a6e                  _LVDinitialization
-                  0x000a9e                  _delay
-                  0x000ac6                  _LongToString
-                  0x000b7e                  _LongToCharArray
-                  0x000bb4                  _ReadDigitalInputs
-                  0x000bde                  _WriteDigitalOutputs
-                  0x000c16                  _DigitalInputsToString
-                  0x000c5c                  _OpenUART2
-                  0x000c7a                  _BusyUART2
-                  0x000c94                  _WriteCharToUART2
-                  0x000cac                  _PrintStringUART2
-                  0x000cc8                  _PrintDigitUART2
-                  0x000cf4                  _StartTimer1
-                  0x000d1a                  _StartTimer2
-                  0x000d40                  _StartTimer3
-                  0x000d66                  _StartTimer4
-                  0x000d8c                  _EncoderScan
-                  0x000e62                  _EncCountV
-                  0x000e80                  _EncGetDistanceStr
-                  0x000ec2                  _EncGetDistanceLong
-                  0x000ef8                  _EncDistanceToCounter
-                  0x000f2e                  _EncGetV
-                  0x000f76                  _clrscr
-                  0x000fbe                  _setDDRAM
-                  0x0010ea                  _DisplayInitialization
-                  0x0011be                  _DisplayView
-                  0x001386                  _ConfigurateSPI2
-                  0x0013ae                  _spi2_write
-                  0x0013e8                  _spi2_read
-                  0x001422                  _RtcSetTime
-                  0x001470                  _RtcInitialization
-                  0x00147a                  _rtc_write_byte
-                  0x00149c                  _RtcRead
-                  0x0014be                  _RtcReadSeconds
-                  0x0014ee                  _RtcReadMinutes
-                  0x00151e                  _RtcReadHours
-                  0x00154e                  _RtcReadDayOfWeek
-                  0x001560                  _RtcReadDays
-                  0x001590                  _RtcReadMonth
-                  0x0015c0                  _RtcReadYear
-                  0x0015ec                  _RtcWriteDateInString
-                  0x00181c                  _FramInitialization
-                  0x001826                  _FramWriteEnable
-                  0x001838                  _FramWrite
-                  0x001882                  _FramRead
-                  0x0018cc                  _FramReadStatus
-                  0x0018e8                  _FramReadPositionCounter
-                  0x001900                  _TrySynchronization
-                  0x001982                  _main
-                  0x0019b4                  __T1Interrupt
-                  0x001ac6                  __T2Interrupt
-                  0x001aec                  __T3Interrupt
-                  0x001b4c                  __T4Interrupt
-                  0x001bf4                  __C1Interrupt
-                  0x001c44                  __C2Interrupt
-                  0x001c8c                  __LVDInterrupt
-                  0x001cba                  _SendTPDO
-                  0x001cf2                  _SendTSDO
-                  0x001d10                  _CanOpenSendCurrentObjectState
-                  0x001dfc                  _CanOpenParseRSDO
-                  0x001e70                  _EditDictionaryElement
-                  0x001f0e                  _SendDictionaryElement
-                  0x001f6c                  _SendDeviceInformation
-                  0x0020c0                  _SendValue
-                  0x0021e0                  _SendParameterType
-                  0x002242                  _SendName
-                  0x0022ec                  _CanOpenEditName
-                  0x002348                  _CanOpenSendCodtDomainMsg
-                  0x0023b0                  _CanOpenGetCodtDomainMsg
-                  0x002454                  _AddParameter
-                  0x002604                  _DeleteParameter
-                  0x002678                  _ReadParameterValue
-                  0x0026e4                  _ReadParameterName
-                  0x002798                  _ReadParameterType
-                  0x0027c4                  _EditParameterValue
-                  0x002864                  _EditParameterName
-                  0x0029d2                  _FindMaxIndex
-                  0x002a58                  _FindDescriptorAdrByIndex
-                  0x002ada                  _Can1Initialization
-                  0x002c58                  _Can2Initialization
-                  0x002dd6                  _Can1SendData
-                  0x002e16                  _Can2SendData
-                  0x002e56                  _Can1ReceiveData
-                  0x002e68                  _Can2ReceiveData
-                  0x002e7a                  _WriteBootSector
-                  0x002ea2                  _ReadBootSector
-                  0x002eb2                  _Formatting
-                  0x002f10                  _ReadNextFat
-                  0x002f36                  _WriteToFat
-                  0x002f5a                  _FindFreeClusterNum
-                  0x002fa6                  _AllocateClustersSequence
-                  0x002ff4                  _ClearClustersSequence
-                  0x003024                  _FindFreeDescriptorAdr
-                  0x003098                  _WriteDescriptorByAddress
-                  0x0030b2                  _ReadDescriptorByAddress
-                  0x0030cc                  _DescriptorsDefragmentation
-                  0x00318a                  _WriteDataToCluster
-                  0x0031bc                  _ReadDataFromCluster
-                  0x0031ee                  _WriteAllParameters
-                  0x0034f8                  _OverSpeedInterpolation
-                  0x0036a2                  _OverSpeedGetMaxV
-                  0x00370e                  _OnBreak
-                  0x003740                  _TryMakeKolibrovka
-                  0x003826                  _OverRiseZoneControl
-                  0x00386e                  _OnOveriseRele
+                  0x000296                  _CAN1SetFilter
+                  0x0002ec                  _CAN1SetMask
+                  0x000308                  _CAN1SetOperationMode
+                  0x00030c                  _CAN1SetRXMode
+                  0x00031c                  _CAN1SetTXMode
+                  0x000332                  _CAN2Initialize
+                  0x000338                  _CAN2IsTXReady
+                  0x00035a                  _CAN2ReceiveMessage
+                  0x000378                  _CAN2SendMessage
+                  0x000408                  _CAN2SetFilter
+                  0x00045e                  _CAN2SetMask
+                  0x00047a                  _CAN2SetOperationMode
+                  0x00047e                  _CAN2SetRXMode
+                  0x00048e                  _CAN2SetTXMode
+                  0x0004a4                  _ConfigIntCAN1
+                  0x0004cc                  _ConfigIntCAN2
+                  0x0004f4                  _OpenSPI2
+                  0x0004fa                  ___subsf3
+                  0x0004fc                  ___addsf3
+                  0x0005b6                  _ceilf
+                  0x0005c6                  ___divsf3
+                  0x00064a                  ___divsi3
+                  0x000668                  __fchop
+                  0x0006b6                  ___ltsf2
+                  0x0006b6                  ___lesf2
+                  0x0006b6                  ___eqsf2
+                  0x0006ba                  ___fixsfsi
+                  0x0006fc                  ___fixunssfsi
+                  0x000732                  ___floatsisf
+                  0x000738                  ___floatunsisf
+                  0x00073c                  __fpack
+                  0x000788                  __funpack
+                  0x0007b2                  __funpack2
+                  0x0007c2                  __fPropagateNaN
+                  0x0007d4                  __fbopExit
+                  0x0007dc                  __fbopReturnNaN
+                  0x0007e2                  ___modsi3
+                  0x000800                  ___mulsf3
+                  0x000868                  ___udivsi3
+                  0x000888                  ___umodsi3
+                  0x00088e                  __fcompare
+                  0x0008c4                  ___floatdisf
+                  0x0008e4                  ___floatundisf
+                  0x000942                  _memcpy
+                  0x000950                  _strcat
+                  0x000966                  _strlen
+                  0x0009fe                  _ReadConfig
+                  0x000a8e                  _LVDinitialization
+                  0x000abe                  _delay
+                  0x000ae6                  _LongToString
+                  0x000b9e                  _LongToCharArray
+                  0x000bd4                  _ReadDigitalInputs
+                  0x000bfe                  _WriteDigitalOutputs
+                  0x000c36                  _DigitalInputsToString
+                  0x000c7c                  _OpenUART2
+                  0x000c9a                  _BusyUART2
+                  0x000cb4                  _WriteCharToUART2
+                  0x000ccc                  _PrintStringUART2
+                  0x000ce8                  _PrintDigitUART2
+                  0x000d14                  _StartTimer1
+                  0x000d3a                  _StartTimer2
+                  0x000d60                  _StartTimer3
+                  0x000d86                  _StartTimer4
+                  0x000dac                  _EncoderScan
+                  0x000e82                  _EncCountV
+                  0x000ea0                  _EncGetDistanceStr
+                  0x000ee2                  _EncGetDistanceLong
+                  0x000f18                  _EncDistanceToCounter
+                  0x000f4e                  _EncGetV
+                  0x000f96                  _clrscr
+                  0x000fde                  _setDDRAM
+                  0x00110a                  _DisplayInitialization
+                  0x0011de                  _DisplayView
+                  0x0013a6                  _ConfigurateSPI2
+                  0x0013ce                  _spi2_write
+                  0x001408                  _spi2_read
+                  0x001442                  _RtcSetTime
+                  0x001490                  _RtcInitialization
+                  0x00149a                  _rtc_write_byte
+                  0x0014bc                  _RtcRead
+                  0x0014de                  _RtcReadSeconds
+                  0x00150e                  _RtcReadMinutes
+                  0x00153e                  _RtcReadHours
+                  0x00156e                  _RtcReadDayOfWeek
+                  0x001580                  _RtcReadDays
+                  0x0015b0                  _RtcReadMonth
+                  0x0015e0                  _RtcReadYear
+                  0x00160c                  _RtcWriteDateInString
+                  0x00183c                  _FramInitialization
+                  0x001846                  _FramWriteEnable
+                  0x001858                  _FramWrite
+                  0x0018a2                  _FramRead
+                  0x0018ec                  _FramReadStatus
+                  0x001908                  _FramReadPositionCounter
+                  0x001920                  _TrySynchronization
+                  0x0019a2                  _main
+                  0x0019d4                  __T1Interrupt
+                  0x001ae6                  __T2Interrupt
+                  0x001b0c                  __T3Interrupt
+                  0x001b6c                  __T4Interrupt
+                  0x001c14                  __C1Interrupt
+                  0x001c64                  __C2Interrupt
+                  0x001cac                  __LVDInterrupt
+                  0x001cda                  _SendTPDO
+                  0x001d12                  _SendTSDO
+                  0x001d30                  _CanOpenSendCurrentObjectState
+                  0x001e1c                  _CanOpenParseRSDO
+                  0x001e90                  _EditDictionaryElement
+                  0x001f2e                  _SendDictionaryElement
+                  0x001f8c                  _SendDeviceInformation
+                  0x0020e0                  _SendValue
+                  0x002200                  _SendParameterType
+                  0x002262                  _SendName
+                  0x00230c                  _CanOpenEditName
+                  0x002368                  _CanOpenSendCodtDomainMsg
+                  0x0023d0                  _CanOpenGetCodtDomainMsg
+                  0x002474                  _AddParameter
+                  0x002624                  _DeleteParameter
+                  0x002698                  _ReadParameterValue
+                  0x002704                  _ReadParameterName
+                  0x0027b8                  _ReadParameterType
+                  0x0027e4                  _EditParameterValue
+                  0x002884                  _EditParameterName
+                  0x0029f2                  _FindMaxIndex
+                  0x002a78                  _FindDescriptorAdrByIndex
+                  0x002afa                  _Can1Initialization
+                  0x002c78                  _Can2Initialization
+                  0x002df6                  _Can1SendData
+                  0x002e36                  _Can2SendData
+                  0x002e76                  _Can1ReceiveData
+                  0x002e88                  _Can2ReceiveData
+                  0x002e9a                  _WriteBootSector
+                  0x002ec2                  _ReadBootSector
+                  0x002ed2                  _Formatting
+                  0x002f30                  _ReadNextFat
+                  0x002f56                  _WriteToFat
+                  0x002f7a                  _FindFreeClusterNum
+                  0x002fc6                  _AllocateClustersSequence
+                  0x003014                  _ClearClustersSequence
+                  0x003044                  _FindFreeDescriptorAdr
+                  0x0030b8                  _WriteDescriptorByAddress
+                  0x0030d2                  _ReadDescriptorByAddress
+                  0x0030ec                  _DescriptorsDefragmentation
+                  0x0031aa                  _WriteDataToCluster
+                  0x0031dc                  _ReadDataFromCluster
+                  0x00320e                  _WriteAllParameters
+                  0x003518                  _OverSpeedInterpolation
+                  0x0036bc                  _OverSpeedGetMaxV
+                  0x003728                  _OnBreak
+                  0x00375a                  _TryMakeKolibrovka
+                  0x003840                  _OverRiseZoneControl
+                  0x003888                  _OnOveriseRele
 
 External Symbols in Program Memory (by name):
 
-                  0x002454                  _AddParameter
-                  0x002fa6                  _AllocateClustersSequence
-                  0x000c7a                  _BusyUART2
+                  0x002474                  _AddParameter
+                  0x002fc6                  _AllocateClustersSequence
+                  0x000c9a                  _BusyUART2
                   0x0001c0                  _CAN1Initialize
                   0x0001c6                  _CAN1IsTXReady
                   0x0001e8                  _CAN1ReceiveMessage
                   0x000206                  _CAN1SendMessage
-                  0x000288                  _CAN1SetFilter
-                  0x0002de                  _CAN1SetMask
-                  0x0002fa                  _CAN1SetOperationMode
-                  0x0002fe                  _CAN1SetRXMode
-                  0x00030e                  _CAN1SetTXMode
-                  0x000324                  _CAN2Initialize
-                  0x00032a                  _CAN2IsTXReady
-                  0x00034c                  _CAN2ReceiveMessage
-                  0x00036a                  _CAN2SendMessage
-                  0x0003ec                  _CAN2SetFilter
-                  0x000442                  _CAN2SetMask
-                  0x00045e                  _CAN2SetOperationMode
-                  0x000462                  _CAN2SetRXMode
-                  0x000472                  _CAN2SetTXMode
-                  0x002ada                  _Can1Initialization
-                  0x002e56                  _Can1ReceiveData
-                  0x002dd6                  _Can1SendData
-                  0x002c58                  _Can2Initialization
-                  0x002e68                  _Can2ReceiveData
-                  0x002e16                  _Can2SendData
-                  0x0022ec                  _CanOpenEditName
-                  0x0023b0                  _CanOpenGetCodtDomainMsg
-                  0x001dfc                  _CanOpenParseRSDO
-                  0x002348                  _CanOpenSendCodtDomainMsg
-                  0x001d10                  _CanOpenSendCurrentObjectState
-                  0x002ff4                  _ClearClustersSequence
-                  0x000488                  _ConfigIntCAN1
-                  0x0004ae                  _ConfigIntCAN2
-                  0x001386                  _ConfigurateSPI2
-                  0x002604                  _DeleteParameter
-                  0x0030cc                  _DescriptorsDefragmentation
-                  0x000c16                  _DigitalInputsToString
-                  0x0010ea                  _DisplayInitialization
-                  0x0011be                  _DisplayView
-                  0x001e70                  _EditDictionaryElement
-                  0x002864                  _EditParameterName
-                  0x0027c4                  _EditParameterValue
-                  0x000e62                  _EncCountV
-                  0x000ef8                  _EncDistanceToCounter
-                  0x000ec2                  _EncGetDistanceLong
-                  0x000e80                  _EncGetDistanceStr
-                  0x000f2e                  _EncGetV
-                  0x000d8c                  _EncoderScan
-                  0x002a58                  _FindDescriptorAdrByIndex
-                  0x002f5a                  _FindFreeClusterNum
-                  0x003024                  _FindFreeDescriptorAdr
-                  0x0029d2                  _FindMaxIndex
-                  0x002eb2                  _Formatting
-                  0x00181c                  _FramInitialization
-                  0x001882                  _FramRead
-                  0x0018e8                  _FramReadPositionCounter
-                  0x0018cc                  _FramReadStatus
-                  0x001838                  _FramWrite
-                  0x001826                  _FramWriteEnable
-                  0x000a6e                  _LVDinitialization
-                  0x000b7e                  _LongToCharArray
-                  0x000ac6                  _LongToString
-                  0x00370e                  _OnBreak
-                  0x00386e                  _OnOveriseRele
-                  0x0004d4                  _OpenSPI2
-                  0x000c5c                  _OpenUART2
-                  0x003826                  _OverRiseZoneControl
-                  0x0036a2                  _OverSpeedGetMaxV
-                  0x0034f8                  _OverSpeedInterpolation
-                  0x000cc8                  _PrintDigitUART2
-                  0x000cac                  _PrintStringUART2
-                  0x002ea2                  _ReadBootSector
-                  0x0009de                  _ReadConfig
-                  0x0031bc                  _ReadDataFromCluster
-                  0x0030b2                  _ReadDescriptorByAddress
-                  0x000bb4                  _ReadDigitalInputs
-                  0x002f10                  _ReadNextFat
-                  0x0026e4                  _ReadParameterName
-                  0x002798                  _ReadParameterType
-                  0x002678                  _ReadParameterValue
-                  0x001470                  _RtcInitialization
-                  0x00149c                  _RtcRead
-                  0x00154e                  _RtcReadDayOfWeek
-                  0x001560                  _RtcReadDays
-                  0x00151e                  _RtcReadHours
-                  0x0014ee                  _RtcReadMinutes
-                  0x001590                  _RtcReadMonth
-                  0x0014be                  _RtcReadSeconds
-                  0x0015c0                  _RtcReadYear
-                  0x001422                  _RtcSetTime
-                  0x0015ec                  _RtcWriteDateInString
-                  0x001f6c                  _SendDeviceInformation
-                  0x001f0e                  _SendDictionaryElement
-                  0x002242                  _SendName
-                  0x0021e0                  _SendParameterType
-                  0x001cba                  _SendTPDO
-                  0x001cf2                  _SendTSDO
-                  0x0020c0                  _SendValue
-                  0x000cf4                  _StartTimer1
-                  0x000d1a                  _StartTimer2
-                  0x000d40                  _StartTimer3
-                  0x000d66                  _StartTimer4
-                  0x003740                  _TryMakeKolibrovka
-                  0x001900                  _TrySynchronization
-                  0x0031ee                  _WriteAllParameters
-                  0x002e7a                  _WriteBootSector
-                  0x000c94                  _WriteCharToUART2
-                  0x00318a                  _WriteDataToCluster
-                  0x003098                  _WriteDescriptorByAddress
-                  0x000bde                  _WriteDigitalOutputs
-                  0x002f36                  _WriteToFat
-                  0x001bf4                  __C1Interrupt
-                  0x001c44                  __C2Interrupt
+                  0x000296                  _CAN1SetFilter
+                  0x0002ec                  _CAN1SetMask
+                  0x000308                  _CAN1SetOperationMode
+                  0x00030c                  _CAN1SetRXMode
+                  0x00031c                  _CAN1SetTXMode
+                  0x000332                  _CAN2Initialize
+                  0x000338                  _CAN2IsTXReady
+                  0x00035a                  _CAN2ReceiveMessage
+                  0x000378                  _CAN2SendMessage
+                  0x000408                  _CAN2SetFilter
+                  0x00045e                  _CAN2SetMask
+                  0x00047a                  _CAN2SetOperationMode
+                  0x00047e                  _CAN2SetRXMode
+                  0x00048e                  _CAN2SetTXMode
+                  0x002afa                  _Can1Initialization
+                  0x002e76                  _Can1ReceiveData
+                  0x002df6                  _Can1SendData
+                  0x002c78                  _Can2Initialization
+                  0x002e88                  _Can2ReceiveData
+                  0x002e36                  _Can2SendData
+                  0x00230c                  _CanOpenEditName
+                  0x0023d0                  _CanOpenGetCodtDomainMsg
+                  0x001e1c                  _CanOpenParseRSDO
+                  0x002368                  _CanOpenSendCodtDomainMsg
+                  0x001d30                  _CanOpenSendCurrentObjectState
+                  0x003014                  _ClearClustersSequence
+                  0x0004a4                  _ConfigIntCAN1
+                  0x0004cc                  _ConfigIntCAN2
+                  0x0013a6                  _ConfigurateSPI2
+                  0x002624                  _DeleteParameter
+                  0x0030ec                  _DescriptorsDefragmentation
+                  0x000c36                  _DigitalInputsToString
+                  0x00110a                  _DisplayInitialization
+                  0x0011de                  _DisplayView
+                  0x001e90                  _EditDictionaryElement
+                  0x002884                  _EditParameterName
+                  0x0027e4                  _EditParameterValue
+                  0x000e82                  _EncCountV
+                  0x000f18                  _EncDistanceToCounter
+                  0x000ee2                  _EncGetDistanceLong
+                  0x000ea0                  _EncGetDistanceStr
+                  0x000f4e                  _EncGetV
+                  0x000dac                  _EncoderScan
+                  0x002a78                  _FindDescriptorAdrByIndex
+                  0x002f7a                  _FindFreeClusterNum
+                  0x003044                  _FindFreeDescriptorAdr
+                  0x0029f2                  _FindMaxIndex
+                  0x002ed2                  _Formatting
+                  0x00183c                  _FramInitialization
+                  0x0018a2                  _FramRead
+                  0x001908                  _FramReadPositionCounter
+                  0x0018ec                  _FramReadStatus
+                  0x001858                  _FramWrite
+                  0x001846                  _FramWriteEnable
+                  0x000a8e                  _LVDinitialization
+                  0x000b9e                  _LongToCharArray
+                  0x000ae6                  _LongToString
+                  0x003728                  _OnBreak
+                  0x003888                  _OnOveriseRele
+                  0x0004f4                  _OpenSPI2
+                  0x000c7c                  _OpenUART2
+                  0x003840                  _OverRiseZoneControl
+                  0x0036bc                  _OverSpeedGetMaxV
+                  0x003518                  _OverSpeedInterpolation
+                  0x000ce8                  _PrintDigitUART2
+                  0x000ccc                  _PrintStringUART2
+                  0x002ec2                  _ReadBootSector
+                  0x0009fe                  _ReadConfig
+                  0x0031dc                  _ReadDataFromCluster
+                  0x0030d2                  _ReadDescriptorByAddress
+                  0x000bd4                  _ReadDigitalInputs
+                  0x002f30                  _ReadNextFat
+                  0x002704                  _ReadParameterName
+                  0x0027b8                  _ReadParameterType
+                  0x002698                  _ReadParameterValue
+                  0x001490                  _RtcInitialization
+                  0x0014bc                  _RtcRead
+                  0x00156e                  _RtcReadDayOfWeek
+                  0x001580                  _RtcReadDays
+                  0x00153e                  _RtcReadHours
+                  0x00150e                  _RtcReadMinutes
+                  0x0015b0                  _RtcReadMonth
+                  0x0014de                  _RtcReadSeconds
+                  0x0015e0                  _RtcReadYear
+                  0x001442                  _RtcSetTime
+                  0x00160c                  _RtcWriteDateInString
+                  0x001f8c                  _SendDeviceInformation
+                  0x001f2e                  _SendDictionaryElement
+                  0x002262                  _SendName
+                  0x002200                  _SendParameterType
+                  0x001cda                  _SendTPDO
+                  0x001d12                  _SendTSDO
+                  0x0020e0                  _SendValue
+                  0x000d14                  _StartTimer1
+                  0x000d3a                  _StartTimer2
+                  0x000d60                  _StartTimer3
+                  0x000d86                  _StartTimer4
+                  0x00375a                  _TryMakeKolibrovka
+                  0x001920                  _TrySynchronization
+                  0x00320e                  _WriteAllParameters
+                  0x002e9a                  _WriteBootSector
+                  0x000cb4                  _WriteCharToUART2
+                  0x0031aa                  _WriteDataToCluster
+                  0x0030b8                  _WriteDescriptorByAddress
+                  0x000bfe                  _WriteDigitalOutputs
+                  0x002f56                  _WriteToFat
+                  0x001c14                  __C1Interrupt
+                  0x001c64                  __C2Interrupt
                   0x0001bc                  __DefaultInterrupt
-                  0x001c8c                  __LVDInterrupt
-                  0x0019b4                  __T1Interrupt
-                  0x001ac6                  __T2Interrupt
-                  0x001aec                  __T3Interrupt
-                  0x001b4c                  __T4Interrupt
-                  0x0004dc                  ___addsf3
-                  0x0005a6                  ___divsf3
-                  0x00062a                  ___divsi3
-                  0x000696                  ___eqsf2
-                  0x00069a                  ___fixsfsi
-                  0x0006dc                  ___fixunssfsi
-                  0x0008a4                  ___floatdisf
-                  0x000712                  ___floatsisf
-                  0x0008c4                  ___floatundisf
-                  0x000718                  ___floatunsisf
-                  0x000696                  ___lesf2
-                  0x000696                  ___ltsf2
-                  0x0007c2                  ___modsi3
-                  0x0007e0                  ___mulsf3
-                  0x0004da                  ___subsf3
-                  0x000848                  ___udivsi3
-                  0x000868                  ___umodsi3
+                  0x001cac                  __LVDInterrupt
+                  0x0019d4                  __T1Interrupt
+                  0x001ae6                  __T2Interrupt
+                  0x001b0c                  __T3Interrupt
+                  0x001b6c                  __T4Interrupt
+                  0x0004fc                  ___addsf3
+                  0x0005c6                  ___divsf3
+                  0x00064a                  ___divsi3
+                  0x0006b6                  ___eqsf2
+                  0x0006ba                  ___fixsfsi
+                  0x0006fc                  ___fixunssfsi
+                  0x0008c4                  ___floatdisf
+                  0x000732                  ___floatsisf
+                  0x0008e4                  ___floatundisf
+                  0x000738                  ___floatunsisf
+                  0x0006b6                  ___lesf2
+                  0x0006b6                  ___ltsf2
+                  0x0007e2                  ___modsi3
+                  0x000800                  ___mulsf3
+                  0x0004fa                  ___subsf3
+                  0x000868                  ___udivsi3
+                  0x000888                  ___umodsi3
                   0x000136                  __data_init
                   0x000136                  __data_init_standard
-                  0x0007a2                  __fPropagateNaN
-                  0x0007b4                  __fbopExit
-                  0x0007bc                  __fbopReturnNaN
-                  0x000648                  __fchop
-                  0x00086e                  __fcompare
-                  0x00071c                  __fpack
-                  0x000768                  __funpack
-                  0x000792                  __funpack2
+                  0x0007c2                  __fPropagateNaN
+                  0x0007d4                  __fbopExit
+                  0x0007dc                  __fbopReturnNaN
+                  0x000668                  __fchop
+                  0x00088e                  __fcompare
+                  0x00073c                  __fpack
+                  0x000788                  __funpack
+                  0x0007b2                  __funpack2
                   0x000126                  __psv_init
                   0x000100                  __resetPRI
-                  0x000596                  _ceilf
-                  0x000f76                  _clrscr
-                  0x000a9e                  _delay
-                  0x001982                  _main
-                  0x000922                  _memcpy
-                  0x00147a                  _rtc_write_byte
-                  0x000fbe                  _setDDRAM
-                  0x0013e8                  _spi2_read
-                  0x0013ae                  _spi2_write
-                  0x000930                  _strcat
-                  0x000946                  _strlen
+                  0x0005b6                  _ceilf
+                  0x000f96                  _clrscr
+                  0x000abe                  _delay
+                  0x0019a2                  _main
+                  0x000942                  _memcpy
+                  0x00149a                  _rtc_write_byte
+                  0x000fde                  _setDDRAM
+                  0x001408                  _spi2_read
+                  0x0013ce                  _spi2_write
+                  0x000950                  _strcat
+                  0x000966                  _strlen
 
 Memory Configuration
 
@@ -601,7 +601,7 @@ LOAD build/default/production/Kolibrovka.o
 LOAD build/default/production/CanOpen.o
 LOAD build/default/production/OverSpeedControl.o
                     0x0001                  __MPLAB_BUILD = 0x1
-LOAD c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a
+LOAD c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a
                     0x8005c0                  __FUID0 = 0x8005c0
                     0x8005c2                  __FUID1 = 0x8005c2
                     0x8005c4                  __FUID2 = 0x8005c4
@@ -627,13 +627,13 @@ LOAD c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp
                   0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
 
-.text             0x000100        0x854
+.text             0x000100        0x874
  *(.init)
- .init            0x000100         0x36 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
+ .init            0x000100         0x36 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
                   0x000100                  __resetPRI
                   0x000100                  __reset
                   0x000126                  __psv_init
- .init            0x000136         0x5e c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
+ .init            0x000136         0x5e c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
                   0x000136                  __data_init_standard
                   0x000136                  __data_init
  *(.user_init)
@@ -646,116 +646,116 @@ LOAD c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp
  *(.libm)
  *(.libdsp)
  *(.lib*)
- .libperi         0x0001c0          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1Initialize.o)
+ .libperi         0x0001c0          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1Initialize.o)
                   0x0001c0                  _CAN1Initialize
- .libperi         0x0001c6         0x22 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1IsTXReady.o)
+ .libperi         0x0001c6         0x22 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1IsTXReady.o)
                   0x0001c6                  _CAN1IsTXReady
- .libperi         0x0001e8         0x1e c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1ReceiveMessage.o)
+ .libperi         0x0001e8         0x1e c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1ReceiveMessage.o)
                   0x0001e8                  _CAN1ReceiveMessage
- .libperi         0x000206         0x82 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SendMessage.o)
+ .libperi         0x000206         0x90 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SendMessage.o)
                   0x000206                  _CAN1SendMessage
- .libperi         0x000288         0x56 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetFilter.o)
-                  0x000288                  _CAN1SetFilter
- .libperi         0x0002de         0x1c c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetMask.o)
-                  0x0002de                  _CAN1SetMask
- .libperi         0x0002fa          0x4 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetOperationMode.o)
-                  0x0002fa                  _CAN1SetOperationMode
- .libperi         0x0002fe         0x10 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetRXMode.o)
-                  0x0002fe                  _CAN1SetRXMode
- .libperi         0x00030e         0x16 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetTXMode.o)
-                  0x00030e                  _CAN1SetTXMode
- .libperi         0x000324          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2Initialize.o)
-                  0x000324                  _CAN2Initialize
- .libperi         0x00032a         0x22 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2IsTXReady.o)
-                  0x00032a                  _CAN2IsTXReady
- .libperi         0x00034c         0x1e c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2ReceiveMessage.o)
-                  0x00034c                  _CAN2ReceiveMessage
- .libperi         0x00036a         0x82 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SendMessage.o)
-                  0x00036a                  _CAN2SendMessage
- .libperi         0x0003ec         0x56 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetFilter.o)
-                  0x0003ec                  _CAN2SetFilter
- .libperi         0x000442         0x1c c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetMask.o)
-                  0x000442                  _CAN2SetMask
- .libperi         0x00045e          0x4 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetOperationMode.o)
-                  0x00045e                  _CAN2SetOperationMode
- .libperi         0x000462         0x10 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetRXMode.o)
-                  0x000462                  _CAN2SetRXMode
- .libperi         0x000472         0x16 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetTXMode.o)
-                  0x000472                  _CAN2SetTXMode
- .libperi         0x000488         0x26 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(ConfigIntCAN1.o)
-                  0x000488                  _ConfigIntCAN1
- .libperi         0x0004ae         0x26 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(ConfigIntCAN2.o)
-                  0x0004ae                  _ConfigIntCAN2
- .libperi         0x0004d4          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(OpenSPI2.o)
-                  0x0004d4                  _OpenSPI2
- .libm.subsf3     0x0004da         0xbc c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(addsf3.eo)
-                  0x0004da                  ___subsf3
-                  0x0004dc                  ___addsf3
- .libm.ceilf      0x000596         0x10 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(ceilf.eo)
-                  0x000596                  _ceilf
- .libm.divfs3     0x0005a6         0x84 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(divsf3.eo)
-                  0x0005a6                  ___divsf3
- .libm.divsi3     0x00062a         0x1e c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(divsi3.eo)
-                  0x00062a                  ___divsi3
- .libm.fchop      0x000648         0x4e c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fchop.eo)
-                  0x000648                  __fchop
- .libm.eqsf2      0x000696          0x4 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(feqltle.eo)
-                  0x000696                  ___eqsf2
-                  0x000696                  ___ltsf2
-                  0x000696                  ___lesf2
- .libm.fixsfsi    0x00069a         0x42 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fixsfsi.eo)
-                  0x00069a                  _(float, int, long long, short, float, short, int)
+ .libperi         0x000296         0x56 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetFilter.o)
+                  0x000296                  _CAN1SetFilter
+ .libperi         0x0002ec         0x1c c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetMask.o)
+                  0x0002ec                  _CAN1SetMask
+ .libperi         0x000308          0x4 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetOperationMode.o)
+                  0x000308                  _CAN1SetOperationMode
+ .libperi         0x00030c         0x10 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetRXMode.o)
+                  0x00030c                  _CAN1SetRXMode
+ .libperi         0x00031c         0x16 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetTXMode.o)
+                  0x00031c                  _CAN1SetTXMode
+ .libperi         0x000332          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2Initialize.o)
+                  0x000332                  _CAN2Initialize
+ .libperi         0x000338         0x22 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2IsTXReady.o)
+                  0x000338                  _CAN2IsTXReady
+ .libperi         0x00035a         0x1e c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2ReceiveMessage.o)
+                  0x00035a                  _CAN2ReceiveMessage
+ .libperi         0x000378         0x90 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SendMessage.o)
+                  0x000378                  _CAN2SendMessage
+ .libperi         0x000408         0x56 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetFilter.o)
+                  0x000408                  _CAN2SetFilter
+ .libperi         0x00045e         0x1c c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetMask.o)
+                  0x00045e                  _CAN2SetMask
+ .libperi         0x00047a          0x4 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetOperationMode.o)
+                  0x00047a                  _CAN2SetOperationMode
+ .libperi         0x00047e         0x10 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetRXMode.o)
+                  0x00047e                  _CAN2SetRXMode
+ .libperi         0x00048e         0x16 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetTXMode.o)
+                  0x00048e                  _CAN2SetTXMode
+ .libperi         0x0004a4         0x28 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(ConfigIntCAN1.o)
+                  0x0004a4                  _ConfigIntCAN1
+ .libperi         0x0004cc         0x28 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(ConfigIntCAN2.o)
+                  0x0004cc                  _ConfigIntCAN2
+ .libperi         0x0004f4          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(OpenSPI2.o)
+                  0x0004f4                  _OpenSPI2
+ .libm.subsf3     0x0004fa         0xbc c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(addsf3.eo)
+                  0x0004fa                  ___subsf3
+                  0x0004fc                  ___addsf3
+ .libm.ceilf      0x0005b6         0x10 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(ceilf.eo)
+                  0x0005b6                  _ceilf
+ .libm.divfs3     0x0005c6         0x84 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(divsf3.eo)
+                  0x0005c6                  ___divsf3
+ .libm.divsi3     0x00064a         0x1e c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(divsi3.eo)
+                  0x00064a                  ___divsi3
+ .libm.fchop      0x000668         0x4e c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(fchop.eo)
+                  0x000668                  __fchop
+ .libm.eqsf2      0x0006b6          0x4 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(feqltle.eo)
+                  0x0006b6                  ___eqsf2
+                  0x0006b6                  ___ltsf2
+                  0x0006b6                  ___lesf2
+ .libm.fixsfsi    0x0006ba         0x42 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(fixsfsi.eo)
+                  0x0006ba                  _(float, int, long long, short, float, short, int)
  .libm.fixunssfsi
-                  0x0006dc         0x36 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fixunssfsi.eo)
-                  0x0006dc                  ___fixunssfsi
+                  0x0006fc         0x36 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(fixunssfsi.eo)
+                  0x0006fc                  ___fixunssfsi
  .libm.floatsisf
-                  0x000712          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatsisf.eo)
-                  0x000712                  ___floatsisf
+                  0x000732          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(floatsisf.eo)
+                  0x000732                  ___floatsisf
  .libm.floatunsisf
-                  0x000718          0x4 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatunsisf.eo)
-                  0x000718                  ___floatunsisf
- .libm.fpack      0x00071c         0x4c c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fpack.eo)
-                  0x00071c                  __fpack
- .libm.funpack    0x000768         0x2a c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(funpack.eo)
-                  0x000768                  __funpack
+                  0x000738          0x4 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(floatunsisf.eo)
+                  0x000738                  ___floatunsisf
+ .libm.fpack      0x00073c         0x4c c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(fpack.eo)
+                  0x00073c                  __fpack
+ .libm.funpack    0x000788         0x2a c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(funpack.eo)
+                  0x000788                  __funpack
  .libm.funpack2
-                  0x000792         0x10 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(funpack2.eo)
-                  0x000792                  __funpack2
+                  0x0007b2         0x10 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(funpack2.eo)
+                  0x0007b2                  __funpack2
  .libm.fPropagateNaN
-                  0x0007a2         0x12 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(futil.eo)
-                  0x0007a2                  __fPropagateNaN
+                  0x0007c2         0x12 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(futil.eo)
+                  0x0007c2                  __fPropagateNaN
  .libm.fbobExit
-                  0x0007b4          0x8 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(futil.eo)
-                  0x0007b4                  __fbopExit
+                  0x0007d4          0x8 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(futil.eo)
+                  0x0007d4                  __fbopExit
  .libm.fbopReturnNaN
-                  0x0007bc          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(futil.eo)
-                  0x0007bc                  __fbopReturnNaN
- .libm.modsi3     0x0007c2         0x1e c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(modsi3.eo)
-                  0x0007c2                  ___modsi3
- .libm.mulsf3     0x0007e0         0x68 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(mulsf3.eo)
-                  0x0007e0                  ___mulsf3
- .libm.udivsi3    0x000848         0x20 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
-                  0x000848                  ___udivsi3
- .libm.umodsi3    0x000868          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(umodsi3.eo)
-                  0x000868                  ___umodsi3
+                  0x0007dc          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(futil.eo)
+                  0x0007dc                  __fbopReturnNaN
+ .libm.modsi3     0x0007e2         0x1e c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(modsi3.eo)
+                  0x0007e2                  ___modsi3
+ .libm.mulsf3     0x000800         0x68 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(mulsf3.eo)
+                  0x000800                  ___mulsf3
+ .libm.udivsi3    0x000868         0x20 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
+                  0x000868                  ___udivsi3
+ .libm.umodsi3    0x000888          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(umodsi3.eo)
+                  0x000888                  ___umodsi3
  .libm.fcompare
-                  0x00086e         0x36 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fcompare.eo)
-                  0x00086e                  __fcompare
+                  0x00088e         0x36 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(fcompare.eo)
+                  0x00088e                  __fcompare
  .libm.floatdisf
-                  0x0008a4         0x20 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatdisf.eo)
-                  0x0008a4                  ___floatdisf
+                  0x0008c4         0x20 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(floatdisf.eo)
+                  0x0008c4                  ___floatdisf
  .libm.floatundisf
-                  0x0008c4         0x5e c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatundisf.eo)
-                  0x0008c4                  ___floatundisf
+                  0x0008e4         0x5e c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(floatundisf.eo)
+                  0x0008e4                  ___floatundisf
  .libc.memcpy.memcpy
-                  0x000922          0xe c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(memcpy.eo)
-                  0x000922                  _memcpy
+                  0x000942          0xe c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libc-elf.a(memcpy.eo)
+                  0x000942                  _memcpy
  .libc.strcat.strcat
-                  0x000930         0x16 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(strcat.eo)
-                  0x000930                  _strcat
+                  0x000950         0x16 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libc-elf.a(strcat.eo)
+                  0x000950                  _strcat
  .libc.strlen.strlen
-                  0x000946          0xe c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(strlen.eo)
-                  0x000946                  _strlen
+                  0x000966          0xe c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libc-elf.a(strlen.eo)
+                  0x000966                  _strlen
 
 usercode
  *(usercode)
@@ -802,17 +802,17 @@ userdata
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x7b76
+.debug_info       0x000000       0x7aef
  *(.debug_info)
- .debug_info      0x000000       0x490b build/default/production/main.o
- .debug_info      0x00490b        0x85a build/default/production/Fat.o
- .debug_info      0x005165        0x8cc build/default/production/Parameters.o
- .debug_info      0x005a31        0x642 build/default/production/Can.o
- .debug_info      0x006073        0x3eb build/default/production/WriteParameters.o
- .debug_info      0x00645e        0x4b2 build/default/production/OverRiseZone.o
- .debug_info      0x006910        0x1fe build/default/production/Kolibrovka.o
- .debug_info      0x006b0e        0xaa3 build/default/production/CanOpen.o
- .debug_info      0x0075b1        0x5c5 build/default/production/OverSpeedControl.o
+ .debug_info      0x000000       0x48fc build/default/production/main.o
+ .debug_info      0x0048fc        0x84b build/default/production/Fat.o
+ .debug_info      0x005147        0x8bd build/default/production/Parameters.o
+ .debug_info      0x005a04        0x633 build/default/production/Can.o
+ .debug_info      0x006037        0x3dc build/default/production/WriteParameters.o
+ .debug_info      0x006413        0x4a3 build/default/production/OverRiseZone.o
+ .debug_info      0x0068b6        0x1ef build/default/production/Kolibrovka.o
+ .debug_info      0x006aa5        0xa94 build/default/production/CanOpen.o
+ .debug_info      0x007539        0x5b6 build/default/production/OverSpeedControl.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0xb6c
@@ -827,17 +827,17 @@ userdata
  .debug_abbrev    0x000855        0x1dd build/default/production/CanOpen.o
  .debug_abbrev    0x000a32        0x13a build/default/production/OverSpeedControl.o
 
-.debug_line       0x000000       0x35d5
+.debug_line       0x000000       0x35bd
  *(.debug_line)
- .debug_line      0x000000       0x17cd build/default/production/main.o
- .debug_line      0x0017cd        0x4e4 build/default/production/Fat.o
- .debug_line      0x001cb1        0x696 build/default/production/Parameters.o
- .debug_line      0x002347        0x285 build/default/production/Can.o
- .debug_line      0x0025cc        0x27e build/default/production/WriteParameters.o
- .debug_line      0x00284a        0x156 build/default/production/OverRiseZone.o
- .debug_line      0x0029a0         0xf6 build/default/production/Kolibrovka.o
- .debug_line      0x002a96        0x8e3 build/default/production/CanOpen.o
- .debug_line      0x003379        0x25c build/default/production/OverSpeedControl.o
+ .debug_line      0x000000       0x17c7 build/default/production/main.o
+ .debug_line      0x0017c7        0x4e4 build/default/production/Fat.o
+ .debug_line      0x001cab        0x696 build/default/production/Parameters.o
+ .debug_line      0x002341        0x27f build/default/production/Can.o
+ .debug_line      0x0025c0        0x27e build/default/production/WriteParameters.o
+ .debug_line      0x00283e        0x150 build/default/production/OverRiseZone.o
+ .debug_line      0x00298e         0xf6 build/default/production/Kolibrovka.o
+ .debug_line      0x002a84        0x8e3 build/default/production/CanOpen.o
+ .debug_line      0x003367        0x256 build/default/production/OverSpeedControl.o
 
 .debug_frame      0x000000        0x778
  *(.debug_frame)
@@ -927,11 +927,11 @@ userdata
                   0x000014          0x4 LONG 0x1bc DEFINED (__INT0Interrupt)?ABSOLUTE (__INT0Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000016          0x4 LONG 0x1bc DEFINED (__IC1Interrupt)?ABSOLUTE (__IC1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000018          0x4 LONG 0x1bc DEFINED (__OC1Interrupt)?ABSOLUTE (__OC1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00001a          0x4 LONG 0x19b4 DEFINED (__T1Interrupt)?ABSOLUTE (__T1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00001a          0x4 LONG 0x19d4 DEFINED (__T1Interrupt)?ABSOLUTE (__T1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00001c          0x4 LONG 0x1bc DEFINED (__IC2Interrupt)?ABSOLUTE (__IC2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00001e          0x4 LONG 0x1bc DEFINED (__OC2Interrupt)?ABSOLUTE (__OC2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000020          0x4 LONG 0x1ac6 DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000022          0x4 LONG 0x1aec DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000020          0x4 LONG 0x1ae6 DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000022          0x4 LONG 0x1b0c DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000024          0x4 LONG 0x1bc DEFINED (__SPI1Interrupt)?ABSOLUTE (__SPI1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000026          0x4 LONG 0x1bc DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000028          0x4 LONG 0x1bc DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
@@ -945,13 +945,13 @@ userdata
                   0x000038          0x4 LONG 0x1bc DEFINED (__IC8Interrupt)?ABSOLUTE (__IC8Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00003a          0x4 LONG 0x1bc DEFINED (__OC3Interrupt)?ABSOLUTE (__OC3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00003c          0x4 LONG 0x1bc DEFINED (__OC4Interrupt)?ABSOLUTE (__OC4Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00003e          0x4 LONG 0x1b4c DEFINED (__T4Interrupt)?ABSOLUTE (__T4Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00003e          0x4 LONG 0x1b6c DEFINED (__T4Interrupt)?ABSOLUTE (__T4Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000040          0x4 LONG 0x1bc DEFINED (__T5Interrupt)?ABSOLUTE (__T5Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000042          0x4 LONG 0x1bc DEFINED (__INT2Interrupt)?ABSOLUTE (__INT2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000044          0x4 LONG 0x1bc DEFINED (__U2RXInterrupt)?ABSOLUTE (__U2RXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000046          0x4 LONG 0x1bc DEFINED (__U2TXInterrupt)?ABSOLUTE (__U2TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000048          0x4 LONG 0x1bc DEFINED (__SPI2Interrupt)?ABSOLUTE (__SPI2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00004a          0x4 LONG 0x1bf4 DEFINED (__C1Interrupt)?ABSOLUTE (__C1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00004a          0x4 LONG 0x1c14 DEFINED (__C1Interrupt)?ABSOLUTE (__C1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00004c          0x4 LONG 0x1bc DEFINED (__IC3Interrupt)?ABSOLUTE (__IC3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00004e          0x4 LONG 0x1bc DEFINED (__IC4Interrupt)?ABSOLUTE (__IC4Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000050          0x4 LONG 0x1bc DEFINED (__IC5Interrupt)?ABSOLUTE (__IC5Interrupt):ABSOLUTE (__DefaultInterrupt)
@@ -962,11 +962,11 @@ userdata
                   0x00005a          0x4 LONG 0x1bc DEFINED (__OC8Interrupt)?ABSOLUTE (__OC8Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00005c          0x4 LONG 0x1bc DEFINED (__INT3Interrupt)?ABSOLUTE (__INT3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00005e          0x4 LONG 0x1bc DEFINED (__INT4Interrupt)?ABSOLUTE (__INT4Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000060          0x4 LONG 0x1c44 DEFINED (__C2Interrupt)?ABSOLUTE (__C2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000060          0x4 LONG 0x1c64 DEFINED (__C2Interrupt)?ABSOLUTE (__C2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000062          0x4 LONG 0x1bc DEFINED (__PWMInterrupt)?ABSOLUTE (__PWMInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000064          0x4 LONG 0x1bc DEFINED (__QEIInterrupt)?ABSOLUTE (__QEIInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000066          0x4 LONG 0x1bc DEFINED (__DCIInterrupt)?ABSOLUTE (__DCIInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000068          0x4 LONG 0x1c8c DEFINED (__LVDInterrupt)?ABSOLUTE (__LVDInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000068          0x4 LONG 0x1cac DEFINED (__LVDInterrupt)?ABSOLUTE (__LVDInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00006a          0x4 LONG 0x1bc DEFINED (__FLTAInterrupt)?ABSOLUTE (__FLTAInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00006c          0x4 LONG 0x1bc DEFINED (__FLTBInterrupt)?ABSOLUTE (__FLTBInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00006e          0x4 LONG 0x1bc DEFINED (__Interrupt45)?ABSOLUTE (__Interrupt45):ABSOLUTE (__DefaultInterrupt)
@@ -991,11 +991,11 @@ userdata
                   0x000094          0x4 LONG 0x1bc DEFINED (__AltINT0Interrupt)?ABSOLUTE (__AltINT0Interrupt):DEFINED (__INT0Interrupt)?ABSOLUTE (__INT0Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000096          0x4 LONG 0x1bc DEFINED (__AltIC1Interrupt)?ABSOLUTE (__AltIC1Interrupt):DEFINED (__IC1Interrupt)?ABSOLUTE (__IC1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000098          0x4 LONG 0x1bc DEFINED (__AltOC1Interrupt)?ABSOLUTE (__AltOC1Interrupt):DEFINED (__OC1Interrupt)?ABSOLUTE (__OC1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00009a          0x4 LONG 0x19b4 DEFINED (__AltT1Interrupt)?ABSOLUTE (__AltT1Interrupt):DEFINED (__T1Interrupt)?ABSOLUTE (__T1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00009a          0x4 LONG 0x19d4 DEFINED (__AltT1Interrupt)?ABSOLUTE (__AltT1Interrupt):DEFINED (__T1Interrupt)?ABSOLUTE (__T1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00009c          0x4 LONG 0x1bc DEFINED (__AltIC2Interrupt)?ABSOLUTE (__AltIC2Interrupt):DEFINED (__IC2Interrupt)?ABSOLUTE (__IC2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00009e          0x4 LONG 0x1bc DEFINED (__AltOC2Interrupt)?ABSOLUTE (__AltOC2Interrupt):DEFINED (__OC2Interrupt)?ABSOLUTE (__OC2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000a0          0x4 LONG 0x1ac6 DEFINED (__AltT2Interrupt)?ABSOLUTE (__AltT2Interrupt):DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000a2          0x4 LONG 0x1aec DEFINED (__AltT3Interrupt)?ABSOLUTE (__AltT3Interrupt):DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000a0          0x4 LONG 0x1ae6 DEFINED (__AltT2Interrupt)?ABSOLUTE (__AltT2Interrupt):DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000a2          0x4 LONG 0x1b0c DEFINED (__AltT3Interrupt)?ABSOLUTE (__AltT3Interrupt):DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000a4          0x4 LONG 0x1bc DEFINED (__AltSPI1Interrupt)?ABSOLUTE (__AltSPI1Interrupt):DEFINED (__SPI1Interrupt)?ABSOLUTE (__SPI1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000a6          0x4 LONG 0x1bc DEFINED (__AltU1RXInterrupt)?ABSOLUTE (__AltU1RXInterrupt):DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000a8          0x4 LONG 0x1bc DEFINED (__AltU1TXInterrupt)?ABSOLUTE (__AltU1TXInterrupt):DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
@@ -1009,13 +1009,13 @@ userdata
                   0x0000b8          0x4 LONG 0x1bc DEFINED (__AltIC8Interrupt)?ABSOLUTE (__AltIC8Interrupt):DEFINED (__IC8Interrupt)?ABSOLUTE (__IC8Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000ba          0x4 LONG 0x1bc DEFINED (__AltOC3Interrupt)?ABSOLUTE (__AltOC3Interrupt):DEFINED (__OC3Interrupt)?ABSOLUTE (__OC3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000bc          0x4 LONG 0x1bc DEFINED (__AltOC4Interrupt)?ABSOLUTE (__AltOC4Interrupt):DEFINED (__OC4Interrupt)?ABSOLUTE (__OC4Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000be          0x4 LONG 0x1b4c DEFINED (__AltT4Interrupt)?ABSOLUTE (__AltT4Interrupt):DEFINED (__T4Interrupt)?ABSOLUTE (__T4Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000be          0x4 LONG 0x1b6c DEFINED (__AltT4Interrupt)?ABSOLUTE (__AltT4Interrupt):DEFINED (__T4Interrupt)?ABSOLUTE (__T4Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000c0          0x4 LONG 0x1bc DEFINED (__AltT5Interrupt)?ABSOLUTE (__AltT5Interrupt):DEFINED (__T5Interrupt)?ABSOLUTE (__T5Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000c2          0x4 LONG 0x1bc DEFINED (__AltINT2Interrupt)?ABSOLUTE (__AltINT2Interrupt):DEFINED (__INT2Interrupt)?ABSOLUTE (__INT2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000c4          0x4 LONG 0x1bc DEFINED (__AltU2RXInterrupt)?ABSOLUTE (__AltU2RXInterrupt):DEFINED (__U2RXInterrupt)?ABSOLUTE (__U2RXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000c6          0x4 LONG 0x1bc DEFINED (__AltU2TXInterrupt)?ABSOLUTE (__AltU2TXInterrupt):DEFINED (__U2TXInterrupt)?ABSOLUTE (__U2TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000c8          0x4 LONG 0x1bc DEFINED (__AltSPI2Interrupt)?ABSOLUTE (__AltSPI2Interrupt):DEFINED (__SPI2Interrupt)?ABSOLUTE (__SPI2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000ca          0x4 LONG 0x1bf4 DEFINED (__AltC1Interrupt)?ABSOLUTE (__AltC1Interrupt):DEFINED (__C1Interrupt)?ABSOLUTE (__C1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000ca          0x4 LONG 0x1c14 DEFINED (__AltC1Interrupt)?ABSOLUTE (__AltC1Interrupt):DEFINED (__C1Interrupt)?ABSOLUTE (__C1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000cc          0x4 LONG 0x1bc DEFINED (__AltIC3Interrupt)?ABSOLUTE (__AltIC3Interrupt):DEFINED (__IC3Interrupt)?ABSOLUTE (__IC3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000ce          0x4 LONG 0x1bc DEFINED (__AltIC4Interrupt)?ABSOLUTE (__AltIC4Interrupt):DEFINED (__IC4Interrupt)?ABSOLUTE (__IC4Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000d0          0x4 LONG 0x1bc DEFINED (__AltIC5Interrupt)?ABSOLUTE (__AltIC5Interrupt):DEFINED (__IC5Interrupt)?ABSOLUTE (__IC5Interrupt):ABSOLUTE (__DefaultInterrupt)
@@ -1026,11 +1026,11 @@ userdata
                   0x0000da          0x4 LONG 0x1bc DEFINED (__AltOC8Interrupt)?ABSOLUTE (__AltOC8Interrupt):DEFINED (__OC8Interrupt)?ABSOLUTE (__OC8Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000dc          0x4 LONG 0x1bc DEFINED (__AltINT3Interrupt)?ABSOLUTE (__AltINT3Interrupt):DEFINED (__INT3Interrupt)?ABSOLUTE (__INT3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000de          0x4 LONG 0x1bc DEFINED (__AltINT4Interrupt)?ABSOLUTE (__AltINT4Interrupt):DEFINED (__INT4Interrupt)?ABSOLUTE (__INT4Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000e0          0x4 LONG 0x1c44 DEFINED (__AltC2Interrupt)?ABSOLUTE (__AltC2Interrupt):DEFINED (__C2Interrupt)?ABSOLUTE (__C2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000e0          0x4 LONG 0x1c64 DEFINED (__AltC2Interrupt)?ABSOLUTE (__AltC2Interrupt):DEFINED (__C2Interrupt)?ABSOLUTE (__C2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000e2          0x4 LONG 0x1bc DEFINED (__AltPWMInterrupt)?ABSOLUTE (__AltPWMInterrupt):DEFINED (__PWMInterrupt)?ABSOLUTE (__PWMInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000e4          0x4 LONG 0x1bc DEFINED (__AltQEIInterrupt)?ABSOLUTE (__AltQEIInterrupt):DEFINED (__QEIInterrupt)?ABSOLUTE (__QEIInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000e6          0x4 LONG 0x1bc DEFINED (__AltDCIInterrupt)?ABSOLUTE (__AltDCIInterrupt):DEFINED (__DCIInterrupt)?ABSOLUTE (__DCIInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000e8          0x4 LONG 0x1c8c DEFINED (__AltLVDInterrupt)?ABSOLUTE (__AltLVDInterrupt):DEFINED (__LVDInterrupt)?ABSOLUTE (__LVDInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000e8          0x4 LONG 0x1cac DEFINED (__AltLVDInterrupt)?ABSOLUTE (__AltLVDInterrupt):DEFINED (__LVDInterrupt)?ABSOLUTE (__LVDInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000ea          0x4 LONG 0x1bc DEFINED (__AltFLTAInterrupt)?ABSOLUTE (__AltFLTAInterrupt):DEFINED (__FLTAInterrupt)?ABSOLUTE (__FLTAInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000ec          0x4 LONG 0x1bc DEFINED (__AltFLTBInterrupt)?ABSOLUTE (__AltFLTBInterrupt):DEFINED (__FLTBInterrupt)?ABSOLUTE (__FLTBInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000ee          0x4 LONG 0x1bc DEFINED (__AltInterrupt45)?ABSOLUTE (__AltInterrupt45):DEFINED (__Interrupt45)?ABSOLUTE (__Interrupt45):ABSOLUTE (__DefaultInterrupt)
@@ -2041,10 +2041,10 @@ userdata
                     0x0216                  UART2 = 0x216
                     0x0216                  _UART2 = 0x216
 START GROUP
-LOAD c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libfx-elf.a
-LOAD c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libpic30-elf.a
-LOAD c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a
-LOAD c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a
+LOAD c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libfx-elf.a
+LOAD c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libpic30-elf.a
+LOAD c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a
+LOAD c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libc-elf.a
 END GROUP
 OUTPUT(dist/default/production/LedDisplay.X.production.elf elf32-pic30)
 LOAD jump_table
@@ -2091,99 +2091,99 @@ __c30_signature
  __c30_signature
                   0x0007e4          0x6 build/default/production/OverSpeedControl.o
  __c30_signature
-                  0x0007ea          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1Initialize.o)
+                  0x0007ea          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1Initialize.o)
  __c30_signature
-                  0x0007f0          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1IsTXReady.o)
+                  0x0007f0          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1IsTXReady.o)
  __c30_signature
-                  0x0007f6          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1ReceiveMessage.o)
+                  0x0007f6          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1ReceiveMessage.o)
  __c30_signature
-                  0x0007fc          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SendMessage.o)
+                  0x0007fc          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SendMessage.o)
  __c30_signature
-                  0x000802          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetFilter.o)
+                  0x000802          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetFilter.o)
  __c30_signature
-                  0x000808          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetMask.o)
+                  0x000808          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetMask.o)
  __c30_signature
-                  0x00080e          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetOperationMode.o)
+                  0x00080e          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetOperationMode.o)
  __c30_signature
-                  0x000814          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetRXMode.o)
+                  0x000814          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetRXMode.o)
  __c30_signature
-                  0x00081a          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetTXMode.o)
+                  0x00081a          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN1SetTXMode.o)
  __c30_signature
-                  0x000820          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2Initialize.o)
+                  0x000820          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2Initialize.o)
  __c30_signature
-                  0x000826          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2IsTXReady.o)
+                  0x000826          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2IsTXReady.o)
  __c30_signature
-                  0x00082c          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2ReceiveMessage.o)
+                  0x00082c          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2ReceiveMessage.o)
  __c30_signature
-                  0x000832          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SendMessage.o)
+                  0x000832          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SendMessage.o)
  __c30_signature
-                  0x000838          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetFilter.o)
+                  0x000838          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetFilter.o)
  __c30_signature
-                  0x00083e          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetMask.o)
+                  0x00083e          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetMask.o)
  __c30_signature
-                  0x000844          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetOperationMode.o)
+                  0x000844          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetOperationMode.o)
  __c30_signature
-                  0x00084a          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetRXMode.o)
+                  0x00084a          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetRXMode.o)
  __c30_signature
-                  0x000850          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetTXMode.o)
+                  0x000850          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(CAN2SetTXMode.o)
  __c30_signature
-                  0x000856          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(ConfigIntCAN1.o)
+                  0x000856          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(ConfigIntCAN1.o)
  __c30_signature
-                  0x00085c          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(ConfigIntCAN2.o)
+                  0x00085c          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(ConfigIntCAN2.o)
  __c30_signature
-                  0x000862          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(OpenSPI2.o)
+                  0x000862          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib/dsPIC30F\libp30F6012A-elf.a(OpenSPI2.o)
  __c30_signature
-                  0x000868          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
+                  0x000868          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
  __c30_signature
-                  0x00086e          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
+                  0x00086e          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
  __c30_signature
-                  0x000874          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(addsf3.eo)
+                  0x000874          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(addsf3.eo)
  __c30_signature
-                  0x00087a          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(ceilf.eo)
+                  0x00087a          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(ceilf.eo)
  __c30_signature
-                  0x000880          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(divsf3.eo)
+                  0x000880          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(divsf3.eo)
  __c30_signature
-                  0x000886          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(divsi3.eo)
+                  0x000886          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(divsi3.eo)
  __c30_signature
-                  0x00088c          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fchop.eo)
+                  0x00088c          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(fchop.eo)
  __c30_signature
-                  0x000892          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(feqltle.eo)
+                  0x000892          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(feqltle.eo)
  __c30_signature
-                  0x000898          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fixsfsi.eo)
+                  0x000898          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(fixsfsi.eo)
  __c30_signature
-                  0x00089e          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fixunssfsi.eo)
+                  0x00089e          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(fixunssfsi.eo)
  __c30_signature
-                  0x0008a4          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatsisf.eo)
+                  0x0008a4          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(floatsisf.eo)
  __c30_signature
-                  0x0008aa          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatunsisf.eo)
+                  0x0008aa          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(floatunsisf.eo)
  __c30_signature
-                  0x0008b0          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fpack.eo)
+                  0x0008b0          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(fpack.eo)
  __c30_signature
-                  0x0008b6          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(funpack.eo)
+                  0x0008b6          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(funpack.eo)
  __c30_signature
-                  0x0008bc          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(funpack2.eo)
+                  0x0008bc          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(funpack2.eo)
  __c30_signature
-                  0x0008c2          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(futil.eo)
+                  0x0008c2          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(futil.eo)
  __c30_signature
-                  0x0008c8          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(modsi3.eo)
+                  0x0008c8          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(modsi3.eo)
  __c30_signature
-                  0x0008ce          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(mulsf3.eo)
+                  0x0008ce          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(mulsf3.eo)
  __c30_signature
-                  0x0008d4          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
+                  0x0008d4          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
  __c30_signature
-                  0x0008da          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(umodsi3.eo)
+                  0x0008da          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(umodsi3.eo)
  __c30_signature
-                  0x0008e0          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(fcompare.eo)
+                  0x0008e0          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(fcompare.eo)
  __c30_signature
-                  0x0008e6          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatdisf.eo)
+                  0x0008e6          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(floatdisf.eo)
  __c30_signature
-                  0x0008ec          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libm-elf.a(floatundisf.eo)
+                  0x0008ec          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libm-elf.a(floatundisf.eo)
  __c30_signature
-                  0x0008f2          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(memcpy.eo)
+                  0x0008f2          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libc-elf.a(memcpy.eo)
  __c30_signature
-                  0x0008f8          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(strcat.eo)
+                  0x0008f8          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libc-elf.a(strcat.eo)
  __c30_signature
-                  0x0008fe          0x6 c:/program files (x86)/microchip/xc16/v1.20/bin/bin/../../lib\libc-elf.a(strlen.eo)
+                  0x0008fe          0x6 c:/program files/microchip/xc16/v1.21/bin/bin/../../lib\libc-elf.a(strlen.eo)
 
 .nbss               0x0800        0x42e
  .nbss              0x0800        0x360 build/default/production/main.o
@@ -2241,126 +2241,126 @@ __c30_signature
  .config_FCKSMEN
                   0xf80000          0x2 build/default/production/main.o
 
-.const              0x8954         0x8a load address 0x000954  
- .const             0x8954         0x7e build/default/production/WriteParameters.o
- .const             0x89d2          0xc build/default/production/main.o
+.const              0x8974         0x8a load address 0x000974  
+ .const             0x8974         0x7e build/default/production/WriteParameters.o
+ .const             0x89f2          0xc build/default/production/main.o
 
-.text             0x0009de       0x2ec8
- .text            0x0009de       0x12dc build/default/production/main.o
-                  0x0009de                  _ReadConfig
-                  0x000a6e                  _LVDinitialization
-                  0x000a9e                  _delay
-                  0x000ac6                  _LongToString
-                  0x000b7e                  _LongToCharArray
-                  0x000bb4                  _ReadDigitalInputs
-                  0x000bde                  _WriteDigitalOutputs
-                  0x000c16                  _DigitalInputsToString
-                  0x000c5c                  _OpenUART2
-                  0x000c7a                  _BusyUART2
-                  0x000c94                  _WriteCharToUART2
-                  0x000cac                  _PrintStringUART2
-                  0x000cc8                  _PrintDigitUART2
-                  0x000cf4                  _StartTimer1
-                  0x000d1a                  _StartTimer2
-                  0x000d40                  _StartTimer3
-                  0x000d66                  _StartTimer4
-                  0x000d8c                  _EncoderScan
-                  0x000e62                  _EncCountV
-                  0x000e80                  _EncGetDistanceStr
-                  0x000ec2                  _EncGetDistanceLong
-                  0x000ef8                  _EncDistanceToCounter
-                  0x000f2e                  _EncGetV
-                  0x000f76                  _clrscr
-                  0x000fbe                  _setDDRAM
-                  0x0010ea                  _DisplayInitialization
-                  0x0011be                  _DisplayView
-                  0x001386                  _ConfigurateSPI2
-                  0x0013ae                  _spi2_write
-                  0x0013e8                  _spi2_read
-                  0x001422                  _RtcSetTime
-                  0x001470                  _RtcInitialization
-                  0x00147a                  _rtc_write_byte
-                  0x00149c                  _RtcRead
-                  0x0014be                  _RtcReadSeconds
-                  0x0014ee                  _RtcReadMinutes
-                  0x00151e                  _RtcReadHours
-                  0x00154e                  _RtcReadDayOfWeek
-                  0x001560                  _RtcReadDays
-                  0x001590                  _RtcReadMonth
-                  0x0015c0                  _RtcReadYear
-                  0x0015ec                  _RtcWriteDateInString
-                  0x00181c                  _FramInitialization
-                  0x001826                  _FramWriteEnable
-                  0x001838                  _FramWrite
-                  0x001882                  _FramRead
-                  0x0018cc                  _FramReadStatus
-                  0x0018e8                  _FramReadPositionCounter
-                  0x001900                  _TrySynchronization
-                  0x001982                  _main
-                  0x0019b4                  __T1Interrupt
-                  0x001ac6                  __T2Interrupt
-                  0x001aec                  __T3Interrupt
-                  0x001b4c                  __T4Interrupt
-                  0x001bf4                  __C1Interrupt
-                  0x001c44                  __C2Interrupt
-                  0x001c8c                  __LVDInterrupt
- .text            0x001cba        0x79a build/default/production/CanOpen.o
-                  0x001cba                  _SendTPDO
-                  0x001cf2                  _SendTSDO
-                  0x001d10                  _CanOpenSendCurrentObjectState
-                  0x001dfc                  _CanOpenParseRSDO
-                  0x001e70                  _EditDictionaryElement
-                  0x001f0e                  _SendDictionaryElement
-                  0x001f6c                  _SendDeviceInformation
-                  0x0020c0                  _SendValue
-                  0x0021e0                  _SendParameterType
-                  0x002242                  _SendName
-                  0x0022ec                  _CanOpenEditName
-                  0x002348                  _CanOpenSendCodtDomainMsg
-                  0x0023b0                  _CanOpenGetCodtDomainMsg
- .text            0x002454        0x686 build/default/production/Parameters.o
-                  0x002454                  _AddParameter
-                  0x002604                  _DeleteParameter
-                  0x002678                  _ReadParameterValue
-                  0x0026e4                  _ReadParameterName
-                  0x002798                  _ReadParameterType
-                  0x0027c4                  _EditParameterValue
-                  0x002864                  _EditParameterName
-                  0x0029d2                  _FindMaxIndex
-                  0x002a58                  _FindDescriptorAdrByIndex
- .text            0x002ada        0x3a0 build/default/production/Can.o
-                  0x002ada                  _Can1Initialization
-                  0x002c58                  _Can2Initialization
-                  0x002dd6                  _Can1SendData
-                  0x002e16                  _Can2SendData
-                  0x002e56                  _Can1ReceiveData
-                  0x002e68                  _Can2ReceiveData
- .text            0x002e7a        0x374 build/default/production/Fat.o
-                  0x002e7a                  _WriteBootSector
-                  0x002ea2                  _ReadBootSector
-                  0x002eb2                  _Formatting
-                  0x002f10                  _ReadNextFat
-                  0x002f36                  _WriteToFat
-                  0x002f5a                  _FindFreeClusterNum
-                  0x002fa6                  _AllocateClustersSequence
-                  0x002ff4                  _ClearClustersSequence
-                  0x003024                  _FindFreeDescriptorAdr
-                  0x003098                  _WriteDescriptorByAddress
-                  0x0030b2                  _ReadDescriptorByAddress
-                  0x0030cc                  _DescriptorsDefragmentation
-                  0x00318a                  _WriteDataToCluster
-                  0x0031bc                  _ReadDataFromCluster
- .text            0x0031ee        0x30a build/default/production/WriteParameters.o
-                  0x0031ee                  _WriteAllParameters
- .text            0x0034f8        0x248 build/default/production/OverSpeedControl.o
-                  0x0034f8                  _OverSpeedInterpolation
-                  0x0036a2                  _OverSpeedGetMaxV
-                  0x00370e                  _OnBreak
- .text            0x003740         0xe6 build/default/production/Kolibrovka.o
-                  0x003740                  _TryMakeKolibrovka
- .text            0x003826         0x80 build/default/production/OverRiseZone.o
-                  0x003826                  _OverRiseZoneControl
-                  0x00386e                  _OnOveriseRele
+.text             0x0009fe       0x2ec2
+ .text            0x0009fe       0x12dc build/default/production/main.o
+                  0x0009fe                  _ReadConfig
+                  0x000a8e                  _LVDinitialization
+                  0x000abe                  _delay
+                  0x000ae6                  _LongToString
+                  0x000b9e                  _LongToCharArray
+                  0x000bd4                  _ReadDigitalInputs
+                  0x000bfe                  _WriteDigitalOutputs
+                  0x000c36                  _DigitalInputsToString
+                  0x000c7c                  _OpenUART2
+                  0x000c9a                  _BusyUART2
+                  0x000cb4                  _WriteCharToUART2
+                  0x000ccc                  _PrintStringUART2
+                  0x000ce8                  _PrintDigitUART2
+                  0x000d14                  _StartTimer1
+                  0x000d3a                  _StartTimer2
+                  0x000d60                  _StartTimer3
+                  0x000d86                  _StartTimer4
+                  0x000dac                  _EncoderScan
+                  0x000e82                  _EncCountV
+                  0x000ea0                  _EncGetDistanceStr
+                  0x000ee2                  _EncGetDistanceLong
+                  0x000f18                  _EncDistanceToCounter
+                  0x000f4e                  _EncGetV
+                  0x000f96                  _clrscr
+                  0x000fde                  _setDDRAM
+                  0x00110a                  _DisplayInitialization
+                  0x0011de                  _DisplayView
+                  0x0013a6                  _ConfigurateSPI2
+                  0x0013ce                  _spi2_write
+                  0x001408                  _spi2_read
+                  0x001442                  _RtcSetTime
+                  0x001490                  _RtcInitialization
+                  0x00149a                  _rtc_write_byte
+                  0x0014bc                  _RtcRead
+                  0x0014de                  _RtcReadSeconds
+                  0x00150e                  _RtcReadMinutes
+                  0x00153e                  _RtcReadHours
+                  0x00156e                  _RtcReadDayOfWeek
+                  0x001580                  _RtcReadDays
+                  0x0015b0                  _RtcReadMonth
+                  0x0015e0                  _RtcReadYear
+                  0x00160c                  _RtcWriteDateInString
+                  0x00183c                  _FramInitialization
+                  0x001846                  _FramWriteEnable
+                  0x001858                  _FramWrite
+                  0x0018a2                  _FramRead
+                  0x0018ec                  _FramReadStatus
+                  0x001908                  _FramReadPositionCounter
+                  0x001920                  _TrySynchronization
+                  0x0019a2                  _main
+                  0x0019d4                  __T1Interrupt
+                  0x001ae6                  __T2Interrupt
+                  0x001b0c                  __T3Interrupt
+                  0x001b6c                  __T4Interrupt
+                  0x001c14                  __C1Interrupt
+                  0x001c64                  __C2Interrupt
+                  0x001cac                  __LVDInterrupt
+ .text            0x001cda        0x79a build/default/production/CanOpen.o
+                  0x001cda                  _SendTPDO
+                  0x001d12                  _SendTSDO
+                  0x001d30                  _CanOpenSendCurrentObjectState
+                  0x001e1c                  _CanOpenParseRSDO
+                  0x001e90                  _EditDictionaryElement
+                  0x001f2e                  _SendDictionaryElement
+                  0x001f8c                  _SendDeviceInformation
+                  0x0020e0                  _SendValue
+                  0x002200                  _SendParameterType
+                  0x002262                  _SendName
+                  0x00230c                  _CanOpenEditName
+                  0x002368                  _CanOpenSendCodtDomainMsg
+                  0x0023d0                  _CanOpenGetCodtDomainMsg
+ .text            0x002474        0x686 build/default/production/Parameters.o
+                  0x002474                  _AddParameter
+                  0x002624                  _DeleteParameter
+                  0x002698                  _ReadParameterValue
+                  0x002704                  _ReadParameterName
+                  0x0027b8                  _ReadParameterType
+                  0x0027e4                  _EditParameterValue
+                  0x002884                  _EditParameterName
+                  0x0029f2                  _FindMaxIndex
+                  0x002a78                  _FindDescriptorAdrByIndex
+ .text            0x002afa        0x3a0 build/default/production/Can.o
+                  0x002afa                  _Can1Initialization
+                  0x002c78                  _Can2Initialization
+                  0x002df6                  _Can1SendData
+                  0x002e36                  _Can2SendData
+                  0x002e76                  _Can1ReceiveData
+                  0x002e88                  _Can2ReceiveData
+ .text            0x002e9a        0x374 build/default/production/Fat.o
+                  0x002e9a                  _WriteBootSector
+                  0x002ec2                  _ReadBootSector
+                  0x002ed2                  _Formatting
+                  0x002f30                  _ReadNextFat
+                  0x002f56                  _WriteToFat
+                  0x002f7a                  _FindFreeClusterNum
+                  0x002fc6                  _AllocateClustersSequence
+                  0x003014                  _ClearClustersSequence
+                  0x003044                  _FindFreeDescriptorAdr
+                  0x0030b8                  _WriteDescriptorByAddress
+                  0x0030d2                  _ReadDescriptorByAddress
+                  0x0030ec                  _DescriptorsDefragmentation
+                  0x0031aa                  _WriteDataToCluster
+                  0x0031dc                  _ReadDataFromCluster
+ .text            0x00320e        0x30a build/default/production/WriteParameters.o
+                  0x00320e                  _WriteAllParameters
+ .text            0x003518        0x242 build/default/production/OverSpeedControl.o
+                  0x003518                  _OverSpeedInterpolation
+                  0x0036bc                  _OverSpeedGetMaxV
+                  0x003728                  _OnBreak
+ .text            0x00375a         0xe6 build/default/production/Kolibrovka.o
+                  0x00375a                  _TryMakeKolibrovka
+ .text            0x003840         0x80 build/default/production/OverRiseZone.o
+                  0x003840                  _OverRiseZoneControl
+                  0x003888                  _OnOveriseRele
 
-.dinit            0x0038a6         0x2a
- .dinit           0x0038a6         0x2a data_init
+.dinit            0x0038c0         0x2a
+ .dinit           0x0038c0         0x2a data_init

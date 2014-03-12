@@ -10,7 +10,7 @@ unsigned char WriteAllParameters()
     deviceInformation.SystemName[0] = 0;
     strcat(deviceInformation.SystemName, "don_avto_1");
      deviceInformation.DeviceName[0] = 0;
-    strcat(deviceInformation.DeviceName,"os_3");
+    strcat(deviceInformation.DeviceName,"os_1");
     deviceInformation.DeviceVersion[0] = 0;
     strcat(deviceInformation.DeviceVersion,"v1.0");
     deviceInformation.SoftVersion[0] = 0;
