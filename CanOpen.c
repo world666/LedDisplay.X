@@ -78,6 +78,13 @@ void EditDictionaryElement(char* data)
         canOpenSubIndex = objSubIndex;
         canOpenCodtDomainLength = data[4];
         canOpenCodtDomainCurrentPosition = 0;
+        //element was accepted
+        char sendBuf[8];
+        sendBuf[0] = 0x60;
+        sendBuf[1] = data[1];
+        sendBuf[2] = data[2];
+        sendBuf[3] = data[3];
+        SendTSDO(nodeID, sendBuf,0);
         return;
     }
         switch(objSubIndex)

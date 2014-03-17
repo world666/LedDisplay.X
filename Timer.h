@@ -59,7 +59,7 @@ void StartTimer4()// write to can queue
     // Period = PR3 * prescaler * Tcy = 58594 * 256 * 33.33ns = 500ms
     T4CON = 0;            // Clear Timer 2 configuration
     T4CONbits.TCKPS = 3;  // Set timer 3 prescaler (0=1:1, 1=1:8, 2=1:64, 3=1:256)
-    PR4 = 1250;          // Set Timer 3 period (max value is 65535)
+    PR4 = 450;          // Set Timer 3 period (max value is 65535)
     _T4IP = 0x4;            // Set Timer 3 interrupt priority
     _T4IF = 0;            // Clear Timer 3 interrupt flag
     _T4IE = 1;            // Enable Timer 3 interrupt
@@ -73,7 +73,7 @@ void StartTimer5() //write to can bus
     // Period = PR3 * prescaler * Tcy = 58594 * 256 * 33.33ns = 500ms
     T5CON = 0;            // Clear Timer 5 configuration
     T5CONbits.TCKPS = 3;  // Set timer 5 prescaler (0=1:1, 1=1:8, 2=1:64, 3=1:256)
-    PR5 = 600;          // Set Timer 5 period (max value is 65535)
+    PR5 = 200;          // Set Timer 5 period (max value is 65535)
     _T5IP = 0x3;            // Set Timer 5 interrupt priority
     _T5IF = 0;            // Clear Timer 5 interrupt flag
     _T5IE = 1;            // Enable Timer 5 interrupt
