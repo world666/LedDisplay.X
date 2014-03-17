@@ -54,20 +54,3 @@ int OverSpeedGetMaxV(long s,int speed)
     }
     return overSpeedIV[i];
 }
-
-void OnBreak()
-{
-    TRISDbits.TRISD1 = 0;//output OE
-    TRISDbits.TRISD2 = 0;//output LE
-    //write output digit (RB8-RB15)
-    TRISB |= 0xFF00;//input
-
-    LATDbits.LATD2 = 0; //clr LE
-    LATDbits.LATD1 = 1; //set OE
-    TRISB &= 0x00FF;//output
-    PORTB = PORTB&0xBFFF;
-    LATDbits.LATD2 = 1;//set LE (D17 save data)
-    delay(25);
-    LATDbits.LATD2 = 0;//set LE (D17 save data)
-    delay(25);
-}

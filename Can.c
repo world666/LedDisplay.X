@@ -3,6 +3,22 @@
 
 //globals vars
 extern int _nodeId;
+unsigned char queueSize = 10;
+unsigned char bufCount = 3;
+
+//can1
+unsigned char isTeilCan1OverCome[3] = {0,0,0};
+char can1DataBuf[3][10][8];
+int sidCan1Data[3][10];
+unsigned char headCan1[3] = {0,0,0};
+unsigned char teilCan1[3] = {0,0,0};
+
+//can2
+unsigned char isTeilCan2OverCome[3] = {0,0,0};
+char can2DataBuf[3][10][8];
+int sidCan2Data[3][10];
+unsigned char headCan2[3] = {0,0,0};
+unsigned char teilCan2[3] = {0,0,0};
 
 void Can1Initialization(void)
 {
@@ -24,7 +40,7 @@ void Can1Initialization(void)
              CAN_INDI_TXB0_DIS &
              CAN_INDI_RXB1_EN &
              CAN_INDI_RXB0_EN ,
-             CAN_INT_PRI_5 &
+             CAN_INT_PRI_2 &
              CAN_INT_ENABLE);
 //Set Filters
     long node_id = _nodeId;
@@ -94,16 +110,66 @@ void Can2Initialization(void)
 
 void Can1SendData(unsigned int sid, char* data, unsigned char bufNumber)
 {
-    while(!CAN1IsTXReady(bufNumber));
-	//Load message ID, Data into transmit buffer and set transmit request bit
-	CAN1SendMessage((CAN_TX_SID(sid)) & (CAN_TX_EID_DIS) & (CAN_SUB_NOR_TX_REQ), (CAN_TX_EID(1)) & (CAN_NOR_TX_REQ), data, 8, bufNumber);
+    unsigned char teil = teilCan1[bufNumber];
+    IncTeilCan1(bufNumber);
+    sidCan1Data[bufNumber][teil] = sid;
+    int i = 0;
+    for(i;i<8;i++)
+        can1DataBuf[bufNumber][teil][i] = data[i];
 }
 
 void Can2SendData(unsigned int sid, char* data, unsigned char bufNumber)
 {
-    while(!CAN2IsTXReady(bufNumber));
-	//Load message ID, Data into transmit buffer and set transmit request bit
+    unsigned char teil = teilCan2[bufNumber];
+    IncTeilCan2(bufNumber);
+    sidCan2Data[bufNumber][teil] = sid;
+    int i = 0;
+    for(i;i<8;i++)
+        can2DataBuf[bufNumber][teil][i] = data[i];
+}
+
+void Can1Execute()
+{
+    int bufNumber = 0;
+    unsigned int sid;
+    char data[8];
+    char head;
+    for(bufNumber; bufNumber<bufCount; bufNumber++)
+    {
+        if(IsQueueCan1Empty(bufNumber))
+            continue;
+        while(!CAN1IsTXReady(bufNumber));
+        head = headCan1[bufNumber];
+        sid = sidCan1Data[bufNumber][head];
+        int j = 0;
+        for(j;j<8;j++)
+            data[j] = can1DataBuf[bufNumber][head][j];
+        //Load message ID, Data into transmit buffer and set transmit request bit
+	CAN1SendMessage((CAN_TX_SID(sid)) & (CAN_TX_EID_DIS) & (CAN_SUB_NOR_TX_REQ), (CAN_TX_EID(1)) & (CAN_NOR_TX_REQ), data, 8, bufNumber);
+        IncHeadCan1(bufNumber);
+    }
+}
+
+void Can2Execute()
+{
+    int bufNumber = 0;
+    unsigned int sid;
+    char data[8];
+    char head;
+    for(bufNumber; bufNumber<bufCount; bufNumber++)
+    {
+        if(IsQueueCan2Empty(bufNumber))
+            continue;
+        while(!CAN2IsTXReady(bufNumber));
+        head = headCan2[bufNumber];
+        sid = sidCan2Data[bufNumber][head];
+        int j = 0;
+        for(j;j<8;j++)
+            data[j] = can2DataBuf[bufNumber][head][j];
+        //Load message ID, Data into transmit buffer and set transmit request bit
 	CAN2SendMessage((CAN_TX_SID(sid)) & (CAN_TX_EID_DIS) & (CAN_SUB_NOR_TX_REQ), (CAN_TX_EID(1)) & (CAN_NOR_TX_REQ), data, 8, bufNumber);
+        IncHeadCan2(bufNumber);
+    }
 }
 
 void Can1ReceiveData(char* data)
@@ -114,4 +180,58 @@ void Can1ReceiveData(char* data)
 void Can2ReceiveData(char* data)
 {
     CAN2ReceiveMessage(data, 8, 0);
+}
+
+void IncTeilCan1(unsigned char bufNumber)
+{
+    teilCan1[bufNumber]++;
+    if(teilCan1[bufNumber]>=queueSize)
+    {
+        teilCan1[bufNumber] = 0;
+        isTeilCan1OverCome[bufNumber] = 1;
+    }
+}
+void IncHeadCan1(unsigned char bufNumber)
+{
+    headCan1[bufNumber]++;
+    if(headCan1[bufNumber]>=queueSize)
+    {
+        headCan1[bufNumber]=0;
+        isTeilCan1OverCome[bufNumber] = 0;
+    }
+}
+char IsQueueCan1Empty(unsigned char bufNumber)
+{
+    if(isTeilCan1OverCome[bufNumber] == 1)
+        return 0;
+    if(headCan1[bufNumber] < teilCan1[bufNumber])
+        return 0;
+    return 1;
+}
+
+void IncTeilCan2(unsigned char bufNumber)
+{
+    teilCan2[bufNumber]++;
+    if(teilCan2[bufNumber]>=queueSize)
+    {
+        teilCan2[bufNumber] = 0;
+        isTeilCan2OverCome[bufNumber] = 1;
+    }
+}
+void IncHeadCan2(unsigned char bufNumber)
+{
+    headCan2[bufNumber]++;
+    if(headCan2[bufNumber]>=queueSize)
+    {
+        headCan2[bufNumber]=0;
+        isTeilCan2OverCome[bufNumber] = 0;
+    }
+}
+char IsQueueCan2Empty(unsigned char bufNumber)
+{
+    if(isTeilCan2OverCome[bufNumber] == 1)
+        return 0;
+    if(headCan2[bufNumber] < teilCan2[bufNumber])
+        return 0;
+    return 1;
 }

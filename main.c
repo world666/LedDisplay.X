@@ -68,6 +68,8 @@ void __attribute__((__interrupt__, __auto_psv__)) _T2Interrupt(void);
 void __attribute__((__interrupt__, __auto_psv__)) _T3Interrupt(void);
 // Function prototype for timer 4 ISR
 void __attribute__((__interrupt__, __auto_psv__)) _T4Interrupt(void);
+// Function prototype for timer 5 ISR
+void __attribute__((__interrupt__, __auto_psv__)) _T5Interrupt(void);
 // Can1 Receive Parameter
 void __attribute__ ((__interrupt__, __auto_psv__)) _C1Interrupt (void);
 // Can2 Receive Parameter
@@ -89,7 +91,7 @@ int main(int argc, char** argv) {
     
     LVDinitialization(); //voltage detect interrupt
 
-    WriteDigitalOutputs(0b00000011);
+    WriteDigitalOutputs(0b01000011,0b01000011);
 
     Can1Initialization();
     Can2Initialization();
@@ -98,6 +100,7 @@ int main(int argc, char** argv) {
     StartTimer2();
     StartTimer3();
     StartTimer4();
+    StartTimer5();
     DisplayView("start"); //lcd display write
     
     while(1);
@@ -177,10 +180,18 @@ void __attribute__((__interrupt__, __auto_psv__)) _T4Interrupt(void)
     int a = 0;
     char inputSignals = ReadDigitalInputs();
     int maxV = OverSpeedGetMaxV(lDistance,speed);
-    /*if(speed>maxV)
-        OnBreak();*/
+    if(abs(speed)>maxV)
+        WriteDigitalOutputs(0b01000000,0b00000000);
     CanOpenSendCurrentObjectState(rDistance,lDistance,speed,maxV,a,inputSignals,1);
     CanOpenSendCurrentObjectState(rDistance,lDistance,speed,maxV,a,inputSignals,2);
+}
+void __attribute__((__interrupt__, __auto_psv__)) _T5Interrupt(void)
+{
+    // Clear Timer 5 interrupt flag
+    // Write to can bus
+    _T5IF = 0;
+    Can1Execute();
+    Can2Execute();
 }
 void __attribute__ ((__interrupt__, __auto_psv__)) _C1Interrupt (void){
     IFS1bits.C1IF = 0; //Clear CAN1 interrupt flag

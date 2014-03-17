@@ -48,3 +48,19 @@ void Can1ReceiveData(char*);
  * @todo Read data(8 byte) over can interface
  */
 void Can2ReceiveData(char*);
+
+void Can1Execute();
+
+void Can2Execute();
+
+void IncTeilCan1(unsigned char);
+
+void IncHeadCan1(unsigned char);
+
+char IsQueueCan1Empty(unsigned char);
+
+void IncTeilCan2(unsigned char);
+
+void IncHeadCan2(unsigned char);
+
+char IsQueueCan2Empty(unsigned char);

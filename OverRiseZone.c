@@ -11,11 +11,11 @@ char OverRiseZoneControl(long currentS)
     if(!_overRiseControl)
         return;
     if(currentS < _lowEdge - _overRizeZoneLow) //overise low
-        WriteDigitalOutputs(2);
+        WriteDigitalOutputs(0x3,0x2);
     else if(currentS > _highEdge + _overRizeZoneHigh)
-        WriteDigitalOutputs(1);
+        WriteDigitalOutputs(0x3,0x1);
     else
-        WriteDigitalOutputs(3);
+        WriteDigitalOutputs(0x3,0x3);
 }
 void OnOveriseRele(char data)
 {

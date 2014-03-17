@@ -13,6 +13,7 @@
  * write data from ram to output register
  * @return input data from port
  */
+char outputBuffer = 0;
 char ReadDigitalInputs()
 {
     TRISDbits.TRISD1 = 0;//output OE
@@ -27,9 +28,12 @@ char ReadDigitalInputs()
     LATDbits.LATD1 = 1; //set OE
     return (raData>>8);
 }
-void WriteDigitalOutputs(char data)
+void WriteDigitalOutputs(char maska, char data)
 {
-    data = ~data;
+    maska = ~maska;
+    outputBuffer &= maska;
+    outputBuffer |= data;
+    char outputData = ~outputBuffer;
     TRISDbits.TRISD1 = 0;//output OE
     TRISDbits.TRISD2 = 0;//output LE
     //write output digit (RB8-RB15)
@@ -38,7 +42,7 @@ void WriteDigitalOutputs(char data)
     LATDbits.LATD2 = 0; //clr LE
     LATDbits.LATD1 = 1; //set OE
     TRISB &= 0x00FF;//output
-    PORTB = data<<8;
+    PORTB = outputData<<8;
     LATDbits.LATD2 = 1;//set LE (D17 save data)
     delay(25);
     LATDbits.LATD2 = 0;//set LE (D17 save data)

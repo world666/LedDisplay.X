@@ -46,22 +46,36 @@ void StartTimer3()//0.1s
     T3CON = 0;            // Clear Timer 2 configuration
     T3CONbits.TCKPS = 3;  // Set timer 3 prescaler (0=1:1, 1=1:8, 2=1:64, 3=1:256)
     PR3 = 9374;          // Set Timer 3 period (max value is 65535)
-    _T3IP = 0x4;            // Set Timer 3 interrupt priority
+    _T3IP = 0x5;            // Set Timer 3 interrupt priority
     _T3IF = 0;            // Clear Timer 3 interrupt flag
     _T3IE = 1;            // Enable Timer 3 interrupt
     T3CONbits.TON = 1;    // Turn on Timer 3
 }
 
-void StartTimer4()// write to can bus
+void StartTimer4()// write to can queue
 {
-    // Configure Timer 3.
+    // Configure Timer 4.
     // PR3 and TCKPS are set to call interrupt every 500ms.
     // Period = PR3 * prescaler * Tcy = 58594 * 256 * 33.33ns = 500ms
     T4CON = 0;            // Clear Timer 2 configuration
     T4CONbits.TCKPS = 3;  // Set timer 3 prescaler (0=1:1, 1=1:8, 2=1:64, 3=1:256)
     PR4 = 1250;          // Set Timer 3 period (max value is 65535)
-    _T4IP = 0x3;            // Set Timer 3 interrupt priority
+    _T4IP = 0x4;            // Set Timer 3 interrupt priority
     _T4IF = 0;            // Clear Timer 3 interrupt flag
     _T4IE = 1;            // Enable Timer 3 interrupt
     T4CONbits.TON = 1;    // Turn on Timer 3
+}
+
+void StartTimer5() //write to can bus
+{
+        // Configure Timer 4.
+    // PR3 and TCKPS are set to call interrupt every 500ms.
+    // Period = PR3 * prescaler * Tcy = 58594 * 256 * 33.33ns = 500ms
+    T5CON = 0;            // Clear Timer 5 configuration
+    T5CONbits.TCKPS = 3;  // Set timer 5 prescaler (0=1:1, 1=1:8, 2=1:64, 3=1:256)
+    PR5 = 600;          // Set Timer 5 period (max value is 65535)
+    _T5IP = 0x3;            // Set Timer 5 interrupt priority
+    _T5IF = 0;            // Clear Timer 5 interrupt flag
+    _T5IE = 1;            // Enable Timer 5 interrupt
+    T5CONbits.TON = 1;    // Turn on Timer 5
 }

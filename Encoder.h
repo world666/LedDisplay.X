@@ -45,7 +45,7 @@ switch(EncState)
 EncState = New;		// ?????????? ????? ????????				// ??????????? ?????????
 }
 
-long EncStartVcounter = 0;
+long EncStartVcounter = -1;
 int Vvalue = 0;
 
 /**
@@ -54,6 +54,10 @@ int Vvalue = 0;
  */
 void EncCountV()
 {
+    if(EncStartVcounter == -1)
+    {
+        EncStartVcounter = EncPositionCounter;
+    }
     Vvalue= EncPositionCounter - EncStartVcounter;
     EncStartVcounter = EncPositionCounter;
 }
