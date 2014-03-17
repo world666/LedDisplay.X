@@ -91,7 +91,7 @@ int main(int argc, char** argv) {
     
     LVDinitialization(); //voltage detect interrupt
 
-    WriteDigitalOutputs(0b01000011,0b01000011);
+    WriteDigitalOutputs(0b01000011,0b00000011);
 
     Can1Initialization();
     Can2Initialization();
@@ -123,6 +123,8 @@ void __attribute__((__interrupt__, __auto_psv__)) _T1Interrupt(void)
     OverRiseZoneControl(EncGetDistanceLong());
     //try make kolibrovka
     TryMakeKolibrovka(signals);
+    //try on overspeed  relay
+    TryInitOverSpeedControl(signals);
     // write to uart encoder counter
     char str[60]="";
     char sDistance[12];

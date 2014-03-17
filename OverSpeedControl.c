@@ -54,3 +54,8 @@ int OverSpeedGetMaxV(long s,int speed)
     }
     return overSpeedIV[i];
 }
+void TryInitOverSpeedControl(char signals)
+{
+    if((signals&0b10000000) == 0)
+        WriteDigitalOutputs(0b01000000,0b01000000);
+}

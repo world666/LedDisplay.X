@@ -15,7 +15,7 @@ long _lowEdge;
 int _synchronization;
 int _synchZone;
 int _overRiseControl = 1;
-int _kolibrovka = 1;
+int _kolibrovka = 0;
 int _overRizeZoneHigh;
 int _overRizeZoneLow;
 int _buffer;
@@ -23,6 +23,7 @@ long overSpeedS[20];
 int overSpeedV[20];
 long overSpeedIS[120];
 int overSpeedIV[120];
+int _buffer2;
 
 //parameters ids
 #define ENCODER_COUNTER 0x2001
