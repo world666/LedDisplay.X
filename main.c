@@ -117,8 +117,7 @@ void __attribute__((__interrupt__, __auto_psv__)) _T1Interrupt(void)
 
     char signals = ReadDigitalInputs();
 
-    //sync encoder counter
-    TrySynchronization(signals);
+    
     //over rise zone control
     OverRiseZoneControl(EncGetDistanceLong());
     //try make kolibrovka
@@ -166,7 +165,12 @@ void __attribute__((__interrupt__, __auto_psv__)) _T3Interrupt(void)
     TRISCbits.TRISC14 = 0;
     // Toggle LED on RD1
     LATCbits.LATC14 = 1 - LATCbits.LATC14;
+
     EncCountV();
+    
+    char signals = ReadDigitalInputs();
+    //sync encoder counter
+    TrySynchronization(signals);
 }
 void __attribute__((__interrupt__, __auto_psv__)) _T4Interrupt(void)
 {
@@ -181,7 +185,7 @@ void __attribute__((__interrupt__, __auto_psv__)) _T4Interrupt(void)
     long rDistance = lowEdge + highEdge - lDistance;
     int a = 0;
     char inputSignals = ReadDigitalInputs();
-    int maxV = OverSpeedGetMaxV(lDistance,speed);
+    int maxV = OverSpeedGetMaxV(lDistance,speed,inputSignals);
     if(abs(speed)>maxV)
         WriteDigitalOutputs(0b01000000,0b00000000);
     CanOpenSendCurrentObjectState(rDistance,lDistance,speed,maxV,a,inputSignals,1);

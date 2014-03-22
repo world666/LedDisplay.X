@@ -90,7 +90,8 @@ void EditDictionaryElement(char* data)
         switch(objSubIndex)
         {
             case 2:
-                EditParameterValue(objIndex, data + 4,4);
+                EditParameterValue(objIndex, data + 4,4);//edit in fram device
+                UpdateConfig(objIndex);//edit in controller's ram
                 break;
             case 4:
                 CanOpenEditName(data);
@@ -332,7 +333,8 @@ void CanOpenGetCodtDomainMsg(char* data)
         unsigned char unusedBytes = (data[0]&0x0E)>>1;
         for(i;i<7-unusedBytes;i++)
             canOpenCodtDomainBlock[canOpenCodtDomainCurrentPosition++] = data[i+1];
-        EditParameterValue(canOpenIndex,canOpenCodtDomainBlock,canOpenCodtDomainLength);
+        EditParameterValue(canOpenIndex,canOpenCodtDomainBlock,canOpenCodtDomainLength); //edit in fram device
+        UpdateConfig(canOpenIndex); //edit in controller's ram
     }
     else
         for(i;i<7;i++)
