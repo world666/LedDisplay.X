@@ -84,7 +84,7 @@ void Can2Initialization(void)
              CAN_INDI_TXB0_DIS &
              CAN_INDI_RXB1_EN &
              CAN_INDI_RXB0_EN ,
-             CAN_INT_PRI_5 &
+             CAN_INT_PRI_2 &
              CAN_INT_ENABLE);
 //Set Filters
     long node_id = _nodeId;

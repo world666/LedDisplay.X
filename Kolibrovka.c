@@ -34,7 +34,7 @@ char TryMakeKolibrovka(char inputSignals)
         float f2Edge = _lowEdge;
         float enc = -(EncPositionCounter>>2);
         _distancePerMarks = ((f1Edge - f2Edge)/enc);
-        EditParameterValue(DISTANCE_PER_MARKS,&_distancePerMarks);
+        EditParameterValue(DISTANCE_PER_MARKS,&_distancePerMarks,4);
         EncPositionCounter = _lowEdge/_distancePerMarks;
         EncPositionCounter<<=2;
         _kolibrovka = 0;

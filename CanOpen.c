@@ -6,6 +6,7 @@ unsigned int canOpenCodtDomainLength;
 unsigned int canOpenCodtDomainCurrentPosition = 0;
 unsigned int canOpenIndex;
 unsigned int canOpenSubIndex;
+unsigned char _canNumber;
 
 int parameterPackageWasSent = 0;
 
@@ -22,12 +23,15 @@ void SendTPDO(unsigned char pdoNumber, unsigned char nodeId, char* data, unsigne
  else
     Can2SendData(sId, data, bufNumber);
 }
-void SendTSDO(unsigned char nodeId, char* data, unsigned char bufNumber)
+void SendTSDO(unsigned char nodeId, char* data, unsigned char bufNumber, char canNumber)
 {
  unsigned int sId;
  sId = 0x580;
  sId += nodeId;
- Can1SendData(sId, data, bufNumber);
+ if(canNumber == 1)
+    Can1SendData(sId, data, bufNumber);
+ else
+    Can2SendData(sId, data, bufNumber);
 }
 void CanOpenSendCurrentObjectState(long s1, long s2, int v, int maxV, int a, char inputSignals,char canNumber)
 {
@@ -53,10 +57,11 @@ void CanOpenSendCurrentObjectState(long s1, long s2, int v, int maxV, int a, cha
     char data3[8] = {inputSignals, 0, 0 ,0, 0, 0, 0 ,0};
     SendTPDO(3, nodeID, data3,0,canNumber);
 }
-void CanOpenParseRSDO(unsigned int sid,char *data)
+void CanOpenParseRSDO(unsigned int sid,char *data, char canNumber)
 {
     if((sid&0x780)!=0x600)//if it's not rsdo
         return;
+    _canNumber = canNumber;
     parameterPackageWasSent = 10000;
     if(data[0] == 0x40)//read query
         SendDictionaryElement(data);
@@ -84,7 +89,7 @@ void EditDictionaryElement(char* data)
         sendBuf[1] = data[1];
         sendBuf[2] = data[2];
         sendBuf[3] = data[3];
-        SendTSDO(nodeID, sendBuf,0);
+        SendTSDO(nodeID, sendBuf,0,_canNumber);
         return;
     }
         switch(objSubIndex)
@@ -104,7 +109,7 @@ void EditDictionaryElement(char* data)
     sendBuf[1] = data[1];
     sendBuf[2] = data[2];
     sendBuf[3] = data[3];
-    SendTSDO(nodeID, sendBuf,0);
+    SendTSDO(nodeID, sendBuf,0,_canNumber);
 }
 void SendDictionaryElement(char* data)
 {   
@@ -196,7 +201,7 @@ void SendDeviceInformation(char* data)
         for(i=0;i<byteCount;i++)
             sendBuf[i + 4] = valueArray[i];
     }
-    SendTSDO(nodeID, sendBuf,0);
+    SendTSDO(nodeID, sendBuf,0,_canNumber);
 }
 void SendValue(char* data)
 {
@@ -245,7 +250,7 @@ void SendValue(char* data)
         for(i=0;i<byteCount;i++)
             sendBuf[i + 4] = valueArray[i];
     }
-    SendTSDO(nodeID, sendBuf,0);
+    SendTSDO(nodeID, sendBuf,0,_canNumber);
 }
 void SendParameterType(char* data)
 {
@@ -261,7 +266,7 @@ void SendParameterType(char* data)
     sendBuf[3] = data[3];
     sendBuf[4] = objType;
     sendBuf[5] = 0x0;
-    SendTSDO(nodeID, sendBuf,0);
+    SendTSDO(nodeID, sendBuf,0,_canNumber);
 }
 void SendName(char* data)
 {
@@ -293,7 +298,7 @@ void SendName(char* data)
         canOpenCodtDomainCurrentPosition = 0;
         canOpenCodtDomainLength = byteCount;
     }
-    SendTSDO(nodeID, sendBuf,0);
+    SendTSDO(nodeID, sendBuf,0,_canNumber);
 }
 void CanOpenEditName(char* data)
 {
@@ -322,7 +327,7 @@ void CanOpenSendCodtDomainMsg()
     int i=1;
     for(i;i<8;i++)
         sendBuf[i] = canOpenCodtDomainBlock[canOpenCodtDomainCurrentPosition++];
-    SendTSDO(nodeID, sendBuf,0);
+    SendTSDO(nodeID, sendBuf,0,_canNumber);
 }
 void CanOpenGetCodtDomainMsg(char* data)
 {
@@ -346,5 +351,5 @@ void CanOpenGetCodtDomainMsg(char* data)
     sendBuf[1] = pointer[0];
     sendBuf[2] = pointer[1];
     sendBuf[3] = canOpenSubIndex;
-    SendTSDO(nodeID, sendBuf,0);
+    SendTSDO(nodeID, sendBuf,0,_canNumber);
 }

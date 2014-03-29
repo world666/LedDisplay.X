@@ -17,6 +17,7 @@ void FramInitialization()
 {
     TRISGbits.TRISG12 = 0; // CS_FR out
     ConfigurateSPI2();
+    delay(4000);
 }
 
 /**

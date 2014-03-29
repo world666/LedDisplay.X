@@ -27,7 +27,7 @@ unsigned char WriteAllParameters()
         return 0;
 
     char name2[] = "node_id";
-    value = 1;
+    value = 2;
     if(!AddParameter(name2,0x10,&value,3))
         return 0;
 

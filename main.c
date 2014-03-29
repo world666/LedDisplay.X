@@ -84,12 +84,13 @@ int main(int argc, char** argv) {
     //RtcSetTime();
     FramInitialization(); //fram init
     //read config
-    WriteAllParameters();
+    //WriteAllParameters();
+
     ReadParameterValue(ENCODER_COUNTER,&EncPositionCounter); //read position counter id = 0x2000
 
     ReadConfig();
     
-    LVDinitialization(); //voltage detect interrupt
+    //LVDinitialization(); //voltage detect interrupt
 
     WriteDigitalOutputs(0b01000011,0b00000011);
 
@@ -188,6 +189,8 @@ void __attribute__((__interrupt__, __auto_psv__)) _T4Interrupt(void)
     int maxV = OverSpeedGetMaxV(lDistance,speed,inputSignals);
     if(abs(speed)>maxV)
         WriteDigitalOutputs(0b01000000,0b00000000);
+    else
+        WriteDigitalOutputs(0b01000000,0b01000000);
     CanOpenSendCurrentObjectState(rDistance,lDistance,speed,maxV,a,inputSignals,1);
     CanOpenSendCurrentObjectState(rDistance,lDistance,speed,maxV,a,inputSignals,2);
 }
@@ -211,7 +214,7 @@ void __attribute__ ((__interrupt__, __auto_psv__)) _C1Interrupt (void){
     }
     unsigned int sid = C1RX0SIDbits.SID;
     Can1ReceiveData(rxData);
-    CanOpenParseRSDO(sid,rxData); //parse message and send response
+    CanOpenParseRSDO(sid,rxData,1); //parse message and send response
     C1RX0CONbits.RXFUL = 0;
     C1RX1CONbits.RXFUL = 0;
     //delay(10000);
@@ -228,7 +231,7 @@ void __attribute__ ((__interrupt__, __auto_psv__)) _C2Interrupt (void){
     }
     unsigned int sid = C2RX0SIDbits.SID;
     Can2ReceiveData(rxData);
-    //CanOpenParseRSDO(sid,rxData); //parse message and send response
+    CanOpenParseRSDO(sid,rxData,2); //parse message and send response
     C2RX0CONbits.RXFUL = 0;
     C2RX1CONbits.RXFUL = 0;
     //delay(10000);
