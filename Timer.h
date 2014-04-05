@@ -20,7 +20,7 @@ void StartTimer1()//write to uart timer
  * @author Kyrylov Andrii
  * @todo init timer 2 (encoder timer f1 f2)
  */
-void StartTimer2()//4.1 mks
+void StartTimer2()//7.08 mks
 {
     // Configure Timer 2.
     // PR2 and TCKPS are set to call interrupt every 500ms.

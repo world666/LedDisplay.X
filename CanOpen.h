@@ -26,5 +26,5 @@ typedef struct DeviceInformation //28bytes
  * @param char - can number
  * @todo send current object state using tpdo over can bus
  */
-void CanOpenSendCurrentObjectState(long, long, int, int, int, char,char);
+void CanOpenSendCurrentObjectState(long, long, int, int, int, char*,char);
 

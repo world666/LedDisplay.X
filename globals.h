@@ -24,6 +24,7 @@ long overSpeedIS1[120]; int overSpeedIV1[120];
 long overSpeedIS2[120]; int overSpeedIV2[120];
 long overSpeedIS3[120]; int overSpeedIV3[120];
 long overSpeedIS4[120]; int overSpeedIV4[120];
+extern long EncPositionCounter;
 int _buffer2;
 
 //parameters ids
@@ -77,6 +78,7 @@ void UpdateConfig(int parameterId)
     switch(parameterId)
     {
         case ENCODER_COUNTER:
+            ReadParameterValue(ENCODER_COUNTER,&EncPositionCounter);
             break;
         case NODE_ID:
             ReadParameterValue(NODE_ID,&_nodeId);

@@ -99,5 +99,5 @@ int EncGetV()
 {
     int speed = Vvalue>>2;
     speed*=_distancePerMarks;
-    return speed/0.1;
+    return speed/0.0708;
 }

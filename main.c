@@ -77,6 +77,8 @@ void __attribute__ ((__interrupt__, __auto_psv__)) _C1Interrupt (void);
 // LVD interrupt
 void __attribute__((__interrupt__, __auto_psv__)) _LVDInterrupt(void);
 
+int repeatCount = 0;
+
 int main(int argc, char** argv) {
     ADPCFG = 0xFFFF;//RA only digit
     DisplayInitialization(); //lcd display init
@@ -90,7 +92,7 @@ int main(int argc, char** argv) {
 
     ReadConfig();
     
-    //LVDinitialization(); //voltage detect interrupt
+    LVDinitialization(); //voltage detect interrupt
 
     WriteDigitalOutputs(0b01000011,0b00000011);
 
@@ -118,13 +120,6 @@ void __attribute__((__interrupt__, __auto_psv__)) _T1Interrupt(void)
 
     char signals = ReadDigitalInputs();
 
-    
-    //over rise zone control
-    OverRiseZoneControl(EncGetDistanceLong());
-    //try make kolibrovka
-    TryMakeKolibrovka(signals);
-    //try on overspeed  relay
-    TryInitOverSpeedControl(signals);
     // write to uart encoder counter
     char str[60]="";
     char sDistance[12];
@@ -155,6 +150,14 @@ void __attribute__((__interrupt__, __auto_psv__)) _T2Interrupt(void)
     // Clear Timer 2 interrupt flag
     _T2IF = 0;
     EncoderScan();
+
+    repeatCount++;
+
+    if(repeatCount==10000)
+    {
+        repeatCount=0;
+        EncCountV();
+    }
 }
 void __attribute__((__interrupt__, __auto_psv__)) _T3Interrupt(void)
 {
@@ -166,12 +169,26 @@ void __attribute__((__interrupt__, __auto_psv__)) _T3Interrupt(void)
     TRISCbits.TRISC14 = 0;
     // Toggle LED on RD1
     LATCbits.LATC14 = 1 - LATCbits.LATC14;
-
-    EncCountV();
     
+    FramWrite(5172,&EncPositionCounter,4); //adr=0 : data sector
+
     char signals = ReadDigitalInputs();
     //sync encoder counter
     TrySynchronization(signals);
+    //over rise zone control
+    OverRiseZoneControl(EncGetDistanceLong());
+    //try make kolibrovka
+    TryMakeKolibrovka(signals);
+    //try on overspeed  relay
+    TryInitOverSpeedControl(signals);
+    //over speed
+    int speed = EncGetV();
+    long lDistance = EncGetDistanceLong();
+    int maxV = OverSpeedGetMaxV(lDistance,speed,signals);
+    if(abs(speed)>maxV)
+        WriteDigitalOutputs(0b01000000,0b00000000);
+    else
+        WriteDigitalOutputs(0b01000000,0b01000000);
 }
 void __attribute__((__interrupt__, __auto_psv__)) _T4Interrupt(void)
 {
@@ -187,12 +204,9 @@ void __attribute__((__interrupt__, __auto_psv__)) _T4Interrupt(void)
     int a = 0;
     char inputSignals = ReadDigitalInputs();
     int maxV = OverSpeedGetMaxV(lDistance,speed,inputSignals);
-    if(abs(speed)>maxV)
-        WriteDigitalOutputs(0b01000000,0b00000000);
-    else
-        WriteDigitalOutputs(0b01000000,0b01000000);
-    CanOpenSendCurrentObjectState(rDistance,lDistance,speed,maxV,a,inputSignals,1);
-    CanOpenSendCurrentObjectState(rDistance,lDistance,speed,maxV,a,inputSignals,2);
+    char externSignals[8] = {inputSignals,0,0,0,GetDigitalOutputs(),0,0,0};
+    CanOpenSendCurrentObjectState(rDistance,lDistance,speed,maxV,a,externSignals,1);
+    CanOpenSendCurrentObjectState(rDistance,lDistance,speed,maxV,a,externSignals,2);
 }
 void __attribute__((__interrupt__, __auto_psv__)) _T5Interrupt(void)
 {
@@ -242,5 +256,5 @@ void __attribute__((__interrupt__, __auto_psv__)) _LVDInterrupt(void) //low volt
 {
     _LVDIF = 0; //clear interrupt flag
     //fram write position counter
-    FramWrite(5168,&EncPositionCounter,4); //adr=0 : data sector
+    FramWrite(5172,&EncPositionCounter,4); //adr=0 : data sector
 }

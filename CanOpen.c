@@ -33,7 +33,7 @@ void SendTSDO(unsigned char nodeId, char* data, unsigned char bufNumber, char ca
  else
     Can2SendData(sId, data, bufNumber);
 }
-void CanOpenSendCurrentObjectState(long s1, long s2, int v, int maxV, int a, char inputSignals,char canNumber)
+void CanOpenSendCurrentObjectState(long s1, long s2, int v, int maxV, int a, char* externSignals,char canNumber)
 {
     unsigned char nodeID = _nodeId;
     char data1[8] = {0, 0, 0 ,0, 0, 0, 0 ,0};
@@ -54,7 +54,7 @@ void CanOpenSendCurrentObjectState(long s1, long s2, int v, int maxV, int a, cha
     buf = &a;
     data2[6] = buf[0]; data2[7] = buf[1];
     SendTPDO(2, nodeID, data2,1,canNumber);
-    char data3[8] = {inputSignals, 0, 0 ,0, 0, 0, 0 ,0};
+    char* data3 = externSignals;
     SendTPDO(3, nodeID, data3,0,canNumber);
 }
 void CanOpenParseRSDO(unsigned int sid,char *data, char canNumber)

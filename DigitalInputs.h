@@ -48,6 +48,10 @@ void WriteDigitalOutputs(char maska, char data)
     LATDbits.LATD2 = 0;//set LE (D17 save data)
     delay(25);
 }
+char GetDigitalOutputs()
+{
+    return ~outputBuffer;
+}
 /**
  * @author Kyrylov Andrii
  * @param str - pointer to output string
