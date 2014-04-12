@@ -6,7 +6,7 @@ unsigned char WriteAllParameters()
     char name[] = "inf";
     DeviceInformation deviceInformation;
     deviceInformation.ObjectCount = 7;
-    deviceInformation.ParametersCount = 14;
+    deviceInformation.ParametersCount = 17;
     deviceInformation.SystemName[0] = 0;
     strcat(deviceInformation.SystemName, "don_avto_1");
     deviceInformation.DeviceName[0] = 0;
@@ -27,7 +27,7 @@ unsigned char WriteAllParameters()
         return 0;
 
     char name2[] = "node_id";
-    value = 2;
+    value = 3;
     if(!AddParameter(name2,0x10,&value,3))
         return 0;
 
@@ -116,5 +116,20 @@ unsigned char WriteAllParameters()
     if(!AddParameter(name13,0xF,codtValue,120))
         return 0;
 
+    char name14[] = "gisterezis_null";
+    int ivalue = 100;
+    if(!AddParameter(name14,0x03,&ivalue,2))
+        return 0;
+
+    char name15[] = "v_coefficient";
+    fvalue = 1.0;
+    if(!AddParameter(name15,0x08,&fvalue,4))
+        return 0;
+
+    char name16[] = "a_coefficient";
+    fvalue = 1.0;
+    if(!AddParameter(name16,0x08,&fvalue,4))
+        return 0;
+    
     return 1;
 }

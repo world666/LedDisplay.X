@@ -98,6 +98,6 @@ long EncDistanceToCounter(long distance)
 int EncGetV()
 {
     int speed = Vvalue>>2;
-    speed*=_distancePerMarks;
+    speed*=_distancePerMarks * _vCoefficient;
     return speed/0.0708;
 }

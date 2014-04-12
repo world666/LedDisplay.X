@@ -183,12 +183,10 @@ void __attribute__((__interrupt__, __auto_psv__)) _T3Interrupt(void)
     TryInitOverSpeedControl(signals);
     //over speed
     int speed = EncGetV();
+    
     long lDistance = EncGetDistanceLong();
-    int maxV = OverSpeedGetMaxV(lDistance,speed,signals);
-    if(abs(speed)>maxV)
-        WriteDigitalOutputs(0b01000000,0b00000000);
-    else
-        WriteDigitalOutputs(0b01000000,0b01000000);
+
+    MakeOverSpeedControl(lDistance,speed,signals);
 }
 void __attribute__((__interrupt__, __auto_psv__)) _T4Interrupt(void)
 {

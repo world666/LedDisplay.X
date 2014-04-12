@@ -8,23 +8,26 @@
 #ifndef GLOBALS_H
 #define	GLOBALS_H
 
-int _nodeId;
+int _nodeId; int buffer1;
 float _distancePerMarks; //mm
 long _highEdge;
 long _lowEdge;
-int _synchronization;
-int _synchZone;
-int _overRiseControl = 1;
-int _kolibrovka = 0;
-int _overRizeZoneHigh;
-int _overRizeZoneLow;
-int _buffer;
+int _synchronization; int buffer2;
+int _synchZone; int buffer3;
+int _overRiseControl = 1; int buffer4;
+int _kolibrovka = 0; int buffer5;
+int _overRizeZoneHigh; int buffer6;
+int _overRizeZoneLow; int buffer7;
+int _buffer; int buffer8;
 
 long overSpeedIS1[120]; int overSpeedIV1[120];
 long overSpeedIS2[120]; int overSpeedIV2[120];
 long overSpeedIS3[120]; int overSpeedIV3[120];
 long overSpeedIS4[120]; int overSpeedIV4[120];
 extern long EncPositionCounter;
+int _gisterezisNull; int buffer9;
+float _vCoefficient;
+float _aCoefficient;
 int _buffer2;
 
 //parameters ids
@@ -41,6 +44,9 @@ int _buffer2;
 #define DEFENCE_DIAGRAM2 0x200B
 #define DEFENCE_DIAGRAM3 0x200C
 #define DEFENCE_DIAGRAM4 0x200D
+#define GISTEREZIS_NULL 0x200E
+#define V_COEFFICIENT 0x200F
+#define A_COEFFICIENT 0x2010
 
 void ReadConfig()
 {   
@@ -56,6 +62,9 @@ void ReadConfig()
     ReadCodtDomainValue(DEFENCE_DIAGRAM2,overSpeedIS2,overSpeedIV2);
     ReadCodtDomainValue(DEFENCE_DIAGRAM3,overSpeedIS3,overSpeedIV3);
     ReadCodtDomainValue(DEFENCE_DIAGRAM4,overSpeedIS4,overSpeedIV4);
+    ReadParameterValue(GISTEREZIS_NULL,&_gisterezisNull);
+    ReadParameterValue(V_COEFFICIENT,&_vCoefficient);
+    ReadParameterValue(A_COEFFICIENT,&_aCoefficient);
 }
 void ReadCodtDomainValue( int parameterId, char* overSpeedIS, char* overSpeedIV)
 {
@@ -115,6 +124,15 @@ void UpdateConfig(int parameterId)
             break;
         case DEFENCE_DIAGRAM4:
             ReadCodtDomainValue(DEFENCE_DIAGRAM4,overSpeedIS4,overSpeedIV4);
+            break;
+        case GISTEREZIS_NULL:
+            ReadParameterValue(GISTEREZIS_NULL,&_gisterezisNull);
+            break;
+        case V_COEFFICIENT:
+            ReadParameterValue(V_COEFFICIENT,&_vCoefficient);
+            break;
+        case A_COEFFICIENT:
+            ReadParameterValue(A_COEFFICIENT,&_aCoefficient);
             break;
     }
 }

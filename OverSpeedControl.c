@@ -6,6 +6,7 @@ extern long overSpeedIS1[120]; extern int overSpeedIV1[120];
 extern long overSpeedIS2[120]; extern int overSpeedIV2[120];
 extern long overSpeedIS3[120]; extern int overSpeedIV3[120];
 extern long overSpeedIS4[120]; extern int overSpeedIV4[120];
+extern int _gisterezisNull;
 void OverSpeedInterpolation(long* coordinate, int* speed, long* interCoordinate, int* interSpeed)
 {
                     int vStep = -100; //0.1 m/sec
@@ -44,6 +45,8 @@ void OverSpeedInterpolation(long* coordinate, int* speed, long* interCoordinate,
 }
 int OverSpeedGetMaxV(long s,int speed,char inputSignals)
 {
+    if(speed == 0)
+        return _gisterezisNull;
     int i=0;
     char inputNumber = (inputSignals & 0b00011000)>>3;
     inputNumber = (~inputNumber) & 0x3;
@@ -84,4 +87,11 @@ void TryInitOverSpeedControl(char signals)
 {
     if((signals&0b10000000) == 0)
         WriteDigitalOutputs(0b01000000,0b01000000);
+}
+
+void MakeOverSpeedControl(long s,int speed,char inputSignals)
+{
+    int maxV = OverSpeedGetMaxV(s,speed,inputSignals);
+    if(abs(speed)>maxV)
+        WriteDigitalOutputs(0b01000000,0b00000000);
 }

@@ -7,3 +7,5 @@
 
 
 void TryInitOverSpeedControl(char signals);
+
+void MakeOverSpeedControl(long s,int speed,char inputSignals);

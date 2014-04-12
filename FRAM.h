@@ -45,13 +45,17 @@ void FramWrite(unsigned int address,char *data, int length)
     FramWriteEnable();
     TRISGbits.TRISG12 = 0; // CS_FR out
     LATGbits.LATG12 = 0; // check fram
-    spi2_write(WRITE_MEMORY_DATA);
-    spi2_write(address>>8);
-    spi2_write(address & 0x00FF);
+    if(!spi2_write(WRITE_MEMORY_DATA))
+        return;
+    if(!spi2_write(address>>8))
+        return;
+    if(!spi2_write(address & 0x00FF))
+        return;
     int i;
     for(i=0; i<length;i++)
     {
-        spi2_write(data[i]);
+        if(!spi2_write(data[i]))
+            return;
     }
     TRISGbits.TRISG12 = 0; // CS_FR out
     LATGbits.LATG12 = 1; // uncheck fram
@@ -69,9 +73,12 @@ void FramRead(unsigned int address,char *data, int length)
     TRISGbits.TRISG12 = 0; // CS_FR out
     LATGbits.LATG12 = 0; // check fram
     unsigned char fram_data;
-    spi2_write(READ_MEMORY_DATA);
-    spi2_write(address>>8);
-    spi2_write(address & 0x00FF);
+    if(!spi2_write(READ_MEMORY_DATA))
+        return;
+    if(!spi2_write(address>>8))
+        return;
+    if(!spi2_write(address & 0x00FF))
+        return;
     int i;
     for(i=0; i<length;i++)
     {

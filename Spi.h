@@ -47,18 +47,25 @@ void ConfigurateSPI2()
  * @author Kyrylov Andrii
  * @param data_out - output value
  * @todo write over spi
+ * @return 1 - success
  */
-void spi2_write(unsigned int data_out)
+char spi2_write(unsigned int data_out)
 {
-
+    int i = 32000;
     IFS1bits.SPI2IF = 0;                    
      if (SPI2CONbits.MODE16)          /* word write */
          SPI2BUF = data_out;
      else
          SPI2BUF = data_out & 0xff;    /*  byte write  */
      while(SPI2STATbits.SPITBF);
-     while(IFS1bits.SPI2IF == 0);  
+     while(IFS1bits.SPI2IF == 0)
+     {
+         if(--i==0)
+             return 0;
+     }
+         
      data_out = SPI2BUF;               //Avoiding overflow when reading
+     return 1;
 }
 
 /**
