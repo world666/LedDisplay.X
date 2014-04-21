@@ -51,19 +51,13 @@ void ConfigurateSPI2()
  */
 char spi2_write(unsigned int data_out)
 {
-    int i = 32000;
-    IFS1bits.SPI2IF = 0;                    
+    IFS1bits.SPI2IF = 0;
      if (SPI2CONbits.MODE16)          /* word write */
          SPI2BUF = data_out;
      else
          SPI2BUF = data_out & 0xff;    /*  byte write  */
      while(SPI2STATbits.SPITBF);
-     while(IFS1bits.SPI2IF == 0)
-     {
-         if(--i==0)
-             return 0;
-     }
-         
+     delay(40);
      data_out = SPI2BUF;               //Avoiding overflow when reading
      return 1;
 }
@@ -75,19 +69,18 @@ char spi2_write(unsigned int data_out)
  */
 unsigned char spi2_read(void)
 {
-
   SPI2STATbits.SPIROV = 0;
   SPI2BUF = 0x00;                  // initiate bus cycle
   while(!SPI2STATbits.SPIRBF);
-   /* Check for Receive buffer full status bit of status register*/
+  // Check for Receive buffer full status bit of status register
   if (SPI2STATbits.SPIRBF)
   {
       SPI2STATbits.SPIROV = 0;
 
       if (SPI2CONbits.MODE16)
-          return (SPI2BUF);           /* return word read */
+          return (SPI2BUF);           // return word read
       else
-          return (SPI2BUF & 0xff);    /* return byte read */
+          return (SPI2BUF & 0xff);    // return byte read
   }
-  return -1;                  		/* RBF bit is not set return error*/
+  return 1;                          // RBF bit is not set return error
 }

@@ -169,8 +169,6 @@ void __attribute__((__interrupt__, __auto_psv__)) _T3Interrupt(void)
     TRISCbits.TRISC14 = 0;
     // Toggle LED on RD1
     LATCbits.LATC14 = 1 - LATCbits.LATC14;
-    
-    FramWrite(5172,&EncPositionCounter,4); //adr=0 : data sector
 
     char signals = ReadDigitalInputs();
     //sync encoder counter
@@ -193,7 +191,6 @@ void __attribute__((__interrupt__, __auto_psv__)) _T4Interrupt(void)
     // Clear Timer 4 interrupt flag
     // Write to can bus
     _T4IF = 0;
-    //delay(5000);
     int speed = EncGetV();
     long lDistance = EncGetDistanceLong();
     long highEdge = _highEdge;
@@ -224,12 +221,13 @@ void __attribute__ ((__interrupt__, __auto_psv__)) _C1Interrupt (void){
         C1INTFbits.WAKIF = 0;
         return;
     }
+    FramWrite(5172,&EncPositionCounter,4); //write current counter
+
     unsigned int sid = C1RX0SIDbits.SID;
     Can1ReceiveData(rxData);
     CanOpenParseRSDO(sid,rxData,1); //parse message and send response
     C1RX0CONbits.RXFUL = 0;
     C1RX1CONbits.RXFUL = 0;
-    //delay(10000);
   }
 void __attribute__ ((__interrupt__, __auto_psv__)) _C2Interrupt (void){
     IFS2bits.C2IF = 0; //Clear CAN1 interrupt flag
@@ -241,12 +239,14 @@ void __attribute__ ((__interrupt__, __auto_psv__)) _C2Interrupt (void){
         C2INTFbits.WAKIF = 0;
         return;
     }
+    
+    FramWrite(5172,&EncPositionCounter,4); //write current counter
+
     unsigned int sid = C2RX0SIDbits.SID;
     Can2ReceiveData(rxData);
     CanOpenParseRSDO(sid,rxData,2); //parse message and send response
     C2RX0CONbits.RXFUL = 0;
     C2RX1CONbits.RXFUL = 0;
-    //delay(10000);
   }
 
 void __attribute__((__interrupt__, __auto_psv__)) _LVDInterrupt(void) //low voltage detcetion
