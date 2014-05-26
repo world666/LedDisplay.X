@@ -88,6 +88,8 @@ void UpdateConfig(int parameterId)
     {
         case ENCODER_COUNTER:
             ReadParameterValue(ENCODER_COUNTER,&EncPositionCounter);
+            EncPositionCounter = EncPositionCounter<<8;
+            EncPositionCounter /= 256;
             break;
         case NODE_ID:
             ReadParameterValue(NODE_ID,&_nodeId);
