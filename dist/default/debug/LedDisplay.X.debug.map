@@ -1,4 +1,4 @@
-Microchip Technology Inc, vp›ƒ
+Microchip Technology Inc, vp›ˆ
 
 Tool Name:
   c:\program files\microchip\xc16\v1.21\bin\bin\..\bin/elf-ld.exe
@@ -30,10 +30,10 @@ Command:
   build/default/debug/Kolibrovka.o \
   build/default/debug/CanOpen.o \
   build/default/debug/OverSpeedControl.o \
-  -TC:\Users\Jeka\AppData\Local\Temp\tmp00001b90.00 \
-  -TC:\Users\Jeka\AppData\Local\Temp\tmp00001b90.01 \
-  -TC:\Users\Jeka\AppData\Local\Temp\tmp00001b90.02 \
-  -TC:\Users\Jeka\AppData\Local\Temp\tmp00001b90.03 \
+  -TC:\Users\Jeka\AppData\Local\Temp\tmp00002284.00 \
+  -TC:\Users\Jeka\AppData\Local\Temp\tmp00002284.01 \
+  -TC:\Users\Jeka\AppData\Local\Temp\tmp00002284.02 \
+  -TC:\Users\Jeka\AppData\Local\Temp\tmp00002284.03 \
   --defsym=__MPLAB_BUILD=1 \
   --defsym=__MPLAB_DEBUG=1 \
   --defsym=__DEBUG=1 \

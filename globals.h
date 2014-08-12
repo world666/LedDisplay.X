@@ -99,9 +99,13 @@ void UpdateConfig(int parameterId)
             break;
         case HIGH_EDGE:
             ReadParameterValue(HIGH_EDGE,&_highEdge);
+            _highEdge = _highEdge<<8;
+            _highEdge /= 256;
             break;
         case LOW_EDGE:
             ReadParameterValue(LOW_EDGE,&_lowEdge);
+            _lowEdge = _lowEdge<<8;
+            _lowEdge /= 256;
             break;
         case SYNCHRONIZATION:
             ReadParameterValue(SYNCHRONIZATION,&_synchronization);

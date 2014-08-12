@@ -156,10 +156,10 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x100               0x878           0xcb4  (3252)
 .const                       0x978                0xde           0x14d  (333)
-.text                        0xa56              0x37bc          0x539a  (21402)
-.dinit                      0x4212                0x4c            0x72  (114)
+.text                        0xa56              0x3810          0x5418  (21528)
+.dinit                      0x4266                0x4c            0x72  (114)
 
-                     Total program memory used (bytes):         0x620d  (25101) 17%
+                     Total program memory used (bytes):         0x628b  (25227) 17%
 
 
 Data Memory  [Origin = 0x800, Length = 0x2000]
@@ -365,129 +365,129 @@ External Symbols in Program Memory (by address):
                   0x000a56                  _ReadConfig
                   0x000ac6                  _ReadCodtDomainValue
                   0x000b30                  _UpdateConfig
-                  0x000c32                  _LVDinitialization
-                  0x000c62                  _delay
-                  0x000c8a                  _LongToString
-                  0x000d42                  _LongToCharArray
-                  0x000d78                  _ReadDigitalInputs
-                  0x000da2                  _WriteDigitalOutputs
-                  0x000dfe                  _GetDigitalOutputs
-                  0x000e0c                  _DigitalInputsToString
-                  0x000e52                  _OpenUART2
-                  0x000e70                  _BusyUART2
-                  0x000e8a                  _WriteCharToUART2
-                  0x000ea2                  _PrintStringUART2
-                  0x000ebe                  _PrintDigitUART2
-                  0x000eea                  _StartTimer1
-                  0x000f10                  _StartTimer2
-                  0x000f36                  _StartTimer3
-                  0x000f5c                  _StartTimer4
-                  0x000f82                  _StartTimer5
-                  0x000fa8                  _EncoderScan
-                  0x00107e                  _EncCountV
-                  0x0010b2                  _EncGetDistanceStr
-                  0x0010f4                  _EncGetDistanceLong
-                  0x00112a                  _EncDistanceToCounter
-                  0x001160                  _EncGetV
-                  0x0011b8                  _clrscr
-                  0x001200                  _setDDRAM
-                  0x00132c                  _DisplayInitialization
-                  0x001400                  _DisplayView
-                  0x0015c8                  _ConfigurateSPI2
-                  0x0015f0                  _spi2_write
-                  0x001628                  _spi2_read
-                  0x001662                  _RtcSetTime
-                  0x0016b0                  _RtcInitialization
-                  0x0016ba                  _rtc_write_byte
-                  0x0016dc                  _RtcRead
-                  0x0016fe                  _RtcReadSeconds
-                  0x00172e                  _RtcReadMinutes
-                  0x00175e                  _RtcReadHours
-                  0x00178e                  _RtcReadDayOfWeek
-                  0x0017a0                  _RtcReadDays
-                  0x0017d0                  _RtcReadMonth
-                  0x001800                  _RtcReadYear
-                  0x00182c                  _RtcWriteDateInString
-                  0x001a5c                  _FramInitialization
-                  0x001a6c                  _FramWriteEnable
-                  0x001a7e                  _FramWrite
-                  0x001af0                  _FramRead
-                  0x001b5a                  _FramReadStatus
-                  0x001b76                  _FramReadPositionCounter
-                  0x001b8e                  _TrySynchronization
-                  0x001c2c                  _main
-                  0x001c62                  __T1Interrupt
-                  0x001d62                  __T2Interrupt
-                  0x001d9c                  __T3Interrupt
-                  0x001e2e                  __T4Interrupt
-                  0x001efa                  __T5Interrupt
-                  0x001f22                  __C1Interrupt
-                  0x001f7e                  __C2Interrupt
-                  0x001fda                  __LVDInterrupt
-                  0x002008                  _SendTPDO
-                  0x002040                  _SendTSDO
-                  0x002070                  _CanOpenSendCurrentObjectState
-                  0x00214e                  _CanOpenParseRSDO
-                  0x0021ca                  _EditDictionaryElement
-                  0x00229e                  _SendDictionaryElement
-                  0x0022fc                  _SendDeviceInformation
-                  0x002456                  _SendValue
-                  0x00257c                  _SendParameterType
-                  0x0025e4                  _SendName
-                  0x002694                  _CanOpenEditName
-                  0x0026f0                  _CanOpenSendCodtDomainMsg
-                  0x00275e                  _CanOpenGetCodtDomainMsg
-                  0x002810                  _Can1Initialization
-                  0x00298e                  _Can2Initialization
-                  0x002b0c                  _Can1SendData
-                  0x002b6e                  _Can2SendData
-                  0x002bd0                  _Can1Execute
-                  0x002c8c                  _Can2Execute
-                  0x002d48                  _Can1ReceiveData
-                  0x002d5a                  _Can2ReceiveData
-                  0x002d6c                  _IncTeilCan1
-                  0x002db0                  _IncHeadCan1
-                  0x002df4                  _IsQueueCan1Empty
-                  0x002e2e                  _IncTeilCan2
-                  0x002e72                  _IncHeadCan2
-                  0x002eb6                  _IsQueueCan2Empty
-                  0x002ef0                  _AddParameter
-                  0x0030a0                  _DeleteParameter
-                  0x003114                  _ReadParameterValue
-                  0x003180                  _ReadParameterName
-                  0x003234                  _ReadParameterType
-                  0x003260                  _EditParameterValue
-                  0x003300                  _EditParameterName
-                  0x00346e                  _FindMaxIndex
-                  0x0034f4                  _FindDescriptorAdrByIndex
-                  0x003576                  _WriteAllParameters
-                  0x003a7a                  _WriteBootSector
-                  0x003aa2                  _ReadBootSector
-                  0x003ab2                  _Formatting
-                  0x003b10                  _ReadNextFat
-                  0x003b36                  _WriteToFat
-                  0x003b5a                  _FindFreeClusterNum
-                  0x003ba6                  _AllocateClustersSequence
-                  0x003bf4                  _ClearClustersSequence
-                  0x003c24                  _FindFreeDescriptorAdr
-                  0x003c98                  _WriteDescriptorByAddress
-                  0x003cb2                  _ReadDescriptorByAddress
-                  0x003ccc                  _DescriptorsDefragmentation
-                  0x003d8a                  _WriteDataToCluster
-                  0x003dbc                  _ReadDataFromCluster
-                  0x003dee                  _OverSpeedInterpolation
-                  0x003f92                  _OverSpeedGetMaxV
-                  0x004060                  _TryInitOverSpeedControl
-                  0x004074                  _MakeOverSpeedControl
-                  0x0040a0                  _TryMakeKolibrovka
-                  0x00418c                  _OverRiseZoneControl
-                  0x0041da                  _OnOveriseRele
+                  0x000c86                  _LVDinitialization
+                  0x000cb6                  _delay
+                  0x000cde                  _LongToString
+                  0x000d96                  _LongToCharArray
+                  0x000dcc                  _ReadDigitalInputs
+                  0x000df6                  _WriteDigitalOutputs
+                  0x000e52                  _GetDigitalOutputs
+                  0x000e60                  _DigitalInputsToString
+                  0x000ea6                  _OpenUART2
+                  0x000ec4                  _BusyUART2
+                  0x000ede                  _WriteCharToUART2
+                  0x000ef6                  _PrintStringUART2
+                  0x000f12                  _PrintDigitUART2
+                  0x000f3e                  _StartTimer1
+                  0x000f64                  _StartTimer2
+                  0x000f8a                  _StartTimer3
+                  0x000fb0                  _StartTimer4
+                  0x000fd6                  _StartTimer5
+                  0x000ffc                  _EncoderScan
+                  0x0010d2                  _EncCountV
+                  0x001106                  _EncGetDistanceStr
+                  0x001148                  _EncGetDistanceLong
+                  0x00117e                  _EncDistanceToCounter
+                  0x0011b4                  _EncGetV
+                  0x00120c                  _clrscr
+                  0x001254                  _setDDRAM
+                  0x001380                  _DisplayInitialization
+                  0x001454                  _DisplayView
+                  0x00161c                  _ConfigurateSPI2
+                  0x001644                  _spi2_write
+                  0x00167c                  _spi2_read
+                  0x0016b6                  _RtcSetTime
+                  0x001704                  _RtcInitialization
+                  0x00170e                  _rtc_write_byte
+                  0x001730                  _RtcRead
+                  0x001752                  _RtcReadSeconds
+                  0x001782                  _RtcReadMinutes
+                  0x0017b2                  _RtcReadHours
+                  0x0017e2                  _RtcReadDayOfWeek
+                  0x0017f4                  _RtcReadDays
+                  0x001824                  _RtcReadMonth
+                  0x001854                  _RtcReadYear
+                  0x001880                  _RtcWriteDateInString
+                  0x001ab0                  _FramInitialization
+                  0x001ac0                  _FramWriteEnable
+                  0x001ad2                  _FramWrite
+                  0x001b44                  _FramRead
+                  0x001bae                  _FramReadStatus
+                  0x001bca                  _FramReadPositionCounter
+                  0x001be2                  _TrySynchronization
+                  0x001c80                  _main
+                  0x001cb6                  __T1Interrupt
+                  0x001db6                  __T2Interrupt
+                  0x001df0                  __T3Interrupt
+                  0x001e82                  __T4Interrupt
+                  0x001f4e                  __T5Interrupt
+                  0x001f76                  __C1Interrupt
+                  0x001fd2                  __C2Interrupt
+                  0x00202e                  __LVDInterrupt
+                  0x00205c                  _SendTPDO
+                  0x002094                  _SendTSDO
+                  0x0020c4                  _CanOpenSendCurrentObjectState
+                  0x0021a2                  _CanOpenParseRSDO
+                  0x00221e                  _EditDictionaryElement
+                  0x0022f2                  _SendDictionaryElement
+                  0x002350                  _SendDeviceInformation
+                  0x0024aa                  _SendValue
+                  0x0025d0                  _SendParameterType
+                  0x002638                  _SendName
+                  0x0026e8                  _CanOpenEditName
+                  0x002744                  _CanOpenSendCodtDomainMsg
+                  0x0027b2                  _CanOpenGetCodtDomainMsg
+                  0x002864                  _Can1Initialization
+                  0x0029e2                  _Can2Initialization
+                  0x002b60                  _Can1SendData
+                  0x002bc2                  _Can2SendData
+                  0x002c24                  _Can1Execute
+                  0x002ce0                  _Can2Execute
+                  0x002d9c                  _Can1ReceiveData
+                  0x002dae                  _Can2ReceiveData
+                  0x002dc0                  _IncTeilCan1
+                  0x002e04                  _IncHeadCan1
+                  0x002e48                  _IsQueueCan1Empty
+                  0x002e82                  _IncTeilCan2
+                  0x002ec6                  _IncHeadCan2
+                  0x002f0a                  _IsQueueCan2Empty
+                  0x002f44                  _AddParameter
+                  0x0030f4                  _DeleteParameter
+                  0x003168                  _ReadParameterValue
+                  0x0031d4                  _ReadParameterName
+                  0x003288                  _ReadParameterType
+                  0x0032b4                  _EditParameterValue
+                  0x003354                  _EditParameterName
+                  0x0034c2                  _FindMaxIndex
+                  0x003548                  _FindDescriptorAdrByIndex
+                  0x0035ca                  _WriteAllParameters
+                  0x003ace                  _WriteBootSector
+                  0x003af6                  _ReadBootSector
+                  0x003b06                  _Formatting
+                  0x003b64                  _ReadNextFat
+                  0x003b8a                  _WriteToFat
+                  0x003bae                  _FindFreeClusterNum
+                  0x003bfa                  _AllocateClustersSequence
+                  0x003c48                  _ClearClustersSequence
+                  0x003c78                  _FindFreeDescriptorAdr
+                  0x003cec                  _WriteDescriptorByAddress
+                  0x003d06                  _ReadDescriptorByAddress
+                  0x003d20                  _DescriptorsDefragmentation
+                  0x003dde                  _WriteDataToCluster
+                  0x003e10                  _ReadDataFromCluster
+                  0x003e42                  _OverSpeedInterpolation
+                  0x003fe6                  _OverSpeedGetMaxV
+                  0x0040b4                  _TryInitOverSpeedControl
+                  0x0040c8                  _MakeOverSpeedControl
+                  0x0040f4                  _TryMakeKolibrovka
+                  0x0041e0                  _OverRiseZoneControl
+                  0x00422e                  _OnOveriseRele
 
 External Symbols in Program Memory (by name):
 
-                  0x002ef0                  _AddParameter
-                  0x003ba6                  _AllocateClustersSequence
-                  0x000e70                  _BusyUART2
+                  0x002f44                  _AddParameter
+                  0x003bfa                  _AllocateClustersSequence
+                  0x000ec4                  _BusyUART2
                   0x0001c4                  _CAN1Initialize
                   0x0001ca                  _CAN1IsTXReady
                   0x0001ec                  _CAN1ReceiveMessage
@@ -506,120 +506,120 @@ External Symbols in Program Memory (by name):
                   0x00047e                  _CAN2SetOperationMode
                   0x000482                  _CAN2SetRXMode
                   0x000492                  _CAN2SetTXMode
-                  0x002bd0                  _Can1Execute
-                  0x002810                  _Can1Initialization
-                  0x002d48                  _Can1ReceiveData
-                  0x002b0c                  _Can1SendData
-                  0x002c8c                  _Can2Execute
-                  0x00298e                  _Can2Initialization
-                  0x002d5a                  _Can2ReceiveData
-                  0x002b6e                  _Can2SendData
-                  0x002694                  _CanOpenEditName
-                  0x00275e                  _CanOpenGetCodtDomainMsg
-                  0x00214e                  _CanOpenParseRSDO
-                  0x0026f0                  _CanOpenSendCodtDomainMsg
-                  0x002070                  _CanOpenSendCurrentObjectState
-                  0x003bf4                  _ClearClustersSequence
+                  0x002c24                  _Can1Execute
+                  0x002864                  _Can1Initialization
+                  0x002d9c                  _Can1ReceiveData
+                  0x002b60                  _Can1SendData
+                  0x002ce0                  _Can2Execute
+                  0x0029e2                  _Can2Initialization
+                  0x002dae                  _Can2ReceiveData
+                  0x002bc2                  _Can2SendData
+                  0x0026e8                  _CanOpenEditName
+                  0x0027b2                  _CanOpenGetCodtDomainMsg
+                  0x0021a2                  _CanOpenParseRSDO
+                  0x002744                  _CanOpenSendCodtDomainMsg
+                  0x0020c4                  _CanOpenSendCurrentObjectState
+                  0x003c48                  _ClearClustersSequence
                   0x0004a8                  _ConfigIntCAN1
                   0x0004d0                  _ConfigIntCAN2
-                  0x0015c8                  _ConfigurateSPI2
-                  0x0030a0                  _DeleteParameter
-                  0x003ccc                  _DescriptorsDefragmentation
-                  0x000e0c                  _DigitalInputsToString
-                  0x00132c                  _DisplayInitialization
-                  0x001400                  _DisplayView
-                  0x0021ca                  _EditDictionaryElement
-                  0x003300                  _EditParameterName
-                  0x003260                  _EditParameterValue
-                  0x00107e                  _EncCountV
-                  0x00112a                  _EncDistanceToCounter
-                  0x0010f4                  _EncGetDistanceLong
-                  0x0010b2                  _EncGetDistanceStr
-                  0x001160                  _EncGetV
-                  0x000fa8                  _EncoderScan
-                  0x0034f4                  _FindDescriptorAdrByIndex
-                  0x003b5a                  _FindFreeClusterNum
-                  0x003c24                  _FindFreeDescriptorAdr
-                  0x00346e                  _FindMaxIndex
-                  0x003ab2                  _Formatting
-                  0x001a5c                  _FramInitialization
-                  0x001af0                  _FramRead
-                  0x001b76                  _FramReadPositionCounter
-                  0x001b5a                  _FramReadStatus
-                  0x001a7e                  _FramWrite
-                  0x001a6c                  _FramWriteEnable
-                  0x000dfe                  _GetDigitalOutputs
-                  0x002db0                  _IncHeadCan1
-                  0x002e72                  _IncHeadCan2
-                  0x002d6c                  _IncTeilCan1
-                  0x002e2e                  _IncTeilCan2
-                  0x002df4                  _IsQueueCan1Empty
-                  0x002eb6                  _IsQueueCan2Empty
-                  0x000c32                  _LVDinitialization
-                  0x000d42                  _LongToCharArray
-                  0x000c8a                  _LongToString
-                  0x004074                  _MakeOverSpeedControl
-                  0x0041da                  _OnOveriseRele
+                  0x00161c                  _ConfigurateSPI2
+                  0x0030f4                  _DeleteParameter
+                  0x003d20                  _DescriptorsDefragmentation
+                  0x000e60                  _DigitalInputsToString
+                  0x001380                  _DisplayInitialization
+                  0x001454                  _DisplayView
+                  0x00221e                  _EditDictionaryElement
+                  0x003354                  _EditParameterName
+                  0x0032b4                  _EditParameterValue
+                  0x0010d2                  _EncCountV
+                  0x00117e                  _EncDistanceToCounter
+                  0x001148                  _EncGetDistanceLong
+                  0x001106                  _EncGetDistanceStr
+                  0x0011b4                  _EncGetV
+                  0x000ffc                  _EncoderScan
+                  0x003548                  _FindDescriptorAdrByIndex
+                  0x003bae                  _FindFreeClusterNum
+                  0x003c78                  _FindFreeDescriptorAdr
+                  0x0034c2                  _FindMaxIndex
+                  0x003b06                  _Formatting
+                  0x001ab0                  _FramInitialization
+                  0x001b44                  _FramRead
+                  0x001bca                  _FramReadPositionCounter
+                  0x001bae                  _FramReadStatus
+                  0x001ad2                  _FramWrite
+                  0x001ac0                  _FramWriteEnable
+                  0x000e52                  _GetDigitalOutputs
+                  0x002e04                  _IncHeadCan1
+                  0x002ec6                  _IncHeadCan2
+                  0x002dc0                  _IncTeilCan1
+                  0x002e82                  _IncTeilCan2
+                  0x002e48                  _IsQueueCan1Empty
+                  0x002f0a                  _IsQueueCan2Empty
+                  0x000c86                  _LVDinitialization
+                  0x000d96                  _LongToCharArray
+                  0x000cde                  _LongToString
+                  0x0040c8                  _MakeOverSpeedControl
+                  0x00422e                  _OnOveriseRele
                   0x0004f8                  _OpenSPI2
-                  0x000e52                  _OpenUART2
-                  0x00418c                  _OverRiseZoneControl
-                  0x003f92                  _OverSpeedGetMaxV
-                  0x003dee                  _OverSpeedInterpolation
-                  0x000ebe                  _PrintDigitUART2
-                  0x000ea2                  _PrintStringUART2
-                  0x003aa2                  _ReadBootSector
+                  0x000ea6                  _OpenUART2
+                  0x0041e0                  _OverRiseZoneControl
+                  0x003fe6                  _OverSpeedGetMaxV
+                  0x003e42                  _OverSpeedInterpolation
+                  0x000f12                  _PrintDigitUART2
+                  0x000ef6                  _PrintStringUART2
+                  0x003af6                  _ReadBootSector
                   0x000ac6                  _ReadCodtDomainValue
                   0x000a56                  _ReadConfig
-                  0x003dbc                  _ReadDataFromCluster
-                  0x003cb2                  _ReadDescriptorByAddress
-                  0x000d78                  _ReadDigitalInputs
-                  0x003b10                  _ReadNextFat
-                  0x003180                  _ReadParameterName
-                  0x003234                  _ReadParameterType
-                  0x003114                  _ReadParameterValue
-                  0x0016b0                  _RtcInitialization
-                  0x0016dc                  _RtcRead
-                  0x00178e                  _RtcReadDayOfWeek
-                  0x0017a0                  _RtcReadDays
-                  0x00175e                  _RtcReadHours
-                  0x00172e                  _RtcReadMinutes
-                  0x0017d0                  _RtcReadMonth
-                  0x0016fe                  _RtcReadSeconds
-                  0x001800                  _RtcReadYear
-                  0x001662                  _RtcSetTime
-                  0x00182c                  _RtcWriteDateInString
-                  0x0022fc                  _SendDeviceInformation
-                  0x00229e                  _SendDictionaryElement
-                  0x0025e4                  _SendName
-                  0x00257c                  _SendParameterType
-                  0x002008                  _SendTPDO
-                  0x002040                  _SendTSDO
-                  0x002456                  _SendValue
-                  0x000eea                  _StartTimer1
-                  0x000f10                  _StartTimer2
-                  0x000f36                  _StartTimer3
-                  0x000f5c                  _StartTimer4
-                  0x000f82                  _StartTimer5
-                  0x004060                  _TryInitOverSpeedControl
-                  0x0040a0                  _TryMakeKolibrovka
-                  0x001b8e                  _TrySynchronization
+                  0x003e10                  _ReadDataFromCluster
+                  0x003d06                  _ReadDescriptorByAddress
+                  0x000dcc                  _ReadDigitalInputs
+                  0x003b64                  _ReadNextFat
+                  0x0031d4                  _ReadParameterName
+                  0x003288                  _ReadParameterType
+                  0x003168                  _ReadParameterValue
+                  0x001704                  _RtcInitialization
+                  0x001730                  _RtcRead
+                  0x0017e2                  _RtcReadDayOfWeek
+                  0x0017f4                  _RtcReadDays
+                  0x0017b2                  _RtcReadHours
+                  0x001782                  _RtcReadMinutes
+                  0x001824                  _RtcReadMonth
+                  0x001752                  _RtcReadSeconds
+                  0x001854                  _RtcReadYear
+                  0x0016b6                  _RtcSetTime
+                  0x001880                  _RtcWriteDateInString
+                  0x002350                  _SendDeviceInformation
+                  0x0022f2                  _SendDictionaryElement
+                  0x002638                  _SendName
+                  0x0025d0                  _SendParameterType
+                  0x00205c                  _SendTPDO
+                  0x002094                  _SendTSDO
+                  0x0024aa                  _SendValue
+                  0x000f3e                  _StartTimer1
+                  0x000f64                  _StartTimer2
+                  0x000f8a                  _StartTimer3
+                  0x000fb0                  _StartTimer4
+                  0x000fd6                  _StartTimer5
+                  0x0040b4                  _TryInitOverSpeedControl
+                  0x0040f4                  _TryMakeKolibrovka
+                  0x001be2                  _TrySynchronization
                   0x000b30                  _UpdateConfig
-                  0x003576                  _WriteAllParameters
-                  0x003a7a                  _WriteBootSector
-                  0x000e8a                  _WriteCharToUART2
-                  0x003d8a                  _WriteDataToCluster
-                  0x003c98                  _WriteDescriptorByAddress
-                  0x000da2                  _WriteDigitalOutputs
-                  0x003b36                  _WriteToFat
-                  0x001f22                  __C1Interrupt
-                  0x001f7e                  __C2Interrupt
+                  0x0035ca                  _WriteAllParameters
+                  0x003ace                  _WriteBootSector
+                  0x000ede                  _WriteCharToUART2
+                  0x003dde                  _WriteDataToCluster
+                  0x003cec                  _WriteDescriptorByAddress
+                  0x000df6                  _WriteDigitalOutputs
+                  0x003b8a                  _WriteToFat
+                  0x001f76                  __C1Interrupt
+                  0x001fd2                  __C2Interrupt
                   0x0001c0                  __DefaultInterrupt
-                  0x001fda                  __LVDInterrupt
-                  0x001c62                  __T1Interrupt
-                  0x001d62                  __T2Interrupt
-                  0x001d9c                  __T3Interrupt
-                  0x001e2e                  __T4Interrupt
-                  0x001efa                  __T5Interrupt
+                  0x00202e                  __LVDInterrupt
+                  0x001cb6                  __T1Interrupt
+                  0x001db6                  __T2Interrupt
+                  0x001df0                  __T3Interrupt
+                  0x001e82                  __T4Interrupt
+                  0x001f4e                  __T5Interrupt
                   0x000500                  ___addsf3
                   0x0005ca                  ___divsf3
                   0x00064e                  ___divsi3
@@ -650,14 +650,14 @@ External Symbols in Program Memory (by name):
                   0x000126                  __psv_init
                   0x000100                  __resetPRI
                   0x0005ba                  _ceilf
-                  0x0011b8                  _clrscr
-                  0x000c62                  _delay
-                  0x001c2c                  _main
+                  0x00120c                  _clrscr
+                  0x000cb6                  _delay
+                  0x001c80                  _main
                   0x000946                  _memcpy
-                  0x0016ba                  _rtc_write_byte
-                  0x001200                  _setDDRAM
-                  0x001628                  _spi2_read
-                  0x0015f0                  _spi2_write
+                  0x00170e                  _rtc_write_byte
+                  0x001254                  _setDDRAM
+                  0x00167c                  _spi2_read
+                  0x001644                  _spi2_write
                   0x000954                  _strcat
                   0x00096a                  _strlen
 
@@ -922,17 +922,17 @@ userdata
  .debug_abbrev    0x0008fe        0x1dd build/default/production/CanOpen.o
  .debug_abbrev    0x000adb         0xda build/default/production/OverSpeedControl.o
 
-.debug_line       0x000000       0x3d78
+.debug_line       0x000000       0x3d98
  *(.debug_line)
- .debug_line      0x000000       0x1abe build/default/production/main.o
- .debug_line      0x001abe        0x4e4 build/default/production/Fat.o
- .debug_line      0x001fa2        0x696 build/default/production/Parameters.o
- .debug_line      0x002638        0x54f build/default/production/Can.o
- .debug_line      0x002b87        0x3fe build/default/production/WriteParameters.o
- .debug_line      0x002f85        0x150 build/default/production/OverRiseZone.o
- .debug_line      0x0030d5         0xfe build/default/production/Kolibrovka.o
- .debug_line      0x0031d3        0x933 build/default/production/CanOpen.o
- .debug_line      0x003b06        0x272 build/default/production/OverSpeedControl.o
+ .debug_line      0x000000       0x1ade build/default/production/main.o
+ .debug_line      0x001ade        0x4e4 build/default/production/Fat.o
+ .debug_line      0x001fc2        0x696 build/default/production/Parameters.o
+ .debug_line      0x002658        0x54f build/default/production/Can.o
+ .debug_line      0x002ba7        0x3fe build/default/production/WriteParameters.o
+ .debug_line      0x002fa5        0x150 build/default/production/OverRiseZone.o
+ .debug_line      0x0030f5         0xfe build/default/production/Kolibrovka.o
+ .debug_line      0x0031f3        0x933 build/default/production/CanOpen.o
+ .debug_line      0x003b26        0x272 build/default/production/OverSpeedControl.o
 
 .debug_frame      0x000000        0x858
  *(.debug_frame)
@@ -1022,11 +1022,11 @@ userdata
                   0x000014          0x4 LONG 0x1c0 DEFINED (__INT0Interrupt)?ABSOLUTE (__INT0Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000016          0x4 LONG 0x1c0 DEFINED (__IC1Interrupt)?ABSOLUTE (__IC1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000018          0x4 LONG 0x1c0 DEFINED (__OC1Interrupt)?ABSOLUTE (__OC1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00001a          0x4 LONG 0x1c62 DEFINED (__T1Interrupt)?ABSOLUTE (__T1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00001a          0x4 LONG 0x1cb6 DEFINED (__T1Interrupt)?ABSOLUTE (__T1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00001c          0x4 LONG 0x1c0 DEFINED (__IC2Interrupt)?ABSOLUTE (__IC2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00001e          0x4 LONG 0x1c0 DEFINED (__OC2Interrupt)?ABSOLUTE (__OC2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000020          0x4 LONG 0x1d62 DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000022          0x4 LONG 0x1d9c DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000020          0x4 LONG 0x1db6 DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000022          0x4 LONG 0x1df0 DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000024          0x4 LONG 0x1c0 DEFINED (__SPI1Interrupt)?ABSOLUTE (__SPI1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000026          0x4 LONG 0x1c0 DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000028          0x4 LONG 0x1c0 DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
@@ -1040,13 +1040,13 @@ userdata
                   0x000038          0x4 LONG 0x1c0 DEFINED (__IC8Interrupt)?ABSOLUTE (__IC8Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00003a          0x4 LONG 0x1c0 DEFINED (__OC3Interrupt)?ABSOLUTE (__OC3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00003c          0x4 LONG 0x1c0 DEFINED (__OC4Interrupt)?ABSOLUTE (__OC4Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00003e          0x4 LONG 0x1e2e DEFINED (__T4Interrupt)?ABSOLUTE (__T4Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000040          0x4 LONG 0x1efa DEFINED (__T5Interrupt)?ABSOLUTE (__T5Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00003e          0x4 LONG 0x1e82 DEFINED (__T4Interrupt)?ABSOLUTE (__T4Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000040          0x4 LONG 0x1f4e DEFINED (__T5Interrupt)?ABSOLUTE (__T5Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000042          0x4 LONG 0x1c0 DEFINED (__INT2Interrupt)?ABSOLUTE (__INT2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000044          0x4 LONG 0x1c0 DEFINED (__U2RXInterrupt)?ABSOLUTE (__U2RXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000046          0x4 LONG 0x1c0 DEFINED (__U2TXInterrupt)?ABSOLUTE (__U2TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000048          0x4 LONG 0x1c0 DEFINED (__SPI2Interrupt)?ABSOLUTE (__SPI2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00004a          0x4 LONG 0x1f22 DEFINED (__C1Interrupt)?ABSOLUTE (__C1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00004a          0x4 LONG 0x1f76 DEFINED (__C1Interrupt)?ABSOLUTE (__C1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00004c          0x4 LONG 0x1c0 DEFINED (__IC3Interrupt)?ABSOLUTE (__IC3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00004e          0x4 LONG 0x1c0 DEFINED (__IC4Interrupt)?ABSOLUTE (__IC4Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000050          0x4 LONG 0x1c0 DEFINED (__IC5Interrupt)?ABSOLUTE (__IC5Interrupt):ABSOLUTE (__DefaultInterrupt)
@@ -1057,11 +1057,11 @@ userdata
                   0x00005a          0x4 LONG 0x1c0 DEFINED (__OC8Interrupt)?ABSOLUTE (__OC8Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00005c          0x4 LONG 0x1c0 DEFINED (__INT3Interrupt)?ABSOLUTE (__INT3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00005e          0x4 LONG 0x1c0 DEFINED (__INT4Interrupt)?ABSOLUTE (__INT4Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000060          0x4 LONG 0x1f7e DEFINED (__C2Interrupt)?ABSOLUTE (__C2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000060          0x4 LONG 0x1fd2 DEFINED (__C2Interrupt)?ABSOLUTE (__C2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000062          0x4 LONG 0x1c0 DEFINED (__PWMInterrupt)?ABSOLUTE (__PWMInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000064          0x4 LONG 0x1c0 DEFINED (__QEIInterrupt)?ABSOLUTE (__QEIInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000066          0x4 LONG 0x1c0 DEFINED (__DCIInterrupt)?ABSOLUTE (__DCIInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000068          0x4 LONG 0x1fda DEFINED (__LVDInterrupt)?ABSOLUTE (__LVDInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000068          0x4 LONG 0x202e DEFINED (__LVDInterrupt)?ABSOLUTE (__LVDInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00006a          0x4 LONG 0x1c0 DEFINED (__FLTAInterrupt)?ABSOLUTE (__FLTAInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00006c          0x4 LONG 0x1c0 DEFINED (__FLTBInterrupt)?ABSOLUTE (__FLTBInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00006e          0x4 LONG 0x1c0 DEFINED (__Interrupt45)?ABSOLUTE (__Interrupt45):ABSOLUTE (__DefaultInterrupt)
@@ -1086,11 +1086,11 @@ userdata
                   0x000094          0x4 LONG 0x1c0 DEFINED (__AltINT0Interrupt)?ABSOLUTE (__AltINT0Interrupt):DEFINED (__INT0Interrupt)?ABSOLUTE (__INT0Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000096          0x4 LONG 0x1c0 DEFINED (__AltIC1Interrupt)?ABSOLUTE (__AltIC1Interrupt):DEFINED (__IC1Interrupt)?ABSOLUTE (__IC1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000098          0x4 LONG 0x1c0 DEFINED (__AltOC1Interrupt)?ABSOLUTE (__AltOC1Interrupt):DEFINED (__OC1Interrupt)?ABSOLUTE (__OC1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00009a          0x4 LONG 0x1c62 DEFINED (__AltT1Interrupt)?ABSOLUTE (__AltT1Interrupt):DEFINED (__T1Interrupt)?ABSOLUTE (__T1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00009a          0x4 LONG 0x1cb6 DEFINED (__AltT1Interrupt)?ABSOLUTE (__AltT1Interrupt):DEFINED (__T1Interrupt)?ABSOLUTE (__T1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00009c          0x4 LONG 0x1c0 DEFINED (__AltIC2Interrupt)?ABSOLUTE (__AltIC2Interrupt):DEFINED (__IC2Interrupt)?ABSOLUTE (__IC2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00009e          0x4 LONG 0x1c0 DEFINED (__AltOC2Interrupt)?ABSOLUTE (__AltOC2Interrupt):DEFINED (__OC2Interrupt)?ABSOLUTE (__OC2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000a0          0x4 LONG 0x1d62 DEFINED (__AltT2Interrupt)?ABSOLUTE (__AltT2Interrupt):DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000a2          0x4 LONG 0x1d9c DEFINED (__AltT3Interrupt)?ABSOLUTE (__AltT3Interrupt):DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000a0          0x4 LONG 0x1db6 DEFINED (__AltT2Interrupt)?ABSOLUTE (__AltT2Interrupt):DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000a2          0x4 LONG 0x1df0 DEFINED (__AltT3Interrupt)?ABSOLUTE (__AltT3Interrupt):DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000a4          0x4 LONG 0x1c0 DEFINED (__AltSPI1Interrupt)?ABSOLUTE (__AltSPI1Interrupt):DEFINED (__SPI1Interrupt)?ABSOLUTE (__SPI1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000a6          0x4 LONG 0x1c0 DEFINED (__AltU1RXInterrupt)?ABSOLUTE (__AltU1RXInterrupt):DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000a8          0x4 LONG 0x1c0 DEFINED (__AltU1TXInterrupt)?ABSOLUTE (__AltU1TXInterrupt):DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
@@ -1104,13 +1104,13 @@ userdata
                   0x0000b8          0x4 LONG 0x1c0 DEFINED (__AltIC8Interrupt)?ABSOLUTE (__AltIC8Interrupt):DEFINED (__IC8Interrupt)?ABSOLUTE (__IC8Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000ba          0x4 LONG 0x1c0 DEFINED (__AltOC3Interrupt)?ABSOLUTE (__AltOC3Interrupt):DEFINED (__OC3Interrupt)?ABSOLUTE (__OC3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000bc          0x4 LONG 0x1c0 DEFINED (__AltOC4Interrupt)?ABSOLUTE (__AltOC4Interrupt):DEFINED (__OC4Interrupt)?ABSOLUTE (__OC4Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000be          0x4 LONG 0x1e2e DEFINED (__AltT4Interrupt)?ABSOLUTE (__AltT4Interrupt):DEFINED (__T4Interrupt)?ABSOLUTE (__T4Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000c0          0x4 LONG 0x1efa DEFINED (__AltT5Interrupt)?ABSOLUTE (__AltT5Interrupt):DEFINED (__T5Interrupt)?ABSOLUTE (__T5Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000be          0x4 LONG 0x1e82 DEFINED (__AltT4Interrupt)?ABSOLUTE (__AltT4Interrupt):DEFINED (__T4Interrupt)?ABSOLUTE (__T4Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000c0          0x4 LONG 0x1f4e DEFINED (__AltT5Interrupt)?ABSOLUTE (__AltT5Interrupt):DEFINED (__T5Interrupt)?ABSOLUTE (__T5Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000c2          0x4 LONG 0x1c0 DEFINED (__AltINT2Interrupt)?ABSOLUTE (__AltINT2Interrupt):DEFINED (__INT2Interrupt)?ABSOLUTE (__INT2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000c4          0x4 LONG 0x1c0 DEFINED (__AltU2RXInterrupt)?ABSOLUTE (__AltU2RXInterrupt):DEFINED (__U2RXInterrupt)?ABSOLUTE (__U2RXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000c6          0x4 LONG 0x1c0 DEFINED (__AltU2TXInterrupt)?ABSOLUTE (__AltU2TXInterrupt):DEFINED (__U2TXInterrupt)?ABSOLUTE (__U2TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000c8          0x4 LONG 0x1c0 DEFINED (__AltSPI2Interrupt)?ABSOLUTE (__AltSPI2Interrupt):DEFINED (__SPI2Interrupt)?ABSOLUTE (__SPI2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000ca          0x4 LONG 0x1f22 DEFINED (__AltC1Interrupt)?ABSOLUTE (__AltC1Interrupt):DEFINED (__C1Interrupt)?ABSOLUTE (__C1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000ca          0x4 LONG 0x1f76 DEFINED (__AltC1Interrupt)?ABSOLUTE (__AltC1Interrupt):DEFINED (__C1Interrupt)?ABSOLUTE (__C1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000cc          0x4 LONG 0x1c0 DEFINED (__AltIC3Interrupt)?ABSOLUTE (__AltIC3Interrupt):DEFINED (__IC3Interrupt)?ABSOLUTE (__IC3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000ce          0x4 LONG 0x1c0 DEFINED (__AltIC4Interrupt)?ABSOLUTE (__AltIC4Interrupt):DEFINED (__IC4Interrupt)?ABSOLUTE (__IC4Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000d0          0x4 LONG 0x1c0 DEFINED (__AltIC5Interrupt)?ABSOLUTE (__AltIC5Interrupt):DEFINED (__IC5Interrupt)?ABSOLUTE (__IC5Interrupt):ABSOLUTE (__DefaultInterrupt)
@@ -1121,11 +1121,11 @@ userdata
                   0x0000da          0x4 LONG 0x1c0 DEFINED (__AltOC8Interrupt)?ABSOLUTE (__AltOC8Interrupt):DEFINED (__OC8Interrupt)?ABSOLUTE (__OC8Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000dc          0x4 LONG 0x1c0 DEFINED (__AltINT3Interrupt)?ABSOLUTE (__AltINT3Interrupt):DEFINED (__INT3Interrupt)?ABSOLUTE (__INT3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000de          0x4 LONG 0x1c0 DEFINED (__AltINT4Interrupt)?ABSOLUTE (__AltINT4Interrupt):DEFINED (__INT4Interrupt)?ABSOLUTE (__INT4Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000e0          0x4 LONG 0x1f7e DEFINED (__AltC2Interrupt)?ABSOLUTE (__AltC2Interrupt):DEFINED (__C2Interrupt)?ABSOLUTE (__C2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000e0          0x4 LONG 0x1fd2 DEFINED (__AltC2Interrupt)?ABSOLUTE (__AltC2Interrupt):DEFINED (__C2Interrupt)?ABSOLUTE (__C2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000e2          0x4 LONG 0x1c0 DEFINED (__AltPWMInterrupt)?ABSOLUTE (__AltPWMInterrupt):DEFINED (__PWMInterrupt)?ABSOLUTE (__PWMInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000e4          0x4 LONG 0x1c0 DEFINED (__AltQEIInterrupt)?ABSOLUTE (__AltQEIInterrupt):DEFINED (__QEIInterrupt)?ABSOLUTE (__QEIInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000e6          0x4 LONG 0x1c0 DEFINED (__AltDCIInterrupt)?ABSOLUTE (__AltDCIInterrupt):DEFINED (__DCIInterrupt)?ABSOLUTE (__DCIInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000e8          0x4 LONG 0x1fda DEFINED (__AltLVDInterrupt)?ABSOLUTE (__AltLVDInterrupt):DEFINED (__LVDInterrupt)?ABSOLUTE (__LVDInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000e8          0x4 LONG 0x202e DEFINED (__AltLVDInterrupt)?ABSOLUTE (__AltLVDInterrupt):DEFINED (__LVDInterrupt)?ABSOLUTE (__LVDInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000ea          0x4 LONG 0x1c0 DEFINED (__AltFLTAInterrupt)?ABSOLUTE (__AltFLTAInterrupt):DEFINED (__FLTAInterrupt)?ABSOLUTE (__FLTAInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000ec          0x4 LONG 0x1c0 DEFINED (__AltFLTBInterrupt)?ABSOLUTE (__AltFLTBInterrupt):DEFINED (__FLTBInterrupt)?ABSOLUTE (__FLTBInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000ee          0x4 LONG 0x1c0 DEFINED (__AltInterrupt45)?ABSOLUTE (__AltInterrupt45):DEFINED (__Interrupt45)?ABSOLUTE (__Interrupt45):ABSOLUTE (__DefaultInterrupt)
@@ -2378,136 +2378,136 @@ __c30_signature
  .const             0x8978         0xd2 build/default/production/WriteParameters.o
  .const             0x8a4a          0xc build/default/production/main.o
 
-.text             0x000a56       0x37bc
- .text            0x000a56       0x15b2 build/default/production/main.o
+.text             0x000a56       0x3810
+ .text            0x000a56       0x1606 build/default/production/main.o
                   0x000a56                  _ReadConfig
                   0x000ac6                  _ReadCodtDomainValue
                   0x000b30                  _UpdateConfig
-                  0x000c32                  _LVDinitialization
-                  0x000c62                  _delay
-                  0x000c8a                  _LongToString
-                  0x000d42                  _LongToCharArray
-                  0x000d78                  _ReadDigitalInputs
-                  0x000da2                  _WriteDigitalOutputs
-                  0x000dfe                  _GetDigitalOutputs
-                  0x000e0c                  _DigitalInputsToString
-                  0x000e52                  _OpenUART2
-                  0x000e70                  _BusyUART2
-                  0x000e8a                  _WriteCharToUART2
-                  0x000ea2                  _PrintStringUART2
-                  0x000ebe                  _PrintDigitUART2
-                  0x000eea                  _StartTimer1
-                  0x000f10                  _StartTimer2
-                  0x000f36                  _StartTimer3
-                  0x000f5c                  _StartTimer4
-                  0x000f82                  _StartTimer5
-                  0x000fa8                  _EncoderScan
-                  0x00107e                  _EncCountV
-                  0x0010b2                  _EncGetDistanceStr
-                  0x0010f4                  _EncGetDistanceLong
-                  0x00112a                  _EncDistanceToCounter
-                  0x001160                  _EncGetV
-                  0x0011b8                  _clrscr
-                  0x001200                  _setDDRAM
-                  0x00132c                  _DisplayInitialization
-                  0x001400                  _DisplayView
-                  0x0015c8                  _ConfigurateSPI2
-                  0x0015f0                  _spi2_write
-                  0x001628                  _spi2_read
-                  0x001662                  _RtcSetTime
-                  0x0016b0                  _RtcInitialization
-                  0x0016ba                  _rtc_write_byte
-                  0x0016dc                  _RtcRead
-                  0x0016fe                  _RtcReadSeconds
-                  0x00172e                  _RtcReadMinutes
-                  0x00175e                  _RtcReadHours
-                  0x00178e                  _RtcReadDayOfWeek
-                  0x0017a0                  _RtcReadDays
-                  0x0017d0                  _RtcReadMonth
-                  0x001800                  _RtcReadYear
-                  0x00182c                  _RtcWriteDateInString
-                  0x001a5c                  _FramInitialization
-                  0x001a6c                  _FramWriteEnable
-                  0x001a7e                  _FramWrite
-                  0x001af0                  _FramRead
-                  0x001b5a                  _FramReadStatus
-                  0x001b76                  _FramReadPositionCounter
-                  0x001b8e                  _TrySynchronization
-                  0x001c2c                  _main
-                  0x001c62                  __T1Interrupt
-                  0x001d62                  __T2Interrupt
-                  0x001d9c                  __T3Interrupt
-                  0x001e2e                  __T4Interrupt
-                  0x001efa                  __T5Interrupt
-                  0x001f22                  __C1Interrupt
-                  0x001f7e                  __C2Interrupt
-                  0x001fda                  __LVDInterrupt
- .text            0x002008        0x808 build/default/production/CanOpen.o
-                  0x002008                  _SendTPDO
-                  0x002040                  _SendTSDO
-                  0x002070                  _CanOpenSendCurrentObjectState
-                  0x00214e                  _CanOpenParseRSDO
-                  0x0021ca                  _EditDictionaryElement
-                  0x00229e                  _SendDictionaryElement
-                  0x0022fc                  _SendDeviceInformation
-                  0x002456                  _SendValue
-                  0x00257c                  _SendParameterType
-                  0x0025e4                  _SendName
-                  0x002694                  _CanOpenEditName
-                  0x0026f0                  _CanOpenSendCodtDomainMsg
-                  0x00275e                  _CanOpenGetCodtDomainMsg
- .text            0x002810        0x6e0 build/default/production/Can.o
-                  0x002810                  _Can1Initialization
-                  0x00298e                  _Can2Initialization
-                  0x002b0c                  _Can1SendData
-                  0x002b6e                  _Can2SendData
-                  0x002bd0                  _Can1Execute
-                  0x002c8c                  _Can2Execute
-                  0x002d48                  _Can1ReceiveData
-                  0x002d5a                  _Can2ReceiveData
-                  0x002d6c                  _IncTeilCan1
-                  0x002db0                  _IncHeadCan1
-                  0x002df4                  _IsQueueCan1Empty
-                  0x002e2e                  _IncTeilCan2
-                  0x002e72                  _IncHeadCan2
-                  0x002eb6                  _IsQueueCan2Empty
- .text            0x002ef0        0x686 build/default/production/Parameters.o
-                  0x002ef0                  _AddParameter
-                  0x0030a0                  _DeleteParameter
-                  0x003114                  _ReadParameterValue
-                  0x003180                  _ReadParameterName
-                  0x003234                  _ReadParameterType
-                  0x003260                  _EditParameterValue
-                  0x003300                  _EditParameterName
-                  0x00346e                  _FindMaxIndex
-                  0x0034f4                  _FindDescriptorAdrByIndex
- .text            0x003576        0x504 build/default/production/WriteParameters.o
-                  0x003576                  _WriteAllParameters
- .text            0x003a7a        0x374 build/default/production/Fat.o
-                  0x003a7a                  _WriteBootSector
-                  0x003aa2                  _ReadBootSector
-                  0x003ab2                  _Formatting
-                  0x003b10                  _ReadNextFat
-                  0x003b36                  _WriteToFat
-                  0x003b5a                  _FindFreeClusterNum
-                  0x003ba6                  _AllocateClustersSequence
-                  0x003bf4                  _ClearClustersSequence
-                  0x003c24                  _FindFreeDescriptorAdr
-                  0x003c98                  _WriteDescriptorByAddress
-                  0x003cb2                  _ReadDescriptorByAddress
-                  0x003ccc                  _DescriptorsDefragmentation
-                  0x003d8a                  _WriteDataToCluster
-                  0x003dbc                  _ReadDataFromCluster
- .text            0x003dee        0x2b2 build/default/production/OverSpeedControl.o
-                  0x003dee                  _OverSpeedInterpolation
-                  0x003f92                  _OverSpeedGetMaxV
-                  0x004060                  _TryInitOverSpeedControl
-                  0x004074                  _MakeOverSpeedControl
- .text            0x0040a0         0xec build/default/production/Kolibrovka.o
-                  0x0040a0                  _TryMakeKolibrovka
- .text            0x00418c         0x86 build/default/production/OverRiseZone.o
-                  0x00418c                  _OverRiseZoneControl
-                  0x0041da                  _OnOveriseRele
+                  0x000c86                  _LVDinitialization
+                  0x000cb6                  _delay
+                  0x000cde                  _LongToString
+                  0x000d96                  _LongToCharArray
+                  0x000dcc                  _ReadDigitalInputs
+                  0x000df6                  _WriteDigitalOutputs
+                  0x000e52                  _GetDigitalOutputs
+                  0x000e60                  _DigitalInputsToString
+                  0x000ea6                  _OpenUART2
+                  0x000ec4                  _BusyUART2
+                  0x000ede                  _WriteCharToUART2
+                  0x000ef6                  _PrintStringUART2
+                  0x000f12                  _PrintDigitUART2
+                  0x000f3e                  _StartTimer1
+                  0x000f64                  _StartTimer2
+                  0x000f8a                  _StartTimer3
+                  0x000fb0                  _StartTimer4
+                  0x000fd6                  _StartTimer5
+                  0x000ffc                  _EncoderScan
+                  0x0010d2                  _EncCountV
+                  0x001106                  _EncGetDistanceStr
+                  0x001148                  _EncGetDistanceLong
+                  0x00117e                  _EncDistanceToCounter
+                  0x0011b4                  _EncGetV
+                  0x00120c                  _clrscr
+                  0x001254                  _setDDRAM
+                  0x001380                  _DisplayInitialization
+                  0x001454                  _DisplayView
+                  0x00161c                  _ConfigurateSPI2
+                  0x001644                  _spi2_write
+                  0x00167c                  _spi2_read
+                  0x0016b6                  _RtcSetTime
+                  0x001704                  _RtcInitialization
+                  0x00170e                  _rtc_write_byte
+                  0x001730                  _RtcRead
+                  0x001752                  _RtcReadSeconds
+                  0x001782                  _RtcReadMinutes
+                  0x0017b2                  _RtcReadHours
+                  0x0017e2                  _RtcReadDayOfWeek
+                  0x0017f4                  _RtcReadDays
+                  0x001824                  _RtcReadMonth
+                  0x001854                  _RtcReadYear
+                  0x001880                  _RtcWriteDateInString
+                  0x001ab0                  _FramInitialization
+                  0x001ac0                  _FramWriteEnable
+                  0x001ad2                  _FramWrite
+                  0x001b44                  _FramRead
+                  0x001bae                  _FramReadStatus
+                  0x001bca                  _FramReadPositionCounter
+                  0x001be2                  _TrySynchronization
+                  0x001c80                  _main
+                  0x001cb6                  __T1Interrupt
+                  0x001db6                  __T2Interrupt
+                  0x001df0                  __T3Interrupt
+                  0x001e82                  __T4Interrupt
+                  0x001f4e                  __T5Interrupt
+                  0x001f76                  __C1Interrupt
+                  0x001fd2                  __C2Interrupt
+                  0x00202e                  __LVDInterrupt
+ .text            0x00205c        0x808 build/default/production/CanOpen.o
+                  0x00205c                  _SendTPDO
+                  0x002094                  _SendTSDO
+                  0x0020c4                  _CanOpenSendCurrentObjectState
+                  0x0021a2                  _CanOpenParseRSDO
+                  0x00221e                  _EditDictionaryElement
+                  0x0022f2                  _SendDictionaryElement
+                  0x002350                  _SendDeviceInformation
+                  0x0024aa                  _SendValue
+                  0x0025d0                  _SendParameterType
+                  0x002638                  _SendName
+                  0x0026e8                  _CanOpenEditName
+                  0x002744                  _CanOpenSendCodtDomainMsg
+                  0x0027b2                  _CanOpenGetCodtDomainMsg
+ .text            0x002864        0x6e0 build/default/production/Can.o
+                  0x002864                  _Can1Initialization
+                  0x0029e2                  _Can2Initialization
+                  0x002b60                  _Can1SendData
+                  0x002bc2                  _Can2SendData
+                  0x002c24                  _Can1Execute
+                  0x002ce0                  _Can2Execute
+                  0x002d9c                  _Can1ReceiveData
+                  0x002dae                  _Can2ReceiveData
+                  0x002dc0                  _IncTeilCan1
+                  0x002e04                  _IncHeadCan1
+                  0x002e48                  _IsQueueCan1Empty
+                  0x002e82                  _IncTeilCan2
+                  0x002ec6                  _IncHeadCan2
+                  0x002f0a                  _IsQueueCan2Empty
+ .text            0x002f44        0x686 build/default/production/Parameters.o
+                  0x002f44                  _AddParameter
+                  0x0030f4                  _DeleteParameter
+                  0x003168                  _ReadParameterValue
+                  0x0031d4                  _ReadParameterName
+                  0x003288                  _ReadParameterType
+                  0x0032b4                  _EditParameterValue
+                  0x003354                  _EditParameterName
+                  0x0034c2                  _FindMaxIndex
+                  0x003548                  _FindDescriptorAdrByIndex
+ .text            0x0035ca        0x504 build/default/production/WriteParameters.o
+                  0x0035ca                  _WriteAllParameters
+ .text            0x003ace        0x374 build/default/production/Fat.o
+                  0x003ace                  _WriteBootSector
+                  0x003af6                  _ReadBootSector
+                  0x003b06                  _Formatting
+                  0x003b64                  _ReadNextFat
+                  0x003b8a                  _WriteToFat
+                  0x003bae                  _FindFreeClusterNum
+                  0x003bfa                  _AllocateClustersSequence
+                  0x003c48                  _ClearClustersSequence
+                  0x003c78                  _FindFreeDescriptorAdr
+                  0x003cec                  _WriteDescriptorByAddress
+                  0x003d06                  _ReadDescriptorByAddress
+                  0x003d20                  _DescriptorsDefragmentation
+                  0x003dde                  _WriteDataToCluster
+                  0x003e10                  _ReadDataFromCluster
+ .text            0x003e42        0x2b2 build/default/production/OverSpeedControl.o
+                  0x003e42                  _OverSpeedInterpolation
+                  0x003fe6                  _OverSpeedGetMaxV
+                  0x0040b4                  _TryInitOverSpeedControl
+                  0x0040c8                  _MakeOverSpeedControl
+ .text            0x0040f4         0xec build/default/production/Kolibrovka.o
+                  0x0040f4                  _TryMakeKolibrovka
+ .text            0x0041e0         0x86 build/default/production/OverRiseZone.o
+                  0x0041e0                  _OverRiseZoneControl
+                  0x00422e                  _OnOveriseRele
 
-.dinit            0x004212         0x4c
- .dinit           0x004212         0x4c data_init
+.dinit            0x004266         0x4c
+ .dinit           0x004266         0x4c data_init
