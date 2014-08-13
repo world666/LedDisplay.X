@@ -53,7 +53,11 @@ void ReadConfig()
     ReadParameterValue(NODE_ID,&_nodeId);
     ReadParameterValue(DISTANCE_PER_MARKS,&_distancePerMarks);
     ReadParameterValue(HIGH_EDGE,&_highEdge);
+    _highEdge = _highEdge<<8;
+    _highEdge /= 256;
     ReadParameterValue(LOW_EDGE,&_lowEdge);
+    _lowEdge = _lowEdge<<8;
+    _lowEdge /= 256;
     ReadParameterValue(SYNCHRONIZATION,&_synchronization);
     ReadParameterValue(SYNCH_ZONE,&_synchZone);
     ReadParameterValue(OVER_RIZE_ZONE_HIGH,&_overRizeZoneHigh);
